@@ -2,6 +2,7 @@ import itertools
 import sys
 import os
 
+# Matches a service and a DFD node through recursively checking their properties.
 def match(tag, dfd_tags, service_tags):
     for property, values in dfd_tags.items():
         print(f"{tag}Checking dfd property {property}")
@@ -84,6 +85,7 @@ def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
                     not_compatible_services.append((source, dest))
     return list(set(not_compatible_services))
 
+#Given a json DFD graph, returns its Graphviz implementation
 def embed_dfd_graph(json_graph, new_graph):
     for node_name, node_tags in json_graph.items():
         if not node_name in new_graph.body:
@@ -103,6 +105,7 @@ def embed_dfd_graph(json_graph, new_graph):
                 new_graph.edge(node_name, node, color=color)
     return new_graph
 
+# Given a DFD json graph and the selected services/arcs, returns the Graphviz implementation of the selected graph
 def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_arcs, requires_arcs):
     selected_graph = embed_dfd_graph(dfd_graph, selected_graph)
 
@@ -132,6 +135,7 @@ def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_
             )
     return selected_graph
 
+# Given the weights of CPLEX objective function, sets preferences' weights to 0.5
 def embed_preferences(variable_names, objective, preferenceFile):
     with open(preferenceFile, 'r') as file:
         for line in  file.readlines():
