@@ -1,6 +1,10 @@
 # Data Platform Match & Select Algorithm
 This repository stores the implementation of "Towards a Process-Driven Design of Data Platforms" [...].
 The match and select algorithm has been implemented in Python 3.9 and thus requires it to be run.
+
+As of today, the application returns **one** optimal solution to the optimization problem. In case of multiple solution, the CPLEX library returns one of them non-deterministically, so two different runs might result in two different solutions.
+
+Upon execution, the matched and selected graphs will be available in the `output` directory in the form of graph and image.
 ## Getting Started - Deploying the environment
 The list of mandatory dependencies to successfully run the script is explicited inside `requirements.txt` file in the project root directory.
 To ease the deploy and testing of the application, three ways have been provided to run the application:
