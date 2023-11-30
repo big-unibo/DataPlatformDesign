@@ -13,3 +13,31 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Run
+        run: |
+            sudo apt-get install gcc graphviz -y
+            pip install -r requirements.txt
+            python src/match_and_select.py
+      - name: Build docker
+        run: |
+            docker compose build
+  
+  release:
+    needs:
+      - build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Deploy
+        run: zip -r source.zip input output src requirements.txt
+      - name: Release
+        run: |
+            npm install
+            npx semantic-release
+        env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
