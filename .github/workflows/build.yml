@@ -18,5 +18,5 @@ jobs:
           python-version: '3.9'
       - name: Run
         run: |
-            pip install -r src/requirements.txt
+            pip install -r requirements.txt
             python src/match_and_select.py
