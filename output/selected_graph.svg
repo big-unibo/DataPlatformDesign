@@ -28,13 +28,13 @@
 <polygon fill="black" stroke="black" points="571.29,-394.18 567.79,-384.18 564.29,-394.18 571.29,-394.18"/>
 </g>
 <!-- PostGIS -->
-<g id="node16" class="node">
+<g id="node15" class="node">
 <title>PostGIS</title>
 <ellipse fill="none" stroke="blue" cx="149.79" cy="-192" rx="48.19" ry="18"/>
 <text text-anchor="middle" x="149.79" y="-188.3" font-family="Times,serif" font-size="14.00">PostGIS</text>
 </g>
 <!-- Sensor Data&#45;&gt;PostGIS -->
-<g id="edge12" class="edge">
+<g id="edge15" class="edge">
 <title>Sensor Data&#45;&gt;PostGIS</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M515.61,-448.12C457.46,-441.85 362.36,-425.6 291.79,-384 225.42,-344.87 180.4,-261.4 160.84,-218.95"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="164.03,-217.51 156.73,-209.82 157.64,-220.38 164.03,-217.51"/>
@@ -53,13 +53,13 @@
 <polygon fill="black" stroke="black" points="398.59,-297.97 388.03,-297.09 395.74,-304.36 398.59,-297.97"/>
 </g>
 <!-- Sagemaker -->
-<g id="node12" class="node">
+<g id="node13" class="node">
 <title>Sagemaker</title>
 <ellipse fill="none" stroke="blue" cx="504.79" cy="-105" rx="63.09" ry="18"/>
 <text text-anchor="middle" x="504.79" y="-101.3" font-family="Times,serif" font-size="14.00">Sagemaker</text>
 </g>
 <!-- Enrich&#45;&gt;Sagemaker -->
-<g id="edge11" class="edge">
+<g id="edge14" class="edge">
 <title>Enrich&#45;&gt;Sagemaker</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M588.02,-350.01C593.93,-344.45 599.64,-337.62 602.79,-330 623.79,-279.31 811.67,-448.79 587.79,-141 581.39,-132.19 572.32,-125.58 562.51,-120.63"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="563.91,-117.42 553.36,-116.53 561.05,-123.81 563.91,-117.42"/>
@@ -84,13 +84,13 @@
 <polygon fill="black" stroke="black" points="374.29,-394.18 370.79,-384.18 367.29,-394.18 374.29,-394.18"/>
 </g>
 <!-- GeoServer -->
-<g id="node15" class="node">
+<g id="node17" class="node">
 <title>GeoServer</title>
 <ellipse fill="none" stroke="blue" cx="59.79" cy="-366" rx="59.59" ry="18"/>
 <text text-anchor="middle" x="59.79" y="-362.3" font-family="Times,serif" font-size="14.00">GeoServer</text>
 </g>
 <!-- Raw Images&#45;&gt;GeoServer -->
-<g id="edge15" class="edge">
+<g id="edge13" class="edge">
 <title>Raw Images&#45;&gt;GeoServer</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M318.75,-449.8C234.98,-445.74 77.83,-435.69 60.79,-417 55.28,-410.95 53.69,-402.59 53.89,-394.42"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="57.38,-394.69 54.92,-384.39 50.41,-393.97 57.38,-394.69"/>
@@ -103,7 +103,7 @@
 <polygon fill="black" stroke="black" points="360.53,-306.11 354.84,-297.18 353.72,-307.71 360.53,-306.11"/>
 </g>
 <!-- Index Comp.&#45;&gt;Sagemaker -->
-<g id="edge22" class="edge">
+<g id="edge20" class="edge">
 <title>Index Comp.&#45;&gt;Sagemaker</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M386.97,-348.38C398.88,-335.33 414.71,-316.22 424.79,-297 439.69,-268.62 429.7,-255.72 445.79,-228 451.32,-218.48 456.42,-218.97 462.79,-210 478.45,-187.96 480.88,-181.15 490.79,-156 493.66,-148.74 496.19,-140.66 498.28,-133.16"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="501.69,-133.97 500.85,-123.41 494.92,-132.19 501.69,-133.97"/>
@@ -141,7 +141,7 @@
 <text text-anchor="middle" x="275.79" y="-231.8" font-family="Times,serif" font-size="14.00">ImplementedBy</text>
 </g>
 <!-- Irrigation Opt.&#45;&gt;Sagemaker -->
-<g id="edge16" class="edge">
+<g id="edge19" class="edge">
 <title>Irrigation Opt.&#45;&gt;Sagemaker</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M371.39,-174.01C369.7,-163.45 369.64,-150.18 376.79,-141 385.12,-130.32 412.79,-122.07 440.29,-116.26"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="441.26,-119.64 450.37,-114.24 439.88,-112.78 441.26,-119.64"/>
@@ -160,20 +160,20 @@
 <polygon fill="black" stroke="black" points="214.89,-132.04 209.06,-123.2 208.1,-133.75 214.89,-132.04"/>
 </g>
 <!-- ETL&#45;&gt;Sagemaker -->
-<g id="edge20" class="edge">
+<g id="edge16" class="edge">
 <title>ETL&#45;&gt;Sagemaker</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M243.17,-173.82C243.15,-162.9 245.15,-149.31 253.79,-141 278.6,-117.16 366.76,-109.39 431.62,-106.94"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="431.94,-110.44 441.82,-106.6 431.7,-103.44 431.94,-110.44"/>
 <text text-anchor="middle" x="310.79" y="-144.8" font-family="Times,serif" font-size="14.00">ImplementedBy</text>
 </g>
 <!-- Redshift -->
-<g id="node17" class="node">
+<g id="node11" class="node">
 <title>Redshift</title>
 <ellipse fill="none" stroke="blue" cx="205.79" cy="-18" rx="50.09" ry="18"/>
 <text text-anchor="middle" x="205.79" y="-14.3" font-family="Times,serif" font-size="14.00">Redshift</text>
 </g>
 <!-- DWH&#45;&gt;Redshift -->
-<g id="edge18" class="edge">
+<g id="edge22" class="edge">
 <title>DWH&#45;&gt;Redshift</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M205.79,-86.8C205.79,-75.16 205.79,-59.55 205.79,-46.24"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="209.29,-46.18 205.79,-36.18 202.29,-46.18 209.29,-46.18"/>
@@ -192,7 +192,7 @@
 <polygon fill="black" stroke="black" points="395.7,-476.28 386.39,-471.21 390.51,-480.97 395.7,-476.28"/>
 </g>
 <!-- Download&#45;&gt;Sagemaker -->
-<g id="edge19" class="edge">
+<g id="edge18" class="edge">
 <title>Download&#45;&gt;Sagemaker</title>
 <path fill="none" stroke="lightblue" stroke-width="2" d="M447.07,-521.84C446.13,-482.72 447.97,-384.92 484.79,-315 506.33,-274.12 541.68,-285.51 559.79,-243 576.46,-203.9 548.45,-157.96 526.66,-130.46"/>
 <polygon fill="lightblue" stroke="lightblue" stroke-width="2" points="529.2,-128.04 520.15,-122.54 523.79,-132.49 529.2,-128.04"/>
@@ -211,7 +211,7 @@
 <polygon fill="black" stroke="black" points="592.7,-476.28 583.39,-471.21 587.51,-480.97 592.7,-476.28"/>
 </g>
 <!-- Kinesis -->
-<g id="node11" class="node">
+<g id="node12" class="node">
 <title>Kinesis</title>
 <ellipse fill="none" stroke="blue" cx="681.79" cy="-453" rx="44.39" ry="18"/>
 <text text-anchor="middle" x="681.79" y="-449.3" font-family="Times,serif" font-size="14.00">Kinesis</text>
@@ -224,37 +224,37 @@
 <text text-anchor="middle" x="722.79" y="-492.8" font-family="Times,serif" font-size="14.00">ImplementedBy</text>
 </g>
 <!-- EC2 -->
-<g id="node13" class="node">
+<g id="node14" class="node">
 <title>EC2</title>
 <ellipse fill="none" stroke="blue" cx="93.79" cy="-105" rx="30.59" ry="18"/>
 <text text-anchor="middle" x="93.79" y="-101.3" font-family="Times,serif" font-size="14.00">EC2</text>
 </g>
+<!-- PostGIS&#45;&gt;EC2 -->
+<g id="edge11" class="edge">
+<title>PostGIS&#45;&gt;EC2</title>
+<path fill="none" stroke="lightblue" stroke-dasharray="5,2" d="M138.73,-174.21C130.57,-161.82 119.34,-144.78 110.15,-130.82"/>
+<polygon fill="lightblue" stroke="lightblue" points="112.88,-128.61 104.46,-122.18 107.03,-132.46 112.88,-128.61"/>
+<text text-anchor="middle" x="152.29" y="-144.8" font-family="Times,serif" font-size="14.00">require</text>
+</g>
 <!-- S3 -->
-<g id="node14" class="node">
+<g id="node16" class="node">
 <title>S3</title>
 <ellipse fill="none" stroke="blue" cx="113.79" cy="-279" rx="27" ry="18"/>
 <text text-anchor="middle" x="113.79" y="-275.3" font-family="Times,serif" font-size="14.00">S3</text>
 </g>
 <!-- GeoServer&#45;&gt;EC2 -->
-<g id="edge13" class="edge">
+<g id="edge12" class="edge">
 <title>GeoServer&#45;&gt;EC2</title>
 <path fill="none" stroke="lightblue" stroke-dasharray="5,2" d="M62.03,-348.01C67.79,-304.1 83.21,-186.6 90.23,-133.15"/>
 <polygon fill="lightblue" stroke="lightblue" points="93.72,-133.43 91.56,-123.06 86.78,-132.52 93.72,-133.43"/>
 <text text-anchor="middle" x="104.29" y="-231.8" font-family="Times,serif" font-size="14.00">require</text>
 </g>
 <!-- GeoServer&#45;&gt;S3 -->
-<g id="edge14" class="edge">
+<g id="edge10" class="edge">
 <title>GeoServer&#45;&gt;S3</title>
 <path fill="none" stroke="lightblue" stroke-dasharray="5,2" d="M70.46,-348.21C78.38,-335.74 89.3,-318.56 98.19,-304.56"/>
 <polygon fill="lightblue" stroke="lightblue" points="101.29,-306.21 103.7,-295.9 95.38,-302.46 101.29,-306.21"/>
 <text text-anchor="middle" x="117.29" y="-318.8" font-family="Times,serif" font-size="14.00">require</text>
-</g>
-<!-- PostGIS&#45;&gt;EC2 -->
-<g id="edge10" class="edge">
-<title>PostGIS&#45;&gt;EC2</title>
-<path fill="none" stroke="lightblue" stroke-dasharray="5,2" d="M138.73,-174.21C130.57,-161.82 119.34,-144.78 110.15,-130.82"/>
-<polygon fill="lightblue" stroke="lightblue" points="112.88,-128.61 104.46,-122.18 107.03,-132.46 112.88,-128.61"/>
-<text text-anchor="middle" x="152.29" y="-144.8" font-family="Times,serif" font-size="14.00">require</text>
 </g>
 </g>
 </svg>

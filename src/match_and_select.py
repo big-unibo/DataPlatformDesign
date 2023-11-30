@@ -3,28 +3,52 @@ import graphviz
 from cplex import Cplex
 import os.path as path
 import utils
+import argparse
+import sys
 
-service_graph_file = "service_graph.json"
-dfd_graph_file = "dfd_graph.json"
-preference_file = "preferences.txt"
+default_service_graph_file = "service_graph.json"
+default_dfd_graph_file = "dfd_graph.json"
+default_preference_file = "preferences.txt"
 
-input_folder =  "input"
-output_folder = "output"
+default_input_folder =  "input"
+default_output_path = "output"
 
+parser = argparse.ArgumentParser(description='Define input files location')
+parser.add_argument('-dfd','--dfd_graph', help='Path of dfd_graph.json', default=path.join(default_input_folder, default_dfd_graph_file))
+parser.add_argument('-sg','--service_graph', help='Path of service_graph.json', default=path.join(default_input_folder, default_service_graph_file))
+parser.add_argument('-p','--preferences', help='Path of preferences.txt', default=path.join(default_input_folder, default_preference_file))
+parser.add_argument('-o','--output_path', help='Output path', default=default_output_path)
+
+args = vars(parser.parse_args())
+
+service_graph_path = args["service_graph"]
+dfd_graph_path = args["dfd_graph"]
+preferences_path = args["preferences"]
+output_path = args["output_path"]
+
+utils.create_directory(output_path)
 # Input graphs
-service_graph = json.load(open(path.join(input_folder, service_graph_file)))
-dfd_graph = json.load(open(path.join(input_folder, dfd_graph_file)))
-preference_file = path.join(input_folder, preference_file)
+try:
+    service_graph = json.load(open(service_graph_path))
+    dfd_graph = json.load(open(dfd_graph_path))
+except FileNotFoundError as e:
+    print("Couldnt' find input file")
+    print(f"Error: {e}")
+    sys.exit(1)
+except json.JSONDecodeError as js:
+    print("Something went wrong while decoding json file")
+    print(f"Error: {js}")
+    sys.exit(1)
 
 # Matched graph
-matched_graph = graphviz.Digraph("G", filename=path.join(output_folder, "matched_graph.gv"), strict=True)
+matched_graph = graphviz.Digraph("G", filename=path.join(output_path, "matched_graph.gv"), strict=True)
 
 # Selected graph
-selected_graph = graphviz.Digraph("G", filename=path.join(output_folder, "selected_graph.gv"), strict=True)
+selected_graph = graphviz.Digraph("G", filename=path.join(output_path, "selected_graph.gv"), strict=True)
 
-#########################
-## BUILD MATCHED GRAPH ##
-#########################
+##########################
+# 1. BUILD MATCHED GRAPH #
+##########################
 
 # Matched graph "ImplementedBy" services
 implementedBy_services = []
@@ -76,14 +100,14 @@ for dfd_entity_name, dfd_process_tags in dfd_graph.items():
                 implementedBy_services.append(service_requirement)
 
 # Render matched graph in output folder
-matched_graph.render(filename=path.join(output_folder, "matched_graph"), format="svg")
+matched_graph.render(filename=path.join(output_path, "matched_graph"), format="svg")
 implemented_services = list(set(implementedBy_services))
 
 
 
-#############################
-## MATCHED GRAPH SELECTION ##
-#############################
+##############################
+# 2. MATCHED GRAPH SELECTION #
+##############################
 
 # List of DFD edges (Flow)
 dfd_edges = [(key, tag["edges"]) for key, tag in dfd_graph.items() if "edges" in tag]
@@ -95,36 +119,29 @@ compatibilities = [
     if "isCompatible" in tag["properties"]
 ]
 
-fourth_constraint = []
+minimal_coverage = []
 for edge in implementedBy_edges:
     sub_constraint = []
     for edge2 in implementedBy_edges:
         if edge2.split("->")[0] == edge.split("->")[0]:
             sub_constraint.append(edge2)
-    fourth_constraint.append(sub_constraint)
-unique_tuple = set(tuple(elem) for elem in fourth_constraint)
+    minimal_coverage.append(sub_constraint)
+minimal_coverage = set(tuple(elem) for elem in minimal_coverage)
 
-###
 ### 4th Constraint - Services' minimal coverage
-###
-fourth_constraint = [[list(t), [1 for _ in enumerate(t)]] for t in unique_tuple]
+fourth_constraint = [[list(t), [1 for _ in enumerate(t)]] for t in minimal_coverage]
 fourth_constraint_names = ["c" + str(i) for i, _ in enumerate(fourth_constraint)]
 fourth_rhs = [1 for _ in enumerate(fourth_constraint)]
 fourth_constraint_senses = [
-    "E" for _ in enumerate(fourth_constraint)
-]
+    "E" for _ in enumerate(fourth_constraint)]
 
-###
 ### 5th Constraint - Services' requirements
-###
 fifth_constraint = [[constraint, [-1, 1]] for constraint in requires_edges]
 fifth_constraint_names = ["r" + str(i) for i, _ in enumerate(fifth_constraint)]
 fifth_rhs = [0 for _ in fifth_constraint]
 fifth_constraint_senses = ["E" for _ in fifth_constraint]
 
-###
 ### 6th Constraint - Services' compatibilities
-###
 not_compatible_services = utils.find_not_compatible_edges(implementedBy_edges, dfd_edges, compatibilities)
 sixth_constraint = [
     [[f"{source[0]}->{source[1]}", f"{dest[0]}->{dest[1]}"], [1, 1]]
@@ -134,9 +151,7 @@ sixth_rhs = [1 for _ in sixth_constraint]
 sixth_constraint_senses = ["L" for _ in sixth_constraint]
 sixth_constraint_names = ["comp" + str(i) for i, _ in enumerate(sixth_constraint)]
 
-###
 ### 7th Constraint - Services' edges
-###
 edges_constraint = [[[edge, edge.split("->")[1]], [1, -1]] for edge in implementedBy_edges] + [
     [[edge[0], edge[0].split("->")[1]], [1, -1]] for edge in requires_edges
 ]
@@ -164,9 +179,7 @@ upper_bounds = [1 for _ in variable_names]
 
 # Setting variables' weights to minimize, weight(arch) = 0 since we don't want to minimize them
 objective = [0 if "->" in variable else 1 for variable in variable_names]
-objective = utils.embed_preferences(variable_names, objective, preference_file)
-# Setting a service preference
-#objective[variable_names.index("S3")] = 0.5
+objective = utils.embed_preferences(variable_names, objective, preferences_path)
 
 problem.variables.add(
     obj=objective, lb=lower_bounds, ub=upper_bounds, names=variable_names
@@ -222,6 +235,6 @@ for i, name in enumerate(problem.variables.get_names()):
 print(f"Solution cost: {problem.solution.get_objective_value()}")
 
 selected_graph = utils.embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_edges, requires_edges)
-selected_graph.render(filename=path.join(output_folder, "selected_graph"), format="svg")
+selected_graph.render(filename=path.join(output_path, "selected_graph"), format="svg")
 
 

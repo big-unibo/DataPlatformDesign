@@ -1,5 +1,6 @@
 import itertools
 import sys
+import os
 
 def match(tag, dfd_tags, service_tags):
     for property, values in dfd_tags.items():
@@ -43,10 +44,10 @@ def find_requirements_for(service_graph, service_name):
             return []
 
 ## Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
-def find_not_compatible_edges(edges, dfd_edges, compatibilities):
-    test = [(tuple.split("->")[0], tuple.split("->")[1]) for tuple in edges]
+def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
+    implemented_by_edges = [(tuple.split("->")[0], tuple.split("->")[1]) for tuple in implemented_by_edges]
     implements_cartesian_product = list(
-        itertools.product(*[test, test])
+        itertools.product(*[implemented_by_edges, implemented_by_edges])
     )
 
     not_compatible_services = []
@@ -140,3 +141,10 @@ def embed_preferences(variable_names, objective, preferenceFile):
                print(f"Can't embed preference {line}, aborting")
                sys.exit(1)
         return objective
+
+def create_directory(directory_path):
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+        print(f"Directory '{directory_path}' created successfully.")
+    else:
+        print(f"Directory '{directory_path}' already exists.")
