@@ -6,7 +6,7 @@ Implementation of the paper "Towards a Process-Driven Design of Data Platforms"
 
 - Python 3.9
 - [Graphviz](https://pypi.org/project/graphviz/) binaries **MUST** be added to the PATH variable on your host machine
-- [CPLEX](https://pypi.org/project/graphviz/](https://pypi.org/project/cplex/))
+- [CPLEX](https://pypi.org/project/cplex/)
 
 
 ## Running the code
