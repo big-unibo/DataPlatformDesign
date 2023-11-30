@@ -24,3 +24,20 @@ jobs:
       - name: Build docker
         run: |
             docker compose build
+  
+  release:
+    needs:
+      - build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Deploy
+        run: zip source.zip input output src requirements.txt
+      - name: Release
+        run: |
+            npm install
+            npx semantic-release
+        env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
