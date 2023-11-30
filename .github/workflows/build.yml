@@ -34,7 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Deploy
-        run: zip source.zip input output src requirements.txt
+        run: zip -r source.zip input output src requirements.txt
       - name: Release
         run: |
             npm install
