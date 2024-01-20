@@ -1,4 +1,4 @@
-pandas==2.1.4
+pandas==2.2.0
 graphviz==0.20.1
 cplex==22.1.1.0
 
