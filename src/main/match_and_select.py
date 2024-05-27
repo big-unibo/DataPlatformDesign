@@ -80,11 +80,11 @@ implementedBy_edges = []
 requires_edges = []
 
 for dfd_entity_name, dfd_process_tags in dfd_graph.items():
-    if not dfd_entity_name in matched_graph.body:
+    if dfd_entity_name not in matched_graph.body:
         shape = "box" if dfd_process_tags["label"] == "Repository" else "ellipse"
         matched_graph.node(dfd_entity_name, dfd_entity_name, color="black", shape=shape)
     for node in dfd_process_tags["edges"]:
-        if not node in matched_graph.body:
+        if node not in matched_graph.body:
             shape = "box" if dfd_graph[node]["label"] == "Repository" else "ellipse"
             matched_graph.node(node, node, color="black")
             matched_graph.edge(dfd_entity_name, node, color="black")
@@ -104,7 +104,7 @@ for dfd_entity_name, dfd_process_tags in dfd_graph.items():
             requirements = utils.find_requirements_for(service_graph, service_name)
             # Attach "requires" needs
             for service_requirement in requirements:
-                if not service_requirement in matched_graph.body:
+                if service_requirement not in matched_graph.body:
                     requires_edges.append(
                         [
                             f"{dfd_entity_name}->{service_requirement}",

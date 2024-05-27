@@ -42,17 +42,17 @@
       ],
       "Goal (All)": {
         "Operational": []
-      },
-      "requires": [
-        "EC2"
-      ],
-      "isCompatible": [
-        "Kinesis",
-        "Sagemaker",
-        "Lambda",
-        "EMR"
-      ]
-    }
+      }
+    },
+    "requires": [
+      "EC2"
+    ],
+    "isCompatible": [
+      "Kinesis",
+      "Sagemaker",
+      "Lambda",
+      "EMR"
+    ]
   },
   "GeoServer": {
     "label": "Service",
@@ -77,18 +77,18 @@
         "Archive",
         "Processed",
         "Product"
-      ],
-      "requires": [
-        "EC2",
-        "S3"
-      ],
-      "isCompatible": [
-        "Kinesis",
-        "Sagemaker",
-        "EMR",
-        "S3"
       ]
-    }
+    },
+    "requires": [
+      "EC2",
+      "S3"
+    ],
+    "isCompatible": [
+      "Kinesis",
+      "Sagemaker",
+      "EMR",
+      "S3"
+    ]
   },
   "Redshift": {
     "label": "Service",
@@ -108,13 +108,13 @@
       ],
       "Goal (All)": {
         "OLAP": []
-      },
-      "isCompatible": [
-        "DynamoDB",
-        "PostGIS",
-        "RDS"
-      ]
-    }
+      }
+    },
+    "isCompatible": [
+      "DynamoDB",
+      "PostGIS",
+      "RDS"
+    ]
   },
   "Lambda": {
     "label": "Service",
@@ -136,24 +136,24 @@
       ],
       "Needs": [
         "FaaS (Code)"
-      ],
-      "isCompatible": [
-        "Athena",
-        "DynamoDB",
-        "EC2",
-        "EFS",
-        "EMR",
-        "Kinesis",
-        "Lambda",
-        "PostGIS",
-        "RDS",
-        "Redshift",
-        "S3",
-        "Sagemaker",
-        "SNS",
-        "SQS"
       ]
-    }
+    },
+    "isCompatible": [
+      "Athena",
+      "DynamoDB",
+      "EC2",
+      "EFS",
+      "EMR",
+      "Kinesis",
+      "Lambda",
+      "PostGIS",
+      "RDS",
+      "Redshift",
+      "S3",
+      "Sagemaker",
+      "SNS",
+      "SQS"
+    ]
   },
   "EMR": {
     "label": "Service",
@@ -173,22 +173,22 @@
       ],
       "Needs": [
         "Iaas (Operation System)"
-      ],
-      "isCompatible": [
-        "DynamoDB",
-        "EC2",
-        "EBS",
-        "Glue",
-        "HDFS",
-        "PostGIS",
-        "RDS",
-        "Redshift",
-        "S3"
-      ],
-      "requires": [
-        "EC2"
       ]
-    }
+    },
+    "isCompatible": [
+      "DynamoDB",
+      "EC2",
+      "EBS",
+      "Glue",
+      "HDFS",
+      "PostGIS",
+      "RDS",
+      "Redshift",
+      "S3"
+    ],
+    "requires": [
+      "EC2"
+    ]
   },
   "Kinesis": {
     "label": "Service",
@@ -210,12 +210,12 @@
       ],
       "Needs": [
         "PaaS (IDE)"
-      ],
-      "isCompatible": [
-        "Lambda",
-        "S3"
       ]
-    }
+    },
+    "isCompatible": [
+      "Lambda",
+      "S3"
+    ]
   },
   "Athena": {
     "label": "Service",
@@ -242,14 +242,14 @@
       ],
       "Needs": [
         "SaaS (Application)"
-      ],
-      "isCompatible": [
-        "Glue",
-        "Redshift",
-        "S3",
-        "Sagemaker"
       ]
-    }
+    },
+    "isCompatible": [
+      "Glue",
+      "Redshift",
+      "S3",
+      "Sagemaker"
+    ]
   },
   "DynamoDB": {
     "label": "Service",
@@ -273,28 +273,28 @@
       ],
       "Goal (All)": {
         "Operational": []
-      },
-      "isCompatible": [
-        "Kinesis",
-        "Lambda",
-        "Redshift",
-        "S3"
-      ]
-    }
+      }
+    },
+    "isCompatible": [
+      "Kinesis",
+      "Lambda",
+      "Redshift",
+      "S3"
+    ]
   },
   "EC2": {
     "label": "Service",
     "properties": {
       "Needs": [
         "Iaas (Operation System)"
-      ],
-      "isCompatible": [
-        "EBS",
-        "Kinesis",
-        "S3",
-        "SQS"
       ]
-    }
+    },
+    "isCompatible": [
+      "EBS",
+      "Kinesis",
+      "S3",
+      "SQS"
+    ]
   },
   "EBS (Block storage)": {
     "label": "Service",
@@ -366,18 +366,18 @@
       ],
       "Needs": [
         "PaaS (IDE)"
-      ],
-      "isCompatible": [
-        "DynamoDB",
-        "Kinesis",
-        "Lambda",
-        "PostGIS",
-        "RDS",
-        "Redshift",
-        "S3",
-        "SQS"
       ]
-    }
+    },
+    "isCompatible": [
+      "DynamoDB",
+      "Kinesis",
+      "Lambda",
+      "PostGIS",
+      "RDS",
+      "Redshift",
+      "S3",
+      "SQS"
+    ]
   },
   "RDS": {
     "label": "Service",
@@ -399,13 +399,13 @@
         "Archive",
         "Processed",
         "Product"
-      ],
-      "isCompatible": [
-        "Lambda",
-        "S3",
-        "SNS"
       ]
-    }
+    },
+    "isCompatible": [
+      "Lambda",
+      "S3",
+      "SNS"
+    ]
   },
   "Sagemaker": {
     "label": "Service",
@@ -433,16 +433,16 @@
       ],
       "Needs": [
         "PaaS (IDE)"
-      ],
-      "isCompatible": [
-        "Athena",
-        "EMR",
-        "Glue",
-        "Lambda",
-        "RDS",
-        "Redshift",
-        "S3"
       ]
-    }
+    },
+    "isCompatible": [
+      "Athena",
+      "EMR",
+      "Glue",
+      "Lambda",
+      "RDS",
+      "Redshift",
+      "S3"
+    ]
   }
 }

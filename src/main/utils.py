@@ -2,6 +2,7 @@ import itertools
 import sys
 import os
 
+
 # Matches a service and a DFD node through recursively checking their properties.
 def match(tag, dfd_tags, service_tags):
     for property, values in dfd_tags.items():
@@ -35,6 +36,7 @@ def match(tag, dfd_tags, service_tags):
     print(f"{tag}{values} matches {service_tags[property]}")
     return True
 
+
 # Returns all service requirement for a given service in a service graph
 def find_requirements_for(service_graph, service_name):
     requires = "requires"
@@ -43,6 +45,7 @@ def find_requirements_for(service_graph, service_name):
             return service_graph[service_name]["properties"][requires]
         else:
             return []
+
 
 ## Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
 def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
@@ -85,10 +88,11 @@ def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
                     not_compatible_services.append((source, dest))
     return list(set(not_compatible_services))
 
+
 #Given a json DFD graph, returns its Graphviz implementation
 def embed_dfd_graph(json_graph, new_graph):
     for node_name, node_tags in json_graph.items():
-        if not node_name in new_graph.body:
+        if node_name not in new_graph.body:
             shape = "ellipse"
             color = "black"
             style = "solid"
@@ -96,7 +100,7 @@ def embed_dfd_graph(json_graph, new_graph):
                 shape = "box"
             new_graph.node(node_name, node_name, shape=shape, color=color, style=style)
             for node in node_tags["edges"]:
-                if not node_name in new_graph.body:
+                if node_name not in new_graph.body:
                     if node_tags["label"] == "Repository":
                         shape = "box"
                     new_graph.node(
@@ -104,6 +108,7 @@ def embed_dfd_graph(json_graph, new_graph):
                     )
                 new_graph.edge(node_name, node, color=color)
     return new_graph
+
 
 # Given a DFD json graph and the selected services/arcs, returns the Graphviz implementation of the selected graph
 def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_arcs, requires_arcs):
@@ -135,16 +140,18 @@ def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_
             )
     return selected_graph
 
+
 # Given the weights of CPLEX objective function, sets preferences' weights to 0.5
 def embed_preferences(variable_names, objective, preferenceFile):
     with open(preferenceFile, 'r') as file:
         for line in  file.readlines():
             if line in variable_names:
-               objective[variable_names.index(line)] = 0.5
+                objective[variable_names.index(line)] = 0.5
             else:
-               print(f"Can't embed preference {line}, aborting")
-               sys.exit(1)
+                print(f"Can't embed preference {line}, aborting")
+                sys.exit(1)
         return objective
+
 
 def create_directory(directory_path):
     if not os.path.exists(directory_path):
