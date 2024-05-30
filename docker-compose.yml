@@ -1,25 +1,20 @@
 version: "3"
 services:
-  service_selction:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
-    working_dir: /app
-
   graphdb:
-    image: ontotext/graphdb:9.1.0-ee
+    image: khaller/graphdb-free:10.6.2
     restart: always
-    environment:
-      GDB_JAVA_OPTS: >-
-        -Xmx2g -Xms2g
-        -Denable-context-index=true
-        -Dentity-pool-implementation=transactional
-        -Dhealth.max.query.time.seconds=60
-        -Dgraphdb.workbench.external-url=${DEPLOYMENT_HOST}/graphdb
-        -Dgraphdb.append.request.id.headers=true
-        -Dgraphdb.workbench.importDirectory=/opt/graphdb/home/graphdb-import
     volumes:
       - "graphdb_data:/opt/graphdb/home"
-      #- "${GDB_LICENSE_PATH?'Missing GraphDB license path'}:/opt/graphdb/home/conf/graphdb.license:ro"
+
+  #workbench:
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile
+  #  environment:
+  #    GRAPHDB_URL: 'http://graphdb:7200'
+  #  ports:
+  #    - 80
+  #  depends_on:
+  #    - graphdb
+volumes:
+    graphdb_data:
