@@ -8,20 +8,18 @@ services:
       - .:/app
     working_dir: /app
 
-  neo4j:
-    container_name: neo4j
-    image: neo4j:latest
-    ports:
-      - 7474:7474
-      - 7687:7687
+  graphdb:
+    image: ontotext/graphdb:9.1.0-ee
+    restart: always
     environment:
-      - NEO4J_AUTH=neo4j/neo4j
-      - NEO4J_apoc_export_file_enabled=true
-      - NEO4J_apoc_import_file_enabled=true
-      - NEO4J_apoc_import_file_use__neo4j__config=true
-      - NEO4J_PLUGINS=["apoc", "graph-data-science"]
+      GDB_JAVA_OPTS: >-
+        -Xmx2g -Xms2g
+        -Denable-context-index=true
+        -Dentity-pool-implementation=transactional
+        -Dhealth.max.query.time.seconds=60
+        -Dgraphdb.workbench.external-url=${DEPLOYMENT_HOST}/graphdb
+        -Dgraphdb.append.request.id.headers=true
+        -Dgraphdb.workbench.importDirectory=/opt/graphdb/home/graphdb-import
     volumes:
-      - ./neo4j_db/data:/data
-      - ./neo4j_db/logs:/logs
-      - ./neo4j_db/import:/var/lib/neo4j/import
-      - ./neo4j_db/plugins:/plugins
+      - "graphdb_data:/opt/graphdb/home"
+      #- "${GDB_LICENSE_PATH?'Missing GraphDB license path'}:/opt/graphdb/home/conf/graphdb.license:ro"

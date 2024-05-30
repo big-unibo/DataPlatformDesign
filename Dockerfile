@@ -11,4 +11,5 @@ RUN apt-get update  && \
     apt-get clean -y
 
 RUN pip install --upgrade pip && \
-    pip install -r src/requirements.txt
+    pip install -r src/requirements.txt \
+    pip install flake8 black
