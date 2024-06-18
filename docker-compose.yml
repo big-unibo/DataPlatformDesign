@@ -8,16 +8,5 @@ services:
     restart: always
     volumes:
       - "graphdb_data:/opt/graphdb/home"
-
-  #workbench:
-  #  build:
-  #    context: .
-  #    dockerfile: Dockerfile
-  #  environment:
-  #    GRAPHDB_URL: 'http://graphdb:7200'
-  #  ports:
-  #    - 80
-  #  depends_on:
-  #    - graphdb
 volumes:
     graphdb_data:

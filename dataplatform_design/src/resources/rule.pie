@@ -1,0 +1,27 @@
+Prefices
+{
+    rdf   :  http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs  :  http://www.w3.org/2000/01/rdf-schema#
+    DPDO  :  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#
+}
+
+Axioms
+{
+    // Example axioms, if needed
+    <rdf:type>  <rdf:type>  <rdf:Property>
+    <DPDO:hasTag>  <rdf:type>  <rdf:Property>
+    <DPDO:implementedBy>  <rdf:type>  <rdf:Property>
+}
+
+Rules
+{
+    Id: match_rule
+        node  <rdf:type>  <DPDO:DFDNode>
+        node  <DPDO:hasTag>  nodeTag
+        service  <rdf:type>  <DPDO:Service>
+        service  <DPDO:hasTag>  serviceTag
+        tag  <rdfs:subClassOf>  serviceTag
+        node  <DPDO:hasTag>  tag
+    -------------------------------
+        node  <DPDO:implementedBy>  service
+}

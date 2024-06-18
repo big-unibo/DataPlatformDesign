@@ -1,6 +1,7 @@
 import itertools
 import sys
 import os
+import logging
 
 
 # Matches a service and a DFD node through recursively checking their properties.
@@ -49,7 +50,9 @@ def find_requirements_for(service_graph, service_name):
 
 ## Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
 def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
-    implemented_by_edges = [(tuple.split("->")[0], tuple.split("->")[1]) for tuple in implemented_by_edges]
+    implemented_by_edges = [
+        (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implemented_by_edges
+    ]
     implements_cartesian_product = list(
         itertools.product(*[implemented_by_edges, implemented_by_edges])
     )
@@ -89,7 +92,7 @@ def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
     return list(set(not_compatible_services))
 
 
-#Given a json DFD graph, returns its Graphviz implementation
+# Given a json DFD graph, returns its Graphviz implementation
 def embed_dfd_graph(json_graph, new_graph):
     for node_name, node_tags in json_graph.items():
         if node_name not in new_graph.body:
@@ -111,7 +114,9 @@ def embed_dfd_graph(json_graph, new_graph):
 
 
 # Given a DFD json graph and the selected services/arcs, returns the Graphviz implementation of the selected graph
-def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_arcs, requires_arcs):
+def embed_selected_graph(
+    selected_graph, dfd_graph, selected_services, selected_arcs, requires_arcs
+):
     selected_graph = embed_dfd_graph(dfd_graph, selected_graph)
 
     for service in selected_services:
@@ -143,8 +148,8 @@ def embed_selected_graph(selected_graph, dfd_graph, selected_services, selected_
 
 # Given the weights of CPLEX objective function, sets preferences' weights to 0.5
 def embed_preferences(variable_names, objective, preferenceFile):
-    with open(preferenceFile, 'r') as file:
-        for line in  file.readlines():
+    with open(preferenceFile, "r") as file:
+        for line in file.readlines():
             if line in variable_names:
                 objective[variable_names.index(line)] = 0.5
             else:
@@ -159,3 +164,28 @@ def create_directory(directory_path):
         print(f"Directory '{directory_path}' created successfully.")
     else:
         print(f"Directory '{directory_path}' already exists.")
+
+
+def setup_logger(logger_name, log_level=10):
+    log_format = "[%(asctime)s][%(levelname)s] %(name)s: %(message)s"
+    formatter = logging.Formatter(log_format)
+
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(log_level)
+
+    # Create stream handler to print logs to standard output
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setLevel(log_level)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
+
+    return logger
+
+
+def load_dotenv(dotenv_path, logger):
+    try:
+        return load_dotenv(dotenv_path)
+    except Exception as e:
+        logger.exception("Failed to load .env")
+        logger.exception(e.__doc__)
+        logger.exception(str(e))

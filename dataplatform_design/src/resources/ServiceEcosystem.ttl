@@ -1,0 +1,113 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ServiceEcosystem: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
+@prefix TagTaxonomy: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#> .
+@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
+
+<http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> rdf:type owl:Ontology ;
+    owl:imports <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO>,
+                <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2
+ServiceEcosystem:EC2 rdf:type owl:NamedIndividual ,
+              DPDO:Service ;
+              DPDO:name "EC2" .
+
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR
+ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
+              DPDO:Service ;
+            DPDO:hasTag TagTaxonomy:Machine_Learning ;
+            DPDO:name "EMR" .
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer
+ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
+                    DPDO:Service ;
+           DPDO:isCompatible ServiceEcosystem:EMR ,
+                         ServiceEcosystem:Kinesis ,
+                         ServiceEcosystem:S3 ;
+           DPDO:hasTag TagTaxonomy:Archive ,
+                       TagTaxonomy:Big ,
+                       TagTaxonomy:Landing ,
+                       TagTaxonomy:Processed ,
+                       TagTaxonomy:Raster ,
+                       TagTaxonomy:Small ,
+                       TagTaxonomy:File ,
+                       TagTaxonomy:Vectorial ;
+           DPDO:requires ServiceEcosystem:EC2 ,
+                         ServiceEcosystem:S3 ;
+            DPDO:name "GeoServer" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis
+ServiceEcosystem:Kinesis rdf:type owl:NamedIndividual ,
+                  DPDO:Service ;
+                  DPDO:name "Kinesis" .
+                  
+
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse
+ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual ,
+                    DPDO:Service ;
+           DPDO:hasTag TagTaxonomy:Big ,
+                       TagTaxonomy:File ,
+                       TagTaxonomy:Small ,
+                       TagTaxonomy:Structured ;
+            DPDO:name "Lakehouse" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda
+ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
+                 DPDO:Service ;
+                 DPDO:name "Lambda" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS
+ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
+                  DPDO:Service ;
+         DPDO:isCompatible ServiceEcosystem:EMR ,
+                       ServiceEcosystem:Kinesis ,
+                       ServiceEcosystem:Lambda ;
+         DPDO:hasTag TagTaxonomy:Big ,
+                     TagTaxonomy:Operational ,
+                     TagTaxonomy:Relational ,
+                     TagTaxonomy:Small ,
+                     TagTaxonomy:Vectorial ;
+         DPDO:requires ServiceEcosystem:EC2 ;
+         DPDO:name "PostGIS" .
+
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Postgres
+ServiceEcosystem:Postgres rdf:type owl:NamedIndividual ,
+                   DPDO:Service ;
+          DPDO:hasTag TagTaxonomy:Archive ,
+                      TagTaxonomy:Big ,
+                      TagTaxonomy:Landing ,
+                      TagTaxonomy:Operational ,
+                      TagTaxonomy:Processed ,
+                      TagTaxonomy:Relational ,
+                      TagTaxonomy:Small ;
+        DPDO:name "Postgres" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift
+ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
+                   DPDO:Service ;
+          DPDO:isCompatible ServiceEcosystem:PostGIS ;
+          DPDO:hasTag TagTaxonomy:Big ,
+                      TagTaxonomy:Multidimensional ,
+                      TagTaxonomy:OLAP ,
+                      TagTaxonomy:Processed ,
+                      TagTaxonomy:Small ;
+        DPDO:name "Redshift" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3
+ServiceEcosystem:S3 rdf:type owl:NamedIndividual ,
+                 DPDO:Service ;
+        DPDO:hasTag TagTaxonomy:Archive ,
+                    TagTaxonomy:Big ,
+                    TagTaxonomy:Landing ,
+                    TagTaxonomy:Operational ,
+                    TagTaxonomy:Processed ,
+                    TagTaxonomy:Small ,
+                    TagTaxonomy:File ;
+        DPDO:name "S3" .
