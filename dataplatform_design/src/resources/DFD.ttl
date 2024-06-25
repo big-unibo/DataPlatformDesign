@@ -12,7 +12,7 @@
     owl:imports <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO>,
                 <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Sensor_Data
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data
 DFD:Sensor_Data rdf:type owl:NamedIndividual ,
                       DPDO:Repository ;
              DPDO:flowsData DFD:Data_Enrichment ;
@@ -21,7 +21,7 @@ DFD:Sensor_Data rdf:type owl:NamedIndividual ,
                          TagTaxonomy:Vectorial ;
              DPDO:name "Sensor Data" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Raw_Images
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images
 DFD:Raw_Images rdf:type owl:NamedIndividual ,
                      DPDO:Repository ;
             DPDO:flowsData DFD:Index_Comp ;
@@ -32,45 +32,70 @@ DFD:Raw_Images rdf:type owl:NamedIndividual ,
                         TagTaxonomy:Raster ;
             DPDO:name "Raw Images" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Data_Enrichment
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment
 DFD:Data_Enrichment rdf:type owl:NamedIndividual ,
                         DPDO:Process ;
+                    DPDO:hasTag TagTaxonomy:Small ,
+                                TagTaxonomy:Batch ;
+                    DPDO:dataFlows DFD:Integrated_Data ;
                     DPDO:name "Data Enrichment" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Index_Comp.
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp.
 DFD:Index_Comp rdf:type owl:NamedIndividual ,
                     DPDO:Process ;
         DPDO:flowsData DFD:Integrated_Data ;
         DPDO:hasTag TagTaxonomy:Batch ,
                     TagTaxonomy:Big ;
-        DPDO:name "Index Comp." .
-                
+        DPDO:name: "Index Comp." .
 
-
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Integrated_Data
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data
 DFD:Integrated_Data rdf:type owl:NamedIndividual ,
                           DPDO:Repository ;
-                 DPDO:flowsData DFD:ETL ;
+                 DPDO:flowsData DFD:ETL ,
+                                DFD:Irrigation_Opt ;
                  DPDO:hasTag TagTaxonomy:Operational ,
                              TagTaxonomy:Relational ,
                              TagTaxonomy:Vectorial ;
                  DPDO:name "Integrated Data." .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#ETL
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL
 DFD:ETL rdf:type owl:NamedIndividual ,
               DPDO:Process ;
             DPDO:flowsData DFD:DWH ;
+            DPDO:hasTag TagTaxonomy:Big ,
+                        TagTaxonomy:Batch ;
             DPDO:name "ETL" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DWH
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH
 DFD:DWH rdf:type owl:NamedIndividual ,
               DPDO:Repository ;
      DPDO:hasTag TagTaxonomy:Multidimensional ,
                  TagTaxonomy:OLAP ;
     DPDO:name "DWH" .
 
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Download
+DFD:Download rdf:type owl:NamedIndividual ,
+              DPDO:Process ;
+            DPDO:hasTag TagTaxonomy:Pull ,
+                        TagTaxonomy:Batch ;
+            DPDO:flowsData DFD:Raw_Images ;
+            DPDO:name "Download image data" .
 
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Consume
+DFD:Consume rdf:type owl:NamedIndividual ,
+              DPDO:Process ;
+            DPDO:hasTag TagTaxonomy:Push ,
+                        TagTaxonomy:Mini_Batch ;
+            DPDO:flowsData DFD:Sensor_Data ;
+            DPDO:name "Consume sensor data" .
 
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt
+DFD:Irrigation_Opt rdf:type owl:NamedIndividual ,
+                DPDO:Process ;
+                DPDO:hasTag TagTaxonomy:Batch ,
+                            TagTaxonomy:Small ,
+                            TagTaxonomy:Regression ;
+                DPDO:name "Irrigation Optimization" .
 
 
 

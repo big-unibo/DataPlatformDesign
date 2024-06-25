@@ -14,21 +14,118 @@
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2
 ServiceEcosystem:EC2 rdf:type owl:NamedIndividual ,
-              DPDO:Service ;
-              DPDO:name "EC2" .
+                DPDO:Service ;
+                DPDO:isCompatible   ServiceEcosystem:EBS,
+                    ServiceEcosystem:Kinesis,
+                    ServiceEcosystem:S3;
+                DPDO:name "EC2" .
 
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS
+ServiceEcosystem:EBS rdf:type owl:NamedIndividual ,
+                DPDO:Service ;
+                DPDO:hasTag TagTaxonomy:File ,
+                    TagTaxonomy:Small ,
+                    TagTaxonomy:Big ,
+                    TagTaxonomy:Archive ,
+                    TagTaxonomy:Landing ;
+                DPDO:isCompatible
+                    ServiceEcosystem:Kinesis,
+                    ServiceEcosystem:S3;
+                DPDO:name "EBS" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EFS
+ServiceEcosystem:EFS rdf:type owl:NamedIndividual ,
+                DPDO:Service ;
+                DPDO:hasTag TagTaxonomy:File ,
+                    TagTaxonomy:Small ,
+                    TagTaxonomy:Big ,
+                    TagTaxonomy:Archive ,
+                    TagTaxonomy:Processed ,
+                    TagTaxonomy:Landing ;
+                DPDO:isCompatible   ServiceEcosystem:EBS,
+                    ServiceEcosystem:Kinesis,
+                    ServiceEcosystem:S3;
+                DPDO:name "EFS" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue
+ServiceEcosystem:Glue rdf:type owl:NamedIndividual ,
+              DPDO:Service ;
+            DPDO:hasTag TagTaxonomy:Relational ,
+                        TagTaxonomy:Multidimensional ,
+                        TagTaxonomy:Document ,
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Pull ,
+                        TagTaxonomy:Batch ,
+                        TagTaxonomy:Streaming ,
+                        TagTaxonomy:Mini_Batch ;
+            DPDO:isCompatible   ServiceEcosystem:DynamoDB,
+                                ServiceEcosystem:Kinesis,
+                                ServiceEcosystem:S3,
+                                ServiceEcosystem:Lambda,
+                                ServiceEcosystem:PostGIS,
+                                ServiceEcosystem:RDS,
+                                ServiceEcosystem:Redshift;
+            DPDO:name "Glue" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS
+ServiceEcosystem:RDS rdf:type owl:NamedIndividual ,
+              DPDO:Service ;
+            DPDO:hasTag TagTaxonomy:Relational ,
+                        TagTaxonomy:Multidimensional ,
+                        TagTaxonomy:Small ,
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Operational ,
+                        TagTaxonomy:Landing ,
+                        TagTaxonomy:Archive ,
+                        TagTaxonomy:Processed ;
+            DPDO:requires ServiceEcosystem:EC2 ;
+            DPDO:isCompatible   ServiceEcosystem:S3,
+                                ServiceEcosystem:Lambda;
+            DPDO:name "RDS" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker
+ServiceEcosystem:Sagemaker rdf:type owl:NamedIndividual ,
+              DPDO:Service ;
+            DPDO:hasTag TagTaxonomy:Classification ,
+                        TagTaxonomy:Regression ,
+                        TagTaxonomy:Small ,
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Clustering ,
+                        TagTaxonomy:Pull ,
+                        TagTaxonomy:Batch ;
+            DPDO:isCompatible   ServiceEcosystem:S3,
+                                ServiceEcosystem:Lambda,
+                                ServiceEcosystem:Athena,
+                                ServiceEcosystem:EMR,
+                                ServiceEcosystem:Glue,
+                                ServiceEcosystem:RDS,
+                                ServiceEcosystem:Redshift;
+            DPDO:name "Sagemaker" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR
 ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
               DPDO:Service ;
-            DPDO:hasTag TagTaxonomy:Machine_Learning ;
+            DPDO:hasTag TagTaxonomy:Machine_Learning ,
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Batch ,
+                        TagTaxonomy:Pull ;
+            DPDO:requires ServiceEcosystem:EC2 ;
+            DPDO:isCompatible   ServiceEcosystem:DynamoDB,
+                                ServiceEcosystem:EC2,
+                                ServiceEcosystem:S3,
+                                ServiceEcosystem:Glue,
+                                ServiceEcosystem:PostGIS,
+                                ServiceEcosystem:RDS,
+                                ServiceEcosystem:Redshift;
             DPDO:name "EMR" .
+
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer
 ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
            DPDO:isCompatible ServiceEcosystem:EMR ,
                          ServiceEcosystem:Kinesis ,
-                         ServiceEcosystem:S3 ;
+                         ServiceEcosystem:S3 ,
+                         ServiceEcosystem:Sagemaker;
            DPDO:hasTag TagTaxonomy:Archive ,
                        TagTaxonomy:Big ,
                        TagTaxonomy:Landing ,
@@ -41,9 +138,45 @@ ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
                          ServiceEcosystem:S3 ;
             DPDO:name "GeoServer" .
 
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena
+ServiceEcosystem:Athena rdf:type owl:NamedIndividual ,
+                    DPDO:Service ;
+           DPDO:isCompatible ServiceEcosystem:Glue ,
+                         ServiceEcosystem:Redshift ,
+                         ServiceEcosystem:S3 ,
+                         ServiceEcosystem:Sagemaker;
+           DPDO:hasTag TagTaxonomy:Relational ,
+                       TagTaxonomy:Document ,
+                       TagTaxonomy:Key_Value ,
+                       TagTaxonomy:Big ,
+                       TagTaxonomy:OLAP ;
+            DPDO:name "Athena" .
+
+###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB
+ServiceEcosystem:DynamoDB rdf:type owl:NamedIndividual ,
+                    DPDO:Service ;
+           DPDO:isCompatible ServiceEcosystem:Kinesis ,
+                         ServiceEcosystem:Redshift ,
+                         ServiceEcosystem:S3 ,
+                         ServiceEcosystem:Lambda;
+           DPDO:hasTag TagTaxonomy:Small ,
+                       TagTaxonomy:Document ,
+                       TagTaxonomy:Wide_Column ,
+                       TagTaxonomy:Big ,
+                       TagTaxonomy:Processed ,
+                       TagTaxonomy:Archive ;
+            DPDO:name "DynamoDB" .
+
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis
 ServiceEcosystem:Kinesis rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
+                    DPDO:hasTag TagTaxonomy:Small ,
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Push ,
+                        TagTaxonomy:Mini_Batch ,
+                        TagTaxonomy:Streaming ;
+                    DPDO:isCompatible ServiceEcosystem:Lambda ,
+                        ServiceEcosystem:S3 ;
                   DPDO:name "Kinesis" .
                   
 
@@ -59,7 +192,24 @@ ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda
 ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
-                 DPDO:Service ;
+                                DPDO:Service ;
+                DPDO:hasTag TagTaxonomy:Small ,
+                            TagTaxonomy:Pull ,
+                            TagTaxonomy:Push ,
+                            TagTaxonomy:Batch ,
+                            TagTaxonomy:Mini_Batch ,
+                            TagTaxonomy:Push ;
+                DPDO:isCompatible ServiceEcosystem:EMR ,
+                            ServiceEcosystem:Kinesis ,
+                            ServiceEcosystem:S3 ,
+                            ServiceEcosystem:Athena,
+                            ServiceEcosystem:DynamoDB,
+                            ServiceEcosystem:EC2,
+                            ServiceEcosystem:Lambda,
+                            ServiceEcosystem:PostGIS,
+                            ServiceEcosystem:RDS,
+                            ServiceEcosystem:Redshift,
+                            ServiceEcosystem:Sagemaker;
                  DPDO:name "Lambda" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS
@@ -67,7 +217,8 @@ ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
          DPDO:isCompatible ServiceEcosystem:EMR ,
                        ServiceEcosystem:Kinesis ,
-                       ServiceEcosystem:Lambda ;
+                       ServiceEcosystem:Lambda ,
+                       ServiceEcosystem:Sagemaker ;
          DPDO:hasTag TagTaxonomy:Big ,
                      TagTaxonomy:Operational ,
                      TagTaxonomy:Relational ,
@@ -92,7 +243,9 @@ ServiceEcosystem:Postgres rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift
 ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
                    DPDO:Service ;
-          DPDO:isCompatible ServiceEcosystem:PostGIS ;
+          DPDO:isCompatible ServiceEcosystem:PostGIS ,
+                            ServiceEcosystem:DynamoDB,
+                            ServiceEcosystem:RDS ;
           DPDO:hasTag TagTaxonomy:Big ,
                       TagTaxonomy:Multidimensional ,
                       TagTaxonomy:OLAP ,

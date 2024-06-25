@@ -29,7 +29,6 @@ TagTaxonomy:Big rdf:type owl:Class ;
          owl:disjointWith TagTaxonomy:Small ;
          rdfs:label "Represents an individual with big data volume" .
 
-
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Classification
 TagTaxonomy:Classification rdf:type owl:Class ;
                     rdfs:subClassOf TagTaxonomy:Machine_Learning ;
@@ -68,7 +67,7 @@ TagTaxonomy:Data_Volume rdf:type owl:Class ;
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Document
 TagTaxonomy:Document rdf:type owl:Class ;
               rdfs:subClassOf TagTaxonomy:Semi_Structured ;
-              owl:disjointWith TagTaxonomy:Wide_column ;
+              owl:disjointWith TagTaxonomy:Wide_Column ;
               rdfs:label "Represents an individual with a document data model" .
 
 
