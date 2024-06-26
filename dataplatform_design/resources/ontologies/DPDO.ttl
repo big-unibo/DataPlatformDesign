@@ -80,11 +80,16 @@ DPDO:requires rdf:type owl:ObjectProperty ;
               rdfs:domain DPDO:Service ;
               rdfs:range DPDO:Service .
 
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isAkin
+DPDO:isAkin rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range DPDO:Service.
 #################################################################
 #    Data properties
 #################################################################
 
-# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/tagName
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/name
 DPDO:name rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf owl:topDataProperty ;
              rdfs:range rdfs:Literal .

@@ -1,4 +1,5 @@
 
+prefix: "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/"
 graph_db:
   endpoint: http://137.204.74.57:7200
   test: /repositories/DataPlatformDesign
@@ -12,10 +13,10 @@ ontologies:
       ServiceEcosystem: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#
       DFD: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#
   paths:
-      DPDO: dataplatform_design/src/resources/DPDO.ttl
-      TagTaxonomy: dataplatform_design/src/resources/TagTaxonomy.ttl
-      ServiceEcosystem: dataplatform_design/src/resources/ServiceEcosystem.ttl
-      DFD: dataplatform_design/src/resources/DFD.ttl
+      DPDO: dataplatform_design/resources/ontologies/DPDO.ttl
+      TagTaxonomy: dataplatform_design/resources/ontologies/TagTaxonomy.ttl
+      ServiceEcosystem: dataplatform_design/resources/ontologies/ServiceEcosystem.ttl
+      DFD: dataplatform_design/resources/ontologies/DFD.ttl
   prefix:
       DPDO: DPDO
       TagTaxonomy: TagTaxonomy

@@ -2,7 +2,7 @@ import json
 import graphviz
 from cplex import Cplex
 import os.path as path
-import utils
+import dataplatform_design.src.main.utils.utils as utils
 import argparse
 import sys
 
@@ -89,6 +89,8 @@ for dfd_entity_name, dfd_process_tags in dfd_graph.items():
             matched_graph.node(node, node, color="black")
             matched_graph.edge(dfd_entity_name, node, color="black")
     for service_name, service_tags in service_graph.items():
+        if service_name == "GeoServer":
+            print("Hello")
         print(f"Trying to match DFD entity {dfd_entity_name} to service {service_name}")
         # If service tags and dfd node tags match
         if utils.match(

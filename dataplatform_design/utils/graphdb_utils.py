@@ -1,18 +1,5 @@
-from SPARQLWrapper import SPARQLWrapper, JSON, POST
-from dotenv import load_dotenv
-from rdflib import Graph, Namespace, URIRef
-import os
-import pytz
-import dataplatform_design.src.main.utils.utils as utils
-from rdflib.namespace import NamespaceManager, RDFS, Namespace, RDF
-from owlready2 import get_ontology
-import yaml
 import requests
-import sys
-import json
-from cplex import Cplex
-import string
-import random
+import utils
 
 # Setup logger
 logger = utils.setup_logger("DataPlat_Design_GraphDB_Utils")
@@ -118,3 +105,26 @@ def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):
         logger.exception(e.__doc__)
         logger.exception(str(e))
         return False
+
+
+def post_ontology_on_db(namespace, local_path, endpoint, repository, named_graph):
+    if not ontology_exists(endpoint, repository, named_graph, namespace):
+        status_code = load_ontology(local_path, endpoint, repository, named_graph)
+        if status_code == 204:
+            logger.info(f"{namespace} uploaded to {endpoint}")
+            return True
+        else:
+            logger.error(
+                f"Failed to load {namespace} to {endpoint}: status code {status_code}"
+            )
+            return False
+    else:
+        logger.info(f"{namespace} already in {endpoint}")
+        return True
+
+
+def setup_graphdb(graphdb_endpoint, graphdb_repository, graphdb_named_graph):
+    check_or_create_repository(graphdb_repository, graphdb_endpoint)
+    check_or_create_named_graph(
+        graphdb_repository, graphdb_named_graph, graphdb_endpoint
+    )
