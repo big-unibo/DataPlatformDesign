@@ -1,5 +1,6 @@
 import requests
 import utils
+import os
 
 # Setup logger
 logger = utils.setup_logger("DataPlat_Design_GraphDB_Utils")
@@ -67,13 +68,18 @@ def check_or_create_repository(repository_name, endpoint):
 
 
 def create_repository(repository_name, endpoint):
-    # Crea il repository
-    payload = {"config": "default"}
-    response = requests.post(
-        endpoint + "/repositories/" + repository_name, json=payload
-    )
+    with open(
+        os.path.join("dataplatform_design", "resources", "repo-config.ttl"), "rb"
+    ) as file:
+        files = {"config": file}
+        response = requests.post(f"{endpoint}/rest/repositories", files=files)
+
+    if response.status_code != 201:
+        logger.error(f"Failed to create repository: {response.text}")
+        print(f"Response status code: {response.status_code}")
+        print(f"Response text: {response.text}")
     response.raise_for_status()
-    logger.info(f"Succesfully created repository {repository_name}")
+    logger.info(f"Successfully created repository {repository_name}")
 
 
 def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):

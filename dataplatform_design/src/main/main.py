@@ -1,9 +1,8 @@
-from rdflib import Graph, Namespace, URIRef
+from rdflib import Graph, URIRef
 import os
 import pytz
 from rdflib.namespace import Namespace
 import sys
-import argparse
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -26,9 +25,8 @@ config = utils.load_yaml("dataplatform_design/resources/config.yml")
 GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
 GRAPHDB_REPOSITORY = config["graph_db"]["repository"]
 GRAPHDB_NAMED_GRAPH = config["graph_db"]["named_graph"]
-SOLUTION_PATH = config["input"]["expected_solution_path"]
+
 # .ttl paths representing ontologies
-PATHS = config["ontologies"]["paths"]
 NAMESPACES = config["ontologies"]["namespaces"]
 
 DPDO = Namespace(NAMESPACES["DPDO"])
@@ -122,7 +120,8 @@ if graph_match.match_lakehouse_pattern(
     # Retrieve expected solution
     expected_solution = utils.setup_graph(NAMESPACES)
     expected_solution.parse(
-        os.path.join("input", "solution", "solution.ttl"), format="turtle"
+        os.path.join("dataplatform_design", "resources", "solution", "solution.ttl"),
+        format="turtle",
     )
 
     # Compare expected solution with computed solution

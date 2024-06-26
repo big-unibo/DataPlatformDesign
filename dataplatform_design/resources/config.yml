@@ -23,8 +23,3 @@ ontologies:
       TagTaxonomy: TagTaxonomy
       ServiceEcosystem: ServiceEcosystem
       DFD: DFD
-
-input:
-  expected_solution_path: input/solution/solution.ttl
-  preferences_path: input/preferences.ttl
-  mandatories_path: input/mandatories.ttl
