@@ -1,8 +1,9 @@
 from rdflib import Graph, Namespace, URIRef
 import os
 import pytz
-from rdflib.namespace import NamespaceManager, Namespace
+from rdflib.namespace import Namespace
 import sys
+import argparse
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -13,11 +14,7 @@ import utils
 import graphdb_utils
 import graph_match
 import graph_select
-import networkx as nx
-import matplotlib.pyplot as plt
 
-
-variable_names = []
 # Timezone
 tz = pytz.timezone("Europe/Rome")
 # Setup logger
@@ -29,7 +26,7 @@ config = utils.load_yaml("dataplatform_design/resources/config.yml")
 GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
 GRAPHDB_REPOSITORY = config["graph_db"]["repository"]
 GRAPHDB_NAMED_GRAPH = config["graph_db"]["named_graph"]
-
+SOLUTION_PATH = config["input"]["expected_solution_path"]
 # .ttl paths representing ontologies
 PATHS = config["ontologies"]["paths"]
 NAMESPACES = config["ontologies"]["namespaces"]
@@ -63,16 +60,7 @@ if not all(
 
 
 # Setup matched graph
-matched_graph = Graph()
-namespace_manager = NamespaceManager(matched_graph)
-matched_graph.namespace_manager = namespace_manager
-
-# Add namespaces to matched graph
-[
-    namespace_manager.bind(name, Namespace(namespace), override=False)
-    for name, namespace in NAMESPACES.items()
-]
-
+matched_graph = utils.setup_graph(NAMESPACES)
 # Load DPDO into matched graph
 matched_graph.parse(config["ontologies"]["paths"]["DPDO"], format="turtle")
 
@@ -93,6 +81,7 @@ if graph_match.match_lakehouse_pattern(
         format="json-ld",
     )
 
+    # Focus only on named graph
     named_graph = Graph(
         store=matched_graph.store, identifier=URIRef(GRAPHDB_NAMED_GRAPH)
     )
@@ -100,41 +89,44 @@ if graph_match.match_lakehouse_pattern(
     preferences = []
     mandatories = []
 
+    # Solve the LP problem
     solution = graph_select.select_services(named_graph, preferences, mandatories)
 
-    selected_services = []
-    selected_edges = []
-
-    # Explore solution
-    print("---------")
-    print("Problem Solution:")
-    print("---------")
-    for i, name in enumerate(solution.variables.get_names()):
-        selected = solution.solution.get_values(i)
-        print(f"{name}: {selected}")
-        if "->" in name and selected:
-            selected_edges.append(name)
-        elif selected:
-            selected_services.append(name)
-    print("---------")
-    print(f"Solution cost: {solution.solution.get_objective_value()}")
-
+    # Foreach new edge, add it to selected_graph
+    selected_graph = utils.setup_graph(NAMESPACES)
     [
-        named_graph.add(
+        selected_graph.add(
             (
                 URIRef(graph_select.denormalize_name(edge.split("->")[0])),
                 DPDO.selected,
                 URIRef(graph_select.denormalize_name(edge.split("->")[1])),
             )
         )
-        for edge in selected_edges
+        for edge in solution
     ]
 
-for (
-    node,
-    p,
-    service,
-) in named_graph.triples(((None, DPDO.selected, None))):
-    print(
-        f"{utils.rdf(named_graph, node)}, {utils.rdf(named_graph, p)}, {utils.rdf(named_graph, service)}"
+    logger.info("Printing solution:")
+    for (
+        node,
+        p,
+        service,
+    ) in selected_graph.triples(((None, DPDO.selected, None))):
+        logger.info(
+            f"{utils.rdf(selected_graph, node)}, {utils.rdf(selected_graph, p)}, {utils.rdf(selected_graph, service)}"
+        )
+
+    # Write selected_graph
+    with open(os.path.join("output", "selected_graph.json"), "w") as json_file:
+        json_file.write(selected_graph.serialize(format="json-ld", indent=4))
+
+    # Retrieve expected solution
+    expected_solution = utils.setup_graph(NAMESPACES)
+    expected_solution.parse(
+        os.path.join("input", "solution", "solution.ttl"), format="turtle"
     )
+
+    # Compare expected solution with computed solution
+    if not utils.graphs_are_equal(expected_solution, selected_graph):
+        logger.error("Expected and proposed solution don't match!")
+    else:
+        logger.info("Expected solution matches proposed solution!")

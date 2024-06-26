@@ -119,7 +119,64 @@ def get_compatible_services(graph):
     ]
 
 
-## Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
+def get_akin_services(graph, implementedby_edges, implemented_services, dfd_edges):
+    akin_services = f"""
+        SELECT ?service ?akinService WHERE {{
+                            ?service <{DPDO.isAkin}> ?akinService .
+                        }}
+    """
+    result = graph.query(akin_services)
+    akin_services_dict = {}
+    for node, followingNode in result:
+        if node not in akin_services_dict:
+            akin_services_dict[node] = []
+        akin_services_dict[node].append(str(followingNode))
+
+    akin_services = [
+        (str(normalize_name(node)), [normalize_name(service) for service in services])
+        for node, services in akin_services_dict.items()
+    ]
+    implementedby_edges = [
+        (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implementedby_edges
+    ]
+    implements_cartesian_product = list(
+        itertools.product(*[implementedby_edges, implementedby_edges])
+    )
+
+    akins = []
+    for source, dest in implements_cartesian_product:
+        is_akin = False
+
+        # DFD nodes
+        dfd_source_node = source[0]
+        dfd_dest_node = dest[0]
+
+        # (DFD nodes) Implemented by
+        dfd_source_node_implBy = source[1]
+        dfd_dest_node_implBy = dest[1]
+
+        # For every DFD edge (Flow)
+        for source_edge, dest_edge in dfd_edges:
+            # If source nodes of two "ImplementedBy" edges are connected by a DFD edge (Flow) then two services MUST be compatible
+            if dfd_source_node == "DFD#ETL" and dfd_dest_node == "DFD#DWH":
+                print(("HELLO"))
+            if dfd_source_node == source_edge and dfd_dest_node in dest_edge:
+                for service, list_akins in akin_services:
+                    # Check for bi-directional compatibility
+                    if (
+                        dfd_source_node_implBy == service
+                        and dfd_dest_node_implBy in list_akins
+                    ) or (
+                        dfd_dest_node_implBy == service
+                        and dfd_source_node_implBy in list_akins
+                    ):
+                        is_akin = True
+                if is_akin:
+                    akins.append((source, dest))
+    return list(set(akins))
+
+
+# Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
 def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
     implemented_by_edges = [
         (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implemented_by_edges
@@ -173,6 +230,9 @@ def select_services(named_graph, preferences, mandatories):
         implementedby_edges, dfd_edges, compatibilities
     )
     implemented_services = get_implementedby_services(named_graph)
+    akin_services = get_akin_services(
+        named_graph, implementedby_edges, implemented_services, dfd_edges
+    )
 
     ##############################
     #   CONSTRAINTS DEFINITION   #
@@ -212,6 +272,17 @@ def select_services(named_graph, preferences, mandatories):
     edges_constraint_names = ["edge" + str(i) for i, _ in enumerate(edges_constraint)]
     edges_rhs = [0 for _ in edges_constraint]
     edges_constraint_senses = ["L" for _ in edges_constraint]
+
+    ### 8th Constraint - Services' affinities
+    affinity_constraint = [
+        [[f"{source[0]}->{source[1]}", f"{dest[0]}->{dest[1]}"], [1, -1]]
+        for source, dest in akin_services
+    ]
+    affinity_constraint_names = [
+        "edge" + str(i) for i, _ in enumerate(affinity_constraint)
+    ]
+    affinity_rhs = [0 for _ in affinity_constraint]
+    affinity_constraint_senses = ["G" for _ in affinity_constraint]
 
     #############################
     # 2.2 PROBLEM FORMALIZATION #
@@ -271,7 +342,24 @@ def select_services(named_graph, preferences, mandatories):
         names=edges_constraint_names,
     )
 
+    problem.linear_constraints.add(
+        lin_expr=affinity_constraint,
+        senses=affinity_constraint_senses,
+        rhs=affinity_rhs,
+        names=affinity_constraint_names,
+    )
     # Solve the problem
     problem.solve()
 
-    return problem
+    selected_services = []
+    selected_edges = []
+
+    for i, name in enumerate(problem.variables.get_names()):
+        selected = problem.solution.get_values(i)
+        # print(f"{name}: {selected}")
+        if "->" in name and selected:
+            selected_edges.append(name)
+        elif selected:
+            selected_services.append(name)
+
+    return selected_edges

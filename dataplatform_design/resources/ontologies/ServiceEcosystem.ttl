@@ -45,6 +45,7 @@ ServiceEcosystem:EFS rdf:type owl:NamedIndividual ,
                 DPDO:isCompatible   ServiceEcosystem:EBS,
                     ServiceEcosystem:Kinesis,
                     ServiceEcosystem:S3;
+                DPDO:isAkin ServiceEcosystem:Glue ;
                 DPDO:name "EFS" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue
@@ -245,12 +246,14 @@ ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
                    DPDO:Service ;
           DPDO:isCompatible ServiceEcosystem:PostGIS ,
                             ServiceEcosystem:DynamoDB,
+                            ServiceEcosystem:Glue,
                             ServiceEcosystem:RDS ;
           DPDO:hasTag TagTaxonomy:Big ,
                       TagTaxonomy:Multidimensional ,
                       TagTaxonomy:OLAP ,
                       TagTaxonomy:Processed ,
                       TagTaxonomy:Small ;
+            DPDO:isAkin ServiceEcosystem:Glue ;
         DPDO:name "Redshift" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3

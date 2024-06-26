@@ -117,10 +117,10 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, config):
         logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
         logger.error(response.content)
 
-    return save_matched_graph(endpoint, repository_name, named_graph_uri, config)
+    return save_matched_graph(endpoint, repository_name, named_graph_uri)
 
 
-def save_matched_graph(endpoint, repository_name, named_graph_uri, config):
+def save_matched_graph(endpoint, repository_name, named_graph_uri):
     matched_graph_query = f"""
         SELECT ?node ?p ?o
         WHERE {{

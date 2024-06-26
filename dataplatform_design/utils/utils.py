@@ -1,6 +1,8 @@
 import sys
 import logging
 import yaml
+from rdflib.namespace import NamespaceManager
+from rdflib import Graph, Namespace
 
 
 def setup_logger(logger_name, log_level=10):
@@ -54,9 +56,45 @@ def rdf(matched_graph, triple):
     return matched_graph.namespace_manager.normalizeUri(triple)
 
 
+def setup_graph(namespaces):
+    new_graph = Graph()
+    namespace_manager = NamespaceManager(new_graph)
+    new_graph.namespace_manager = namespace_manager
+
+    # Add namespaces to matched graph
+    [
+        namespace_manager.bind(name, Namespace(namespace), override=False)
+        for name, namespace in namespaces.items()
+    ]
+    return new_graph
+
+
 def load_yaml(path):
     with open(path) as yml_file:
         try:
             return yaml.load(yml_file, Loader=yaml.FullLoader)
         except yaml.YAMLError as exc:
             logger.exception(exc)
+
+
+def graphs_are_equal(expected_solution, proposed_solution):
+    # Confronta il numero di triple nei due grafi
+    if len(expected_solution) != len(proposed_solution):
+        return False
+
+    # Confronta le triple in entrambi i grafi
+    for triple in expected_solution:
+        if triple not in proposed_solution:
+            s, p, o = triple
+            logger.warning(
+                f"{rdf(expected_solution,s)} {rdf(expected_solution,p)} {rdf(expected_solution,o)} from expected solution not in proposed solution"
+            )
+            return False
+    for triple in proposed_solution:
+        if triple not in expected_solution:
+            logger.warning(
+                f"{rdf(proposed_solution,s)} {rdf(proposed_solution,p)} {rdf(proposed_solution,o)} from proposed solution not in expected solution"
+            )
+            return False
+
+    return True
