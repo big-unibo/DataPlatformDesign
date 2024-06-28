@@ -8,11 +8,12 @@ config = utils.load_yaml("dataplatform_design/resources/config.yml")
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
+TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["TagTaxonomy"])
+SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["ServiceEcosystem"])
 
 
 def normalize_name(name):
-    normalized = name.replace(PREFIX, "")
-    return normalized
+    return name.replace(PREFIX, "") if PREFIX in name else name
 
 
 def denormalize_name(name):
@@ -158,8 +159,6 @@ def get_akin_services(graph, implementedby_edges, implemented_services, dfd_edge
         # For every DFD edge (Flow)
         for source_edge, dest_edge in dfd_edges:
             # If source nodes of two "ImplementedBy" edges are connected by a DFD edge (Flow) then two services MUST be compatible
-            if dfd_source_node == "DFD#ETL" and dfd_dest_node == "DFD#DWH":
-                print(("HELLO"))
             if dfd_source_node == source_edge and dfd_dest_node in dest_edge:
                 for service, list_akins in akin_services:
                     # Check for bi-directional compatibility
@@ -220,6 +219,53 @@ def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
     return list(set(not_compatible_services))
 
 
+def get_lakehouse_services(named_graph):
+    lakehouse_services_query = f"""
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?datalake ?pathRepository
+        WHERE {{
+            ?datalake rdf:type <{DPDO.Repository}> .
+            ?datalake <{DPDO.hasTag}> <{TAG_TAXONOMY.Landing}> .
+            ?datalake <{DPDO.flowsData}>+ ?repository .
+            ?repository rdf:type <{DPDO.Repository}> .
+            ?repository <{DPDO.flowsData}>+ ?dwh .
+            ?dwh rdf:type <{DPDO.Repository}> .
+            FILTER EXISTS {{
+                ?datalake <{DPDO.flowsData}>+ ?dwh .
+                ?dwh <{DPDO.hasTag}> <{TAG_TAXONOMY.Multidimensional}> .
+            }}
+            FILTER EXISTS {{
+                ?repository <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
+            }}
+            FILTER(?repository != ?dwh)
+            {{
+                ?datalake <{DPDO.flowsData}>+ ?pathRepository .
+                ?pathRepository rdf:type <{DPDO.Repository}> .
+            }}
+        }}
+    """
+    result = named_graph.query(lakehouse_services_query)
+    lakehouse_services_dict = {}
+    for node, followingNode in result:
+        if node not in lakehouse_services_dict:
+            lakehouse_services_dict[node] = []
+        lakehouse_services_dict[node].append(str(followingNode))
+    lakehouse_paths = [
+        (
+            [
+                f"{normalize_name(node)}->{normalize_name(str(SERVICE_ECOSYSTEM.Lakehouse))}"
+            ]
+            + [
+                f"{normalize_name(service)}->{normalize_name(str(SERVICE_ECOSYSTEM.Lakehouse))}"
+                for service in services
+            ]
+        )
+        for node, services in lakehouse_services_dict.items()
+    ]
+    return lakehouse_paths
+
+
 def select_services(named_graph, preferences, mandatories):
     minimal_coverage = get_minimal_coverage(named_graph)
     requires_edges = get_require_edges(named_graph)
@@ -233,6 +279,7 @@ def select_services(named_graph, preferences, mandatories):
     akin_services = get_akin_services(
         named_graph, implementedby_edges, implemented_services, dfd_edges
     )
+    lakehouse_implements = get_lakehouse_services(named_graph)
 
     ##############################
     #   CONSTRAINTS DEFINITION   #
@@ -279,10 +326,22 @@ def select_services(named_graph, preferences, mandatories):
         for source, dest in akin_services
     ]
     affinity_constraint_names = [
-        "edge" + str(i) for i, _ in enumerate(affinity_constraint)
+        "affinity" + str(i) for i, _ in enumerate(affinity_constraint)
     ]
     affinity_rhs = [0 for _ in affinity_constraint]
-    affinity_constraint_senses = ["G" for _ in affinity_constraint]
+    affinity_constraint_senses = ["E" for _ in affinity_constraint]
+
+    ### 8th Constraint - Services' affinities
+    lakehouse_constraint = [
+        [path, [1 for _ in range(len(path) - 1)] + [-1]]
+        for services in lakehouse_implements
+        for path in list(itertools.permutations(services))
+    ]
+    lakehouse_constraint_names = [
+        "lakehouse" + str(i) for i, _ in enumerate(lakehouse_constraint)
+    ]
+    lakehouse_rhs = [1 for _ in lakehouse_constraint]
+    lakehouse_constraint_senses = ["L" for _ in lakehouse_constraint]
 
     #############################
     # 2.2 PROBLEM FORMALIZATION #
@@ -309,8 +368,14 @@ def select_services(named_graph, preferences, mandatories):
     objective = [0 if "->" in variable else 1 for variable in variable_names]
     # objective = utils.embed_preferences(variable_names, objective, preferences_path)
 
+    variable_types = [problem.variables.type.binary for _ in variable_names]
+
     problem.variables.add(
-        obj=objective, lb=lower_bounds, ub=upper_bounds, names=variable_names
+        obj=objective,
+        lb=lower_bounds,
+        ub=upper_bounds,
+        types=variable_types,
+        names=variable_names,
     )
 
     # Adding constraints
@@ -348,6 +413,14 @@ def select_services(named_graph, preferences, mandatories):
         rhs=affinity_rhs,
         names=affinity_constraint_names,
     )
+
+    problem.linear_constraints.add(
+        lin_expr=lakehouse_constraint,
+        senses=lakehouse_constraint_senses,
+        rhs=lakehouse_rhs,
+        names=lakehouse_constraint_names,
+    )
+
     # Solve the problem
     problem.solve()
 
@@ -356,7 +429,7 @@ def select_services(named_graph, preferences, mandatories):
 
     for i, name in enumerate(problem.variables.get_names()):
         selected = problem.solution.get_values(i)
-        # print(f"{name}: {selected}")
+        print(f"{name}: {selected}")
         if "->" in name and selected:
             selected_edges.append(name)
         elif selected:

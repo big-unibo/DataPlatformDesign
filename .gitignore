@@ -1,6 +1,5 @@
 .idea/
 .vscode
-output/**
 !output/.dummy
 
 # Created by https://www.gitignore.io/api/java,linux,macos,gradle,windows,eclipse,intellij

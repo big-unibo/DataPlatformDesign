@@ -1,0 +1,3931 @@
+[
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#domain",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#domain"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#range",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#range"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#equivalentProperty",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentProperty"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#equivalentClass",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+        ]
+    },
+    {
+        "@id": "http://proton.semanticweb.org/protonsys#transitiveOver",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://proton.semanticweb.org/protonsys#transitiveOver"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#inverseOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#SymmetricProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#inverseOf"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#inverseOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            },
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#differentFrom",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty"
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#differentFrom"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2001/XMLSchema#string",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#string"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#_1",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+            }
+        ]
+    },
+    {
+        "@id": "ex:p1",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "ex:p1"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#disjointWith",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#disjointWith"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isAkin",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isAkin"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#topDataProperty",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#imports",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#imports"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Classification",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Graph",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Key_Value",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Temporal",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Sensor Data"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Data Enrichment"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Raw Images"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Integrated Data."
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name:",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name:"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "ETL"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Irrigation Optimization"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "DWH"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Download",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Download image data"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Consume",
+        "@type": [
+            "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Consume sensor data"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected",
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_column",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EC2"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EBS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Kinesis"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "S3"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Lambda"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EFS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EFS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Glue"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "DynamoDB"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "PostGIS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "RDS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Redshift"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Classification"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Clustering"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Key_Value"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Athena"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EMR"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "GeoServer"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Lakehouse"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Postgres",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Postgres"
+            }
+        ]
+    },
+    {
+        "@id": "http://dpdo_example.com/DPD_Graph",
+        "@graph": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#AnnotationProperty"
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Agent",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Repository",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "TEST"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isAkin",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#DatatypeProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ],
+                "http://www.w3.org/2002/07/owl#imports": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with archive functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a some data functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with batch computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some data computing purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Volume",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Volume"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with big data volume"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Volume",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with data of some volume"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Volume",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Volume"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with small data volume"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Classification",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with classification (ML) goal"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with machine learning's data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some goal in terms of data"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with machine learning regression data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Collection_Type",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some data collection purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with some data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with data of some nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a document data model"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a semi structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a unstructured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Graph",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a graph data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Key_Value",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Unstructured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a key-value data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with landing functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with mini-batch computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a multidimensional data model"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Model"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a relational structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with OLAP data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Goal"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with operational data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Functionality"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with storaging processed data functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Collection_Type",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Collection_Type"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with pull collection type"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Collection_Type",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Collection_Type"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with push collection type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a raster spatial data nature"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a spatial data nature"
+                    }
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Temporal"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a vectorial spatial data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Temporal",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Data_Nature"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a temporal data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class",
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Computing"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with streaming computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_column",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a wide column data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ],
+                "http://www.w3.org/2002/07/owl#imports": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "EBS"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Kinesis"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "S3"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EFS",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isAkin": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "EFS"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Glue"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "DynamoDB"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Lambda"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "PostGIS"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "RDS"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isAkin": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Redshift"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Classification"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Clustering"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Sagemaker"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Key_Value"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Athena"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "EMR"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#requires": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "GeoServer"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Lakehouse"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Postgres",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Postgres"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ],
+                "http://www.w3.org/2002/07/owl#imports": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Repository",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Sensor Data"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Data Enrichment"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Repository",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Raw Images"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name:": [
+                    {
+                        "@value": "Index Comp."
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Repository",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Integrated Data."
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "ETL"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Irrigation Optimization"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Repository",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "DWH"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Download",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Download image data"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Consume",
+                "@type": [
+                    "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
+                    "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
+                    {
+                        "@value": "Consume sensor data"
+                    }
+                ]
+            },
+            {
+                "@id": "ex:s1",
+                "ex:p1": [
+                    {
+                        "@id": "ex:o1"
+                    }
+                ]
+            }
+        ]
+    }
+]

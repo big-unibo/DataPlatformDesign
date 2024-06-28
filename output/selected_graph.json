@@ -1,0 +1,94 @@
+[
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Consume",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Download",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment",
+        "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#selected": [
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            }
+        ]
+    }
+]

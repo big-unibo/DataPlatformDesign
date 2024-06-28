@@ -10,22 +10,17 @@ config = utils.load_yaml("dataplatform_design/resources/config.yml")
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
-TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["DPDO"])
-SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["DPDO"])
+TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["TagTaxonomy"])
+SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["ServiceEcosystem"])
 
 
 def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri, config):
     lakehouse_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX {config["prefix"]["DFD"]}: <{config["namespaces"]["DFD"]}>
-        PREFIX {config["prefix"]["ServiceEcosystem"]}: <{config["namespaces"]["ServiceEcosystem"]}>
-        PREFIX {config["prefix"]["TagTaxonomy"]}: <{config["namespaces"]["TagTaxonomy"]}>
-        PREFIX {config["prefix"]["DPDO"]}: <{config["namespaces"]["DPDO"]}>
-
         INSERT {{
                 GRAPH <{named_graph_uri}> {{
-                ?c <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+                ?pathRepository <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
                 ?datalake <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
             }}
         }}
