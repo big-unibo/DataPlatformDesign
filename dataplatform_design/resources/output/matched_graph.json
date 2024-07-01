@@ -831,6 +831,9 @@
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
             },
             {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+            },
+            {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
             },
             {
@@ -838,6 +841,9 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment"
@@ -866,6 +872,9 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -934,17 +943,6 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows",
-        "@type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-            {
-                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows"
             }
         ]
     },
@@ -1516,6 +1514,9 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
@@ -3162,6 +3163,9 @@
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
                     },
                     {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
                     },
                     {
@@ -3587,6 +3591,9 @@
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small"
                     },
                     {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing"
+                    },
+                    {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational"
                     },
                     {
@@ -3596,6 +3603,9 @@
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#implementedBy": [
                     {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse"
                     }
                 ],
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
@@ -3609,6 +3619,11 @@
                 "@type": [
                     "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Process",
                     "http://www.w3.org/2002/07/owl#NamedIndividual"
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
+                    }
                 ],
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#hasTag": [
                     {
@@ -3629,11 +3644,6 @@
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
                     {
                         "@value": "Data Enrichment"
-                    }
-                ],
-                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#dataFlows": [
-                    {
-                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data"
                     }
                 ]
             },

@@ -141,7 +141,10 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri):
     if response.status_code == 200:
         logger.info("Retrieved matched graph")
         with open(
-            os.path.join("dataplatform_design", "output", "matched_graph.json"), "w"
+            os.path.join(
+                "dataplatform_design", "resources", "output", "matched_graph.json"
+            ),
+            "w",
         ) as write_file:
             json.dump(response.json(), write_file, indent=4)
         return True

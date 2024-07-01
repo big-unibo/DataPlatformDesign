@@ -14,10 +14,10 @@ ontologies:
       ServiceEcosystem: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#
       DFD: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#
   paths:
-      DPDO: dataplatform_design/resources/ontologies/DPDO.ttl
-      TagTaxonomy: dataplatform_design/resources/ontologies/TagTaxonomy.ttl
-      ServiceEcosystem: dataplatform_design/resources/ontologies/ServiceEcosystem.ttl
-      DFD: dataplatform_design/resources/ontologies/DFD.ttl
+      DPDO: dataplatform_design/resources/input/ontologies/DPDO.ttl
+      TagTaxonomy: dataplatform_design/resources/input/ontologies/TagTaxonomy.ttl
+      ServiceEcosystem: dataplatform_design/resources/input/ontologies/ServiceEcosystem.ttl
+      DFD: dataplatform_design/resources/input/ontologies/DFD.ttl
   prefix:
       DPDO: DPDO
       TagTaxonomy: TagTaxonomy

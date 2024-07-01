@@ -77,7 +77,9 @@ if graph_match.match_lakehouse_pattern(
 
     # # Load matched graph
     matched_graph.parse(
-        location=os.path.join("dataplatform_design", "output", "matched_graph.json"),
+        location=os.path.join(
+            "dataplatform_design", "resources", "output", "matched_graph.json"
+        ),
         format="json-ld",
     )
 
@@ -117,14 +119,19 @@ if graph_match.match_lakehouse_pattern(
 
     # Write selected_graph
     with open(
-        os.path.join("dataplatform_design", "output", "selected_graph.json"), "w"
+        os.path.join(
+            "dataplatform_design", "resources", "output", "selected_graph.json"
+        ),
+        "w",
     ) as json_file:
         json_file.write(selected_graph.serialize(format="json-ld", indent=4))
 
     # Retrieve expected solution
     expected_solution = utils.setup_graph(NAMESPACES)
     expected_solution.parse(
-        os.path.join("dataplatform_design", "input", "solution.ttl"),
+        os.path.join(
+            "dataplatform_design", "resources", "input", "solution", "solution.ttl"
+        ),
         format="turtle",
     )
 
