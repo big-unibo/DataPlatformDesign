@@ -18,7 +18,8 @@ DFD:Sensor_Data rdf:type owl:NamedIndividual ,
              DPDO:flowsData DFD:Data_Enrichment ;
              DPDO:hasTag TagTaxonomy:Relational ,
                          TagTaxonomy:Small ,
-                         TagTaxonomy:Vectorial ;
+                         TagTaxonomy:Vectorial ,
+                         TagTaxonomy:Landing ;
              DPDO:name "Sensor Data" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images
@@ -37,7 +38,7 @@ DFD:Data_Enrichment rdf:type owl:NamedIndividual ,
                         DPDO:Process ;
                     DPDO:hasTag TagTaxonomy:Small ,
                                 TagTaxonomy:Batch ;
-                    DPDO:dataFlows DFD:Integrated_Data ;
+                    DPDO:flowsData DFD:Integrated_Data ;
                     DPDO:name "Data Enrichment" .
 
 ###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp.

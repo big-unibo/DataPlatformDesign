@@ -337,17 +337,11 @@ def select_services(named_graph, preferences, mandatories):
     ### 8th Constraint - Services' affinities
     lakehouse_constraint = [
         [
-            path + [normalize_name(str(SERVICE_ECOSYSTEM.Lakehouse))],
-            [1 for node in path] + [-1 * len(path)],
+            lakehouse_path + [normalize_name(str(SERVICE_ECOSYSTEM.Lakehouse))],
+            [1 for _ in lakehouse_path] + [-1 * len(lakehouse_path)],
         ]
-        for path in lakehouse_implements
+        for lakehouse_path in lakehouse_implements
     ]
-
-    # lakehouse_constraint = [
-    #     [path, [1 for _ in range(len(path) - 1)] + [-1]]
-    #     for services in lakehouse_implements
-    #     for path in list(itertools.permutations(services))
-    # ]
 
     lakehouse_constraint_names = [
         "lakehouse" + str(i) for i, _ in enumerate(lakehouse_constraint)
