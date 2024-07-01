@@ -224,7 +224,8 @@ ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
                      TagTaxonomy:Operational ,
                      TagTaxonomy:Relational ,
                      TagTaxonomy:Small ,
-                     TagTaxonomy:Vectorial ;
+                     TagTaxonomy:Vectorial ,
+                     TagTaxonomy:Landing ;
          DPDO:requires ServiceEcosystem:EC2 ;
          DPDO:name "PostGIS" .
 
