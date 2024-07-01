@@ -2,9 +2,12 @@ import utils
 from rdflib import Namespace
 import itertools
 from cplex import Cplex
+import os
 
 # Load config
-config = utils.load_yaml("dataplatform_design/resources/config.yml")
+config = utils.load_yaml(
+    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+)
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
@@ -333,15 +336,24 @@ def select_services(named_graph, preferences, mandatories):
 
     ### 8th Constraint - Services' affinities
     lakehouse_constraint = [
-        [path, [1 for _ in range(len(path) - 1)] + [-1]]
-        for services in lakehouse_implements
-        for path in list(itertools.permutations(services))
+        [
+            path + [normalize_name(str(SERVICE_ECOSYSTEM.Lakehouse))],
+            [1 for node in path] + [-1 * len(path)],
+        ]
+        for path in lakehouse_implements
     ]
+
+    # lakehouse_constraint = [
+    #     [path, [1 for _ in range(len(path) - 1)] + [-1]]
+    #     for services in lakehouse_implements
+    #     for path in list(itertools.permutations(services))
+    # ]
+
     lakehouse_constraint_names = [
         "lakehouse" + str(i) for i, _ in enumerate(lakehouse_constraint)
     ]
-    lakehouse_rhs = [1 for _ in lakehouse_constraint]
-    lakehouse_constraint_senses = ["L" for _ in lakehouse_constraint]
+    lakehouse_rhs = [0 for _ in lakehouse_constraint]
+    lakehouse_constraint_senses = ["E" for _ in lakehouse_constraint]
 
     #############################
     # 2.2 PROBLEM FORMALIZATION #

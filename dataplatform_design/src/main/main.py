@@ -19,7 +19,9 @@ tz = pytz.timezone("Europe/Rome")
 # Setup logger
 logger = utils.setup_logger("DataPlat_Design")
 # Load config
-config = utils.load_yaml("dataplatform_design/resources/config.yml")
+config = utils.load_yaml(
+    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+)
 
 # GraphDB endpoint
 GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
@@ -75,7 +77,7 @@ if graph_match.match_lakehouse_pattern(
 
     # # Load matched graph
     matched_graph.parse(
-        location=os.path.join("output", "matched_graph.json"),
+        location=os.path.join("dataplatform_design", "output", "matched_graph.json"),
         format="json-ld",
     )
 
@@ -114,13 +116,15 @@ if graph_match.match_lakehouse_pattern(
         )
 
     # Write selected_graph
-    with open(os.path.join("output", "selected_graph.json"), "w") as json_file:
+    with open(
+        os.path.join("dataplatform_design", "output", "selected_graph.json"), "w"
+    ) as json_file:
         json_file.write(selected_graph.serialize(format="json-ld", indent=4))
 
     # Retrieve expected solution
     expected_solution = utils.setup_graph(NAMESPACES)
     expected_solution.parse(
-        os.path.join("dataplatform_design", "resources", "solution", "solution.ttl"),
+        os.path.join("dataplatform_design", "input", "solution.ttl"),
         format="turtle",
     )
 

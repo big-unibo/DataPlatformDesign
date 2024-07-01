@@ -6,7 +6,9 @@ from rdflib import Namespace
 
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")
 # Load config
-config = utils.load_yaml("dataplatform_design/resources/config.yml")
+config = utils.load_yaml(
+    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+)
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
@@ -138,7 +140,9 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri):
 
     if response.status_code == 200:
         logger.info("Retrieved matched graph")
-        with open(os.path.join("output", "matched_graph.json"), "w") as write_file:
+        with open(
+            os.path.join("dataplatform_design", "output", "matched_graph.json"), "w"
+        ) as write_file:
             json.dump(response.json(), write_file, indent=4)
         return True
     else:

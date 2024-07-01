@@ -69,7 +69,8 @@ def check_or_create_repository(repository_name, endpoint):
 
 def create_repository(repository_name, endpoint):
     with open(
-        os.path.join("dataplatform_design", "resources", "repo-config.ttl"), "rb"
+        os.path.join("dataplatform_design", "resources", "configs", "repo-config.ttl"),
+        "rb",
     ) as file:
         files = {"config": file}
         response = requests.post(f"{endpoint}/rest/repositories", files=files)
