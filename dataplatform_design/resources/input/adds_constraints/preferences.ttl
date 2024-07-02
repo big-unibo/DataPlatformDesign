@@ -1,6 +1,5 @@
 @prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
 @prefix DFD: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#> .
 @prefix ServiceEcosystem: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-ServiceEcosystem:Lakehouse DPDO:isPreferred xsd:true
+ServiceEcosystem:Lakehouse DPDO:isPreferred true .

@@ -269,7 +269,60 @@ def get_lakehouse_services(named_graph):
     return lakehouse_paths
 
 
-def select_services(named_graph, preferences, mandatories):
+def get_preferences(named_graph):
+    lakehouse_services_query = f"""
+        SELECT ?service
+        WHERE {{
+            ?service <{DPDO.isPreferred}> true.
+        }}
+    """
+    result = named_graph.query(lakehouse_services_query)
+    return [normalize_name(str(node[0])) for node in result]
+
+
+def get_mandatories(named_graph):
+    lakehouse_services_query = f"""
+        SELECT ?service
+        WHERE {{
+            ?service <{DPDO.isMandatory}> true.
+        }}
+    """
+    result = named_graph.query(lakehouse_services_query)
+    return [normalize_name(str(node[0])) for node in result]
+
+
+def embed_additional_constraints(variable_names, preferences, mandatories):
+    objective = []
+    for variable in variable_names:
+        if "->" in variable:
+            objective.append(0)
+        else:
+            if variable in preferences and variable not in mandatories:
+                objective.append(0.5)
+            elif variable in mandatories:
+                objective.append(0)
+            else:
+                objective.append(1)
+    return objective
+    # return [
+    #     (
+    #         0
+    #         if "->" in variable
+    #         else (
+    #             0
+    #             if variable in mandatories
+    #             else (
+    #                 0.5
+    #                 if variable in preferences and variable not in mandatories
+    #                 else 1
+    #             )
+    #         )
+    #     )
+    #     for variable in variable_names
+    # ]
+
+
+def select_services(named_graph):
     minimal_coverage = get_minimal_coverage(named_graph)
     requires_edges = get_require_edges(named_graph)
     implementedby_edges = get_implementedby_edges(named_graph)
@@ -283,7 +336,8 @@ def select_services(named_graph, preferences, mandatories):
         named_graph, implementedby_edges, implemented_services, dfd_edges
     )
     lakehouse_implements = get_lakehouse_services(named_graph)
-
+    preferences = get_preferences(named_graph)
+    mandatories = get_mandatories(named_graph)
     ##############################
     #   CONSTRAINTS DEFINITION   #
     ##############################
@@ -338,7 +392,8 @@ def select_services(named_graph, preferences, mandatories):
     lakehouse_constraint = [
         [
             lakehouse_path,
-            [1 for _ in range(len(lakehouse_path) - 1)] + [-1 * (len(lakehouse_path) - 1)],
+            [1 for _ in range(len(lakehouse_path) - 1)]
+            + [-1 * (len(lakehouse_path) - 1)],
         ]
         for lakehouse_path in lakehouse_implements
     ]
@@ -371,9 +426,9 @@ def select_services(named_graph, preferences, mandatories):
     upper_bounds = [1 for _ in variable_names]
 
     # Setting variables' weights to minimize, weight(arch) = 0 since we don't want to minimize them
-    objective = [0 if "->" in variable else 1 for variable in variable_names]
-    # objective = utils.embed_preferences(variable_names, objective, preferences_path)
-
+    # objective = [0 if "->" in variable else 1 for variable in variable_names]
+    objective = embed_additional_constraints(variable_names, preferences, mandatories)
+    print(objective)
     variable_types = [problem.variables.type.binary for _ in variable_names]
 
     problem.variables.add(

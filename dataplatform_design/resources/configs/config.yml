@@ -23,3 +23,6 @@ ontologies:
       TagTaxonomy: TagTaxonomy
       ServiceEcosystem: ServiceEcosystem
       DFD: DFD
+  adds_constraints_paths:
+      preferences: dataplatform_design/resources/input/adds_constraints/preferences.ttl
+      mandatories: dataplatform_design/resources/input/adds_constraints/mandatories.ttl

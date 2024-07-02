@@ -442,6 +442,34 @@
         ]
     },
     {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isPreferred",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isPreferred"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory"
+            }
+        ]
+    },
+    {
         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name",
         "@type": [
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -1274,6 +1302,10 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
+            },
+            {
+                "@value": "true",
+                "@type": "http://www.w3.org/2001/XMLSchema#boolean"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -1824,6 +1856,10 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+            },
+            {
+                "@value": "true",
+                "@type": "http://www.w3.org/2001/XMLSchema#boolean"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -2073,6 +2109,48 @@
                 "http://www.w3.org/2000/01/rdf-schema#range": [
                     {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isPreferred",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
                     }
                 ]
             },
@@ -2875,6 +2953,12 @@
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
                     }
                 ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory": [
+                    {
+                        "@value": "true",
+                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ],
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [
                     {
                         "@value": "Kinesis"
@@ -3518,6 +3602,18 @@
                     },
                     {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isPreferred": [
+                    {
+                        "@value": "true",
+                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ],
+                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory": [
+                    {
+                        "@value": "true",
+                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
                     }
                 ],
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [

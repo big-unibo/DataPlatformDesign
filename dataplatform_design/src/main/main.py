@@ -58,6 +58,13 @@ if not all(
     )
     sys.exit(1)
 
+[
+    graphdb_utils.load_ontology(
+        path, GRAPHDB_ENDPOINT, GRAPHDB_REPOSITORY, GRAPHDB_NAMED_GRAPH
+    )
+    for path in config["ontologies"]["adds_constraints_paths"].values()
+]
+
 
 # Setup matched graph
 matched_graph = utils.setup_graph(NAMESPACES)
@@ -92,7 +99,7 @@ if graph_match.match_lakehouse_pattern(
     mandatories = []
 
     # Solve the LP problem
-    solution = graph_select.select_services(named_graph, preferences, mandatories)
+    solution = graph_select.select_services(named_graph)
 
     # Foreach new edge, add it to selected_graph
     selected_graph = utils.setup_graph(NAMESPACES)

@@ -85,12 +85,24 @@ DPDO:isAkin rdf:type owl:ObjectProperty;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain DPDO:Service ;
               rdfs:range DPDO:Service.
-              
-# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/selected             
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/selected
 DPDO:selected rdf:type owl:ObjectProperty;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain DPDO:DFDNode ;
               rdfs:range DPDO:Service.
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isPreferred
+DPDO:isPreferred rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range xsd:boolean.
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isMandatory
+DPDO:isMandatory rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range xsd:boolean.
 #################################################################
 #    Data properties
 #################################################################
