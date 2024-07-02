@@ -18,7 +18,9 @@ jobs:
           python-version: '3.9'
       - name: Run
         run: |
-            docker compose up
+            chmod +x *.sh
+            docker compose up &
+            ./wait-for-it.sh "127.0.0.1:7200" --timeout=480 -- echo "GraphDB is up"
             pip install -r requirements.txt
             python dataplatform_design/src/main/main.py
 
