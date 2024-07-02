@@ -9,6 +9,9 @@
     "dockerFile": "../Dockerfile",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home,type=bind",
     "workspaceFolder": "/home",
+    "runArgs": [
+        "--network=host"
+    ],
     // Set *default* container specific settings.json values on container create.
     "customizations": {
         "vscode": {
