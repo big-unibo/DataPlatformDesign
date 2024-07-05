@@ -3,7 +3,7 @@
 prefix: "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/"
 
 graph_db:
-  endpoint: http://137.204.74.57:7200
+  endpoint: http://127.0.0.1:7200
   repository: DataPlatformDesign_scenario
   named_graph: http://dpdo_example.com/DPD_Graph
 

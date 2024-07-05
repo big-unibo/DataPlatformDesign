@@ -2,6 +2,63 @@ import re
 import os
 import shutil
 import yaml
+import argparse
+from os import path
+
+
+def get_scenario_parser(template_path):
+
+    parser = argparse.ArgumentParser(description="Define new scenario parameters")
+    parser.add_argument(
+        "--scenario_name", "--name", help="New scenario name", required=True
+    )
+
+    parser.add_argument(
+        "-se",
+        "--service_ecosystem",
+        help="Path of ServiceEcosystem.ttl",
+        default=path.join(template_path, "input", "ontologies", "ServiceEcosystem.ttl"),
+    )
+
+    parser.add_argument(
+        "-dfd",
+        "--dfd",
+        help="Path of DFD.ttl",
+        default=path.join(template_path, "input", "ontologies", "DFD.ttl"),
+    )
+
+    parser.add_argument(
+        "-tt",
+        "--tag_taxonomy",
+        help="Path of TagTaxonomy.ttl",
+        default=path.join(template_path, "input", "ontologies", "TagTaxonomy.ttl"),
+    )
+
+    parser.add_argument(
+        "-s",
+        "--solution",
+        help="Path of solution.ttl",
+        default=path.join(template_path, "input", "solution", "solution.ttl"),
+    )
+
+    parser.add_argument(
+        "-p",
+        "--preferences",
+        help="Path of preferences.ttl",
+        default=path.join(
+            template_path, "input", "adds_constraints", "preferences.ttl"
+        ),
+    )
+
+    parser.add_argument(
+        "-m",
+        "--mandatories",
+        help="Path of mandatories.ttl",
+        default=path.join(
+            template_path, "input", "adds_constraints", "mandatories.ttl"
+        ),
+    )
+    return parser
 
 
 def normalize_repositories_names(repo_config_paths, test_scenario):

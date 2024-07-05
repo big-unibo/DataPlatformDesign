@@ -1,60 +1,12 @@
-import os.path as path
-import argparse
-import sys
 import os
-import yaml
-import shutil
+import argparse
+import os
 import test_utils
 
-parser = argparse.ArgumentParser(description="Define new scenario parameters")
+
 template_path = os.path.join("dataplatform_design", "resources")
 scenarios_directory = os.path.join("dataplatform_design", "src", "test", "scenarios")
-
-parser.add_argument(
-    "--scenario_name", "--name", help="New scenario name", required=True
-)
-
-parser.add_argument(
-    "-se",
-    "--service_ecosystem",
-    help="Path of ServiceEcosystem.ttl",
-    default=path.join(template_path, "input", "ontologies", "ServiceEcosystem.ttl"),
-)
-
-parser.add_argument(
-    "-dfd",
-    "--dfd",
-    help="Path of DFD.ttl",
-    default=path.join(template_path, "input", "ontologies", "DFD.ttl"),
-)
-
-parser.add_argument(
-    "-tt",
-    "--tag_taxonomy",
-    help="Path of TagTaxonomy.ttl",
-    default=path.join(template_path, "input", "ontologies", "TagTaxonomy.ttl"),
-)
-
-parser.add_argument(
-    "-s",
-    "--solution",
-    help="Path of solution.ttl",
-    default=path.join(template_path, "input", "solution", "solution.ttl"),
-)
-
-parser.add_argument(
-    "-p",
-    "--preferences",
-    help="Path of preferences.ttl",
-    default=path.join(template_path, "input", "adds_constraints", "preferences.ttl"),
-)
-
-parser.add_argument(
-    "-m",
-    "--mandatories",
-    help="Path of mandatories.ttl",
-    default=path.join(template_path, "input", "adds_constraints", "mandatories.ttl"),
-)
+parser = test_utils.get_scenario_parser(template_path)
 
 args = parser.parse_args()
 args_dict = vars(args)
