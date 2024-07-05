@@ -1302,10 +1302,6 @@
             },
             {
                 "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda"
-            },
-            {
-                "@value": "true",
-                "@type": "http://www.w3.org/2001/XMLSchema#boolean"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -2951,12 +2947,6 @@
                     },
                     {
                         "@id": "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming"
-                    }
-                ],
-                "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isMandatory": [
-                    {
-                        "@value": "true",
-                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
                     }
                 ],
                 "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#name": [

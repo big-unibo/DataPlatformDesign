@@ -1,0 +1,83 @@
+import os
+import sys
+import test_utils
+
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
+)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main/")))
+
+from utils import utils
+from dataplatform_designer import DataPlatformDesigner
+
+
+logger = utils.setup_logger("DataPlat_Design_Test")
+
+for scenario_directory in test_utils.listdirs(
+    os.path.join("dataplatform_design", "src", "test", "scenarios")
+):
+    test_utils.normalize_repositories_names(
+        [
+            os.path.join(scenario_directory, "configs", "config.yml"),
+            os.path.join(scenario_directory, "configs", "repo-config.ttl"),
+        ],
+        scenario_directory.split(os.sep)[-1],
+    )
+
+    # Load config
+    config = utils.load_yaml(os.path.join(scenario_directory, "configs", "config.yml"))
+
+    # GraphDB endpoint
+    GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
+    GRAPHDB_REPOSITORY = config["graph_db"]["repository"]
+    GRAPHDB_NAMED_GRAPH = config["graph_db"]["named_graph"]
+
+    logger.info(f"Running scenario {scenario_directory}")
+
+    # .ttl paths representing ontologies
+    NAMESPACES = config["ontologies"]["namespaces"]
+
+    matched_graph_path = os.path.join(
+        scenario_directory, "output", "matched_graph.json"
+    )
+    selected_graph_path = os.path.join(
+        scenario_directory, "output", "selected_graph.json"
+    )
+    solution_path = os.path.join(
+        scenario_directory, "input", "solution", "solution.ttl"
+    )
+
+    dataplat_designer = DataPlatformDesigner(
+        GRAPHDB_ENDPOINT, GRAPHDB_REPOSITORY, GRAPHDB_NAMED_GRAPH, NAMESPACES
+    )
+
+    dataplat_designer.setup_graph_db(
+        os.path.join(scenario_directory, "configs", "repo-config.ttl")
+    )
+
+    dataplat_designer.load_ontologies(
+        [
+            (path, namespace)
+            for path, namespace in zip(
+                config["ontologies"]["paths"].values(),
+                config["ontologies"]["namespaces"].values(),
+            )
+        ]
+    )
+    dataplat_designer.add_constraints(
+        config["ontologies"]["adds_constraints_paths"].values()
+    )
+
+    matched_graph = dataplat_designer.build_matched_graph(
+        config["ontologies"]["paths"]["dpdo"],
+        matched_graph_path,
+    )
+
+    selected_graph = dataplat_designer.build_selected_graph(
+        matched_graph,
+        selected_graph_path,
+    )
+
+    result = dataplat_designer.compare_solution(selected_graph, solution_path)
+
+    assert result, f"Testing {scenario_directory}, result: {result}"

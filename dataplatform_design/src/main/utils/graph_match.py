@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-import utils
+from . import utils
 from rdflib import Namespace
 
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")
@@ -11,12 +11,12 @@ config = utils.load_yaml(
 )
 
 PREFIX = config["prefix"]
-DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
-TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["TagTaxonomy"])
-SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["ServiceEcosystem"])
+DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
+TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["tag_taxonomy"])
+SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["service_ecosystem"])
 
 
-def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri, config):
+def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
     lakehouse_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -70,7 +70,7 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri, config):
         return False
 
 
-def build_matched_graph(endpoint, repository_name, named_graph_uri, config):
+def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
     match_query = f"""
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX drl: <http://example.org/drl/>
@@ -114,10 +114,12 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, config):
         logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
         logger.error(response.content)
 
-    return save_matched_graph(endpoint, repository_name, named_graph_uri)
+    return save_matched_graph(
+        endpoint, repository_name, named_graph_uri, match_graph_path
+    )
 
 
-def save_matched_graph(endpoint, repository_name, named_graph_uri):
+def save_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
     matched_graph_query = f"""
         SELECT ?node ?p ?o
         WHERE {{
@@ -140,14 +142,18 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri):
 
     if response.status_code == 200:
         logger.info("Retrieved matched graph")
-        with open(
-            os.path.join(
-                "dataplatform_design", "resources", "output", "matched_graph.json"
-            ),
-            "w",
-        ) as write_file:
-            json.dump(response.json(), write_file, indent=4)
-        return True
+        output_path = os.path.join(match_graph_path)
+        try:
+            with open(
+                output_path,
+                "w",
+            ) as write_file:
+                json.dump(response.json(), write_file, indent=4)
+            logger.info(f"Saved matched graph to {output_path}")
+            return True
+        except Exception as e:
+            logger.exception(str(e))
+            logger.exception(e.__doc__)
     else:
         logger.error(response.status_code)
         logger.error(response.text)

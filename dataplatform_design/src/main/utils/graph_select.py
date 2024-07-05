@@ -1,4 +1,4 @@
-import utils
+from . import utils
 from rdflib import Namespace
 import itertools
 from cplex import Cplex
@@ -10,10 +10,9 @@ config = utils.load_yaml(
 )
 
 PREFIX = config["prefix"]
-DPDO = Namespace(config["ontologies"]["namespaces"]["DPDO"])
-TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["TagTaxonomy"])
-SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["ServiceEcosystem"])
-
+DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
+TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["tag_taxonomy"])
+SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["service_ecosystem"])
 
 def normalize_name(name):
     return name.replace(PREFIX, "") if PREFIX in name else name

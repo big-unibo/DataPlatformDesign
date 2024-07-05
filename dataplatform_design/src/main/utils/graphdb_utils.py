@@ -1,6 +1,7 @@
 import requests
 import utils
 import os
+from . import utils
 
 # Setup logger
 logger = utils.setup_logger("DataPlat_Design_GraphDB_Utils")
@@ -28,7 +29,8 @@ def ontology_exists(endpoint, repository, named_graph, namespace):
     return results["boolean"]
 
 
-def load_ontology(file_path, endpoint, repository, named_graph):
+def load_ontology(file_path, endpoint, repository, named_graph, namespace):
+
     endpoint_url = f"{endpoint}/repositories/{repository}"
     with open(file_path, "rb") as f:
         data = f.read()
@@ -39,6 +41,12 @@ def load_ontology(file_path, endpoint, repository, named_graph):
             headers=headers,
         )
         response.raise_for_status()  # Raise an exception for HTTP errors
+        if response.status_code == 204:
+            logger.info(f"{namespace} uploaded to {endpoint}")
+        else:
+            logger.error(
+                f"Failed to load {namespace} to {endpoint}: status code {response.status_code}"
+            )
         return response.status_code
 
 
@@ -53,7 +61,7 @@ def build_output_graph(path, graph_repository, named_graph):
     return response.status_code
 
 
-def check_or_create_repository(repository_name, endpoint):
+def check_or_create_repository(repository_name, repo_config_path, endpoint):
     # Verifica se il repository esiste
     response = requests.get(endpoint + "/repositories")
     response.raise_for_status()
@@ -62,14 +70,27 @@ def check_or_create_repository(repository_name, endpoint):
 
     # Se il repository non esiste, crealo
     if not repository_exists:
-        create_repository(repository_name, endpoint)
+        return create_repository(repository_name, repo_config_path, endpoint)
     else:
         logger.info("Repository already existing")
+        return True
 
 
-def create_repository(repository_name, endpoint):
+def delete_repository(repository_name, endpoint):
+
+    response = requests.delete(f"{endpoint}/rest/repositories/{repository_name}")
+
+    if response.status_code == 200:
+        logger.info(f"Successfully deleted  repository '{repository_name}'.")
+    else:
+        logger.error(f"Couldn't delete repository '{repository_name}'.")
+        logger.error(f"Status Code: {response.status_code}")
+        logger.error(f"Text: {response.content}")
+
+
+def create_repository(repository_name, repo_config_path, endpoint):
     with open(
-        os.path.join("dataplatform_design", "resources", "configs", "repo-config.ttl"),
+        repo_config_path,
         "rb",
     ) as file:
         files = {"config": file}
@@ -79,8 +100,10 @@ def create_repository(repository_name, endpoint):
         logger.error(f"Failed to create repository: {response.text}")
         print(f"Response status code: {response.status_code}")
         print(f"Response text: {response.text}")
+        return False
     response.raise_for_status()
     logger.info(f"Successfully created repository {repository_name}")
+    return True
 
 
 def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):
@@ -104,7 +127,7 @@ def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):
         else:
             logger.exception(f"Error: {response.status_code}")
             logger.exception(response.text)
-            return response.status_code == 500
+            return response.status_code >= 500
     except Exception as e:
         logger.exception(
             f"Something went wrong while checking for named graph {named_graph_uri}"
@@ -116,22 +139,22 @@ def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):
 
 def post_ontology_on_db(namespace, local_path, endpoint, repository, named_graph):
     if not ontology_exists(endpoint, repository, named_graph, namespace):
-        status_code = load_ontology(local_path, endpoint, repository, named_graph)
-        if status_code == 204:
-            logger.info(f"{namespace} uploaded to {endpoint}")
-            return True
-        else:
-            logger.error(
-                f"Failed to load {namespace} to {endpoint}: status code {status_code}"
-            )
-            return False
+        return load_ontology(local_path, endpoint, repository, named_graph, namespace)
     else:
         logger.info(f"{namespace} already in {endpoint}")
         return True
 
 
-def setup_graphdb(graphdb_endpoint, graphdb_repository, graphdb_named_graph):
-    check_or_create_repository(graphdb_repository, graphdb_endpoint)
-    check_or_create_named_graph(
-        graphdb_repository, graphdb_named_graph, graphdb_endpoint
+def setup_graphdb(
+    graphdb_endpoint, graphdb_repository, repo_config_path, graphdb_named_graph
+):
+    return all(
+        [
+            check_or_create_repository(
+                graphdb_repository, repo_config_path, graphdb_endpoint
+            ),
+            check_or_create_named_graph(
+                graphdb_repository, graphdb_named_graph, graphdb_endpoint
+            ),
+        ]
     )

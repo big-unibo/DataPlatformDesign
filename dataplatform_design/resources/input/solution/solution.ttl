@@ -24,4 +24,4 @@ DFD:Download DPDO:selected ServiceEcosystem:Sagemaker .
 
 DFD:Consume DPDO:selected ServiceEcosystem:Lambda .
 
-DFD:Irrigation_Opt DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:Irrigation_Opt DPDO:selected ServiceEcosystem:Glue .

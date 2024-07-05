@@ -22,7 +22,8 @@ jobs:
             docker compose up &
             ./wait-for-it.sh "127.0.0.1:7200" --timeout=480 -- echo "GraphDB is up"
             pip install -r requirements.txt
-            python dataplatform_design/src/main/main.py
+            python dataplatform_design/src/test/create_test_scenario.py --scenario_name test_scenario
+            python dataplatform_design/src/test/test_solutions.py
 
   release:
     needs:
