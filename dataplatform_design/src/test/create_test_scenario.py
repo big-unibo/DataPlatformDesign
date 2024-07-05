@@ -32,6 +32,7 @@ scenario_resources_path_dict = {
     "preferences": f"{new_scenario_path}/input/adds_constraints",
     "solution": f"{new_scenario_path}/input/solution",
     "repo_config": f"{new_scenario_path}/configs",
+    "output": f"{new_scenario_path}/output",
 }
 
 # Build new scenario directory tree
