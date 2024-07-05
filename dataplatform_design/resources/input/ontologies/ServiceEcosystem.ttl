@@ -217,7 +217,6 @@ ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
 ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
          DPDO:isCompatible ServiceEcosystem:EMR ,
-                       ServiceEcosystem:Kinesis ,
                        ServiceEcosystem:Lambda ,
                        ServiceEcosystem:Sagemaker ;
          DPDO:hasTag TagTaxonomy:Big ,
