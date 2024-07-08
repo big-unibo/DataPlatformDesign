@@ -9,4 +9,4 @@ pyfactxx
 owlready2==0.46
 pyyaml==6.0.1
 requests==2.32.2
-pytest==8.2.0
+pytest==8.2.2
