@@ -9,6 +9,7 @@ parser = test_utils.get_scenario_parser(template_path)
 
 args = parser.parse_args()
 args_dict = vars(args)
+
 scenario_name = args.scenario_name
 logger = test_utils.setup_logger("DataPlatform_ScenarioCreation")
 # Build scenario directory structure
@@ -27,10 +28,10 @@ template_structure = {
 }
 
 scenario_resources_path_dict = {
-    "dfd": f"{new_scenario_path}/input/ontologies",
+    "dpdo": f"{new_scenario_path}/input/ontologies",
     "service_ecosystem": f"{new_scenario_path}/input/ontologies",
     "tag_taxonomy": f"{new_scenario_path}/input/ontologies",
-    "dpdo": f"{new_scenario_path}/input/ontologies",
+    "dfd": f"{new_scenario_path}/input/ontologies",
     "mandatories": f"{new_scenario_path}/input/adds_constraints",
     "preferences": f"{new_scenario_path}/input/adds_constraints",
     "solution": f"{new_scenario_path}/input/solution",
@@ -69,7 +70,7 @@ args_dict.update({"dpdo": os.path.join(template_structure["ontologies"], "DPDO.t
 
 for arg_name, arg_value in args_dict.items():
     if arg_name != "scenario_name":
-
+        print(arg_name)
         # Copy args provided files
 
         test_utils.copy_file(
@@ -81,14 +82,17 @@ for arg_name, arg_value in args_dict.items():
         )
 
         # Update config file to refer to new ontologies.ttl paths
-
         test_utils.modify_yaml(
             new_config_path,
             new_config_path,
             (
                 ["ontologies", "paths", arg_name]
-                if arg_name not in ["mandatories", "preferences"]
-                else ["ontologies", "adds_constraints_paths", arg_name]
+                if arg_name not in ["mandatories", "preferences", "solution"]
+                else (
+                    ["ontologies", arg_name]
+                    if arg_name == "solution"
+                    else ["ontologies", "adds_constraints_paths", arg_name]
+                )
             ),
             arg_value.replace(
                 os.sep.join(arg_value.split(os.sep)[:-1]),

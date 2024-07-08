@@ -3,6 +3,7 @@ import os
 import pytz
 from rdflib.namespace import Namespace
 import sys
+from SPARQLWrapper import SPARQLWrapper, POST
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -46,6 +47,7 @@ class DataPlatformDesigner:
         )
 
     def load_ontologies(self, ontologies):
+        print(ontologies)
         if not all(
             ontology
             for ontology in [

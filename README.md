@@ -49,6 +49,12 @@ The script takes additional optional parameters such as:
 - --preferences {path_to_service_ontology.ttl}
 - --mandatories {path_to_service_ontology.ttl}
 
-which specify the path of the ontologies to be copied into the scenario. <u>Please note that in case of using user-defined ontologies with different namespaces than the default ones, such ontologies' namespaces <b>must</b> be updated in </u> `/dataplatform_design/src/test/scenarios/scenario_{scenario_name}/configs/config.yml`.
+which specify the path of the ontologies to be copied into the scenario. <u>Please note that in case of using user-defined ontologies with different namespaces than the default ones, such ontologies' namespaces and prefixes <b>must</b> be updated in </u> `/dataplatform_design/src/test/scenarios/scenario_{scenario_name}/configs/config.yml`.
 
+### Testing scenarios
 
+Once scenarios have been defined, all of them can be tested via
+   ```sh
+   python dataplatform_design/src/test/test_solutions.py
+   ```
+Such script will compute the optimal set of services implementing the DFD for each scenario, and will compare each computed solution to the proposed one, returning true if <u>for all scenarios</u>, one of the computed solution matches the proposed one.

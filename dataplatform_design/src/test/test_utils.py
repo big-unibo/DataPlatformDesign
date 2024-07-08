@@ -12,7 +12,7 @@ def get_scenario_parser(template_path):
 
     parser = argparse.ArgumentParser(description="Define new scenario parameters")
     parser.add_argument(
-        "--scenario_name", "--name", help="New scenario name", required=True
+        "--scenario_name", "--name", help="New scenario name", default="test_solution"
     )
 
     parser.add_argument(
@@ -20,13 +20,6 @@ def get_scenario_parser(template_path):
         "--service_ecosystem",
         help="Path of ServiceEcosystem.ttl",
         default=path.join(template_path, "input", "ontologies", "ServiceEcosystem.ttl"),
-    )
-
-    parser.add_argument(
-        "-dfd",
-        "--dfd",
-        help="Path of DFD.ttl",
-        default=path.join(template_path, "input", "ontologies", "DFD.ttl"),
     )
 
     parser.add_argument(
@@ -59,6 +52,12 @@ def get_scenario_parser(template_path):
         default=path.join(
             template_path, "input", "adds_constraints", "mandatories.ttl"
         ),
+    )
+    parser.add_argument(
+        "-dfd",
+        "--dfd",
+        help="Path of DFD.ttl",
+        default=path.join(template_path, "input", "ontologies", "DFD.ttl"),
     )
     return parser
 
@@ -118,16 +117,21 @@ def listdirs(path):
 
 def modify_nested_key(data, key_list, new_value):
     """
-    Modifica il valore di una chiave nidificata in un dizionario.
+    Modifica il valore di una chiave (nidificata o non nidificata) in un dizionario.
 
     :param data: Dizionario originale.
     :param key_list: Lista delle chiavi che rappresentano i livelli di nidificazione.
     :param new_value: Nuovo valore da assegnare.
     """
-    current_level = data
-    for key in key_list[:-1]:
-        current_level = current_level.get(key, {})
-    current_level[key_list[-1]] = new_value
+    if len(key_list) == 1:
+        data[key_list[0]] = new_value
+    else:
+        current_level = data
+        for key in key_list[:-1]:
+            if key not in current_level:
+                current_level[key] = {}
+            current_level = current_level[key]
+        current_level[key_list[-1]] = new_value
 
 
 def copy_file(src, dst):

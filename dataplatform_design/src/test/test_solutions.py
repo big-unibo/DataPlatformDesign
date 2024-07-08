@@ -42,9 +42,7 @@ for scenario_directory in test_utils.listdirs(
         scenario_directory, "output", "matched_graph.json"
     )
     selected_graph_path = os.path.join(scenario_directory, "output")
-    solution_path = os.path.join(
-        scenario_directory, "input", "solution", "solution.ttl"
-    )
+    solution_path = config["ontologies"]["solution"]
 
     dataplat_designer = DataPlatformDesigner(
         GRAPHDB_ENDPOINT, GRAPHDB_REPOSITORY, GRAPHDB_NAMED_GRAPH, NAMESPACES
@@ -59,9 +57,13 @@ for scenario_directory in test_utils.listdirs(
     dataplat_designer.load_ontologies(
         [
             (path, namespace)
-            for path, namespace in zip(
-                config["ontologies"]["paths"].values(),
-                config["ontologies"]["namespaces"].values(),
+            for path, namespace in reversed(
+                list(
+                    zip(
+                        config["ontologies"]["paths"].values(),
+                        config["ontologies"]["namespaces"].values(),
+                    )
+                )
             )
         ]
     )
