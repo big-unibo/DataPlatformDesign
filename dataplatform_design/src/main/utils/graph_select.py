@@ -14,6 +14,7 @@ DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
 TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["tag_taxonomy"])
 SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["service_ecosystem"])
 
+
 def normalize_name(name):
     return name.replace(PREFIX, "") if PREFIX in name else name
 
@@ -481,18 +482,31 @@ def select_services(named_graph):
         names=lakehouse_constraint_names,
     )
 
-    # Solve the problem
-    problem.solve()
+    # Generate and populate the solution pool
+    problem.parameters.mip.pool.intensity.set(4)  # Set the pool intensity to high
+    problem.parameters.mip.limits.populate.set(10**6)  # Set a high limit for the pool
+    problem.populate_solution_pool()
 
-    selected_services = []
-    selected_edges = []
+    num_solutions = problem.solution.pool.get_num()
+    print(f"Number of solutions found: {num_solutions}")
 
-    for i, name in enumerate(problem.variables.get_names()):
-        selected = problem.solution.get_values(i)
-        print(f"{name}: {selected}")
-        if "->" in name and selected:
-            selected_edges.append(name)
-        elif selected:
-            selected_services.append(name)
+    all_solutions = []
+    for i in range(num_solutions):
+        selected_services = []
+        selected_edges = []
+        solution_values = problem.solution.pool.get_values(i)
+        for j, name in enumerate(problem.variables.get_names()):
+            selected = solution_values[j]
+            print(f"{name}: {selected}")
+            if "->" in name and selected:
+                selected_edges.append(name)
+            elif selected:
+                selected_services.append(name)
+        all_solutions.append({"services": selected_services, "edges": selected_edges})
 
-    return selected_edges
+    return all_solutions
+
+    # for i, (services, edges) in enumerate(all_solutions):
+    #     print(f"Solution {i+1}:")
+    #     print(f"Services: {services}")
+    #     print(f"Edges: {edges}")

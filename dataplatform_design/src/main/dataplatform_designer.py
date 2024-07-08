@@ -98,48 +98,60 @@ class DataPlatformDesigner:
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
-        solution = graph_select.select_services(named_graph)
-
-        # Foreach new edge, add it to selected_graph
-        selected_graph = utils.setup_graph(self.namespaces)
-        [
-            selected_graph.add(
-                (
-                    URIRef(graph_select.denormalize_name(edge.split("->")[0])),
-                    self.DPDO.selected,
-                    URIRef(graph_select.denormalize_name(edge.split("->")[1])),
+        solutions = graph_select.select_services(named_graph)
+        selected_graphs = []
+        for solution in solutions:
+            solution_output_path = os.path.join(
+                selected_graph_output_path,
+                f"selected_graph_solution_{solutions.index(solution)}.json",
+            )
+            # Foreach new edge, add it to selected_graph
+            solution_selected_graph = utils.setup_graph(self.namespaces)
+            [
+                solution_selected_graph.add(
+                    (
+                        URIRef(graph_select.denormalize_name(edge.split("->")[0])),
+                        self.DPDO.selected,
+                        URIRef(graph_select.denormalize_name(edge.split("->")[1])),
+                    )
                 )
-            )
-            for edge in solution
-        ]
-        logger.info("Printing solution:")
-        for (
-            node,
-            p,
-            service,
-        ) in selected_graph.triples(((None, self.DPDO.selected, None))):
-            logger.info(
-                f"{utils.rdf(selected_graph, node)}, {utils.rdf(selected_graph, p)}, {utils.rdf(selected_graph, service)}"
-            )
-            # Write selected_graph
-        with open(
-            selected_graph_output_path,
-            "w",
-        ) as json_file:
-            json_file.write(selected_graph.serialize(format="json-ld", indent=4))
+                for edge in solution["edges"]
+            ]
+            logger.info(f"\n Printing solution {solutions.index(solution)}:")
+            for (
+                node,
+                p,
+                service,
+            ) in solution_selected_graph.triples(((None, self.DPDO.selected, None))):
+                logger.info(
+                    f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
+                )
+                # Write selected_graph
+            with open(
+                solution_output_path,
+                "w",
+            ) as json_file:
+                json_file.write(
+                    solution_selected_graph.serialize(format="json-ld", indent=4)
+                )
 
-        return selected_graph
+            selected_graphs.append(solution_selected_graph)
 
-    def compare_solution(self, selected_graph, solution_path):
-        expected_solution = utils.setup_graph(self.namespaces)
-        expected_solution.parse(
-            solution_path,
-            format="turtle",
-        )
-        # Compare expected solution with computed solution
-        if not utils.graphs_are_equal(expected_solution, selected_graph):
-            logger.error("Expected and proposed solution don't match!")
-            return False
-        else:
-            logger.info("Expected solution matches proposed solution!")
-            return True
+        return selected_graphs
+
+    def compare_solutions(self, selected_graphs, solution_path):
+        for solution in selected_graphs:
+            logger.info(f"Comparing solution n° {selected_graphs.index(solution)}")
+            expected_solution = utils.setup_graph(self.namespaces)
+            expected_solution.parse(
+                solution_path,
+                format="turtle",
+            )
+            # Compare expected solution with computed solution
+            if utils.graphs_are_equal(expected_solution, solution):
+                logger.info(
+                    f"Expected solution matches solution {selected_graphs.index(solution)}!"
+                )
+                return True
+        logger.warning("No computed solution matches proposed one")
+        return False

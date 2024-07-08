@@ -40,9 +40,7 @@ for scenario_directory in test_utils.listdirs(
     matched_graph_path = os.path.join(
         scenario_directory, "output", "matched_graph.json"
     )
-    selected_graph_path = os.path.join(
-        scenario_directory, "output", "selected_graph.json"
-    )
+    selected_graph_path = os.path.join(scenario_directory, "output")
     solution_path = os.path.join(
         scenario_directory, "input", "solution", "solution.ttl"
     )
@@ -73,11 +71,11 @@ for scenario_directory in test_utils.listdirs(
         matched_graph_path,
     )
 
-    selected_graph = dataplat_designer.build_selected_graph(
+    selected_graphs = dataplat_designer.build_selected_graph(
         matched_graph,
         selected_graph_path,
     )
 
-    result = dataplat_designer.compare_solution(selected_graph, solution_path)
+    result = dataplat_designer.compare_solutions(selected_graphs, solution_path)
 
     assert result, f"Testing {scenario_directory}, result: {result}"
