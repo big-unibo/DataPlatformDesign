@@ -24,8 +24,9 @@ for scenario_directory in test_utils.listdirs(
         scenario_directory.split(os.sep)[-1],
     )
 
+    scenario_config_path = os.path.join(scenario_directory, "configs", "config.yml")
     # Load config
-    config = utils.load_yaml(os.path.join(scenario_directory, "configs", "config.yml"))
+    config = utils.load_yaml(scenario_config_path)
 
     # GraphDB endpoint
     GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
@@ -48,6 +49,8 @@ for scenario_directory in test_utils.listdirs(
     dataplat_designer = DataPlatformDesigner(
         GRAPHDB_ENDPOINT, GRAPHDB_REPOSITORY, GRAPHDB_NAMED_GRAPH, NAMESPACES
     )
+
+    dataplat_designer.setup_config(config)
 
     dataplat_designer.setup_graph_db(
         os.path.join(scenario_directory, "configs", "repo-config.ttl")

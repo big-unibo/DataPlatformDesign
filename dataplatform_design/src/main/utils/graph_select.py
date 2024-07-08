@@ -4,15 +4,22 @@ import itertools
 from cplex import Cplex
 import os
 
-# Load config
+# Load default config
 config = utils.load_yaml(
-    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+    os.path.join(
+        "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
+    )
 )
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
 TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["tag_taxonomy"])
 SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["service_ecosystem"])
+
+
+def setup_config(scenario_config):
+    global config
+    config = scenario_config
 
 
 def normalize_name(name):

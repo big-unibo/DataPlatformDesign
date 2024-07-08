@@ -4,6 +4,8 @@ import shutil
 import yaml
 import argparse
 from os import path
+import logging
+import sys
 
 
 def get_scenario_parser(template_path):
@@ -150,3 +152,19 @@ def modify_yaml(input_path, output_path, key_to_modify, new_value):
     """Writes a dictionary to a YAML file."""
     with open(output_path, "w") as file:
         yaml.safe_dump(data, file)
+
+
+def setup_logger(logger_name, log_level=10):
+    log_format = "[%(asctime)s][%(levelname)s] %(name)s: %(message)s"
+    formatter = logging.Formatter(log_format)
+
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(log_level)
+
+    # Create stream handler to print logs to standard output
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setLevel(log_level)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
+
+    return logger

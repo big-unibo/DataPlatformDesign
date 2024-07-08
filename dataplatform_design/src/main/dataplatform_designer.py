@@ -14,9 +14,12 @@ from utils import utils, graphdb_utils, graph_match, graph_select
 tz = pytz.timezone("Europe/Rome")
 # Setup log
 logger = utils.setup_logger("DataPlat_Design")
+
 # Load config
 config = utils.load_yaml(
-    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+    os.path.join(
+        "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
+    )
 )
 
 
@@ -29,6 +32,12 @@ class DataPlatformDesigner:
         self.DPDO = Namespace(namespaces["dpdo"])
         self.TAG = Namespace(namespaces["tag_taxonomy"])
         self.DFD = Namespace(namespaces["dfd"])
+
+    def setup_config(self, scenario_config):
+        global config
+        config = scenario_config
+        graph_match.setup_config(scenario_config)
+        graph_select.setup_config(scenario_config)
 
     def setup_graph_db(self, repo_config_path):
         graphdb_utils.delete_repository(self.repository, self.endpoint)

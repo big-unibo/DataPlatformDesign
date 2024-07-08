@@ -1,19 +1,22 @@
 import os
-import argparse
 import os
 import test_utils
+import sys
 
-
-template_path = os.path.join("dataplatform_design", "resources")
+template_path = os.path.join("dataplatform_design", "resources", "scenario_template")
 scenarios_directory = os.path.join("dataplatform_design", "src", "test", "scenarios")
 parser = test_utils.get_scenario_parser(template_path)
 
 args = parser.parse_args()
 args_dict = vars(args)
 scenario_name = args.scenario_name
-
+logger = test_utils.setup_logger("DataPlatform_ScenarioCreation")
 # Build scenario directory structure
 new_scenario_path = os.path.join(scenarios_directory, scenario_name)
+
+if os.path.exists(new_scenario_path):
+    logger.exception(f"Scenario {new_scenario_path} alredy exists.")
+    sys.exit(1)
 
 template_structure = {
     "config": f"{template_path}/configs/",
@@ -38,7 +41,7 @@ scenario_resources_path_dict = {
 # Build new scenario directory tree
 for dir_name, dir_path in scenario_resources_path_dict.items():
     os.makedirs(dir_path, exist_ok=True)
-    print(f"Created scenario directory: {dir_path}")
+    logger.info(f"Created scenario directory: {dir_path}")
 
 new_config_path = os.path.join(
     scenario_resources_path_dict["repo_config"], "config.yml"

@@ -7,8 +7,16 @@ from rdflib import Namespace
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")
 # Load config
 config = utils.load_yaml(
-    os.path.join("dataplatform_design", "resources", "configs", "config.yml")
+    os.path.join(
+        "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
+    )
 )
+
+
+def setup_config(scenario_config):
+    global config
+    config = scenario_config
+
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
