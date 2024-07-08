@@ -1,0 +1,113 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix spl:     <http://spinrdf.org/spl#> .
+@base <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO> .
+
+<http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+# http://www.w3.org/2000/01/rdf-schema#label
+
+rdfs:label rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Classes
+#################################################################
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/Service
+DPDO:Service rdf:type owl:Class ;
+            owl:disjointWith DPDO:DFDNode .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/DFDNode
+DPDO:DFDNode rdf:type owl:Class ;
+            owl:disjointWith DPDO:Service .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/Agent
+DPDO:Agent rdf:type owl:Class ;
+           rdfs:subClassOf DPDO:DFDNode .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/Process
+DPDO:Process rdf:type owl:Class ;
+             rdfs:subClassOf DPDO:DFDNode .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/Repository
+DPDO:Repository rdf:type owl:Class ;
+            rdfs:subClassOf DPDO:DFDNode ;
+            rdfs:label "TEST" .
+
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/Tag
+DPDO:Tag rdf:type owl:Class .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#isCompatible
+DPDO:isCompatible rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/flowsData
+DPDO:flowsData rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain DPDO:DFDNode ;
+               rdfs:range DPDO:DFDNode .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/hasTag
+DPDO:hasTag rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range DPDO:Tag .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/implementedBy
+DPDO:implementedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain DPDO:DFDNode ;
+                   rdfs:range DPDO:Service .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/requires
+DPDO:requires rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range DPDO:Service .
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isAkin
+DPDO:isAkin rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range DPDO:Service.
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/selected
+DPDO:selected rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:DFDNode ;
+              rdfs:range DPDO:Service.
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isPreferred
+DPDO:isPreferred rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range xsd:boolean.
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/isMandatory
+DPDO:isMandatory rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range xsd:boolean.
+#################################################################
+#    Data properties
+#################################################################
+
+# http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO/name
+DPDO:name rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range rdfs:Literal .

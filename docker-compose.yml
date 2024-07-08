@@ -1,9 +1,12 @@
 version: "3"
 services:
-  service_selction:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  graphdb:
+    image: khaller/graphdb-free:10.6.2
+    ports:
+      - "7200:7200"
+      - "7300:7300"
+    restart: always
     volumes:
-      - .:/app
-    working_dir: /app
+      - "graphdb_data:/opt/graphdb/home"
+volumes:
+    graphdb_data:

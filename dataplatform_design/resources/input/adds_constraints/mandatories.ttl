@@ -1,0 +1,5 @@
+@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
+@prefix DFD: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#> .
+@prefix ServiceEcosystem: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
+
+ServiceEcosystem:Lakehouse DPDO:isMandatory true .

@@ -1,0 +1,28 @@
+
+
+prefix: "http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/"
+
+graph_db:
+  endpoint: http://127.0.0.1:7200
+  repository: DataPlatformDesign_scenario
+  named_graph: http://dpdo_example.com/DPD_Graph
+
+ontologies:
+  namespaces:
+      dpdo: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#
+      tag_taxonomy: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#
+      service_ecosystem: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#
+      dfd: http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#
+  paths:
+      dpdo: dataplatform_design/resources/input/ontologies/DPDO.ttl
+      tag_taxonomy: dataplatform_design/resources/input/ontologies/TagTaxonomy.ttl
+      service_ecosystem: dataplatform_design/resources/input/ontologies/ServiceEcosystem.ttl
+      dfd: dataplatform_design/resources/input/ontologies/DFD.ttl
+  prefix:
+      dpdo: DPDO
+      tag_taxonomy: TagTaxonomy
+      service_ecosystem: ServiceEcosystem
+      dfd: DFD
+  adds_constraints_paths:
+      preferences: dataplatform_design/resources/input/adds_constraints/preferences.ttl
+      mandatories: dataplatform_design/resources/input/adds_constraints/mandatories.ttl
