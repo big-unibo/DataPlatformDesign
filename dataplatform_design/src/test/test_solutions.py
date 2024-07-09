@@ -67,6 +67,7 @@ for scenario_directory in test_utils.listdirs(
             )
         ]
     )
+
     dataplat_designer.add_constraints(
         config["ontologies"]["adds_constraints_paths"].values()
     )

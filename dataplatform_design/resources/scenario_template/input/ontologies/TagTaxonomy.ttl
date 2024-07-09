@@ -2,226 +2,226 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix TagTaxonomy: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#> .
-@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> .
+@base <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> .
 
-<http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> rdf:type owl:Ontology ;
-    owl:imports <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO>.
+<http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> rdf:type owl:Ontology ;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>.
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Archive
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Archive
 TagTaxonomy:Archive rdf:type owl:Class ;
              rdfs:subClassOf TagTaxonomy:Functionality ;
              rdfs:label "Represents an individual with archive functionality" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Batch
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Batch
 TagTaxonomy:Batch rdf:type owl:Class ;
            rdfs:subClassOf TagTaxonomy:Computing ;
            rdfs:label "Represents an individual with batch computing type" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Big
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Big
 TagTaxonomy:Big rdf:type owl:Class ;
          rdfs:subClassOf TagTaxonomy:Data_Volume ;
          owl:disjointWith TagTaxonomy:Small ;
          rdfs:label "Represents an individual with big data volume" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Classification
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Classification
 TagTaxonomy:Classification rdf:type owl:Class ;
                     rdfs:subClassOf TagTaxonomy:Machine_Learning ;
                     owl:disjointWith TagTaxonomy:Regression ;
                     rdfs:label "Represents an individual with classification (ML) goal" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Collection_Type
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Collection_Type
 TagTaxonomy:Collection_Type rdf:type owl:Class ;
                      rdfs:subClassOf DPDO:Tag ;
                      rdfs:label "Represents an individual with some data collection purposes" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Computing
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Computing
 TagTaxonomy:Computing rdf:type owl:Class ;
                rdfs:subClassOf DPDO:Tag ;
                rdfs:label "Represents an individual with some data computing purposes" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Data_Model
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Model
 TagTaxonomy:Data_Model rdf:type owl:Class ;
                 rdfs:subClassOf DPDO:Tag ;
                 rdfs:label "Represents an individual that works with some data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Data_Nature
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Nature
 TagTaxonomy:Data_Nature rdf:type owl:Class ;
                  rdfs:subClassOf DPDO:Tag ;
                  rdfs:label "Represents an individual that works with data of some nature" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Data_Volume
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Volume
 TagTaxonomy:Data_Volume rdf:type owl:Class ;
                  rdfs:subClassOf DPDO:Tag ;
                  rdfs:label "Represents an individual that works with data of some volume" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Document
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Document
 TagTaxonomy:Document rdf:type owl:Class ;
               rdfs:subClassOf TagTaxonomy:Semi_Structured ;
               owl:disjointWith TagTaxonomy:Wide_Column ;
               rdfs:label "Represents an individual with a document data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/File
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/File
 TagTaxonomy:File rdf:type owl:Class ;
           rdfs:subClassOf TagTaxonomy:Unstructured .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Functionality
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Functionality
 TagTaxonomy:Functionality rdf:type owl:Class ;
                    rdfs:subClassOf DPDO:Tag ;
                    rdfs:label "Represents an individual with a some data functionality" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Goal
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Goal
 TagTaxonomy:Goal rdf:type owl:Class ;
           rdfs:subClassOf DPDO:Tag ;
           rdfs:label "Represents an individual with some goal in terms of data" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Graph
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Graph
 TagTaxonomy:Graph rdf:type owl:Class ;
            rdfs:subClassOf TagTaxonomy:Unstructured ;
            rdfs:label "Represents an individual with a graph data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Key_Value
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Key_Value
 TagTaxonomy:Key_Value rdf:type owl:Class ;
                rdfs:subClassOf TagTaxonomy:Unstructured ;
                rdfs:label "Represents an individual with a key-value data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Landing
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Landing
 TagTaxonomy:Landing rdf:type owl:Class ;
              rdfs:subClassOf TagTaxonomy:Functionality ;
              rdfs:label "Represents an individual with landing functionality" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Machine_Learning
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Machine_Learning
 TagTaxonomy:Machine_Learning rdf:type owl:Class ;
                       rdfs:subClassOf TagTaxonomy:Goal ;
                       rdfs:label "Represents an individual with machine learning's data purposes" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Mini_Batch
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Mini_Batch
 TagTaxonomy:Mini_Batch rdf:type owl:Class ;
                 rdfs:subClassOf TagTaxonomy:Computing ;
                 rdfs:label "Represents an individual with mini-batch computing type" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Multidimensional
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Multidimensional
 TagTaxonomy:Multidimensional rdf:type owl:Class ;
                       rdfs:subClassOf TagTaxonomy:Structured ;
                       owl:disjointWith TagTaxonomy:Relational ;
                       rdfs:label "Represents an individual with a multidimensional data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/OLAP
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/OLAP
 TagTaxonomy:OLAP rdf:type owl:Class ;
           rdfs:subClassOf TagTaxonomy:Goal ;
           rdfs:label "Represents an individual with OLAP data purposes" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Operational
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Operational
 TagTaxonomy:Operational rdf:type owl:Class ;
                  rdfs:subClassOf TagTaxonomy:Goal ;
                  rdfs:label "Represents an individual with operational data purposes" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Processed
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Processed
 TagTaxonomy:Processed rdf:type owl:Class ;
                rdfs:subClassOf TagTaxonomy:Functionality ;
                rdfs:label "Represents an individual with storaging processed data functionality" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Pull
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Pull
 TagTaxonomy:Pull rdf:type owl:Class ;
           rdfs:subClassOf TagTaxonomy:Collection_Type ;
           owl:disjointWith TagTaxonomy:Push ;
           rdfs:label "Represents an individual with pull collection type" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Push
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Push
 TagTaxonomy:Push rdf:type owl:Class ;
           rdfs:subClassOf TagTaxonomy:Collection_Type ;
           rdfs:label "Represents an individual with push collection type" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Raster
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Raster
 TagTaxonomy:Raster rdf:type owl:Class ;
             rdfs:subClassOf TagTaxonomy:Spatial ;
             owl:disjointWith TagTaxonomy:Vectorial ;
             rdfs:label "Represents an individual with a raster spatial data nature" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Regression
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Regression
 TagTaxonomy:Regression rdf:type owl:Class ;
                 rdfs:subClassOf TagTaxonomy:Machine_Learning ;
                 rdfs:label "Represents an individual with machine learning regression data purposes" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Relational
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Relational
 TagTaxonomy:Relational rdf:type owl:Class ;
                 rdfs:subClassOf TagTaxonomy:Structured ;
                 rdfs:label "Represents an individual with a relational structured data model" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Semi_Structured
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Semi_Structured
 TagTaxonomy:Semi_Structured rdf:type owl:Class ;
                      rdfs:subClassOf TagTaxonomy:Data_Model ;
                      rdfs:label "Represents an individual with a semi structured data model" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Small
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Small
 TagTaxonomy:Small rdf:type owl:Class ;
            rdfs:subClassOf TagTaxonomy:Data_Volume ;
            rdfs:label "Represents an individual with small data volume" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Spatial
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Spatial
 TagTaxonomy:Spatial rdf:type owl:Class ;
              rdfs:subClassOf TagTaxonomy:Data_Nature ;
              owl:disjointWith TagTaxonomy:Temporal ;
              rdfs:label "Represents an individual with a spatial data nature" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Streaming
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Streaming
 TagTaxonomy:Streaming rdf:type owl:Class ;
                rdfs:subClassOf TagTaxonomy:Computing ;
                rdfs:label "Represents an individual with streaming computing type" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Structured
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Structured
 TagTaxonomy:Structured rdf:type owl:Class ;
                 rdfs:subClassOf TagTaxonomy:Data_Model ;
                 rdfs:label "Represents an individual with a structured data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Temporal
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Temporal
 TagTaxonomy:Temporal rdf:type owl:Class ;
               rdfs:subClassOf TagTaxonomy:Data_Nature ;
               rdfs:label "Represents an individual with a temporal data nature" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Unstructured
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Unstructured
 TagTaxonomy:Unstructured rdf:type owl:Class ;
                   rdfs:subClassOf TagTaxonomy:Data_Model ;
                   rdfs:label "Represents an individual with a unstructured data model" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Vectorial
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Vectorial
 TagTaxonomy:Vectorial rdf:type owl:Class ;
                rdfs:subClassOf TagTaxonomy:Spatial ;
                rdfs:label "Represents an individual with a vectorial spatial data nature" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy/Wide_column
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Wide_column
 TagTaxonomy:Wide_column rdf:type owl:Class ;
                  rdfs:subClassOf TagTaxonomy:Semi_Structured ;
                  rdfs:label "Represents an individual with a wide column data model" .
@@ -231,141 +231,141 @@ TagTaxonomy:Wide_column rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Archive
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive
 TagTaxonomy:Archive rdf:type owl:NamedIndividual ,
                   TagTaxonomy:Functionality .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Batch
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch
 TagTaxonomy:Batch rdf:type owl:NamedIndividual ,
                 TagTaxonomy:Computing .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Big
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big
 TagTaxonomy:Big rdf:type owl:NamedIndividual ,
               TagTaxonomy:Data_Volume .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Classification
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification
 TagTaxonomy:Classification rdf:type owl:NamedIndividual ,
                          TagTaxonomy:Machine_Learning .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Document
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document
 TagTaxonomy:Document rdf:type owl:NamedIndividual ,
                    TagTaxonomy:Semi_Structured .
 
 
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#File
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File
 TagTaxonomy:File rdf:type owl:NamedIndividual ,
                TagTaxonomy:Unstructured .
 
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Graph
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph
 TagTaxonomy:Graph rdf:type owl:NamedIndividual ,
                 TagTaxonomy:Unstructured .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Key_Value
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value
 TagTaxonomy:Key_Value rdf:type owl:NamedIndividual ,
                     TagTaxonomy:Unstructured .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Landing
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing
 TagTaxonomy:Landing rdf:type owl:NamedIndividual ,
                   TagTaxonomy:Functionality .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Machine_Learning
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning
 TagTaxonomy:Machine_Learning rdf:type owl:NamedIndividual ,
                            TagTaxonomy:Goal .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Mini_Batch
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch
 TagTaxonomy:Mini_Batch rdf:type owl:NamedIndividual ,
                      TagTaxonomy:Computing .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Multidimensional
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional
 TagTaxonomy:Multidimensional rdf:type owl:NamedIndividual ,
                            TagTaxonomy:Structured .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#OLAP
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#OLAP
 TagTaxonomy:OLAP rdf:type owl:NamedIndividual ,
                TagTaxonomy:Goal .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Operational
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational
 TagTaxonomy:Operational rdf:type owl:NamedIndividual ,
                       TagTaxonomy:Goal .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Processed
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed
 TagTaxonomy:Processed rdf:type owl:NamedIndividual ,
                     TagTaxonomy:Functionality .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Pull
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull
 TagTaxonomy:Pull rdf:type owl:NamedIndividual ,
                TagTaxonomy:Collection_Type .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Push
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push
 TagTaxonomy:Push rdf:type owl:NamedIndividual ,
                TagTaxonomy:Collection_Type .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Raster
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster
 TagTaxonomy:Raster rdf:type owl:NamedIndividual ,
                  TagTaxonomy:Spatial .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Regression
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression
 TagTaxonomy:Regression rdf:type owl:NamedIndividual ,
                      TagTaxonomy:Machine_Learning .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Relational
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational
 TagTaxonomy:Relational rdf:type owl:NamedIndividual ,
                      TagTaxonomy:Structured .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Semi_Structured
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured
 TagTaxonomy:Semi_Structured rdf:type owl:NamedIndividual ,
                           TagTaxonomy:Data_Model .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Small
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small
 TagTaxonomy:Small rdf:type owl:NamedIndividual ,
                 TagTaxonomy:Data_Volume .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Spatial
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial
 TagTaxonomy:Spatial rdf:type owl:NamedIndividual ,
                   TagTaxonomy:Data_Nature .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Streaming
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming
 TagTaxonomy:Streaming rdf:type owl:NamedIndividual ,
                     TagTaxonomy:Computing .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Structured
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured
 TagTaxonomy:Structured rdf:type owl:NamedIndividual ,
                      TagTaxonomy:Data_Model .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Temporal
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal
 TagTaxonomy:Temporal rdf:type owl:NamedIndividual ,
                    TagTaxonomy:Data_Nature .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Vectorial
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial
 TagTaxonomy:Vectorial rdf:type owl:NamedIndividual ,
                     TagTaxonomy:Spatial .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#Wide_Column
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_Column
 TagTaxonomy:Wide_Column rdf:type owl:NamedIndividual ,
                       TagTaxonomy:Semi_Structured .

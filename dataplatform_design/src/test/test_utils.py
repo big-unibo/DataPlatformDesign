@@ -116,13 +116,6 @@ def listdirs(path):
 
 
 def modify_nested_key(data, key_list, new_value):
-    """
-    Modifica il valore di una chiave (nidificata o non nidificata) in un dizionario.
-
-    :param data: Dizionario originale.
-    :param key_list: Lista delle chiavi che rappresentano i livelli di nidificazione.
-    :param new_value: Nuovo valore da assegnare.
-    """
     if len(key_list) == 1:
         data[key_list[0]] = new_value
     else:

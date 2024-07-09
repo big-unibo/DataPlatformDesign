@@ -2,17 +2,17 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ServiceEcosystem: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
-@prefix TagTaxonomy: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#> .
-@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> .
+@base <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
 
-<http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#> rdf:type owl:Ontology ;
-    owl:imports <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO>,
-                <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> .
+<http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> rdf:type owl:Ontology ;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EC2
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2
 ServiceEcosystem:EC2 rdf:type owl:NamedIndividual ,
                 DPDO:Service ;
                 DPDO:isCompatible   ServiceEcosystem:EBS,
@@ -20,7 +20,7 @@ ServiceEcosystem:EC2 rdf:type owl:NamedIndividual ,
                     ServiceEcosystem:S3;
                 DPDO:name "EC2" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EBS
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS
 ServiceEcosystem:EBS rdf:type owl:NamedIndividual ,
                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:File ,
@@ -33,7 +33,7 @@ ServiceEcosystem:EBS rdf:type owl:NamedIndividual ,
                     ServiceEcosystem:S3;
                 DPDO:name "EBS" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EFS
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EFS
 ServiceEcosystem:EFS rdf:type owl:NamedIndividual ,
                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:File ,
@@ -47,7 +47,7 @@ ServiceEcosystem:EFS rdf:type owl:NamedIndividual ,
                     ServiceEcosystem:S3;
                 DPDO:name "EFS" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Glue
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue
 ServiceEcosystem:Glue rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Relational ,
@@ -67,7 +67,7 @@ ServiceEcosystem:Glue rdf:type owl:NamedIndividual ,
                                 ServiceEcosystem:Redshift;
             DPDO:name "Glue" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#RDS
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS
 ServiceEcosystem:RDS rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Relational ,
@@ -83,7 +83,7 @@ ServiceEcosystem:RDS rdf:type owl:NamedIndividual ,
                                 ServiceEcosystem:Lambda;
             DPDO:name "RDS" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Sagemaker
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker
 ServiceEcosystem:Sagemaker rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Classification ,
@@ -102,7 +102,7 @@ ServiceEcosystem:Sagemaker rdf:type owl:NamedIndividual ,
                                 ServiceEcosystem:Redshift;
             DPDO:name "Sagemaker" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#EMR
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR
 ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Machine_Learning ,
@@ -119,7 +119,7 @@ ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
                                 ServiceEcosystem:Redshift;
             DPDO:name "EMR" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#GeoServer
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer
 ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
            DPDO:isCompatible ServiceEcosystem:EMR ,
@@ -138,7 +138,7 @@ ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
                          ServiceEcosystem:S3 ;
             DPDO:name "GeoServer" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Athena
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena
 ServiceEcosystem:Athena rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
            DPDO:isCompatible ServiceEcosystem:Glue ,
@@ -152,7 +152,7 @@ ServiceEcosystem:Athena rdf:type owl:NamedIndividual ,
                        TagTaxonomy:OLAP ;
             DPDO:name "Athena" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#DynamoDB
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB
 ServiceEcosystem:DynamoDB rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
            DPDO:isCompatible ServiceEcosystem:Kinesis ,
@@ -167,7 +167,7 @@ ServiceEcosystem:DynamoDB rdf:type owl:NamedIndividual ,
                        TagTaxonomy:Archive ;
             DPDO:name "DynamoDB" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Kinesis
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis
 ServiceEcosystem:Kinesis rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
                     DPDO:hasTag TagTaxonomy:Small ,
@@ -181,7 +181,7 @@ ServiceEcosystem:Kinesis rdf:type owl:NamedIndividual ,
                   
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lakehouse
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lakehouse
 ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
            DPDO:hasTag TagTaxonomy:Big ,
@@ -190,7 +190,7 @@ ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual ,
                        TagTaxonomy:Structured ;
             DPDO:name "Lakehouse" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Lambda
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda
 ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
                                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:Small ,
@@ -212,7 +212,7 @@ ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
                             ServiceEcosystem:Sagemaker;
                  DPDO:name "Lambda" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#PostGIS
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS
 ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
          DPDO:isCompatible ServiceEcosystem:EMR ,
@@ -228,7 +228,7 @@ ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
          DPDO:name "PostGIS" .
 
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Postgres
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres
 ServiceEcosystem:Postgres rdf:type owl:NamedIndividual ,
                    DPDO:Service ;
           DPDO:hasTag TagTaxonomy:Archive ,
@@ -240,7 +240,7 @@ ServiceEcosystem:Postgres rdf:type owl:NamedIndividual ,
                       TagTaxonomy:Small ;
         DPDO:name "Postgres" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#Redshift
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift
 ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
                    DPDO:Service ;
           DPDO:isCompatible ServiceEcosystem:PostGIS ,
@@ -254,7 +254,7 @@ ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
                       TagTaxonomy:Small ;
         DPDO:name "Redshift" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/ServiceEcosystem#S3
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3
 ServiceEcosystem:S3 rdf:type owl:NamedIndividual ,
                  DPDO:Service ;
         DPDO:hasTag TagTaxonomy:Archive ,

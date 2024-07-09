@@ -2,17 +2,17 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix DPDO: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO#> .
-@prefix DFD: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#> .
-@prefix TagTaxonomy: <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD> .
+@base <http://www.foo.bar/dataplatform_design/ontologies/DFD> .
 
-<http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD> rdf:type owl:Ontology ;
-    owl:imports <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DPDO>,
-                <http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/TagTaxonomy> .
+<http://www.foo.bar/dataplatform_design/ontologies/DFD> rdf:type owl:Ontology ;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Sensor_Data
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Sensor_Data
 DFD:Sensor_Data rdf:type owl:NamedIndividual ,
                       DPDO:Repository ;
              DPDO:flowsData DFD:Data_Enrichment ;
@@ -22,7 +22,7 @@ DFD:Sensor_Data rdf:type owl:NamedIndividual ,
                          TagTaxonomy:Landing ;
              DPDO:name "Sensor Data" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Raw_Images
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Raw_Images
 DFD:Raw_Images rdf:type owl:NamedIndividual ,
                      DPDO:Repository ;
             DPDO:flowsData DFD:Index_Comp ;
@@ -33,7 +33,7 @@ DFD:Raw_Images rdf:type owl:NamedIndividual ,
                         TagTaxonomy:Raster ;
             DPDO:name "Raw Images" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Data_Enrichment
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Data_Enrichment
 DFD:Data_Enrichment rdf:type owl:NamedIndividual ,
                         DPDO:Process ;
                     DPDO:hasTag TagTaxonomy:Small ,
@@ -41,7 +41,7 @@ DFD:Data_Enrichment rdf:type owl:NamedIndividual ,
                     DPDO:flowsData DFD:Integrated_Data ;
                     DPDO:name "Data Enrichment" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Index_Comp.
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Index_Comp.
 DFD:Index_Comp rdf:type owl:NamedIndividual ,
                     DPDO:Process ;
         DPDO:flowsData DFD:Integrated_Data ;
@@ -49,7 +49,7 @@ DFD:Index_Comp rdf:type owl:NamedIndividual ,
                     TagTaxonomy:Big ;
         DPDO:name: "Index Comp." .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Integrated_Data
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data
 DFD:Integrated_Data rdf:type owl:NamedIndividual ,
                           DPDO:Repository ;
                  DPDO:flowsData DFD:ETL ,
@@ -59,7 +59,7 @@ DFD:Integrated_Data rdf:type owl:NamedIndividual ,
                              TagTaxonomy:Vectorial ;
                  DPDO:name "Integrated Data." .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#ETL
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#ETL
 DFD:ETL rdf:type owl:NamedIndividual ,
               DPDO:Process ;
             DPDO:flowsData DFD:DWH ;
@@ -67,14 +67,14 @@ DFD:ETL rdf:type owl:NamedIndividual ,
                         TagTaxonomy:Batch ;
             DPDO:name "ETL" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#DWH
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#DWH
 DFD:DWH rdf:type owl:NamedIndividual ,
               DPDO:Repository ;
      DPDO:hasTag TagTaxonomy:Multidimensional ,
                  TagTaxonomy:OLAP ;
     DPDO:name "DWH" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Download
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Download
 DFD:Download rdf:type owl:NamedIndividual ,
               DPDO:Process ;
             DPDO:hasTag TagTaxonomy:Pull ,
@@ -82,7 +82,7 @@ DFD:Download rdf:type owl:NamedIndividual ,
             DPDO:flowsData DFD:Raw_Images ;
             DPDO:name "Download image data" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Consume
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Consume
 DFD:Consume rdf:type owl:NamedIndividual ,
               DPDO:Process ;
             DPDO:hasTag TagTaxonomy:Push ,
@@ -90,7 +90,7 @@ DFD:Consume rdf:type owl:NamedIndividual ,
             DPDO:flowsData DFD:Sensor_Data ;
             DPDO:name "Consume sensor data" .
 
-###  http://www.semanticweb.org/manuele.pasini2/ontologies/2024/4/DFD#Irrigation_Opt
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Irrigation_Opt
 DFD:Irrigation_Opt rdf:type owl:NamedIndividual ,
                 DPDO:Process ;
                 DPDO:hasTag TagTaxonomy:Batch ,
