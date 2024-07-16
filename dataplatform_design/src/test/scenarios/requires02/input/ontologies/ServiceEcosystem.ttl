@@ -113,18 +113,17 @@ ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
             DPDO:name "EMR" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer
-ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
+ServiceEcosystem:S3 rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
-           DPDO:isCompatible ServiceEcosystem:EMR ,
-                         ServiceEcosystem:Kinesis ,
-                         ServiceEcosystem:S3 ,
-                         ServiceEcosystem:Sagemaker;
-           DPDO:hasTag TagTaxonomy:Data_Zones_all ,
-                       TagTaxonomy:Data_Volume_all ,
-                       TagTaxonomy:File ,
-                       TagTaxonomy:Spatial ;
-           DPDO:requires ServiceEcosystem:EC2 ,
-                         ServiceEcosystem:S3 ;
+            DPDO:isCompatible ServiceEcosystem:EMR ,
+                        ServiceEcosystem:Kinesis ,
+                        ServiceEcosystem:S3 ,
+                        ServiceEcosystem:Sagemaker;
+            DPDO:hasTag TagTaxonomy:Data_Zones_all ,
+                        TagTaxonomy:Data_Volume_all ,
+                        TagTaxonomy:File ;
+            DPDO:requires ServiceEcosystem:EC2 ,
+                        ServiceEcosystem:S3 ;
             DPDO:name "GeoServer" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena

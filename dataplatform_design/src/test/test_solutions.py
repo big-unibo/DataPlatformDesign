@@ -104,5 +104,8 @@ class TestStringMethods(unittest.TestCase):
     def test_requires01(self):
         test_scenarioI(self, get_path("requires01"))
 
+    def test_requires02(self):
+        test_scenarioI(self, get_path("requires02"))
+
     def test_ico(self):
         test_scenarioI(self, get_path("ico"))

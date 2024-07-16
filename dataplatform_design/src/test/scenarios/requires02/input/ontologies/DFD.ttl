@@ -15,7 +15,6 @@
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Raw_Images
 DFD:Raw_Images rdf:type owl:NamedIndividual ,
                      DPDO:Repository ;
-            DPDO:flowsData DFD:Index_Comp ;
             DPDO:hasTag TagTaxonomy:Big ,
                         TagTaxonomy:Landing ;
             DPDO:name "Raw Images" .
