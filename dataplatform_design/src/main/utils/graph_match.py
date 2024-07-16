@@ -80,27 +80,51 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
 
 def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
     match_query = f"""
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX drl: <http://example.org/drl/>
-        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-        INSERT
-        {{
-            GRAPH <{named_graph_uri}>
-            {{
+
+        INSERT {{
+                GRAPH <{named_graph_uri}> {{
                 ?node <{DPDO.implementedBy}> ?service .
+                }}
             }}
-        }}
         WHERE {{
             ?node rdf:type <{DPDO.DFDNode}> .
             ?node <{DPDO.hasTag}> ?nodeTag .
+
             ?service rdf:type <{DPDO.Service}> .
             ?service <{DPDO.hasTag}> ?serviceTag .
+
+            ?nodeTag a ?dfd_tag_class .
+            ?serviceTag a ?service_tag_class .
+
+    		?service_tag_clas rdfs:subClassOf <{DPDO.Tag}> .
+    		?dfd_tag_class rdfs:subClassOf <{DPDO.Tag}> .
+
+            FILTER NOT EXISTS {{
+                ?more_specific_service_class rdfs:subClassOf ?service_tag_class .
+                ?serviceTag rdf:type ?more_specific_service_class .
+            }}
+
+            ?dfd_tag_class rdfs:subClassOf* ?service_tag_class .
+
             FILTER NOT EXISTS {{
                 ?node <{DPDO.hasTag}> ?tag .
                 FILTER NOT EXISTS {{
-                    ?service <{DPDO.hasTag}> ?service_tag .
-                    ?tag rdfs:subClassOf* ?service_tag .
-                }}
+            		?service <{DPDO.hasTag}> ?service_tag .
+                    ?tag a ?not_service_tag_class .
+                    ?service_tag a ?not_dfd_tag_class .
+
+            		?not_service_tag_class rdfs:subClassOf <{DPDO.Tag}> .
+            		?not_dfd_tag_class rdfs:subClassOf <{DPDO.Tag}> .
+
+                    ?not_dfd_tag_class rdfs:subClassOf* ?not_service_tag_class .
+
+                    FILTER NOT EXISTS {{
+                            ?more_specific_service_class rdfs:subClassOf ?not_service_tag_class .
+                            ?service_tag rdf:type ?more_specific_service_class .
+                        }}
+               }}
             }}
         }}
     """
@@ -128,6 +152,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
 
 
 def save_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
+
     matched_graph_query = f"""
         SELECT ?node ?p ?o
         WHERE {{

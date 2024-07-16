@@ -72,16 +72,22 @@ for scenario_directory in test_utils.listdirs(
         config["ontologies"]["adds_constraints_paths"].values()
     )
 
+    # Building matched graph
     matched_graph = dataplat_designer.build_matched_graph(
         config["ontologies"]["paths"]["dpdo"],
         matched_graph_path,
     )
 
+    # Augmenting matched graph
+    matched_graph = dataplat_designer.augment_graph(matched_graph)
+
+    # Building selected graph
     selected_graphs = dataplat_designer.build_selected_graph(
         matched_graph,
         selected_graph_path,
     )
 
+    # Compare solution to given one
     result = dataplat_designer.compare_solutions(selected_graphs, solution_path)
 
     assert result, f"Testing {scenario_directory}, result: {result}"

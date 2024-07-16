@@ -24,8 +24,7 @@ ServiceEcosystem:EC2 rdf:type owl:NamedIndividual ,
 ServiceEcosystem:EBS rdf:type owl:NamedIndividual ,
                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:File ,
-                    TagTaxonomy:Small ,
-                    TagTaxonomy:Big ,
+                    TagTaxonomy:Data_Volume_all,
                     TagTaxonomy:Archive ,
                     TagTaxonomy:Landing ;
                 DPDO:isCompatible
@@ -37,26 +36,27 @@ ServiceEcosystem:EBS rdf:type owl:NamedIndividual ,
 ServiceEcosystem:EFS rdf:type owl:NamedIndividual ,
                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:File ,
-                    TagTaxonomy:Small ,
-                    TagTaxonomy:Big ,
-                    TagTaxonomy:Archive ,
-                    TagTaxonomy:Processed ,
-                    TagTaxonomy:Landing ;
+                    TagTaxonomy:Data_Volume_all,
+                    TagTaxonomy:Functionality_all ;
                 DPDO:isCompatible   ServiceEcosystem:EBS,
                     ServiceEcosystem:Kinesis,
                     ServiceEcosystem:S3;
                 DPDO:name "EFS" .
 
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader
+ServiceEcosystem:Databricks_Autoloader rdf:type owl:NamedIndividual ,
+                DPDO:Service ;
+                DPDO:hasTag TagTaxonomy:Computing_all .
+
+
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue
 ServiceEcosystem:Glue rdf:type owl:NamedIndividual ,
-              DPDO:Service ;
-            DPDO:hasTag TagTaxonomy:Relational ,
-                        TagTaxonomy:Multidimensional ,
+                                DPDO:Service ;
+            DPDO:hasTag TagTaxonomy:Structured,
                         TagTaxonomy:Document ,
                         TagTaxonomy:Big ,
                         TagTaxonomy:Pull ,
                         TagTaxonomy:Batch ,
-                        TagTaxonomy:Streaming ,
                         TagTaxonomy:Mini_Batch ;
             DPDO:isCompatible   ServiceEcosystem:DynamoDB,
                                 ServiceEcosystem:Kinesis,
@@ -70,14 +70,10 @@ ServiceEcosystem:Glue rdf:type owl:NamedIndividual ,
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS
 ServiceEcosystem:RDS rdf:type owl:NamedIndividual ,
               DPDO:Service ;
-            DPDO:hasTag TagTaxonomy:Relational ,
-                        TagTaxonomy:Multidimensional ,
-                        TagTaxonomy:Small ,
-                        TagTaxonomy:Big ,
+            DPDO:hasTag TagTaxonomy:Structured,
+                        TagTaxonomy:Data_Volume_all,
                         TagTaxonomy:Operational ,
-                        TagTaxonomy:Landing ,
-                        TagTaxonomy:Archive ,
-                        TagTaxonomy:Processed ;
+                        TagTaxonomy:Data_Zones_all;
             DPDO:requires ServiceEcosystem:EC2 ;
             DPDO:isCompatible   ServiceEcosystem:S3,
                                 ServiceEcosystem:Lambda;
@@ -88,10 +84,8 @@ ServiceEcosystem:Sagemaker rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Classification ,
                         TagTaxonomy:Regression ,
-                        TagTaxonomy:Small ,
-                        TagTaxonomy:Big ,
+                        TagTaxonomy:Data_Volume_all,
                         TagTaxonomy:Clustering ,
-                        TagTaxonomy:Pull ,
                         TagTaxonomy:Batch ;
             DPDO:isCompatible   ServiceEcosystem:S3,
                                 ServiceEcosystem:Lambda,
@@ -107,8 +101,7 @@ ServiceEcosystem:EMR rdf:type owl:NamedIndividual ,
               DPDO:Service ;
             DPDO:hasTag TagTaxonomy:Machine_Learning ,
                         TagTaxonomy:Big ,
-                        TagTaxonomy:Batch ,
-                        TagTaxonomy:Pull ;
+                        TagTaxonomy:Batch ;
             DPDO:requires ServiceEcosystem:EC2 ;
             DPDO:isCompatible   ServiceEcosystem:DynamoDB,
                                 ServiceEcosystem:EC2,
@@ -126,14 +119,10 @@ ServiceEcosystem:GeoServer rdf:type owl:NamedIndividual ,
                          ServiceEcosystem:Kinesis ,
                          ServiceEcosystem:S3 ,
                          ServiceEcosystem:Sagemaker;
-           DPDO:hasTag TagTaxonomy:Archive ,
-                       TagTaxonomy:Big ,
-                       TagTaxonomy:Landing ,
-                       TagTaxonomy:Processed ,
-                       TagTaxonomy:Raster ,
-                       TagTaxonomy:Small ,
+           DPDO:hasTag TagTaxonomy:Data_Zones_all ,
+                       TagTaxonomy:Data_Volume_all ,
                        TagTaxonomy:File ,
-                       TagTaxonomy:Vectorial ;
+                       TagTaxonomy:Spatial ;
            DPDO:requires ServiceEcosystem:EC2 ,
                          ServiceEcosystem:S3 ;
             DPDO:name "GeoServer" .
@@ -149,7 +138,7 @@ ServiceEcosystem:Athena rdf:type owl:NamedIndividual ,
                        TagTaxonomy:Document ,
                        TagTaxonomy:Key_Value ,
                        TagTaxonomy:Big ,
-                       TagTaxonomy:OLAP ;
+                       TagTaxonomy:Reporting ;
             DPDO:name "Athena" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB
@@ -159,10 +148,8 @@ ServiceEcosystem:DynamoDB rdf:type owl:NamedIndividual ,
                          ServiceEcosystem:Redshift ,
                          ServiceEcosystem:S3 ,
                          ServiceEcosystem:Lambda;
-           DPDO:hasTag TagTaxonomy:Small ,
-                       TagTaxonomy:Document ,
-                       TagTaxonomy:Wide_Column ,
-                       TagTaxonomy:Big ,
+           DPDO:hasTag TagTaxonomy:Data_Volume_all ,
+                       TagTaxonomy:Semi_Structured,
                        TagTaxonomy:Processed ,
                        TagTaxonomy:Archive ;
             DPDO:name "DynamoDB" .
@@ -170,35 +157,33 @@ ServiceEcosystem:DynamoDB rdf:type owl:NamedIndividual ,
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis
 ServiceEcosystem:Kinesis rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
-                    DPDO:hasTag TagTaxonomy:Small ,
-                        TagTaxonomy:Big ,
+                    DPDO:hasTag TagTaxonomy:Data_Volume_all,
                         TagTaxonomy:Push ,
                         TagTaxonomy:Mini_Batch ,
                         TagTaxonomy:Streaming ;
                     DPDO:isCompatible ServiceEcosystem:Lambda ,
                         ServiceEcosystem:S3 ;
                   DPDO:name "Kinesis" .
-                  
+
 
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lakehouse
 ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual ,
                     DPDO:Service ;
-           DPDO:hasTag TagTaxonomy:Big ,
+           DPDO:hasTag TagTaxonomy:Data_Volume_all ,
                        TagTaxonomy:File ,
-                       TagTaxonomy:Small ,
                        TagTaxonomy:Structured ;
+            DPDO:requires ServiceEcosystem:S3;
             DPDO:name "Lakehouse" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda
 ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
                                 DPDO:Service ;
                 DPDO:hasTag TagTaxonomy:Small ,
-                            TagTaxonomy:Pull ,
-                            TagTaxonomy:Push ,
+                            TagTaxonomy:Collection_all ,
                             TagTaxonomy:Batch ,
                             TagTaxonomy:Mini_Batch ,
-                            TagTaxonomy:Push ;
+                            TagTaxonomy:Functionality_all;
                 DPDO:isCompatible ServiceEcosystem:EMR ,
                             ServiceEcosystem:Kinesis ,
                             ServiceEcosystem:S3 ,
@@ -212,16 +197,24 @@ ServiceEcosystem:Lambda rdf:type owl:NamedIndividual ,
                             ServiceEcosystem:Sagemaker;
                  DPDO:name "Lambda" .
 
+
+###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job
+ServiceEcosystem:Databricks_Job rdf:type owl:NamedIndividual ,
+                                DPDO:Service ;
+                    DPDO:hasTag
+                        TagTaxonomy:Big ,
+                        TagTaxonomy:Batch .
+
+
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS
 ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
                   DPDO:Service ;
          DPDO:isCompatible ServiceEcosystem:EMR ,
                        ServiceEcosystem:Lambda ,
                        ServiceEcosystem:Sagemaker ;
-         DPDO:hasTag TagTaxonomy:Big ,
+         DPDO:hasTag TagTaxonomy:Data_Volume_all ,
                      TagTaxonomy:Operational ,
                      TagTaxonomy:Relational ,
-                     TagTaxonomy:Small ,
                      TagTaxonomy:Vectorial ,
                      TagTaxonomy:Landing ;
          DPDO:requires ServiceEcosystem:EC2 ;
@@ -231,13 +224,10 @@ ServiceEcosystem:PostGIS rdf:type owl:NamedIndividual ,
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres
 ServiceEcosystem:Postgres rdf:type owl:NamedIndividual ,
                    DPDO:Service ;
-          DPDO:hasTag TagTaxonomy:Archive ,
-                      TagTaxonomy:Big ,
-                      TagTaxonomy:Landing ,
+          DPDO:hasTag TagTaxonomy:Data_Zones_all,
                       TagTaxonomy:Operational ,
-                      TagTaxonomy:Processed ,
                       TagTaxonomy:Relational ,
-                      TagTaxonomy:Small ;
+                      TagTaxonomy:Data_Volume_all ;
         DPDO:name "Postgres" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift
@@ -247,21 +237,17 @@ ServiceEcosystem:Redshift rdf:type owl:NamedIndividual ,
                             ServiceEcosystem:DynamoDB,
                             ServiceEcosystem:Glue,
                             ServiceEcosystem:RDS ;
-          DPDO:hasTag TagTaxonomy:Big ,
+          DPDO:hasTag TagTaxonomy:Data_Volume_all ,
                       TagTaxonomy:Multidimensional ,
-                      TagTaxonomy:OLAP ,
-                      TagTaxonomy:Processed ,
-                      TagTaxonomy:Small ;
+                      TagTaxonomy:Reporting ,
+                      TagTaxonomy:Processed ;
         DPDO:name "Redshift" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3
 ServiceEcosystem:S3 rdf:type owl:NamedIndividual ,
                  DPDO:Service ;
-        DPDO:hasTag TagTaxonomy:Archive ,
-                    TagTaxonomy:Big ,
-                    TagTaxonomy:Landing ,
+        DPDO:hasTag TagTaxonomy:Data_Zones_all,
                     TagTaxonomy:Operational ,
-                    TagTaxonomy:Processed ,
-                    TagTaxonomy:Small ,
+                    TagTaxonomy:Data_Volume_all ,
                     TagTaxonomy:File ;
         DPDO:name "S3" .

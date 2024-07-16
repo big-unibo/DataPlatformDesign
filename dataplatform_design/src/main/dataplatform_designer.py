@@ -9,7 +9,7 @@ sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
 )
 
-from utils import utils, graphdb_utils, graph_match, graph_select
+from utils import utils, graphdb_utils, graph_match, graph_select, graph_augment
 
 # Timezone
 tz = pytz.timezone("Europe/Rome")
@@ -30,6 +30,7 @@ class DataPlatformDesigner:
         self.repository = repository
         self.named_graph = named_graph
         self.namespaces = namespaces
+        self.selection_constraints = []
         self.DPDO = Namespace(namespaces["dpdo"])
         self.TAG = Namespace(namespaces["tag_taxonomy"])
         self.DFD = Namespace(namespaces["dfd"])
@@ -39,6 +40,10 @@ class DataPlatformDesigner:
         config = scenario_config
         graph_match.setup_config(scenario_config)
         graph_select.setup_config(scenario_config)
+        graph_augment.setup_config(scenario_config)
+
+    def add_selection_constraint(self, constraint):
+        self.selection_constraints.append(constraint)
 
     def setup_graph_db(self, repo_config_path):
         graphdb_utils.delete_repository(self.repository, self.endpoint)
@@ -47,7 +52,6 @@ class DataPlatformDesigner:
         )
 
     def load_ontologies(self, ontologies):
-        print(ontologies)
         if not all(
             ontology
             for ontology in [
@@ -109,7 +113,7 @@ class DataPlatformDesigner:
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
-        solutions = graph_select.select_services(named_graph)
+        solutions = graph_select.select_services(named_graph, constraints)
         selected_graphs = []
         for solution in solutions:
             solution_output_path = os.path.join(
@@ -128,16 +132,16 @@ class DataPlatformDesigner:
                 )
                 for edge in solution["edges"]
             ]
-            logger.info(f"\n Printing solution {solutions.index(solution)}:")
-            for (
-                node,
-                p,
-                service,
-            ) in solution_selected_graph.triples(((None, self.DPDO.selected, None))):
-                logger.info(
-                    f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
-                )
-                # Write selected_graph
+            # logger.info(f"\n Printing solution {solutions.index(solution)}:")
+            # for (
+            #     node,
+            #     p,
+            #     service,
+            # ) in solution_selected_graph.triples(((None, self.DPDO.selected, None))):
+            #     logger.info(
+            #         f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
+            #     )
+            # Write selected_graph
             with open(
                 solution_output_path,
                 "w",
@@ -149,6 +153,9 @@ class DataPlatformDesigner:
             selected_graphs.append(solution_selected_graph)
 
         return selected_graphs
+
+    def augment_graph(self, graph):
+        return graph_augment.augment_graph(graph)
 
     def compare_solutions(self, selected_graphs, solution_path):
         for solution in selected_graphs:

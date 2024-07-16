@@ -101,8 +101,9 @@ DPDO:isPreferred rdf:type owl:ObjectProperty;
 # http://www.foo.bar/dataplatform_design/ontologies/DPDO/isMandatory
 DPDO:isMandatory rdf:type owl:ObjectProperty;
               rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain DPDO:Service ;
-              rdfs:range xsd:boolean.
+              rdfs:domain DPDO:DFDNode ;
+              rdfs:range DPDO:Service .
+
 #################################################################
 #    Data properties
 #################################################################

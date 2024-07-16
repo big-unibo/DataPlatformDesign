@@ -33,25 +33,35 @@ def denormalize_name(name):
 def get_require_edges(graph):
     requires_query = f"""SELECT ?node ?service ?serviceRequirement WHERE {{
     {{
-        ?node <{DPDO.implementedBy}> ?service .
-        ?service <{DPDO.requires}> ?serviceRequirement .
+        ?node DPDO:implementedBy ?service .
+        ?service DPDO:requires ?serviceRequirement .
     }}
     }}
                         """
     result = graph.query(requires_query)
-
     service_requirements_dict = {}
-    for node, service, serviceRequirement in result:
-        if node not in service_requirements_dict:
-            service_requirements_dict[node] = []
-        if service not in service_requirements_dict[node]:
-            service_requirements_dict[node].append(service)
-        service_requirements_dict[node].append(serviceRequirement)
 
-    return [
-        [f"{normalize_name(node)}->{normalize_name(service)}" for service in services]
-        for node, services in service_requirements_dict.items()
-    ]
+    # for service, require in result:
+    #     if service not in service_requirements_dict:
+    #         service_requirements_dict[service] = []
+    #     if require not in service_requirements_dict[service]:
+    #         service_requirements_dict[service].append(require)
+
+    for node, service, serviceRequirement in result:
+        node = normalize_name(node)
+        service = normalize_name(service)
+        serviceRequirement = normalize_name(serviceRequirement)
+        if node not in service_requirements_dict:
+            service_requirements_dict[node] = {}
+        if service not in service_requirements_dict[node]:
+            service_requirements_dict[node][service] = []
+        service_requirements_dict[node][service].append(serviceRequirement)
+
+    return service_requirements_dict
+    # [
+    #     [normalize_name(node)] + [f"{normalize_name(service)}" for service in services]
+    #     for node, services in service_requirements_dict.items()
+    # ]
 
 
 def get_minimal_coverage(graph):
@@ -289,13 +299,18 @@ def get_preferences(named_graph):
 
 def get_mandatories(named_graph):
     lakehouse_services_query = f"""
-        SELECT ?service
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?node ?service
         WHERE {{
-            ?service <{DPDO.isMandatory}> true.
+            ?node <{DPDO.isMandatory}> ?service .
+            ?service a <{DPDO.Service}> .
         }}
     """
     result = named_graph.query(lakehouse_services_query)
-    return [normalize_name(str(node[0])) for node in result]
+    return [
+        f"{normalize_name(str(node))}->{normalize_name(str(service))}"
+        for node, service in result
+    ]
 
 
 def embed_additional_constraints(variable_names, preferences, mandatories):
@@ -332,6 +347,7 @@ def embed_additional_constraints(variable_names, preferences, mandatories):
 def select_services(named_graph):
     minimal_coverage = get_minimal_coverage(named_graph)
     requires_edges = get_require_edges(named_graph)
+
     implementedby_edges = get_implementedby_edges(named_graph)
     dfd_edges = get_dataflows(named_graph)
     compatibilities = get_compatible_services(named_graph)
@@ -345,6 +361,7 @@ def select_services(named_graph):
     lakehouse_implements = get_lakehouse_services(named_graph)
     preferences = get_preferences(named_graph)
     mandatories = get_mandatories(named_graph)
+
     ##############################
     #   CONSTRAINTS DEFINITION   #
     ##############################
@@ -356,16 +373,45 @@ def select_services(named_graph):
     fourth_constraint_senses = ["E" for _ in enumerate(fourth_constraint)]
 
     ### 5th Constraint - Services' requirements
+    seen = set()
     fifth_constraint = [
         [
-            constraint,
-            [-1 * (len(constraint) - 1)] + [1 for _ in range(len(constraint) - 1)],
+            [service] + requires,
+            (
+                ([-1 * (len(requires))] + [1 for _ in range(len(requires))])
+                if len(requires) > 1
+                else ([-1 * len(requires)] + [1 for _ in range(len(requires))])
+            ),
         ]
-        for constraint in requires_edges
+        for services in requires_edges.values()
+        for service, requires in services.items()
+        if (
+            tuple([service] + requires),
+            tuple(
+                ([-1 * (len(requires))] + [1 for _ in range(len(requires))])
+                if len(requires) > 1
+                else ([-1 * len(requires)] + [1 for _ in range(len(requires))])
+            ),
+        )
+        not in seen
+        and not seen.add(
+            (
+                tuple([service] + requires),
+                tuple(
+                    ([-1 * (len(requires))] + [1 for _ in range(len(requires))])
+                    if len(requires) > 1
+                    else ([-1 * len(requires)] + [1 for _ in range(len(requires))])
+                ),
+            )
+        )
     ]
+
+    # fifth_constraint = [
+    #     [list(set(constraint)), truth] for constraint, truth in fifth_constraint
+    # ]
     fifth_constraint_names = ["r" + str(i) for i, _ in enumerate(fifth_constraint)]
     fifth_rhs = [0 for _ in fifth_constraint]
-    fifth_constraint_senses = ["E" for _ in fifth_constraint]
+    fifth_constraint_senses = ["G" for _ in fifth_constraint]
 
     ### 6th Constraint - Services' compatibilities
     sixth_constraint = [
@@ -379,7 +425,7 @@ def select_services(named_graph):
     ### 7th Constraint - Services' edges
     edges_constraint = [
         [[edge, edge.split("->")[1]], [1, -1]] for edge in implementedby_edges
-    ] + [[[edge[0], edge[0].split("->")[1]], [1, -1]] for edge in requires_edges]
+    ]  # + [[[edge[0], edge[0].split("->")[1]], [1, -1]] for edge in requires_edges]
     edges_constraint_names = ["edge" + str(i) for i, _ in enumerate(edges_constraint)]
     edges_rhs = [0 for _ in edges_constraint]
     edges_constraint_senses = ["L" for _ in edges_constraint]
@@ -424,7 +470,16 @@ def select_services(named_graph):
         set(
             implementedby_edges
             + implemented_services
-            + [constraint for sub_list in requires_edges for constraint in sub_list]
+            + list(
+                set(
+                    [
+                        service
+                        for sub_list in requires_edges.values()
+                        for service_require in sub_list.values()
+                        for service in service_require
+                    ]
+                )
+            )
         )
     )
 
@@ -433,9 +488,9 @@ def select_services(named_graph):
     upper_bounds = [1 for _ in variable_names]
 
     # Setting variables' weights to minimize, weight(arch) = 0 since we don't want to minimize them
-    # objective = [0 if "->" in variable else 1 for variable in variable_names]
+    objective = [0 if "->" in variable else 1 for variable in variable_names]
     objective = embed_additional_constraints(variable_names, preferences, mandatories)
-    print(objective)
+
     variable_types = [problem.variables.type.binary for _ in variable_names]
 
     problem.variables.add(
@@ -446,19 +501,19 @@ def select_services(named_graph):
         names=variable_names,
     )
 
+    problem.linear_constraints.add(
+        lin_expr=fourth_constraint,
+        senses=fourth_constraint_senses,
+        rhs=fourth_rhs,
+        names=fourth_constraint_names,
+    )
+
     # Adding constraints
     problem.linear_constraints.add(
         lin_expr=fifth_constraint,
         senses=fifth_constraint_senses,
         rhs=fifth_rhs,
         names=fifth_constraint_names,
-    )
-
-    problem.linear_constraints.add(
-        lin_expr=fourth_constraint,
-        senses=fourth_constraint_senses,
-        rhs=fourth_rhs,
-        names=fourth_constraint_names,
     )
 
     problem.linear_constraints.add(
@@ -490,8 +545,9 @@ def select_services(named_graph):
     )
 
     # Generate and populate the solution pool
-    problem.parameters.mip.pool.intensity.set(4)  # Set the pool intensity to high
-    problem.parameters.mip.limits.populate.set(10**6)  # Set a high limit for the pool
+    problem.parameters.mip.pool.intensity.set(2)  # Set the pool intensity to high
+    problem.parameters.mip.limits.populate.set(10**2)  # Set a high limit for the pool
+
     problem.populate_solution_pool()
 
     num_solutions = problem.solution.pool.get_num()
@@ -504,7 +560,7 @@ def select_services(named_graph):
         solution_values = problem.solution.pool.get_values(i)
         for j, name in enumerate(problem.variables.get_names()):
             selected = solution_values[j]
-            print(f"{name}: {selected}")
+            # print(f"{name}: {selected}")
             if "->" in name and selected:
                 selected_edges.append(name)
             elif selected:
