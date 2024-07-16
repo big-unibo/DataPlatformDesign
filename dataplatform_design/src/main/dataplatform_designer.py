@@ -216,9 +216,8 @@ class DataPlatformDesigner:
             )
             # Compare expected solution with computed solution
             if utils.graphs_are_equal(expected_solution, solution):
-                logger.info(
-                    f"Expected solution matches solution {selected_graphs.index(solution)}!"
-                )
-                return True
-        logger.warning("No computed solution matches proposed one")
-        return False
+                s = f"Expected solution matches solution {selected_graphs.index(solution)}!"
+                # logger.info(s)
+                return True, s
+        # logger.warning("No computed solution matches proposed one")
+        return False, "No solution"

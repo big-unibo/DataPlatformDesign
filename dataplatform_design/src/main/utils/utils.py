@@ -70,15 +70,10 @@ def graphs_are_equal(expected_solution, proposed_solution):
     for triple in expected_solution:
         if triple not in proposed_solution:
             s, p, o = triple
-            logger.warning(
-                f"{rdf(expected_solution,s)} {rdf(expected_solution,p)} {rdf(expected_solution,o)} from expected solution not in proposed solution"
-            )
+            # logger.warning(f"{rdf(expected_solution,s)} {rdf(expected_solution,p)} {rdf(expected_solution,o)} from expected solution not in proposed solution")
             return False
     for triple in proposed_solution:
         if triple not in expected_solution:
-            logger.warning(
-                f"{rdf(proposed_solution,s)} {rdf(proposed_solution,p)} {rdf(proposed_solution,o)} from proposed solution not in expected solution"
-            )
+            # logger.warning(f"{rdf(proposed_solution,s)} {rdf(proposed_solution,p)} {rdf(proposed_solution,o)} from proposed solution not in expected solution")
             return False
-
     return True

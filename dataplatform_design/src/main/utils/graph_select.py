@@ -473,6 +473,12 @@ def select_services(named_graph):
     #############################
 
     problem = Cplex()
+
+    problem.set_log_stream(None)
+    problem.set_error_stream(None)
+    problem.set_warning_stream(None)
+    problem.set_results_stream(None)
+
     problem.set_problem_type(Cplex.problem_type.LP)
     problem.objective.set_sense(problem.objective.sense.minimize)
 

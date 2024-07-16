@@ -37,7 +37,7 @@ def test_scenarioI(self, scenario_directory):
     GRAPHDB_REPOSITORY = config["graph_db"]["repository"]
     GRAPHDB_NAMED_GRAPH = config["graph_db"]["named_graph"]
 
-    logger.info(f"Running scenario {scenario_directory}")
+    # logger.info(f"Running scenario {scenario_directory}")
 
     # .ttl paths representing ontologies
     NAMESPACES = config["ontologies"]["namespaces"]
@@ -92,7 +92,10 @@ def test_scenarioI(self, scenario_directory):
     )
 
     # Compare solution to given one
-    self.assertTrue(dataplat_designer.compare_solutions(selected_graphs, solution_path))
+    res, s = dataplat_designer.compare_solutions(selected_graphs, solution_path)
+    # print(s)
+    self.assertTrue(res)
+    self.assertEqual(len(selected_graphs), 1)
     # assert result, f"Testing {scenario_directory}, result: {result}"
 
 
