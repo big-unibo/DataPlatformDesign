@@ -3,7 +3,7 @@ import os
 import pytz
 from rdflib.namespace import Namespace
 import sys
-from SPARQLWrapper import SPARQLWrapper, POST
+import requests
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -116,9 +116,10 @@ class DataPlatformDesigner:
         solutions = graph_select.select_services(named_graph)
         selected_graphs = []
         for solution in solutions:
+            solution_number = solutions.index(solution)
             solution_output_path = os.path.join(
                 selected_graph_output_path,
-                f"selected_graph_solution_{solutions.index(solution)}.json",
+                f"selected_graph_solution_{solution_number}.json",
             )
             # Foreach new edge, add it to selected_graph
             solution_selected_graph = utils.setup_graph(self.namespaces)
@@ -126,21 +127,38 @@ class DataPlatformDesigner:
                 solution_selected_graph.add(
                     (
                         URIRef(graph_select.denormalize_name(edge.split("->")[0])),
-                        self.DPDO.selected,
+                        getattr(self.DPDO, f"selected_{solution_number}"),
                         URIRef(graph_select.denormalize_name(edge.split("->")[1])),
                     )
                 )
                 for edge in solution["edges"]
             ]
-            # logger.info(f"\n Printing solution {solutions.index(solution)}:")
-            # for (
-            #     node,
-            #     p,
-            #     service,
-            # ) in solution_selected_graph.triples(((None, self.DPDO.selected, None))):
-            #     logger.info(
-            #         f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
-            #     )
+            logger.info(f"\n Pushing solution {solution_number} to GraphDb...:")
+            # Serializza il grafo in formato Turtle
+            data = solution_selected_graph.serialize(format="turtle")
+            headers = {"Content-Type": "application/x-turtle"}
+            response = requests.post(
+                f"{self.endpoint}/repositories/{self.repository}/statements",
+                data=data,
+                headers=headers,
+            )
+            if not response.status_code == 204:
+                logger.error(
+                    f"Something went wrong while pushing solution to {self.endpoint}",
+                    response.status_code,
+                )
+                logger.error(response.text)
+            logger.info(f"\n Printing solution {solution_number}:")
+            for (
+                node,
+                p,
+                service,
+            ) in solution_selected_graph.triples(
+                ((None, getattr(self.DPDO, f"selected_{solution_number}"), None))
+            ):
+                logger.info(
+                    f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
+                )
             # Write selected_graph
             with open(
                 solution_output_path,
