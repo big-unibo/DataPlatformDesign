@@ -1,21 +1,25 @@
 import os
 import sys
-import test_utils
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
 )
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main/")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../test/")))
 
+import test_utils
 from utils import utils
 from dataplatform_designer import DataPlatformDesigner
-
+import unittest
 
 logger = utils.setup_logger("DataPlat_Design_Test")
 
-for scenario_directory in test_utils.listdirs(
-    os.path.join("dataplatform_design", "src", "test", "scenarios")
-):
+
+def get_path(folder):
+    return os.path.join("dataplatform_design", "src", "test", "scenarios", folder)
+
+
+def test_scenarioI(self, scenario_directory):
     test_utils.normalize_repositories_names(
         [
             os.path.join(scenario_directory, "configs", "config.yml"),
@@ -88,6 +92,14 @@ for scenario_directory in test_utils.listdirs(
     )
 
     # Compare solution to given one
-    result = dataplat_designer.compare_solutions(selected_graphs, solution_path)
+    self.assertTrue(dataplat_designer.compare_solutions(selected_graphs, solution_path))
+    # assert result, f"Testing {scenario_directory}, result: {result}"
 
-    assert result, f"Testing {scenario_directory}, result: {result}"
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_requires01(self):
+        test_scenarioI(self, get_path("requires01"))
+
+    def test_ico(self):
+        test_scenarioI(self, get_path("ico"))
