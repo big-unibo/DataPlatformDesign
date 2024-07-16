@@ -4,7 +4,6 @@ graph_db:
   repository: DataPlatformDesign_requires01
 ontologies:
   adds_constraints_paths:
-    mandatories: dataplatform_design/src/test/scenarios/requires01/input/adds_constraints/mandatories.ttl
     preferences: dataplatform_design/src/test/scenarios/requires01/input/adds_constraints/preferences.ttl
   namespaces:
     dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#

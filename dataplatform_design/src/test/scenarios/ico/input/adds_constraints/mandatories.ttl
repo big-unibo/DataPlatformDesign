@@ -1,5 +1,0 @@
-@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
-@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
-@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
-
-ServiceEcosystem:Lakehouse DPDO:isMandatory true .
