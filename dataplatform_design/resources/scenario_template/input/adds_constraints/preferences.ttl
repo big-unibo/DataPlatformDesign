@@ -3,3 +3,4 @@
 @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
 
 ServiceEcosystem:Lakehouse DPDO:isPreferred true .
+ServiceEcosystem:S3 DPDO:isPreferred true .

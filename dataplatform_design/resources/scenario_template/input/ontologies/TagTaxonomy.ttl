@@ -82,22 +82,10 @@ TagTaxonomy:Functionality_class rdf:type owl:Class ;
                    rdfs:subClassOf DPDO:Tag ;
                    rdfs:label "Represents an individual with a some data zone" .
 
-###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Integration_class
-TagTaxonomy:Integration_class rdf:type owl:Class ;
-                   rdfs:subClassOf TagTaxonomy:Functionality_class ;
-                   rdfs:label "Represents an individual with an integration data functionality" .
-
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/ETL_class
 TagTaxonomy:ETL_class rdf:type owl:Class ;
                    rdfs:subClassOf TagTaxonomy:Functionality_class ;
                    rdfs:label "Represents an individual with ETL data functionality" .
-
-
-###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Goal_class
-TagTaxonomy:Goal_class rdf:type owl:Class ;
-          rdfs:subClassOf DPDO:Tag ;
-          rdfs:label "Represents an individual with some goal in terms of data" .
-
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Graph_class
 TagTaxonomy:Graph_class rdf:type owl:Class ;
@@ -119,7 +107,7 @@ TagTaxonomy:Landing_class rdf:type owl:Class ;
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Machine_Learning_class
 TagTaxonomy:Machine_Learning_class rdf:type owl:Class ;
-                      rdfs:subClassOf TagTaxonomy:Goal_class ;
+                      rdfs:subClassOf TagTaxonomy:Functionality_class ;
                       rdfs:label "Represents an individual with machine learning's data purposes" .
 
 
@@ -137,13 +125,13 @@ TagTaxonomy:Multidimensional_class rdf:type owl:Class ;
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Reporting_class
 TagTaxonomy:Reporting_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Goal_class ;
+          rdfs:subClassOf TagTaxonomy:Functionality_class ;
           rdfs:label "Represents an individual with Reporting data purposes" .
 
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Operational_class
 TagTaxonomy:Operational_class rdf:type owl:Class ;
-                 rdfs:subClassOf TagTaxonomy:Goal_class ;
+                 rdfs:subClassOf TagTaxonomy:Functionality_class ;
                  rdfs:label "Represents an individual with operational data purposes" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Processed_class
@@ -262,10 +250,6 @@ TagTaxonomy:Functionality_all rdf:type
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all
 TagTaxonomy:Computing_all rdf:type
               TagTaxonomy:Computing_class .
-
-###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_all
-TagTaxonomy:Goal_all rdf:type
-              TagTaxonomy:Goal_class .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all
 TagTaxonomy:Collection_all rdf:type 
