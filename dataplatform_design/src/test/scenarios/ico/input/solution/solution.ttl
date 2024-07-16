@@ -1,0 +1,36 @@
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Download
+DFD:Download DPDO:selected ServiceEcosystem:Lambda .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Raw_Sales
+DFD:Raw_Sales DPDO:selected ServiceEcosystem:Lakehouse .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Clean
+DFD:Transform DPDO:selected ServiceEcosystem:Databricks_Autoloader .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Legacy_ETL
+DFD:Legacy_ETL DPDO:selected ServiceEcosystem:Lambda .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Old_DWH
+DFD:Old_DWH DPDO:selected ServiceEcosystem:Redshift .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Cleaned_Data
+DFD:Cleaned_Data DPDO:selected ServiceEcosystem:Lakehouse .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrate
+DFD:Integrate DPDO:selected ServiceEcosystem:Databricks_Job .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data
+DFD:Integrated_Data DPDO:selected ServiceEcosystem:Lakehouse .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Compute_KPIs
+DFD:Compute_KPIs DPDO:selected ServiceEcosystem:Databricks_Job .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#CLV
+DFD:CLV DPDO:selected ServiceEcosystem:Sagemaker .
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#KPI
+DFD:KPI DPDO:selected ServiceEcosystem:Lakehouse .

@@ -1,0 +1,114 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix spl:     <http://spinrdf.org/spl#> .
+@base <http://www.foo.bar/dataplatform_design/ontologies/DPDO> .
+
+<http://www.foo.bar/dataplatform_design/ontologies/DPDO> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+# http://www.w3.org/2000/01/rdf-schema#label
+
+rdfs:label rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Classes
+#################################################################
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/Service
+DPDO:Service rdf:type owl:Class ;
+            owl:disjointWith DPDO:DFDNode .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/DFDNode
+DPDO:DFDNode rdf:type owl:Class ;
+            owl:disjointWith DPDO:Service .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/Agent
+DPDO:Agent rdf:type owl:Class ;
+           rdfs:subClassOf DPDO:DFDNode .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/Process
+DPDO:Process rdf:type owl:Class ;
+             rdfs:subClassOf DPDO:DFDNode .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/Repository
+DPDO:Repository rdf:type owl:Class ;
+            rdfs:subClassOf DPDO:DFDNode ;
+            rdfs:label "TEST" .
+
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/Tag
+DPDO:Tag rdf:type owl:Class .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible
+DPDO:isCompatible rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/flowsData
+DPDO:flowsData rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain DPDO:DFDNode ;
+               rdfs:range DPDO:DFDNode .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/hasTag
+DPDO:hasTag rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range DPDO:Tag .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/implementedBy
+DPDO:implementedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain DPDO:DFDNode ;
+                   rdfs:range DPDO:Service .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/requires
+DPDO:requires rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range DPDO:Service .
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/isAkin
+DPDO:isAkin rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range DPDO:Service.
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/selected
+DPDO:selected rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:DFDNode ;
+              rdfs:range DPDO:Service.
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/isPreferred
+DPDO:isPreferred rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:Service ;
+              rdfs:range xsd:boolean.
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/isMandatory
+DPDO:isMandatory rdf:type owl:ObjectProperty;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain DPDO:DFDNode ;
+              rdfs:range DPDO:Service .
+
+#################################################################
+#    Data properties
+#################################################################
+
+# http://www.foo.bar/dataplatform_design/ontologies/DPDO/name
+DPDO:name rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range rdfs:Literal .
