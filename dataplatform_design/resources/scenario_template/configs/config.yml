@@ -14,16 +14,16 @@ ontologies:
       service_ecosystem: http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#
       dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#
   paths:
-      dpdo: dataplatform_design/resources/input/ontologies/DPDO.ttl
-      tag_taxonomy: dataplatform_design/resources/input/ontologies/TagTaxonomy.ttl
-      service_ecosystem: dataplatform_design/resources/input/ontologies/ServiceEcosystem.ttl
-      dfd: dataplatform_design/resources/input/ontologies/DFD.ttl
+      dpdo: dataplatform_design/resources/scenario_template/input/ontologies/DPDO.ttl
+      tag_taxonomy: dataplatform_design/resources/scenario_template/input/ontologies/TagTaxonomy.ttl
+      service_ecosystem: dataplatform_design/resources/scenario_template/input/ontologies/ServiceEcosystem.ttl
+      dfd: dataplatform_design/resources/scenario_template/input/ontologies/DFD.ttl
   prefix:
       dpdo: DPDO
       tag_taxonomy: TagTaxonomy
       service_ecosystem: ServiceEcosystem
       dfd: DFD
   adds_constraints_paths:
-      preferences: dataplatform_design/resources/input/adds_constraints/preferences.ttl
-  solution: dataplatform_design/resources/input/solution/solution.ttl
+      preferences: dataplatform_design/resources/scenario_template/input/adds_constraints/preferences.ttl
+  solution: dataplatform_design/resources/scenario_template/input/solution/solution.ttl
 

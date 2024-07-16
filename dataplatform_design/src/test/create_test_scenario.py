@@ -68,7 +68,7 @@ args_dict.update({"dpdo": os.path.join(template_structure["ontologies"], "DPDO.t
 # Iterate over the dictionary
 
 for arg_name, arg_value in args_dict.items():
-    if arg_name != "scenario_name":
+    if arg_name not in ["scenario_name", "service_ecosystem", "tag_taxonomy", "dpdo"]:
         print(arg_name)
         # Copy args provided files
 

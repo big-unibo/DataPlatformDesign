@@ -8,7 +8,6 @@ import logging
 import sys
 
 
-
 def get_scenario_parser(template_path):
 
     parser = argparse.ArgumentParser(description="Define new scenario parameters")
@@ -43,15 +42,6 @@ def get_scenario_parser(template_path):
         help="Path of preferences.ttl",
         default=path.join(
             template_path, "input", "adds_constraints", "preferences.ttl"
-        ),
-    )
-
-    parser.add_argument(
-        "-m",
-        "--mandatories",
-        help="Path of mandatories.ttl",
-        default=path.join(
-            template_path, "input", "adds_constraints", "mandatories.ttl"
         ),
     )
     parser.add_argument(
