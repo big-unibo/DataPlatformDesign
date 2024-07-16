@@ -4,7 +4,7 @@ graph_db:
   repository: DataPlatformDesign_requires02
 ontologies:
   adds_constraints_paths:
-    preferences: dataplatform_design/src/test/scenarios/requires02/input/adds_constraints/preferences.ttl
+    preferences: dataplatform_design/resources/scenario_template/input/adds_constraints/preferences.ttl
   namespaces:
     dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#
     dpdo: http://www.foo.bar/dataplatform_design/ontologies/DPDO#
@@ -12,9 +12,9 @@ ontologies:
     tag_taxonomy: http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#
   paths:
     dfd: dataplatform_design/src/test/scenarios/requires02/input/ontologies/DFD.ttl
-    dpdo: dataplatform_design/src/test/scenarios/requires02/input/ontologies/DPDO.ttl
-    service_ecosystem: dataplatform_design/src/test/scenarios/requires02/input/ontologies/ServiceEcosystem.ttl
-    tag_taxonomy: dataplatform_design/src/test/scenarios/requires02/input/ontologies/TagTaxonomy.ttl
+    dpdo: dataplatform_design/resources/scenario_template/input/ontologies/DPDO.ttl
+    service_ecosystem: dataplatform_design/resources/scenario_template/input/ontologies/ServiceEcosystem.ttl
+    tag_taxonomy: dataplatform_design/resources/scenario_template/input/ontologies/TagTaxonomy.ttl
   prefix:
     dfd: DFD
     dpdo: DPDO
