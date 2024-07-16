@@ -1,0 +1,25 @@
+graph_db:
+  endpoint: http://127.0.0.1:7200
+  named_graph: http://dpdo_example.com/DPD_Graph
+  repository: DataPlatformDesign_requires01
+ontologies:
+  adds_constraints_paths:
+    mandatories: dataplatform_design/src/test/scenarios/requires01/input/adds_constraints/mandatories.ttl
+    preferences: dataplatform_design/src/test/scenarios/requires01/input/adds_constraints/preferences.ttl
+  namespaces:
+    dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#
+    dpdo: http://www.foo.bar/dataplatform_design/ontologies/DPDO#
+    service_ecosystem: http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#
+    tag_taxonomy: http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#
+  paths:
+    dfd: dataplatform_design/src/test/scenarios/requires01/input/ontologies/DFD.ttl
+    dpdo: dataplatform_design/src/test/scenarios/requires01/input/ontologies/DPDO.ttl
+    service_ecosystem: dataplatform_design/src/test/scenarios/requires01/input/ontologies/ServiceEcosystem.ttl
+    tag_taxonomy: dataplatform_design/src/test/scenarios/requires01/input/ontologies/TagTaxonomy.ttl
+  prefix:
+    dfd: DFD
+    dpdo: DPDO
+    service_ecosystem: ServiceEcosystem
+    tag_taxonomy: TagTaxonomy
+  solution: dataplatform_design/src/test/scenarios/requires01/input/solution/solution.ttl
+prefix: http://www.foo.bar/dataplatform_design/ontologies/

@@ -1,0 +1,3725 @@
+[
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#domain",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#domain"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#range",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#range"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#equivalentProperty",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentProperty"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#equivalentClass",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty",
+            "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+            }
+        ],
+        "http://proton.semanticweb.org/protonsys#transitiveOver": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#equivalentClass"
+            }
+        ]
+    },
+    {
+        "@id": "http://proton.semanticweb.org/protonsys#transitiveOver",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://proton.semanticweb.org/protonsys#transitiveOver"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#inverseOf",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2002/07/owl#SymmetricProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#inverseOf"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#inverseOf"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            },
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#differentFrom",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#SymmetricProperty"
+        ],
+        "http://www.w3.org/2002/07/owl#inverseOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#differentFrom"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2001/XMLSchema#string",
+        "@type": [
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2000/01/rdf-schema#Datatype"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#string"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#_1",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+            }
+        ]
+    },
+    {
+        "@id": "ex:p1",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "ex:p1"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class",
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_Column",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#imports",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#imports"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#disjointWith",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#disjointWith"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isPreferred",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isPreferred"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isMandatory",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isMandatory"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2002/07/owl#topDataProperty",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Sensor_Data",
+        "@type": [
+            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+        ],
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Data_Enrichment"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Sensor Data"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isAkin",
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#selected",
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Container"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_column_class",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EC2"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EBS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Kinesis"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "S3"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Lambda"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EFS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EFS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Glue"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "DynamoDB"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "PostGIS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "RDS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Redshift"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Clustering"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Athena"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EMR"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "GeoServer"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lakehouse",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@value": "true",
+                "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Lakehouse"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Postgres"
+            }
+        ]
+    },
+    {
+        "@id": "http://dpdo_example.com/DPD_Graph",
+        "@graph": [
+            {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#AnnotationProperty"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with archive functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a some data zone"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with batch computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some data computing purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with big data volume"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with data of some volume"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with classification (ML) goal"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with machine learning's data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some data collection purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with some data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual that works with data of some nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a document data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a semi structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a unstructured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a some data zone"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with an integration data functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with ETL data functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with some goal in terms of data"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a graph data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a key-value data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with landing functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with mini-batch computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a multidimensional data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with Reporting data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with operational data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with storaging processed data functionality"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with pull collection type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with delta pull collection type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with cumulative pull collection type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with push collection type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a raster spatial data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a spatial data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with machine learning regression data purposes"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a relational structured data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with small data volume"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with streaming computing type"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a temporal data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a vectorial spatial data nature"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_column_class",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "Represents an individual with a wide column data model"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_Column",
+                "@type": [
+                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured_class"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ],
+                "http://www.w3.org/2002/07/owl#imports": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "EBS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Kinesis"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "S3"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#DatatypeProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EFS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "EFS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Glue"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "DynamoDB"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Lambda"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "PostGIS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "RDS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Redshift"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Sagemaker"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Clustering"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Athena"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "EMR"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "GeoServer"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lakehouse",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Lakehouse"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isPreferred": [
+                    {
+                        "@value": "true",
+                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isMandatory": [
+                    {
+                        "@value": "true",
+                        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Postgres"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2002/07/owl#disjointWith": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Agent",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Class"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#label": [
+                    {
+                        "@value": "TEST"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isAkin",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#selected",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isPreferred",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isMandatory",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#domain": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#Ontology"
+                ],
+                "http://www.w3.org/2002/07/owl#imports": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Sensor_Data",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Sensor Data"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Data_Enrichment"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                    }
+                ]
+            },
+            {
+                "@id": "ex:s1",
+                "ex:p1": [
+                    {
+                        "@id": "ex:o1"
+                    }
+                ]
+            }
+        ]
+    }
+]
