@@ -1,5 +1,5 @@
 graph_db:
-  endpoint: http://137.204.74.57:7200
+  endpoint: http://127.0.0.1:7200
   named_graph: http://dpdo_example.com/DPD_Graph
   repository: DataPlatformDesign_ico
 ontologies:

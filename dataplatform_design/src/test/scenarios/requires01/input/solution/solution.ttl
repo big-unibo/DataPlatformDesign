@@ -2,5 +2,4 @@
 @prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
 @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
 
-DFD:Sensor_Data DPDO:selected ServiceEcosystem:EC2 ;
-                DPDO:selected ServiceEcosystem:PostGIS .
+DFD:Sensor_Data DPDO:selected ServiceEcosystem:PostGIS .
