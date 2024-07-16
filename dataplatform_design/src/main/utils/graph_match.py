@@ -176,6 +176,7 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_p
     if response.status_code == 200:
         logger.info("Retrieved matched graph")
         output_path = os.path.join(match_graph_path)
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         try:
             with open(
                 output_path,
