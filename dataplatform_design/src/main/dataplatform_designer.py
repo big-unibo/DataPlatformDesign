@@ -113,7 +113,7 @@ class DataPlatformDesigner:
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
-        solutions = graph_select.select_services(named_graph, constraints)
+        solutions = graph_select.select_services(named_graph)
         selected_graphs = []
         for solution in solutions:
             solution_output_path = os.path.join(
