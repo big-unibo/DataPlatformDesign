@@ -3,6 +3,15 @@ from rdflib import Namespace
 import itertools
 from cplex import Cplex
 import os
+import contextlib
+import sys
+
+
+@contextlib.contextmanager
+def suppress_print():
+    with open(os.devnull, "w") as f, contextlib.redirect_stdout(f):
+        yield
+
 
 # Load default config
 config = utils.load_yaml(
@@ -10,6 +19,8 @@ config = utils.load_yaml(
         "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
     )
 )
+# Setup log
+logger = utils.setup_logger("DataPlat_Design_Select_Algorithm")
 
 PREFIX = config["prefix"]
 DPDO = Namespace(config["ontologies"]["namespaces"]["dpdo"])
@@ -551,25 +562,28 @@ def select_services(named_graph):
     problem.populate_solution_pool()
 
     num_solutions = problem.solution.pool.get_num()
-    print(f"Number of solutions found: {num_solutions}")
+    # logger.info(f"Number of solutions found: {num_solutions}")
 
     all_solutions = []
+    all_requires = []
     for i in range(num_solutions):
         selected_services = []
         selected_edges = []
         solution_values = problem.solution.pool.get_values(i)
         for j, name in enumerate(problem.variables.get_names()):
             selected = solution_values[j]
-            # print(f"{name}: {selected}")
             if "->" in name and selected:
                 selected_edges.append(name)
             elif selected:
                 selected_services.append(name)
         all_solutions.append({"services": selected_services, "edges": selected_edges})
-
-    return all_solutions
-
-    # for i, (services, edges) in enumerate(all_solutions):
-    #     print(f"Solution {i+1}:")
-    #     print(f"Services: {services}")
-    #     print(f"Edges: {edges}")
+        all_requires.append(
+            [
+                f"{service}->{require}"
+                for dfd in requires_edges.values()
+                for service, requires in dfd.items()
+                for require in requires
+                if service in selected_services
+            ]
+        )
+    return all_solutions, all_requires

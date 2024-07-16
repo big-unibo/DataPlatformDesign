@@ -68,7 +68,7 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
     )
 
     if response.status_code == 204:
-        logger.info("Successfully checked for Lakehouse pattern.")
+        logger.debug("Successfully checked for Lakehouse pattern.")
         return True
     else:
         logger.error(
@@ -141,7 +141,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
     )
 
     if response.status_code == 204:
-        logger.info("Successfully matched DFD and Service Graph.")
+        logger.debug("Successfully matched DFD and Service Graph.")
     else:
         logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
         logger.error(response.content)
@@ -174,7 +174,7 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_p
     response.raise_for_status()
 
     if response.status_code == 200:
-        logger.info("Retrieved matched graph")
+        logger.debug("Retrieved matched graph")
         output_path = os.path.join(match_graph_path)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         try:
@@ -183,7 +183,7 @@ def save_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_p
                 "w",
             ) as write_file:
                 json.dump(response.json(), write_file, indent=4)
-            logger.info(f"Saved matched graph to {output_path}")
+            logger.debug(f"Saved matched graph to {output_path}")
             return True
         except Exception as e:
             logger.exception(str(e))

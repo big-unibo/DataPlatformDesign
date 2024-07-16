@@ -42,7 +42,7 @@ def load_ontology(file_path, endpoint, repository, named_graph, namespace):
         )
         response.raise_for_status()  # Raise an exception for HTTP errors
         if response.status_code == 204:
-            logger.info(f"{namespace} uploaded to {endpoint}")
+            logger.debug(f"{namespace} uploaded to {endpoint}")
         else:
             logger.error(
                 f"Failed to load {namespace} to {endpoint}: status code {response.status_code}"
@@ -72,7 +72,7 @@ def check_or_create_repository(repository_name, repo_config_path, endpoint):
     if not repository_exists:
         return create_repository(repository_name, repo_config_path, endpoint)
     else:
-        logger.info("Repository already existing")
+        logger.debug("Repository already existing")
         return True
 
 
@@ -81,7 +81,7 @@ def delete_repository(repository_name, endpoint):
     response = requests.delete(f"{endpoint}/rest/repositories/{repository_name}")
 
     if response.status_code == 200:
-        logger.info(f"Successfully deleted  repository '{repository_name}'.")
+        logger.debug(f"Successfully deleted  repository '{repository_name}'.")
     else:
         logger.error(f"Couldn't delete repository '{repository_name}'.")
         logger.error(f"Status Code: {response.status_code}")
@@ -98,11 +98,11 @@ def create_repository(repository_name, repo_config_path, endpoint):
 
     if response.status_code != 201:
         logger.error(f"Failed to create repository: {response.text}")
-        print(f"Response status code: {response.status_code}")
-        print(f"Response text: {response.text}")
+        logger.error(f"Response status code: {response.status_code}")
+        logger.error(f"Response text: {response.text}")
         return False
     response.raise_for_status()
-    logger.info(f"Successfully created repository {repository_name}")
+    logger.debug(f"Successfully created repository {repository_name}")
     return True
 
 
@@ -122,7 +122,7 @@ def check_or_create_named_graph(repository_name, named_graph_uri, endpoint):
             headers=headers,
         )
         if response.status_code == 204:
-            logger.info("Graph created and data inserted successfully")
+            logger.debug("Graph created and data inserted successfully")
             return True
         else:
             logger.exception(f"Error: {response.status_code}")

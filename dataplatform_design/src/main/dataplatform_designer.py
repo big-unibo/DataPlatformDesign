@@ -113,7 +113,7 @@ class DataPlatformDesigner:
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
-        solutions = graph_select.select_services(named_graph)
+        solutions, requires = graph_select.select_services(named_graph)
         selected_graphs = []
         for solution in solutions:
             solution_number = solutions.index(solution)
@@ -123,8 +123,9 @@ class DataPlatformDesigner:
             )
             # Foreach new edge, add it to selected_graph
             solution_selected_graph = utils.setup_graph(self.namespaces)
+            db_selected_graph = utils.setup_graph(self.namespaces)
             [
-                solution_selected_graph.add(
+                db_selected_graph.add(
                     (
                         URIRef(graph_select.denormalize_name(edge.split("->")[0])),
                         getattr(self.DPDO, f"selected_{solution_number}"),
@@ -133,9 +134,39 @@ class DataPlatformDesigner:
                 )
                 for edge in solution["edges"]
             ]
-            logger.info(f"\n Pushing solution {solution_number} to GraphDb...:")
+            [
+                db_selected_graph.add(
+                    (
+                        URIRef(graph_select.denormalize_name(edge.split("->")[0])),
+                        getattr(self.DPDO, f"selected_{solution_number}"),
+                        URIRef(graph_select.denormalize_name(edge.split("->")[1])),
+                    )
+                )
+                for edge in requires[solution_number]
+            ]
+            [
+                solution_selected_graph.add(
+                    (
+                        URIRef(graph_select.denormalize_name(edge.split("->")[0])),
+                        getattr(self.DPDO, f"selected"),
+                        URIRef(graph_select.denormalize_name(edge.split("->")[1])),
+                    )
+                )
+                for edge in solution["edges"]
+            ]
+            [
+                solution_selected_graph.add(
+                    (
+                        URIRef(graph_select.denormalize_name(edge.split("->")[0])),
+                        getattr(self.DPDO, f"selected"),
+                        URIRef(graph_select.denormalize_name(edge.split("->")[1])),
+                    )
+                )
+                for edge in requires[solution_number]
+            ]
+            logger.debug(f"\n Pushing solution {solution_number} to GraphDb...:")
             # Serializza il grafo in formato Turtle
-            data = solution_selected_graph.serialize(format="turtle")
+            data = db_selected_graph.serialize(format="turtle")
             headers = {"Content-Type": "application/x-turtle"}
             response = requests.post(
                 f"{self.endpoint}/repositories/{self.repository}/statements",
@@ -148,7 +179,7 @@ class DataPlatformDesigner:
                     response.status_code,
                 )
                 logger.error(response.text)
-            logger.info(f"\n Printing solution {solution_number}:")
+            logger.debug(f"\n Printing solution {solution_number}:")
             for (
                 node,
                 p,
@@ -156,7 +187,7 @@ class DataPlatformDesigner:
             ) in solution_selected_graph.triples(
                 ((None, getattr(self.DPDO, f"selected_{solution_number}"), None))
             ):
-                logger.info(
+                logger.debug(
                     f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
                 )
             # Write selected_graph
@@ -177,7 +208,7 @@ class DataPlatformDesigner:
 
     def compare_solutions(self, selected_graphs, solution_path):
         for solution in selected_graphs:
-            logger.info(f"Comparing solution n° {selected_graphs.index(solution)}")
+            logger.debug(f"Comparing solution n° {selected_graphs.index(solution)}")
             expected_solution = utils.setup_graph(self.namespaces)
             expected_solution.parse(
                 solution_path,

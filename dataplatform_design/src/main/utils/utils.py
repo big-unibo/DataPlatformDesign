@@ -5,7 +5,7 @@ from rdflib.namespace import NamespaceManager
 from rdflib import Graph, Namespace
 
 
-def setup_logger(logger_name, log_level=10):
+def setup_logger(logger_name, log_level=logging.INFO):
     log_format = "[%(asctime)s][%(levelname)s] %(name)s: %(message)s"
     formatter = logging.Formatter(log_format)
 

@@ -8,6 +8,7 @@ import logging
 import sys
 
 
+
 def get_scenario_parser(template_path):
 
     parser = argparse.ArgumentParser(description="Define new scenario parameters")
