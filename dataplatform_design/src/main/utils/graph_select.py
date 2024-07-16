@@ -7,12 +7,6 @@ import contextlib
 import sys
 
 
-@contextlib.contextmanager
-def suppress_print():
-    with open(os.devnull, "w") as f, contextlib.redirect_stdout(f):
-        yield
-
-
 # Load default config
 config = utils.load_yaml(
     os.path.join(
@@ -435,11 +429,11 @@ def select_services(named_graph):
 
     ### 7th Constraint - Services' edges
     edges_constraint = [
-        [[edge, edge.split("->")[1]], [1, -1]] for edge in implementedby_edges
+        [[edge, edge.split("->")[1]], [-1, 1]] for edge in implementedby_edges
     ]  # + [[[edge[0], edge[0].split("->")[1]], [1, -1]] for edge in requires_edges]
     edges_constraint_names = ["edge" + str(i) for i, _ in enumerate(edges_constraint)]
     edges_rhs = [0 for _ in edges_constraint]
-    edges_constraint_senses = ["L" for _ in edges_constraint]
+    edges_constraint_senses = ["G" for _ in edges_constraint]
 
     ### 8th Constraint - Services' affinities
     affinity_constraint = [
@@ -562,25 +556,28 @@ def select_services(named_graph):
     )
 
     # Generate and populate the solution pool
-    problem.parameters.mip.pool.intensity.set(2)  # Set the pool intensity to high
+    problem.parameters.mip.pool.intensity.set(4)  # Set the pool intensity to high
     problem.parameters.mip.limits.populate.set(10**2)  # Set a high limit for the pool
-
+    problem.parameters.mip.pool.relgap.set(0.0)
     problem.populate_solution_pool()
 
     num_solutions = problem.solution.pool.get_num()
-    # logger.info(f"Number of solutions found: {num_solutions}")
+    logger.info(f"Number of solutions found: {num_solutions}")
 
     all_solutions = []
     all_requires = []
+
     for i in range(num_solutions):
+        # if problem.solution.pool.get_objective_value(i) <= min_obj:
         selected_services = []
         selected_edges = []
         solution_values = problem.solution.pool.get_values(i)
+
         for j, name in enumerate(problem.variables.get_names()):
             selected = solution_values[j]
-            if "->" in name and selected:
+            if "->" in name and selected > 0:
                 selected_edges.append(name)
-            elif selected:
+            elif selected > 0:
                 selected_services.append(name)
         all_solutions.append({"services": selected_services, "edges": selected_edges})
         all_requires.append(
