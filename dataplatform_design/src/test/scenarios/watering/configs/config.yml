@@ -12,9 +12,9 @@ ontologies:
     tag_taxonomy: http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#
   paths:
     dfd: dataplatform_design/src/test/scenarios/watering/input/ontologies/DFD.ttl
-    dpdo: dataplatform_design/src/test/scenarios/watering/input/ontologies/DPDO.ttl
-    service_ecosystem: dataplatform_design/src/test/scenarios/watering/input/ontologies/ServiceEcosystem.ttl
-    tag_taxonomy: dataplatform_design/src/test/scenarios/watering/input/ontologies/TagTaxonomy.ttl
+    dpdo: dataplatform_design/resources/scenario_template/input/ontologies/DPDO.ttl
+    service_ecosystem: dataplatform_design/resources/scenario_template/input/ontologies/ServiceEcosystem.ttl
+    tag_taxonomy: dataplatform_design/resources/scenario_template/input/ontologies/TagTaxonomy.ttl
   prefix:
     dfd: DFD
     dpdo: DPDO

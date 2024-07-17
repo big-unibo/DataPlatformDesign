@@ -45,6 +45,19 @@ def parse_json_to_graph(json_file):
 def visualize_graph(g, save_path):
     dot = Digraph(comment="RDF Graph")
 
+    repository = {}
+    process = {}
+    for s, p, o in g:
+        s_str = str(s).split("#")[-1]
+        p_str = str(p).split("#")[-1]
+        o_str = str(o).split("#")[-1]
+
+        if "DFD" in s and "type" in p_str:
+            if o_str == "Repository":
+                repository[s_str] = True
+            if o_str == "Process":
+                process[s_str] = True
+
     for s, p, o in g:
         s_str = str(s).split("#")[-1]
         p_str = str(p).split("#")[-1]
@@ -53,16 +66,24 @@ def visualize_graph(g, save_path):
             dot.node(
                 s_str,
                 s_str,
-                shape="ellipse" if "DFD" in s else "box",
+                shape=(
+                    "box"
+                    if (s_str in repository)
+                    else ("oval" if (s_str in process) else "oval")
+                ),
                 style="filled",
-                color="lightblue" if "DFD" in s else "yellow",
+                color="steelblue" if "DFD" in s else "gold",
             )
             dot.node(
                 o_str,
                 o_str,
-                shape="ellipse" if "DFD" in o else "box",
+                shape=(
+                    "box"
+                    if (o_str in repository)
+                    else ("oval" if (o_str in process) else "oval")
+                ),
                 style="filled",
-                color="lightblue" if "DFD" in o else "yellow",
+                color="steelblue" if "DFD" in o else "gold",
             )
             dot.edge(s_str, o_str, label=p_str)
 

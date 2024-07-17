@@ -17,7 +17,6 @@
 DFD:Sensor_Data rdf:type
                     owl:NamedIndividual,
                     DPDO:Repository;
-            DPDO:flowsData DFD:Data_Enrichment;
             DPDO:hasTag TagTaxonomy:Relational;
             DPDO:isMandatory ServiceEcosystem:PostGIS;
             DPDO:name "Sensor Data".
