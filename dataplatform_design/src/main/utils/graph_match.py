@@ -83,7 +83,6 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
 
 
 def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
-    print(SERVICE_ECOSYSTEM.Lakehouse)
     match_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
