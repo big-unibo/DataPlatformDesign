@@ -37,17 +37,21 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
         WHERE {{
             ?datalake rdf:type <{DPDO.Repository}> .
             ?datalake <{DPDO.hasTag}> <{TAG_TAXONOMY.Landing}> .
-            ?datalake <{DPDO.flowsData}>+ ?repository .
-            ?repository rdf:type <{DPDO.Repository}> .
-            ?repository <{DPDO.flowsData}>+ ?dwh .
+            OPTIONAL{{
+                ?datalake <{DPDO.flowsData}>+ ?repository .
+                ?repository rdf:type <{DPDO.Repository}> .
+                ?repository <{DPDO.flowsData}>+ ?dwh .
+
+                FILTER EXISTS {{
+                ?repository <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
+            }}
+            }}
             ?dwh rdf:type <{DPDO.Repository}> .
             FILTER EXISTS {{
                 ?datalake <{DPDO.flowsData}>+ ?dwh .
                 ?dwh <{DPDO.hasTag}> <{TAG_TAXONOMY.Multidimensional}> .
             }}
-            FILTER EXISTS {{
-                ?repository <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
-            }}
+
             FILTER(?repository != ?dwh)
             {{
                 ?datalake <{DPDO.flowsData}>+ ?pathRepository .
@@ -79,6 +83,7 @@ def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
 
 
 def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
+    print(SERVICE_ECOSYSTEM.Lakehouse)
     match_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -126,6 +131,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
                         }}
                }}
             }}
+            FILTER (?service != <{SERVICE_ECOSYSTEM.Lakehouse}>) .
         }}
     """
 

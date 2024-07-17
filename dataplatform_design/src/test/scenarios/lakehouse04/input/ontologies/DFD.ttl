@@ -16,6 +16,7 @@ DFD:N1
         rdf:type owl:NamedIndividual, DPDO:Repository;
         DPDO:flowsData DFD:N2;
         DPDO:hasTag TagTaxonomy:Landing;
+        DPDO:isMandatory ServiceEcosystem:Lakehouse;
         DPDO:name "N1".
 
 DFD:N2
