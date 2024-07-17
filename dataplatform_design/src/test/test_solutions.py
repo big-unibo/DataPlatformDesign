@@ -110,5 +110,11 @@ class TestStringMethods(unittest.TestCase):
     def test_mandatory01(self):
         test_scenarioI(self, get_path("mandatory01"))
 
+    def test_isAkin01(self):
+        test_scenarioI(self, get_path("isAkin01"))
+
+    def test_isAkin01(self):
+        test_scenarioI(self, get_path("isAkin02"))
+
     # def test_ico(self):
     #     test_scenarioI(self, get_path("ico"))

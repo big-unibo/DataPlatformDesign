@@ -2,5 +2,5 @@
 @prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
 @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
 
-
-DFD:Raw_Images DPDO:selected ServiceEcosystem:S3.
+DFD:N1 DPDO:selected ServiceEcosystem:S1.
+DFD:N2 DPDO:selected ServiceEcosystem:S3.
