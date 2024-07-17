@@ -1,6 +1,6 @@
 import os
 import rdflib
-from rdflib import Namespace
+from rdflib import Namespace, URIRef
 from graphviz import Digraph
 
 
@@ -19,44 +19,28 @@ def parse_json_to_graph(json_file):
         format="json-ld",
     )
 
-    predicates = ["implementedBy", "requires"]
+    predicates = ["implementedBy", "requires", "flowsData"]
 
-    # if "matched_graph" in json_file:
-    #     [
-    #         print(str(p))
-    #         for s, p, o in g
-    #         # for predicate in predicates
-    #         # if predicate in str(p)
-    #     ]
-    #     triples_to_remove = [
-    #         (s, p, o)
-    #         for s, p, o in g
-    #         if all([predicate not in str(p) for predicate in predicates])
-    #     ]
+    if "matched_graph" in json_file:
+        # Focus only on named graph
+        named_graph = rdflib.Graph(
+            store=g.store, identifier=URIRef("http://dpdo_example.com/DPD_Graph")
+        )
+        triples_to_remove = [
+            (s, p, o)
+            for s, p, o in named_graph
+            if all([predicate not in str(p) for predicate in predicates])
+        ]
 
-    #     for triple in triples_to_remove:
-    #         g.remove(triple)
+        for triple in triples_to_remove:
+            named_graph.remove(triple)
 
-    #     for s, p, o in g:
-    #         print(f"Subject: {s}, Predicate: {p}, Object: {o}")
+        return named_graph
     return g
 
 
 def visualize_graph(g, save_path):
     dot = Digraph(comment="RDF Graph")
-
-    repository = {}
-    process = {}
-    for s, p, o in g:
-        s_str = str(s).split("#")[-1]
-        p_str = str(p).split("#")[-1]
-        o_str = str(o).split("#")[-1]
-
-        if "DFD" in s and "type" in p_str:
-            if o_str == "Repository":
-                repository[s_str] = True
-            if o_str == "Process":
-                process[s_str] = True
 
     for s, p, o in g:
         s_str = str(s).split("#")[-1]
@@ -66,24 +50,16 @@ def visualize_graph(g, save_path):
             dot.node(
                 s_str,
                 s_str,
-                shape=(
-                    "box"
-                    if (s_str in repository)
-                    else ("oval" if (s_str in process) else "oval")
-                ),
+                shape="ellipse" if "DFD" in s else "box",
                 style="filled",
-                color="steelblue" if "DFD" in s else "gold",
+                color="lightblue" if "DFD" in s else "yellow",
             )
             dot.node(
                 o_str,
                 o_str,
-                shape=(
-                    "box"
-                    if (o_str in repository)
-                    else ("oval" if (o_str in process) else "oval")
-                ),
+                shape="ellipse" if "DFD" in o else "box",
                 style="filled",
-                color="steelblue" if "DFD" in o else "gold",
+                color="lightblue" if "DFD" in o else "yellow",
             )
             dot.edge(s_str, o_str, label=p_str)
 
