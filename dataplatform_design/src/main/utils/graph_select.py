@@ -318,16 +318,14 @@ def get_mandatories(named_graph):
     ]
 
 
-def embed_additional_constraints(variable_names, preferences, mandatories):
+def embed_additional_constraints(variable_names, preferences):
     objective = []
     for variable in variable_names:
         if "->" in variable:
             objective.append(0)
         else:
-            if variable in preferences and variable not in mandatories:
+            if variable in preferences and variable:
                 objective.append(0.5)
-            elif variable in mandatories:
-                objective.append(0)
             else:
                 objective.append(1)
     return objective
@@ -462,6 +460,15 @@ def select_services(named_graph):
     lakehouse_rhs = [0 for _ in lakehouse_constraint]
     lakehouse_constraint_senses = ["E" for _ in lakehouse_constraint]
 
+    ### 9th Constraint - Services' mandatories
+    mandatory_constraint = [[[mandatory], [1]] for mandatory in mandatories]
+
+    mandatory_constraint_names = [
+        "mandatory" + str(i) for i, _ in enumerate(mandatory_constraint)
+    ]
+    mandatory_constraint_rhs = [1 for _ in mandatory_constraint]
+    mandatory_constraint_senses = ["E" for _ in mandatory_constraint]
+
     #############################
     # 2.2 PROBLEM FORMALIZATION #
     #############################
@@ -500,7 +507,7 @@ def select_services(named_graph):
 
     # Setting variables' weights to minimize, weight(arch) = 0 since we don't want to minimize them
     objective = [0 if "->" in variable else 1 for variable in variable_names]
-    objective = embed_additional_constraints(variable_names, preferences, mandatories)
+    objective = embed_additional_constraints(variable_names, preferences)
 
     variable_types = [problem.variables.type.binary for _ in variable_names]
 
@@ -553,6 +560,13 @@ def select_services(named_graph):
         senses=lakehouse_constraint_senses,
         rhs=lakehouse_rhs,
         names=lakehouse_constraint_names,
+    )
+
+    problem.linear_constraints.add(
+        lin_expr=mandatory_constraint,
+        senses=mandatory_constraint_senses,
+        rhs=mandatory_constraint_rhs,
+        names=mandatory_constraint_names,
     )
 
     # Generate and populate the solution pool
