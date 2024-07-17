@@ -99,7 +99,7 @@ def test_scenarioI(self, scenario_directory):
     # assert result, f"Testing {scenario_directory}, result: {result}"
 
 
-class TestStringMethods(unittest.TestCase):
+class TestSolutions(unittest.TestCase):
 
     def test_requires01(self):
         test_scenarioI(self, get_path("requires01"))
