@@ -1,0 +1,42 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/DFD>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/DFD> rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+DFD:N1
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N2;
+    DPDO:hasTag TagTaxonomy:Landing;
+    DPDO:name "N1".
+
+DFD:N2
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N3;
+    DPDO:hasTag TagTaxonomy:Batch;
+    DPDO:name "N2".
+
+DFD:N3
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N4;
+    DPDO:hasTag TagTaxonomy:Relational;
+    DPDO:name "N3".
+
+DFD:N4
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N5;
+    DPDO:hasTag TagTaxonomy:Batch;
+    DPDO:name "N4".
+
+DFD:N5
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Multidimensional;
+    DPDO:name "N5".

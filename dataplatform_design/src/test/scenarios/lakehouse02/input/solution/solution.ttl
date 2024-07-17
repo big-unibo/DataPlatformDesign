@@ -1,0 +1,9 @@
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+
+DFD:N1 DPDO:selected ServiceEcosystem:Lakehouse.
+DFD:N2 DPDO:selected ServiceEcosystem:S1.
+DFD:N3 DPDO:selected ServiceEcosystem:Lakehouse.
+DFD:N4 DPDO:selected ServiceEcosystem:S1.
+DFD:N5 DPDO:selected ServiceEcosystem:Lakehouse.
