@@ -61,8 +61,8 @@ def load_yaml(path):
             logger.exception(exc)
 
 
-def graphs_are_equal(expected_solution, proposed_solution, predicate):
-    triples_to_remove = [(s, p, o) for s, p, o in proposed_solution if p == predicate]
+def graphs_are_equal(expected_solution, proposed_solution, predicates):
+    triples_to_remove = [(s, p, o) for s, p, o in proposed_solution if p in predicates]
     for triple in triples_to_remove:
         proposed_solution.remove(triple)
 

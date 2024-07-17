@@ -1,4 +1,4 @@
-from rdflib import Graph, URIRef
+from rdflib import Graph, URIRef, RDF
 import os
 import pytz
 from rdflib.namespace import Namespace
@@ -127,6 +127,8 @@ class DataPlatformDesigner:
 
             for c, s in named_graph.subject_objects(self.DPDO.flowsData):
                 solution_selected_graph.add((c, self.DPDO.flowsData, s))
+            for c, s in named_graph.subject_objects(RDF.type):
+                solution_selected_graph.add((c, RDF.type, s))
 
             db_selected_graph = utils.setup_graph(self.namespaces)
             [
@@ -220,7 +222,7 @@ class DataPlatformDesigner:
                 format="turtle",
             )
             # Compare expected solution with computed solution
-            if utils.graphs_are_equal(expected_solution, solution, self.DPDO.flowsData):
+            if utils.graphs_are_equal(expected_solution, solution, [self.DPDO.flowsData, RDF.type]):
                 s = f"Expected solution matches solution {selected_graphs.index(solution)}!"
                 # logger.info(s)
                 return True, s

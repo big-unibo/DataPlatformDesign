@@ -20,7 +20,6 @@ DFD:Download rdf:type owl:NamedIndividual ,
             DPDO:flowsData DFD:Raw_Sales ;
             DPDO:hasTag TagTaxonomy:Pull,
                         TagTaxonomy:Batch;
-            DPDO:isMandatory ServiceEcosystem:EMR ;
             DPDO:name "Download" .
 
 
@@ -34,7 +33,7 @@ DFD:Raw_Sales rdf:type owl:NamedIndividual ,
              DPDO:name "Raw Sales" .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Clean
-DFD:Transform rdf:type owl:NamedIndividual ,
+DFD:Clean rdf:type owl:NamedIndividual ,
                         DPDO:Process ;
                     DPDO:flowsData DFD:Cleaned_Data ;
                     DPDO:hasTag TagTaxonomy:Cumulative;
