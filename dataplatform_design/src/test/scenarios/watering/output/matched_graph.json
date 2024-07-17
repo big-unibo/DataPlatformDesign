@@ -372,12 +372,6 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_all",
-        "@type": [
-            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
-        ]
-    },
-    {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
@@ -415,13 +409,6 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration",
-        "@type": [
-            "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
-        ]
-    },
-    {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_class",
@@ -447,7 +434,7 @@
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
         ]
     },
     {
@@ -517,7 +504,7 @@
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
         ]
     },
     {
@@ -547,14 +534,14 @@
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
         ]
     },
     {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
         ]
     },
     {
@@ -599,7 +586,7 @@
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning_class",
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag",
-            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+            "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
         ]
     },
     {
@@ -678,6 +665,20 @@
         ]
     },
     {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag",
+        "@type": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag"
+            },
+            {
+                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+            }
+        ]
+    },
+    {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible",
         "@type": [
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -702,20 +703,6 @@
             },
             {
                 "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag",
-        "@type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag"
-            },
-            {
-                "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
             }
         ]
     },
@@ -923,16 +910,21 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Index Comp."
             }
         ]
     },
@@ -971,17 +963,6 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name:",
-        "@type": [
-            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name:"
-            }
-        ]
-    },
-    {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#ETL",
         "@type": [
             "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
@@ -997,10 +978,10 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job"
@@ -1029,6 +1010,9 @@
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
@@ -1078,10 +1062,10 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Raw_Images"
@@ -1208,7 +1192,7 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
             }
         ]
     },
@@ -1231,14 +1215,6 @@
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_class"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration_class",
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
             }
         ]
     },
@@ -1371,7 +1347,7 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
             }
         ]
     },
@@ -1441,38 +1417,19 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#topDataProperty": [
-            {
-                "@value": "EC2"
-            }
-        ]
-    },
-    {
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS",
         "http://www.w3.org/2002/07/owl#topObjectProperty": [
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
@@ -1525,10 +1482,10 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -1556,37 +1513,37 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
@@ -1599,13 +1556,16 @@
         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EFS",
         "http://www.w3.org/2002/07/owl#topObjectProperty": [
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
             },
             {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
@@ -1624,62 +1584,98 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
         "http://www.w3.org/2002/07/owl#topObjectProperty": [
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "RDS"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
             {
-                "@value": "Glue"
+                "@value": "Redshift"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "PostGIS"
             }
         ]
     },
@@ -1690,10 +1686,10 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured"
@@ -1718,141 +1714,42 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
         "http://www.w3.org/2002/07/owl#topObjectProperty": [
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#topDataProperty": [
-            {
-                "@value": "PostGIS"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#topDataProperty": [
-            {
-                "@value": "RDS"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#topDataProperty": [
-            {
-                "@value": "GeoServer"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
             {
-                "@value": "Redshift"
+                "@value": "EMR"
             }
         ]
     },
@@ -1866,39 +1763,52 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Clustering"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
             {
                 "@value": "Sagemaker"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "EC2"
             }
         ]
     },
@@ -1924,10 +1834,10 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
@@ -1940,8 +1850,11 @@
         ]
     },
     {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
         "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL"
+            },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
             },
@@ -1949,33 +1862,106 @@
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
             }
         ],
         "http://www.w3.org/2002/07/owl#topDataProperty": [
             {
-                "@value": "EMR"
+                "@value": "Glue"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "GeoServer"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#topDataProperty": [
+            {
+                "@value": "Postgres"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
+        "http://www.w3.org/2002/07/owl#topObjectProperty": [
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
             }
         ]
     },
@@ -2013,28 +1999,6 @@
             },
             {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
-        "http://www.w3.org/2002/07/owl#topObjectProperty": [
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
-            }
-        ],
-        "http://www.w3.org/2002/07/owl#topDataProperty": [
-            {
-                "@value": "Postgres"
             }
         ]
     },
@@ -2172,7 +2136,7 @@
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
                     }
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2311,22 +2275,6 @@
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration_class",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#Class"
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
-                    }
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#label": [
-                    {
-                        "@value": "Represents an individual with an integration data functionality"
-                    }
-                ]
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL_class",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#Class"
@@ -2339,22 +2287,6 @@
                 "http://www.w3.org/2000/01/rdf-schema#label": [
                     {
                         "@value": "Represents an individual with ETL data functionality"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#Class"
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Tag"
-                    }
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#label": [
-                    {
-                        "@value": "Represents an individual with some goal in terms of data"
                     }
                 ]
             },
@@ -2461,7 +2393,7 @@
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
                     }
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2477,7 +2409,7 @@
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_class"
                     }
                 ],
                 "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2735,12 +2667,6 @@
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_all",
-                "@type": [
-                    "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Goal_class"
-                ]
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all",
                 "@type": [
                     "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_Type_class"
@@ -2971,55 +2897,24 @@
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "EC2"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#Class"
-                ],
-                "http://www.w3.org/2002/07/owl#disjointWith": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#ObjectProperty"
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-                    {
-                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
-                    }
-                ]
-            },
-            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
@@ -3033,95 +2928,16 @@
                     {
                         "@value": "EBS"
                     }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
-                    }
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis",
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service",
                 "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                    "http://www.w3.org/2002/07/owl#Class"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                "http://www.w3.org/2002/07/owl#disjointWith": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Kinesis"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "S3"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#DatatypeProperty"
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-                    {
-                        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
-                    }
-                ],
-                "http://www.w3.org/2000/01/rdf-schema#range": [
-                    {
-                        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#DFDNode"
                     }
                 ]
             },
@@ -3142,10 +2958,111 @@
                 ]
             },
             {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#ObjectProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Kinesis"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "S3"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#DatatypeProperty"
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                    {
+                        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+                    }
+                ],
+                "http://www.w3.org/2000/01/rdf-schema#range": [
+                    {
+                        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    }
+                ]
+            },
+            {
                 "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EFS",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
@@ -3162,36 +3079,64 @@
                     {
                         "@value": "EFS"
                     }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "RDS"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
                     }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
@@ -3201,47 +3146,118 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
                     },
                     {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    },
+                    {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@value": "Glue"
+                        "@value": "Lambda"
                     }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Redshift"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "PostGIS"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
                     }
                 ]
             },
@@ -3250,6 +3266,20 @@
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured"
+                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
@@ -3269,32 +3299,35 @@
                     {
                         "@value": "DynamoDB"
                     }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured"
-                    }
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda",
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL"
                     },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
                     },
@@ -3302,134 +3335,24 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
-                    },
-                    {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#GeoServer"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@value": "Lambda"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "PostGIS"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "RDS"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                        "@value": "Glue"
                     }
                 ]
             },
@@ -3438,25 +3361,6 @@
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "GeoServer"
-                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
@@ -3469,55 +3373,131 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "GeoServer"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
                     }
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift",
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@value": "Redshift"
+                        "@value": "EMR"
                     }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Sagemaker"
                     }
                 ]
             },
@@ -3543,54 +3523,63 @@
                 ]
             },
             {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker",
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2",
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EBS"
+                    },
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Kinesis"
+                    },
+                    {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Athena"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@value": "Sagemaker"
+                        "@value": "EC2"
                     }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression"
-                    },
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Clustering"
+                        "@value": "Postgres"
+                    }
+                ]
+            },
+            {
+                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Autoloader",
+                "@type": [
+                    "http://www.w3.org/2002/07/owl#NamedIndividual",
+                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all"
                     }
                 ]
             },
@@ -3599,25 +3588,6 @@
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Athena"
-                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
@@ -3635,56 +3605,24 @@
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
                     }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#isCompatible": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#S3"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#DynamoDB"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#PostGIS"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Redshift"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
                     {
-                        "@value": "EMR"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EC2"
+                        "@value": "Athena"
                     }
                 ]
             },
@@ -3693,11 +3631,6 @@
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Lakehouse"
-                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
@@ -3708,6 +3641,11 @@
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Lakehouse"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#requires": [
@@ -3734,32 +3672,6 @@
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
-                    }
-                ]
-            },
-            {
-                "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Postgres",
-                "@type": [
-                    "http://www.w3.org/2002/07/owl#NamedIndividual",
-                    "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Service"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Postgres"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational"
-                    },
-                    {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational"
                     }
                 ]
             },
@@ -3958,11 +3870,6 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Sensor Data"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing"
@@ -3975,6 +3882,11 @@
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Sensor Data"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -3997,17 +3909,17 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Data Enrichment"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Data Enrichment"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -4030,11 +3942,6 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Raw Images"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive"
@@ -4050,6 +3957,11 @@
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Raw Images"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -4080,6 +3992,11 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
                     }
                 ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Index Comp."
+                    }
+                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data"
@@ -4090,18 +4007,13 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
-                    },
-                    {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job"
-                    }
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name:": [
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                    },
                     {
-                        "@value": "Index Comp."
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job"
                     }
                 ]
             },
@@ -4110,11 +4022,6 @@
                 "@type": [
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository"
-                ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Integrated Data."
-                    }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
@@ -4125,6 +4032,11 @@
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Integrated Data."
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -4150,17 +4062,17 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "ETL"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "ETL"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -4173,10 +4085,10 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#EMR"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Databricks_Job"
@@ -4189,11 +4101,6 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Irrigation Optimization"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
@@ -4205,7 +4112,15 @@
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small"
                     }
                 ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Irrigation Optimization"
+                    }
+                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy": [
+                    {
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                    },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Sagemaker"
                     }
@@ -4217,17 +4132,17 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Repository"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "DWH"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "DWH"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy": [
@@ -4245,17 +4160,17 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Download image data"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Download image data"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
@@ -4265,10 +4180,10 @@
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#implementedBy": [
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
                     },
                     {
-                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Lambda"
+                        "@id": "http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue"
                     }
                 ]
             },
@@ -4278,17 +4193,17 @@
                     "http://www.w3.org/2002/07/owl#NamedIndividual",
                     "http://www.foo.bar/dataplatform_design/ontologies/DPDO#Process"
                 ],
-                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
-                    {
-                        "@value": "Consume sensor data"
-                    }
-                ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#hasTag": [
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch"
                     },
                     {
                         "@id": "http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push"
+                    }
+                ],
+                "http://www.foo.bar/dataplatform_design/ontologies/DPDO#name": [
+                    {
+                        "@value": "Consume sensor data"
                     }
                 ],
                 "http://www.foo.bar/dataplatform_design/ontologies/DPDO#flowsData": [
