@@ -1,0 +1,36 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+ServiceEcosystem:S1 rdf:type owl:NamedIndividual, DPDO:Service;
+    DPDO:hasTag TagTaxonomy:Batch;
+    DPDO:isCompatible ServiceEcosystem:Lakehouse, ServiceEcosystem:S3, ServiceEcosystem:RDS, ServiceEcosystem:Redshift;
+    DPDO:name "S1".
+
+ServiceEcosystem:S3 rdf:type owl:NamedIndividual, DPDO:Service;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all, TagTaxonomy:Big;
+    DPDO:name "S3".
+
+ServiceEcosystem:RDS rdf:type owl:NamedIndividual, DPDO:Service;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Data_Volume_all, TagTaxonomy:Operational, TagTaxonomy:Data_Zones_all;
+    DPDO:isCompatible ServiceEcosystem:S3, ServiceEcosystem:Lambda;
+    DPDO:name "RDS".
+
+ServiceEcosystem:Redshift rdf:type owl:NamedIndividual, DPDO:Service;
+    DPDO:isCompatible ServiceEcosystem:PostGIS, ServiceEcosystem:DynamoDB, ServiceEcosystem:Glue, ServiceEcosystem:RDS;
+    DPDO:hasTag TagTaxonomy:Reporting, TagTaxonomy:Multidimensional, TagTaxonomy:Data_Volume_all;
+    DPDO:name "Redshift".
+
+ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual, DPDO:Service;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:File, TagTaxonomy:Structured;
+    DPDO:name "Lakehouse".

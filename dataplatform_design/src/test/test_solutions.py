@@ -113,8 +113,11 @@ class TestStringMethods(unittest.TestCase):
     def test_isAkin01(self):
         test_scenarioI(self, get_path("isAkin01"))
 
-    def test_isAkin01(self):
+    def test_isAkin02(self):
         test_scenarioI(self, get_path("isAkin02"))
+
+    def test_lakehouse01(self):
+        test_scenarioI(self, get_path("lakehouse01"))
 
     # def test_ico(self):
     #     test_scenarioI(self, get_path("ico"))

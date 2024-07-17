@@ -52,7 +52,7 @@ ServiceEcosystem:S3 rdf:type owl:NamedIndividual,
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#RDS
 ServiceEcosystem:RDS rdf:type owl:NamedIndividual,
             DPDO:Service;
-            DPDO:hasTag TagTaxonomy:Structured,
+            DPDO:hasTag TagTaxonomy:Relational,
                         TagTaxonomy:Data_Volume_all,
                         TagTaxonomy:Operational,
                         TagTaxonomy:Data_Zones_all;
