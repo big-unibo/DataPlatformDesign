@@ -82,10 +82,36 @@ def visualize_graph(g, save_path):
                 style="filled",
                 color="steelblue" if "DFD" in o else "gold",
             )
-            dot.edge(s_str, o_str, label=p_str)
+
+            def e_color(s):
+                if s == "flowsData":
+                    return "black"
+                if s == "selected":
+                    return "red"
+                return "grey"
+
+            def e_style(s):
+                if s == "requires":
+                    return "dashed"
+                if s == "isCompatible":
+                    return "dotted"
+                return "solid"
+
+            dot.edge(
+                s_str,
+                o_str,
+                label=(
+                    p_str
+                    if p_str
+                    not in ["implementedBy", "flowsData", "isCompatible", "requires"]
+                    else ""
+                ),
+                style=e_style(p_str),
+                color=e_color(p_str),
+            )
 
     dot.render(save_path, format="png")
-    dot.save(save_path + ".dot")
+    # dot.save(save_path + ".dot")
 
 
 def process_directory_tree(root_dir):
