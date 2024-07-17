@@ -47,7 +47,7 @@ DFD:Index_Comp rdf:type owl:NamedIndividual ,
         DPDO:flowsData DFD:Integrated_Data ;
         DPDO:hasTag TagTaxonomy:Batch ,
                     TagTaxonomy:Big ;
-        DPDO:name: "Index Comp." .
+        DPDO:name "Index Comp." .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data
 DFD:Integrated_Data rdf:type owl:NamedIndividual ,
