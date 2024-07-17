@@ -248,25 +248,14 @@ def get_lakehouse_services(named_graph):
     lakehouse_services_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        SELECT ?datalake ?pathRepository
-        WHERE {{
-            ?datalake rdf:type <{DPDO.Repository}> .
-            ?datalake <{DPDO.hasTag}> <{TAG_TAXONOMY.Landing}> .
-            ?datalake <{DPDO.flowsData}>+ ?repository .
-            ?repository rdf:type <{DPDO.Repository}> .
-            ?repository <{DPDO.flowsData}>+ ?dwh .
-            ?dwh rdf:type <{DPDO.Repository}> .
-            FILTER EXISTS {{
-                ?datalake <{DPDO.flowsData}>+ ?dwh .
-                ?dwh <{DPDO.hasTag}> <{TAG_TAXONOMY.Multidimensional}> .
-            }}
-            FILTER EXISTS {{
-                ?repository <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
-            }}
-            FILTER(?repository != ?dwh)
-            {{
-                ?datalake <{DPDO.flowsData}>+ ?pathRepository .
-                ?pathRepository rdf:type <{DPDO.Repository}> .
+        select ?node ?other_node where {{
+            ?node <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+            ?node <{DPDO.flowsData}>+ ?other_node .
+            ?other_node <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+
+            FILTER NOT EXISTS{{
+                ?previous_node <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+                ?previous_node <{DPDO.flowsData}>+ ?node .
             }}
         }}
     """
