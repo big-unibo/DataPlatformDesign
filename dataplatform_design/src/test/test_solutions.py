@@ -122,6 +122,15 @@ class TestStringMethods(unittest.TestCase):
     def test_lakehouse01(self):
         test_scenarioI(self, get_path("lakehouse01"))
 
+    def test_lakehouse02(self):
+        test_scenarioI(self, get_path("lakehouse02"))
+
+    def test_lakehouse03(self):
+        test_scenarioI(self, get_path("lakehouse03"))
+
+    def test_lakehouse04(self):
+        test_scenarioI(self, get_path("lakehouse04"))
+
     def test_isCompatible02(self):
         test_scenarioI(self, get_path("isCompatible02"))
 
