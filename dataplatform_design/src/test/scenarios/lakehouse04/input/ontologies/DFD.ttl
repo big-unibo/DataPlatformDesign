@@ -20,7 +20,7 @@ DFD:N1
 
 DFD:N2
         rdf:type owl:NamedIndividual, DPDO:Process;
-        DPDO:flowsData DFD:N2;
+        DPDO:flowsData DFD:N3;
         DPDO:hasTag TagTaxonomy:Batch;
         DPDO:name "N2".
 
