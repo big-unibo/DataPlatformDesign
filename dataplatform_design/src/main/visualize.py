@@ -36,10 +36,10 @@ def visualize_graph(g, save_path):
                 shape=(
                     "box"
                     if (s_str in repository)
-                    else ("ellipse" if (s_str in process) else "hexagon")
+                    else ("oval" if (s_str in process) else "oval")
                 ),
                 style="filled",
-                color="lightblue" if "DFD" in s else "yellow",
+                color="steelblue" if "DFD" in s else "gold",
             )
             dot.node(
                 o_str,
@@ -47,10 +47,10 @@ def visualize_graph(g, save_path):
                 shape=(
                     "box"
                     if (o_str in repository)
-                    else ("ellipse" if (o_str in process) else "hexagon")
+                    else ("oval" if (o_str in process) else "oval")
                 ),
                 style="filled",
-                color="lightblue" if "DFD" in o else "yellow",
+                color="steelblue" if "DFD" in o else "gold",
             )
             dot.edge(s_str, o_str, label=p_str)
 
