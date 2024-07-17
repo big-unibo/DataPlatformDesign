@@ -562,7 +562,7 @@ def select_services(named_graph):
     problem.populate_solution_pool()
 
     num_solutions = problem.solution.pool.get_num()
-    logger.info(f"Number of solutions found: {num_solutions}")
+    logger.debug(f"Number of solutions found: {num_solutions}")
 
     all_solutions = []
     all_requires = []

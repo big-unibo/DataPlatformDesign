@@ -1,0 +1,45 @@
+- Data Model (All)
+    - Structured
+        - Relational
+        - Multidimensional
+    - Semi-structured
+        - Document
+        - Wide-column
+    - Unstructured
+        - Key-value
+        - Graph
+        - File
+- Data Nature (All)
+    - Spatial
+        - Vectorial
+        - Raster
+    - Temporal
+- Volume (All)
+    - Small
+    - Big
+- Data Zones (All)
+    - Landing
+    - Archive
+    - Processed
+    - Data product
+- Functionality (All)
+    - ETL
+    - Reporting
+    - Operational
+    - Machine learning
+        - Classification
+        - Regression
+- Collection (All)
+    - Pull
+        - Cumulative
+        - Delta
+    - Push
+- Computing (All)
+    - Batch
+    - Mini-batch
+    - Streaming
+- Language (All)
+    - Low code
+    - Python
+    - Java
+    - SQL
