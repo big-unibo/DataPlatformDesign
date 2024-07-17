@@ -1,11 +1,44 @@
 import os
 import rdflib
+from rdflib import Namespace
 from graphviz import Digraph
 
 
 def parse_turtle_to_graph(turtle_file):
     g = rdflib.Graph()
     g.parse(turtle_file, format="turtle")
+    return g
+
+
+def parse_json_to_graph(json_file):
+
+    g = rdflib.Graph()
+
+    g.parse(
+        location=os.path.join(json_file),
+        format="json-ld",
+    )
+
+    predicates = ["implementedBy", "requires"]
+
+    # if "matched_graph" in json_file:
+    #     [
+    #         print(str(p))
+    #         for s, p, o in g
+    #         # for predicate in predicates
+    #         # if predicate in str(p)
+    #     ]
+    #     triples_to_remove = [
+    #         (s, p, o)
+    #         for s, p, o in g
+    #         if all([predicate not in str(p) for predicate in predicates])
+    #     ]
+
+    #     for triple in triples_to_remove:
+    #         g.remove(triple)
+
+    #     for s, p, o in g:
+    #         print(f"Subject: {s}, Predicate: {p}, Object: {o}")
     return g
 
 
@@ -46,6 +79,13 @@ def process_directory_tree(root_dir):
                 if "config" not in file_path:
                     print(file_path)
                     g = parse_turtle_to_graph(file_path)
+                    visualize_graph(g, save_path)
+            elif filename.endswith(".json"):
+                file_path = os.path.join(dirpath, filename)
+                save_path = os.path.join(dirpath, filename.replace(".json", ""))
+                if "config" not in file_path:
+                    print(file_path)
+                    g = parse_json_to_graph(file_path)
                     visualize_graph(g, save_path)
 
 

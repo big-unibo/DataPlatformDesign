@@ -61,12 +61,14 @@ def load_yaml(path):
             logger.exception(exc)
 
 
-def graphs_are_equal(expected_solution, proposed_solution):
-    # Confronta il numero di triple nei due grafi
+def graphs_are_equal(expected_solution, proposed_solution, predicate):
+    triples_to_remove = [(s, p, o) for s, p, o in proposed_solution if p == predicate]
+    for triple in triples_to_remove:
+        proposed_solution.remove(triple)
+
     if len(expected_solution) != len(proposed_solution):
         return False
 
-    # Confronta le triple in entrambi i grafi
     for triple in expected_solution:
         if triple not in proposed_solution:
             s, p, o = triple

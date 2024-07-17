@@ -136,3 +136,7 @@ class TestSolutions(unittest.TestCase):
 
     def test_ico(self):
         test_scenarioI(self, get_path("ico"))
+
+
+test = TestSolutions()
+test.test_isAkin01()

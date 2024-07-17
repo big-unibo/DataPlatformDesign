@@ -121,8 +121,13 @@ class DataPlatformDesigner:
                 selected_graph_output_path,
                 f"selected_graph_solution_{solution_number}.json",
             )
+
             # Foreach new edge, add it to selected_graph
             solution_selected_graph = utils.setup_graph(self.namespaces)
+
+            for c, s in named_graph.subject_objects(self.DPDO.flowsData):
+                solution_selected_graph.add((c, self.DPDO.flowsData, s))
+
             db_selected_graph = utils.setup_graph(self.namespaces)
             [
                 db_selected_graph.add(
@@ -215,7 +220,7 @@ class DataPlatformDesigner:
                 format="turtle",
             )
             # Compare expected solution with computed solution
-            if utils.graphs_are_equal(expected_solution, solution):
+            if utils.graphs_are_equal(expected_solution, solution, self.DPDO.flowsData):
                 s = f"Expected solution matches solution {selected_graphs.index(solution)}!"
                 # logger.info(s)
                 return True, s
