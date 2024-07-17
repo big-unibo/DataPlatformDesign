@@ -10,6 +10,6 @@ RUN apt-get update  && \
     apt-get install -y graphviz && \
     apt-get clean -y
 
-RUN pip install --upgrade pip && \
-    pip install -r src/requirements.txt \
-    pip install flake8 black
+RUN pip install --upgrade pip
+RUN pip install -r src/requirements.txt
+RUN pip install flake8 black

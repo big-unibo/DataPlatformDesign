@@ -2,6 +2,12 @@
 .vscode
 **/output/*
 !output/.dummy
+**/input/adds_constraints/*
+!**/input/adds_constraints/*.ttl
+**/input/ontologies/*
+!**/input/ontologies/*.ttl
+**/input/solution/*
+!**/input/solution/*.ttl
 
 # Created by https://www.gitignore.io/api/java,linux,macos,gradle,windows,eclipse,intellij
 # Edit at https://www.gitignore.io/?templates=java,linux,macos,gradle,windows,eclipse,intellij

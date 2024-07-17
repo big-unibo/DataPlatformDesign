@@ -6,6 +6,7 @@
 @prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#>.
 @prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
 @base <http://www.foo.bar/dataplatform_design/ontologies/DFD>.
 
 <http://www.foo.bar/dataplatform_design/ontologies/DFD> rdf:type owl:Ontology;
