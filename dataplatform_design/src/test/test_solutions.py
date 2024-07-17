@@ -125,5 +125,5 @@ class TestStringMethods(unittest.TestCase):
     def test_isCompatible02(self):
         test_scenarioI(self, get_path("isCompatible02"))
 
-    # def test_ico(self):
-    #     test_scenarioI(self, get_path("ico"))
+    def test_ico(self):
+        test_scenarioI(self, get_path("ico"))
