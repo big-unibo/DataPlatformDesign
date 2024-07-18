@@ -4,7 +4,7 @@ graph_db:
   repository: DataPlatformDesign_watering
 ontologies:
   adds_constraints_paths:
-    preferences: dataplatform_design/src/test/scenarios/watering/input/adds_constraints/preferences.ttl
+    preferences: dataplatform_design/resources/scenario_template/input/adds_constraints/preferences.ttl
   namespaces:
     dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#
     dpdo: http://www.foo.bar/dataplatform_design/ontologies/DPDO#

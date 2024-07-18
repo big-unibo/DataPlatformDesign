@@ -628,7 +628,7 @@ ServiceEcosystem:Databricks_Job
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
             TagTaxonomy:Big,
-            TagTaxonomy:Batch;.
+            TagTaxonomy:Batch;
         DPDO:isCompatible
             ServiceEcosystem:Athena,
             ServiceEcosystem:Databricks_Autoloader,

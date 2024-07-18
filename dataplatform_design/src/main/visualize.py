@@ -134,5 +134,8 @@ def process_directory_tree(root_dir):
 
 
 # Example usage
-root_directory = "dataplatform_design/src/test/scenarios/"
-process_directory_tree(root_directory)
+for root_directory in [
+    "dataplatform_design/src/test/scenarios/",
+    "dataplatform_design/resources",
+]:
+    process_directory_tree(root_directory)
