@@ -55,7 +55,7 @@ DFD:Index_Comp
         DPDO:hasTag
             TagTaxonomy:Batch,
             TagTaxonomy:Big;
-        DPDO:name "Index Comp.".
+        DPDO:name "Index Computation".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data
 DFD:Integrated_Data
@@ -114,6 +114,3 @@ DFD:Irrigation_Opt
             TagTaxonomy:Small,
             TagTaxonomy:Regression;
         DPDO:name "Irrigation Optimization".
-
-
-
