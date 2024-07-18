@@ -555,6 +555,7 @@ ServiceEcosystem:Lakehouse
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
             TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Landing,
             TagTaxonomy:File,
             TagTaxonomy:Structured;
         DPDO:isCompatible
@@ -587,8 +588,7 @@ ServiceEcosystem:Lambda
             TagTaxonomy:Small,
             TagTaxonomy:Collection_all,
             TagTaxonomy:Batch,
-            TagTaxonomy:Mini_Batch,
-            TagTaxonomy:Functionality_all;
+            TagTaxonomy:Mini_Batch;
         DPDO:isCompatible
             # ServiceEcosystem:EMR,
             # ServiceEcosystem:Kinesis,

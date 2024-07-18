@@ -19,7 +19,7 @@ def get_path(folder):
     return os.path.join("dataplatform_design", "src", "test", "scenarios", folder)
 
 
-def test_scenarioI(self, scenario_directory):
+def test_scenarioI(self, scenario_directory, n_solutions=1):
     test_utils.normalize_repositories_names(
         [
             os.path.join(scenario_directory, "configs", "config.yml"),
@@ -95,7 +95,7 @@ def test_scenarioI(self, scenario_directory):
     res, s = dataplat_designer.compare_solutions(selected_graphs, solution_path)
     # print(s)
     self.assertTrue(res)
-    self.assertEqual(len(selected_graphs), 1)
+    self.assertEqual(len(selected_graphs), n_solutions)
     # assert result, f"Testing {scenario_directory}, result: {result}"
 
 
@@ -138,7 +138,7 @@ class TestSolutions(unittest.TestCase):
         test_scenarioI(self, get_path("ico"))
 
     def test_watering(self):
-        test_scenarioI(self, get_path("watering"))
+        test_scenarioI(self, get_path("watering"), n_solutions=2)
 
 
 # test = TestSolutions()

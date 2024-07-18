@@ -33,7 +33,7 @@ DFD:Raw_Images
             TagTaxonomy:Archive,
             TagTaxonomy:Big,
             TagTaxonomy:File,
-            TagTaxonomy:Landing,
+            # TagTaxonomy:Landing,
             TagTaxonomy:Raster;
         DPDO:name "Raw Images".
 
