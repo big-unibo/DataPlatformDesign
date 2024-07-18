@@ -94,7 +94,7 @@ DFD:Download
             TagTaxonomy:Pull,
             TagTaxonomy:Batch;
         DPDO:flowsData DFD:Raw_Images;
-        DPDO:name "Download image data".
+        DPDO:name "Download Image Data".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Consume
 DFD:Consume
@@ -104,7 +104,7 @@ DFD:Consume
             TagTaxonomy:Mini_Batch;
         DPDO:flowsData
             DFD:Sensor_Data;
-        DPDO:name "Consume sensor data".
+        DPDO:name "Consume Sensor Data".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Irrigation_Opt
 DFD:Irrigation_Opt

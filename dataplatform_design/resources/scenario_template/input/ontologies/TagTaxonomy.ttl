@@ -1,416 +1,301 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
-@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> .
-
-<http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> rdf:type owl:Ontology .
-
-
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+<http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> rdf:type owl:Ontology.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Archive_class
-TagTaxonomy:Archive_class rdf:type owl:Class ;
-             rdfs:subClassOf TagTaxonomy:Data_Zones_class ;
-             rdfs:label "Represents an individual with archive functionality" .
-
-
+TagTaxonomy:Archive_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Zones_class;
+    rdfs:label "Represents an individual with archive functionality".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Batch_class
-TagTaxonomy:Batch_class rdf:type owl:Class ;
-           rdfs:subClassOf TagTaxonomy:Computing_class ;
-           rdfs:label "Represents an individual with batch computing type" .
-
-
+TagTaxonomy:Batch_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Computing_class;
+    rdfs:label "Represents an individual with batch computing type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Big_class
-TagTaxonomy:Big_class rdf:type owl:Class ;
-         rdfs:subClassOf TagTaxonomy:Data_Volume_class ;
-         rdfs:label "Represents an individual with big data volume" .
-
+TagTaxonomy:Big_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Volume_class;
+    rdfs:label "Represents an individual with big data volume".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Classification_class
-TagTaxonomy:Classification_class rdf:type owl:Class ;
-                    rdfs:subClassOf TagTaxonomy:Machine_Learning_class ;
-                    rdfs:label "Represents an individual with classification (ML) goal" .
-
-
+TagTaxonomy:Classification_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Machine_Learning_class;
+    rdfs:label "Represents an individual with classification (ML) goal".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Collection_Type_class
-TagTaxonomy:Collection_Type_class rdf:type owl:Class ;
-                     rdfs:subClassOf DPDO:Tag ;
-                     rdfs:label "Represents an individual with some data collection purposes" .
-
+TagTaxonomy:Collection_Type_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual with some data collection purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Computing_class
-TagTaxonomy:Computing_class rdf:type owl:Class ;
-               rdfs:subClassOf DPDO:Tag ;
-               rdfs:label "Represents an individual with some data computing purposes" .
-
+TagTaxonomy:Computing_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual with some data computing purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Model_class
-TagTaxonomy:Data_Model_class rdf:type owl:Class ;
-                rdfs:subClassOf DPDO:Tag ;
-                rdfs:label "Represents an individual that works with some data model" .
-
-
+TagTaxonomy:Data_Model_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual that works with some data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Nature_class
-TagTaxonomy:Data_Nature_class rdf:type owl:Class ;
-                 rdfs:subClassOf DPDO:Tag ;
-                 rdfs:label "Represents an individual that works with data of some nature" .
-
-
+TagTaxonomy:Data_Nature_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual that works with data of some nature".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Volume_class
-TagTaxonomy:Data_Volume_class rdf:type owl:Class ;
-                 rdfs:subClassOf DPDO:Tag ;
-                 rdfs:label "Represents an individual that works with data of some volume" .
-
-
+TagTaxonomy:Data_Volume_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual that works with data of some volume".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Document_class
-TagTaxonomy:Document_class rdf:type owl:Class ;
-              rdfs:subClassOf TagTaxonomy:Semi_Structured_class ;
-              rdfs:label "Represents an individual with a document data model" .
-
-
+TagTaxonomy:Document_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Semi_Structured_class;
+    rdfs:label "Represents an individual with a document data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/File_class
-TagTaxonomy:File_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Unstructured_class .
-
-
+TagTaxonomy:File_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Unstructured_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Zones_class
-TagTaxonomy:Data_Zones_class rdf:type owl:Class ;
-                   rdfs:subClassOf DPDO:Tag ;
-                   rdfs:label "Represents an individual with a some data zone" .
-
-###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Data_Functionality_class
-TagTaxonomy:Functionality_class rdf:type owl:Class ;
-                   rdfs:subClassOf DPDO:Tag ;
-                   rdfs:label "Represents an individual with a some data zone" .
-
+TagTaxonomy:Data_Zones_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual with a some data zone".
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Language_class
+TagTaxonomy:Language_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag.
+TagTaxonomy:Python_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Language_class.
+TagTaxonomy:SQL_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Language_class.
+TagTaxonomy:LowCode_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Language_class.
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Functionality_class
+TagTaxonomy:Functionality_class
+    rdf:type owl:Class;
+    rdfs:subClassOf DPDO:Tag;
+    rdfs:label "Represents an individual with a some data zone".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/ETL_class
-TagTaxonomy:ETL_class rdf:type owl:Class ;
-                   rdfs:subClassOf TagTaxonomy:Functionality_class ;
-                   rdfs:label "Represents an individual with ETL data functionality" .
-
+TagTaxonomy:ETL_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Functionality_class;
+    rdfs:label "Represents an individual with ETL data functionality".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Graph_class
-TagTaxonomy:Graph_class rdf:type owl:Class ;
-           rdfs:subClassOf TagTaxonomy:Unstructured_class ;
-           rdfs:label "Represents an individual with a graph data model" .
-
-
+TagTaxonomy:Graph_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Unstructured_class;
+    rdfs:label "Represents an individual with a graph data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Key_Value_class
-TagTaxonomy:Key_Value_class rdf:type owl:Class ;
-               rdfs:subClassOf TagTaxonomy:Unstructured_class ;
-               rdfs:label "Represents an individual with a key-value data model" .
-
-
+TagTaxonomy:Key_Value_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Unstructured_class;
+    rdfs:label "Represents an individual with a key-value data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Landing_class
-TagTaxonomy:Landing_class rdf:type owl:Class ;
-             rdfs:subClassOf TagTaxonomy:Data_Zones_class ;
-             rdfs:label "Represents an individual with landing functionality" .
-
-
+TagTaxonomy:Landing_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Zones_class;
+    rdfs:label "Represents an individual with landing functionality".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Machine_Learning_class
-TagTaxonomy:Machine_Learning_class rdf:type owl:Class ;
-                      rdfs:subClassOf TagTaxonomy:Functionality_class ;
-                      rdfs:label "Represents an individual with machine learning's data purposes" .
-
-
+TagTaxonomy:Machine_Learning_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Functionality_class;
+    rdfs:label "Represents an individual with machine learning's data purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Mini_Batch_class
-TagTaxonomy:Mini_Batch_class rdf:type owl:Class ;
-                rdfs:subClassOf TagTaxonomy:Computing_class ;
-                rdfs:label "Represents an individual with mini-batch computing type" .
-
-
+TagTaxonomy:Mini_Batch_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Computing_class;
+    rdfs:label "Represents an individual with mini-batch computing type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Multidimensional_class
-TagTaxonomy:Multidimensional_class rdf:type owl:Class ;
-                      rdfs:subClassOf TagTaxonomy:Structured_class ;
-                      rdfs:label "Represents an individual with a multidimensional data model" .
-
-
+TagTaxonomy:Multidimensional_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Structured_class;
+    rdfs:label "Represents an individual with a multidimensional data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Reporting_class
-TagTaxonomy:Reporting_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Functionality_class ;
-          rdfs:label "Represents an individual with Reporting data purposes" .
-
-
+TagTaxonomy:Reporting_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Functionality_class;
+    rdfs:label "Represents an individual with Reporting data purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Operational_class
-TagTaxonomy:Operational_class rdf:type owl:Class ;
-                 rdfs:subClassOf TagTaxonomy:Functionality_class ;
-                 rdfs:label "Represents an individual with operational data purposes" .
-
+TagTaxonomy:Operational_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Functionality_class;
+    rdfs:label "Represents an individual with operational data purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Processed_class
-TagTaxonomy:Processed_class rdf:type owl:Class ;
-               rdfs:subClassOf TagTaxonomy:Data_Zones_class ;
-               rdfs:label "Represents an individual with storaging processed data functionality" .
-
-
+TagTaxonomy:Processed_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Zones_class;
+    rdfs:label "Represents an individual with storaging processed data functionality".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Pull_class
-TagTaxonomy:Pull_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Collection_Type_class ;
-          rdfs:label "Represents an individual with pull collection type" .
-
+TagTaxonomy:Pull_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Collection_Type_class;
+    rdfs:label "Represents an individual with pull collection type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Delta_class
-TagTaxonomy:Delta_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Pull_class ;
-          rdfs:label "Represents an individual with delta pull collection type" .
-
+TagTaxonomy:Delta_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Pull_class;
+    rdfs:label "Represents an individual with delta pull collection type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Cumulative_class
-TagTaxonomy:Cumulative_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Pull_class ;
-          rdfs:label "Represents an individual with cumulative pull collection type" .
-
+TagTaxonomy:Cumulative_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Pull_class;
+    rdfs:label "Represents an individual with cumulative pull collection type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Push_class
-TagTaxonomy:Push_class rdf:type owl:Class ;
-          rdfs:subClassOf TagTaxonomy:Collection_Type_class ;
-          rdfs:label "Represents an individual with push collection type" .
-
-
+TagTaxonomy:Push_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Collection_Type_class;
+    rdfs:label "Represents an individual with push collection type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Raster_class
-TagTaxonomy:Raster_class rdf:type owl:Class ;
-            rdfs:subClassOf TagTaxonomy:Spatial_class ;
-            rdfs:label "Represents an individual with a raster spatial data nature" .
-
-
+TagTaxonomy:Raster_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Spatial_class;
+    rdfs:label "Represents an individual with a raster spatial data nature".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Regression_class
-TagTaxonomy:Regression_class rdf:type owl:Class ;
-                rdfs:subClassOf TagTaxonomy:Machine_Learning_class ;
-                rdfs:label "Represents an individual with machine learning regression data purposes" .
-
-
+TagTaxonomy:Regression_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Machine_Learning_class;
+    rdfs:label "Represents an individual with machine learning regression data purposes".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Relational_class
-TagTaxonomy:Relational_class rdf:type owl:Class ;
-                rdfs:subClassOf TagTaxonomy:Structured_class ;
-                rdfs:label "Represents an individual with a relational structured data model" .
-
+TagTaxonomy:Relational_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Structured_class;
+    rdfs:label "Represents an individual with a relational structured data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Semi_Structured_class
-TagTaxonomy:Semi_Structured_class rdf:type owl:Class ;
-                     rdfs:subClassOf TagTaxonomy:Data_Model_class ;
-                     rdfs:label "Represents an individual with a semi structured data model" .
-
+TagTaxonomy:Semi_Structured_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Model_class;
+    rdfs:label "Represents an individual with a semi structured data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Small_class
-TagTaxonomy:Small_class rdf:type owl:Class ;
-           rdfs:subClassOf TagTaxonomy:Data_Volume_class ;
-           rdfs:label "Represents an individual with small data volume" .
-
-
+TagTaxonomy:Small_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Volume_class;
+    rdfs:label "Represents an individual with small data volume".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Spatial_class
-TagTaxonomy:Spatial_class rdf:type owl:Class ;
-             rdfs:subClassOf TagTaxonomy:Data_Nature_class ;
-             rdfs:label "Represents an individual with a spatial data nature" .
-
-
+TagTaxonomy:Spatial_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Nature_class;
+    rdfs:label "Represents an individual with a spatial data nature".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Streaming_class
-TagTaxonomy:Streaming_class rdf:type owl:Class ;
-               rdfs:subClassOf TagTaxonomy:Computing_class ;
-               rdfs:label "Represents an individual with streaming computing type" .
-
-
+TagTaxonomy:Streaming_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Computing_class;
+    rdfs:label "Represents an individual with streaming computing type".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Structured_class
-TagTaxonomy:Structured_class rdf:type owl:Class ;
-                rdfs:subClassOf TagTaxonomy:Data_Model_class ;
-                rdfs:label "Represents an individual with a structured data model" .
-
-
+TagTaxonomy:Structured_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Model_class;
+    rdfs:label "Represents an individual with a structured data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Temporal_class
-TagTaxonomy:Temporal_class rdf:type owl:Class ;
-              rdfs:subClassOf TagTaxonomy:Data_Nature_class ;
-              rdfs:label "Represents an individual with a temporal data nature" .
-
-
+TagTaxonomy:Temporal_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Nature_class;
+    rdfs:label "Represents an individual with a temporal data nature".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Unstructured_class
-TagTaxonomy:Unstructured_class rdf:type owl:Class ;
-                  rdfs:subClassOf TagTaxonomy:Data_Model_class ;
-                  rdfs:label "Represents an individual with a unstructured data model" .
-
-
+TagTaxonomy:Unstructured_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Data_Model_class;
+    rdfs:label "Represents an individual with a unstructured data model".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Vectorial_class
-TagTaxonomy:Vectorial_class rdf:type owl:Class ;
-               rdfs:subClassOf TagTaxonomy:Spatial_class ;
-               rdfs:label "Represents an individual with a vectorial spatial data nature" .
-
-
+TagTaxonomy:Vectorial_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Spatial_class;
+    rdfs:label "Represents an individual with a vectorial spatial data nature".
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Wide_column_class
-TagTaxonomy:Wide_column_class rdf:type owl:Class ;
-                 rdfs:subClassOf TagTaxonomy:Semi_Structured_class ;
-                 rdfs:label "Represents an individual with a wide column data model" .
-
-
+TagTaxonomy:Wide_column_class
+    rdf:type owl:Class;
+    rdfs:subClassOf TagTaxonomy:Semi_Structured_class;
+    rdfs:label "Represents an individual with a wide column data model".
 #################################################################
 #    Individuals
 #################################################################
-
+TagTaxonomy:Language_all rdf:type TagTaxonomy:Language_class.
+TagTaxonomy:Python rdf:type TagTaxonomy:Python_class.
+TagTaxonomy:SQL rdf:type TagTaxonomy:SQL_class.
+TagTaxonomy:LowCode rdf:type TagTaxonomy:LowCode_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta
-TagTaxonomy:Delta rdf:type
-              TagTaxonomy:Delta_class .
-
+TagTaxonomy:Delta rdf:type TagTaxonomy:Delta_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Cumulative
-TagTaxonomy:Cumulative rdf:type
-              TagTaxonomy:Cumulative_class .
-
+TagTaxonomy:Cumulative rdf:type TagTaxonomy:Cumulative_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Functionality_all
-TagTaxonomy:Functionality_all rdf:type
-              TagTaxonomy:Functionality_class .
-
+TagTaxonomy:Functionality_all rdf:type TagTaxonomy:Functionality_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Computing_all
-TagTaxonomy:Computing_all rdf:type
-              TagTaxonomy:Computing_class .
-
+TagTaxonomy:Computing_all rdf:type TagTaxonomy:Computing_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Collection_all
-TagTaxonomy:Collection_all rdf:type 
-              TagTaxonomy:Collection_Type_class .
-
+TagTaxonomy:Collection_all rdf:type TagTaxonomy:Collection_Type_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Volume_all
-TagTaxonomy:Data_Volume_all rdf:type 
-              TagTaxonomy:Data_Volume_class .
-
+TagTaxonomy:Data_Volume_all rdf:type TagTaxonomy:Data_Volume_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Nature_all
-TagTaxonomy:Data_Nature_all rdf:type 
-                  TagTaxonomy:Data_Nature_class .
-
+TagTaxonomy:Data_Nature_all rdf:type TagTaxonomy:Data_Nature_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Model_all
-TagTaxonomy:Data_Model_all rdf:type 
-                     TagTaxonomy:Data_Model_class .
-
+TagTaxonomy:Data_Model_all rdf:type TagTaxonomy:Data_Model_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Data_Zones_all
-TagTaxonomy:Data_Zones_all rdf:type 
-                  TagTaxonomy:Data_Zones_class .
-
+TagTaxonomy:Data_Zones_all rdf:type TagTaxonomy:Data_Zones_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL
-TagTaxonomy:ETL rdf:type 
-                  TagTaxonomy:ETL_class .
-
+TagTaxonomy:ETL rdf:type TagTaxonomy:ETL_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration
-TagTaxonomy:Integration rdf:type 
-                  TagTaxonomy:Integration_class .
-
+TagTaxonomy:Integration rdf:type TagTaxonomy:Integration_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive
-TagTaxonomy:Archive rdf:type 
-                  TagTaxonomy:Archive_class .
-
-
+TagTaxonomy:Archive rdf:type TagTaxonomy:Archive_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch
-TagTaxonomy:Batch rdf:type 
-                TagTaxonomy:Batch_class .
-
-
+TagTaxonomy:Batch rdf:type TagTaxonomy:Batch_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Big
-TagTaxonomy:Big rdf:type 
-              TagTaxonomy:Big_class .
-
+TagTaxonomy:Big rdf:type TagTaxonomy:Big_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Classification
-TagTaxonomy:Classification rdf:type 
-                         TagTaxonomy:Classification_class .
-
-
+TagTaxonomy:Classification rdf:type TagTaxonomy:Classification_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Document
-TagTaxonomy:Document rdf:type 
-                   TagTaxonomy:Document_class .
-
-
+TagTaxonomy:Document rdf:type TagTaxonomy:Document_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#File
-TagTaxonomy:File rdf:type 
-               TagTaxonomy:File_class .
-
-
-
+TagTaxonomy:File rdf:type TagTaxonomy:File_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Graph
-TagTaxonomy:Graph rdf:type 
-                TagTaxonomy:Graph_class .
-
-
+TagTaxonomy:Graph rdf:type TagTaxonomy:Graph_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Key_Value
-TagTaxonomy:Key_Value rdf:type 
-                    TagTaxonomy:Key_Value_class .
-
+TagTaxonomy:Key_Value rdf:type TagTaxonomy:Key_Value_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Landing
-TagTaxonomy:Landing rdf:type 
-                  TagTaxonomy:Landing_class .
-
-
+TagTaxonomy:Landing rdf:type TagTaxonomy:Landing_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Machine_Learning
-TagTaxonomy:Machine_Learning rdf:type 
-                           TagTaxonomy:Machine_Learning_class .
-
-
+TagTaxonomy:Machine_Learning rdf:type TagTaxonomy:Machine_Learning_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Mini_Batch
-TagTaxonomy:Mini_Batch rdf:type 
-                     TagTaxonomy:Mini_Batch_class .
-
-
+TagTaxonomy:Mini_Batch rdf:type TagTaxonomy:Mini_Batch_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Multidimensional
-TagTaxonomy:Multidimensional rdf:type 
-                           TagTaxonomy:Multidimensional_class .
-
-
+TagTaxonomy:Multidimensional rdf:type TagTaxonomy:Multidimensional_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Reporting
-TagTaxonomy:Reporting rdf:type 
-               TagTaxonomy:Reporting_class .
-
-
+TagTaxonomy:Reporting rdf:type TagTaxonomy:Reporting_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Operational
-TagTaxonomy:Operational rdf:type 
-                      TagTaxonomy:Operational_class .
-
+TagTaxonomy:Operational rdf:type TagTaxonomy:Operational_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Processed
-TagTaxonomy:Processed rdf:type 
-                    TagTaxonomy:Processed_class .
-
-
+TagTaxonomy:Processed rdf:type TagTaxonomy:Processed_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Pull
-TagTaxonomy:Pull rdf:type 
-               TagTaxonomy:Pull_class .
-
-
+TagTaxonomy:Pull rdf:type TagTaxonomy:Pull_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Push
-TagTaxonomy:Push rdf:type 
-               TagTaxonomy:Push_class .
-
-
+TagTaxonomy:Push rdf:type TagTaxonomy:Push_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Raster
-TagTaxonomy:Raster rdf:type 
-                 TagTaxonomy:Raster_class .
-
+TagTaxonomy:Raster rdf:type TagTaxonomy:Raster_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Regression
-TagTaxonomy:Regression rdf:type 
-                     TagTaxonomy:Regression_class .
-
-
+TagTaxonomy:Regression rdf:type TagTaxonomy:Regression_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Relational
-TagTaxonomy:Relational rdf:type 
-                     TagTaxonomy:Relational_class .
-
-
+TagTaxonomy:Relational rdf:type TagTaxonomy:Relational_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Semi_Structured
-TagTaxonomy:Semi_Structured rdf:type 
-                          TagTaxonomy:Semi_Structured_class .
-
-
+TagTaxonomy:Semi_Structured rdf:type TagTaxonomy:Semi_Structured_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Small
-TagTaxonomy:Small rdf:type 
-                TagTaxonomy:Small_class .
-
-
+TagTaxonomy:Small rdf:type TagTaxonomy:Small_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Spatial
-TagTaxonomy:Spatial rdf:type 
-                  TagTaxonomy:Spatial_class .
-
-
+TagTaxonomy:Spatial rdf:type TagTaxonomy:Spatial_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Streaming
-TagTaxonomy:Streaming rdf:type 
-                    TagTaxonomy:Streaming_class .
-
-
+TagTaxonomy:Streaming rdf:type TagTaxonomy:Streaming_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Structured
-TagTaxonomy:Structured rdf:type 
-                     TagTaxonomy:Structured_class .
-
-
+TagTaxonomy:Structured rdf:type TagTaxonomy:Structured_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal
-TagTaxonomy:Temporal rdf:type 
-                   TagTaxonomy:Temporal_class .
-
-
+TagTaxonomy:Temporal rdf:type TagTaxonomy:Temporal_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial
-TagTaxonomy:Vectorial rdf:type 
-                    TagTaxonomy:Spatial_class .
-
-
+TagTaxonomy:Vectorial rdf:type TagTaxonomy:Spatial_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_Column
-TagTaxonomy:Wide_Column rdf:type 
-                      TagTaxonomy:Semi_Structured_class .
+TagTaxonomy:Wide_Column rdf:type TagTaxonomy:Semi_Structured_class.
