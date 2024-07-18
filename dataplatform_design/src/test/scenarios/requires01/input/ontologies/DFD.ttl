@@ -13,11 +13,9 @@
                 <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> .
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Sensor_Data
-DFD:Sensor_Data rdf:type owl:NamedIndividual ,
-                      DPDO:Repository ;
-             DPDO:flowsData DFD:Data_Enrichment ;
-             DPDO:hasTag TagTaxonomy:Relational ,
-                         TagTaxonomy:Small ,
-                         TagTaxonomy:Vectorial ,
-                         TagTaxonomy:Landing ;
-             DPDO:name "Sensor Data" .
+DFD:Sensor_Data rdf:type owl:NamedIndividual, DPDO:Repository;
+                DPDO:hasTag TagTaxonomy:Relational,
+                            TagTaxonomy:Small,
+                            TagTaxonomy:Vectorial,
+                            TagTaxonomy:Landing;
+                DPDO:name "Sensor Data".
