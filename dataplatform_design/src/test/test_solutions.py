@@ -105,7 +105,9 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     )
 
     # Compare solution to given one
-    res, s, solution_cost = dataplat_designer.compare_solutions(selected_graphs, solution_path)
+    res, s, solution_cost = dataplat_designer.compare_solutions(
+        selected_graphs, solution_path, costs
+    )
     self.assertTrue(res)
     self.assertEqual(len(selected_graphs), n_solutions)
     # assert result, f"Testing {scenario_directory}, result: {result}"
