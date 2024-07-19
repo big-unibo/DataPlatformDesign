@@ -4,6 +4,7 @@ import pytz
 from rdflib.namespace import Namespace
 import sys
 import requests
+import visualize
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -25,11 +26,12 @@ config = utils.load_yaml(
 
 
 class DataPlatformDesigner:
-    def __init__(self, endpoint, repository, named_graph, namespaces):
+    def __init__(self, endpoint, repository, named_graph, namespaces, scenario_path):
         self.endpoint = endpoint
         self.repository = repository
         self.named_graph = named_graph
         self.namespaces = namespaces
+        self.scenario_path = scenario_path
         self.selection_constraints = []
         self.DPDO = Namespace(namespaces["dpdo"])
         self.TAG = Namespace(namespaces["tag_taxonomy"])
@@ -180,7 +182,7 @@ class DataPlatformDesigner:
                 for edge in requires[solution_number]
             ]
             logger.debug(f"\n Pushing solution {solution_number} to GraphDb...:")
-            # Serializza il grafo in formato Turtle
+            
             data = db_selected_graph.serialize(format="turtle")
             headers = {"Content-Type": "application/x-turtle"}
             response = requests.post(
@@ -205,6 +207,7 @@ class DataPlatformDesigner:
                 logger.debug(
                     f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
                 )
+
             # Write selected_graph
             with open(
                 solution_output_path,
@@ -216,6 +219,7 @@ class DataPlatformDesigner:
 
             selected_graphs.append(solution_selected_graph)
 
+        visualize.process_directory_tree(self.scenario_path)
         return selected_graphs
 
     def augment_graph(self, graph):
