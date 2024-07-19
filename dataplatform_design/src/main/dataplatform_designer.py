@@ -97,7 +97,11 @@ class DataPlatformDesigner:
             if graph_match.build_matched_graph(
                 self.endpoint, self.repository, self.named_graph, matched_graph_path
             ) & graph_match.match_lakehouse_pattern(
-                self.endpoint, self.repository, self.named_graph, matched_graph_path, self.namespaces
+                self.endpoint,
+                self.repository,
+                self.named_graph,
+                matched_graph_path,
+                self.namespaces,
             ):
 
                 # # Load matched graph
@@ -114,7 +118,6 @@ class DataPlatformDesigner:
         except Exception as e:
             logger.exception("Something went wrong while building matched graph")
             logger.exception(e.__doc__)
-            logger.exception(str(e))
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem

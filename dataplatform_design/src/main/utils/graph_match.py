@@ -183,24 +183,12 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
         headers=match_headers,
     )
 
-    dfd_nodes_query = f"""SELECT (COUNT(DISTINCT ?node) AS ?count)
+    dfd_implements_query = f"""SELECT ?node
     WHERE {{
         ?node a <{DPDO.DFDNode}> .
-    }}"""
-
-    dfd_nodes_response = requests.post(
-        f"{endpoint}/repositories/{repository_name}",
-        data=dfd_nodes_query,
-        headers={
-            "Content-Type": "application/sparql-query",
-            "Accept": "application/sparql-results+json",
-        },
-    )
-
-    dfd_implements_query = f"""SELECT (COUNT(DISTINCT ?node) AS ?count)
-    WHERE {{
-        ?node a <{DPDO.DFDNode}> .
-        ?node <{DPDO.implementedBy}> ?service .
+        FILTER NOT EXISTS{{
+            ?node <{DPDO.implementedBy}> ?service .
+            }}
     }}"""
     dfd_implements_response = requests.post(
         f"{endpoint}/repositories/{repository_name}",
@@ -211,7 +199,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
         },
     )
     at_least_implement_query = f"""
-        SELECT (COUNT(DISTINCT ?previous_node) AS ?count)
+        SELECT ?previous_node ?following_node
             WHERE {{
                 ?previous_node a <{DPDO.DFDNode}> .
                 ?previous_node <{DPDO.implementedBy}> ?service .
@@ -221,7 +209,9 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
 
                 ?previous_node <{DPDO.flowsData}> ?following_node .
 
-                ?service <{DPDO.isCompatible}> ?another_service .
+                FILTER NOT EXISTS{{
+                    ?service <{DPDO.isCompatible}> ?another_service .
+                }}
             }}
     """
     dfd_compatible_response = requests.post(
@@ -251,35 +241,36 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
     flows_data_count = int(
         flows_data_response.json()["results"]["bindings"][0]["count"]["value"]
     )
-    compatible_node_count = int(
-        dfd_compatible_response.json()["results"]["bindings"][0]["count"]["value"]
-    )
-    node_count = int(
-        dfd_nodes_response.json()["results"]["bindings"][0]["count"]["value"]
-    )
-    implements_count = int(
-        dfd_implements_response.json()["results"]["bindings"][0]["count"]["value"]
-    )
+    compatible_node_count = dfd_compatible_response.json()["results"]["bindings"]
+
+    not_implements = dfd_implements_response.json()["results"]["bindings"]
 
     if (
         response.status_code == 204
-        and node_count == implements_count
-        and flows_data_count == compatible_node_count
+        and len(not_implements) <= 0
+        and len(compatible_node_count) <= 0
     ):
         logger.debug("Successfully matched DFD and Service Graph.")
     else:
-        if node_count != implements_count:
-            logger.error("Not all DFD nodes matched a service.")
-            raise Exception("Not all DFD nodes matched a service.")
-        elif flows_data_count != compatible_node_count:
-            logger.error(
-                "Can't find a set of compatible services for two consecutive DFD nodes"
-            )
+        if len(not_implements) > 0:
+            for not_implement in not_implements:
+                logger.exception(
+                    f"""Couldn't find an service implement for {not_implement["node"]["value"]}"""
+                )
+            raise Exception(f"Couldn't find an service implement for some DFD Nodes")
+        elif compatible_node_count > 0:
+            for linked_nodes in compatible_node_count:
+                previous_node = linked_nodes["previous_node"]["value"]
+                following_node = linked_nodes["following_node"]["value"]
+                logger.exception(
+                    f"Can't find a set of compatible services for nodes {previous_node} -> and {following_node}"
+                )
             raise Exception(
                 "Can't find a set of compatible services for two consecutive DFD nodes"
             )
-        logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
-        logger.error(response.content)
+        else:
+            logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
+            logger.error(response.content)
 
     return save_matched_graph(
         endpoint, repository_name, named_graph_uri, match_graph_path
