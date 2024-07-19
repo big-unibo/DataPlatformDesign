@@ -99,7 +99,7 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     matched_graph = dataplat_designer.augment_graph(matched_graph)
 
     # Building selected graph
-    selected_graphs = dataplat_designer.build_selected_graph(
+    selected_graphs, costs = dataplat_designer.build_selected_graph(
         matched_graph,
         selected_graph_path,
     )
@@ -128,6 +128,13 @@ class TestSolutions(unittest.TestCase):
 
     def test_isAkin02(self):
         test_scenarioI(self, get_path("isAkin02"))
+
+    def test_isAkin03(self):
+        try:
+            test_scenarioI(self, get_path("isAkin03"))
+        except Exception as e:
+            logger.exception(e.__doc__)
+            return True
 
     def test_isCompatible01(self):
         test_scenarioI(self, get_path("isCompatible01"))

@@ -131,10 +131,11 @@ def get_akin_services(graph, implementedby_edges, dfd_edges):
     for node, service, followingNode, akin_service in result:
         akin_services.append(
             (
-                ((normalize_name(str(node))),
-                (normalize_name(str(service)))),
-                ((normalize_name(str(followingNode))),
-                (normalize_name(str(akin_service)))),
+                ((normalize_name(str(node))), (normalize_name(str(service)))),
+                (
+                    (normalize_name(str(followingNode))),
+                    (normalize_name(str(akin_service))),
+                ),
             )
         )
     return akin_services
@@ -535,19 +536,22 @@ def select_services(named_graph):
 
     all_solutions = []
     all_requires = []
-
+    all_solution_costs = []
     for i in range(num_solutions):
-        # if problem.solution.pool.get_objective_value(i) <= min_obj:
+        cost = 0
         selected_services = []
         selected_edges = []
         solution_values = problem.solution.pool.get_values(i)
 
         for j, name in enumerate(problem.variables.get_names()):
             selected = solution_values[j]
+            print(f"{name} : {selected}")
             if "->" in name and selected > 0:
                 selected_edges.append(name)
             elif selected > 0:
+                cost = cost + selected
                 selected_services.append(name)
+        all_solution_costs.append(cost)
         all_solutions.append({"services": selected_services, "edges": selected_edges})
         all_requires.append(
             [
@@ -558,4 +562,4 @@ def select_services(named_graph):
                 if service in selected_services
             ]
         )
-    return all_solutions, all_requires
+    return all_solutions, all_requires, all_solution_costs

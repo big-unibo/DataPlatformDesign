@@ -123,7 +123,7 @@ class DataPlatformDesigner:
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
-        solutions, requires = graph_select.select_services(named_graph)
+        solutions, requires, costs = graph_select.select_services(named_graph)
         selected_graphs = []
         for solution in solutions:
             solution_number = solutions.index(solution)
@@ -218,9 +218,9 @@ class DataPlatformDesigner:
                 )
 
             selected_graphs.append(solution_selected_graph)
-
         visualize.process_directory_tree(self.scenario_path)
-        return selected_graphs
+
+        return selected_graphs, costs
 
     def augment_graph(self, graph):
         return graph_augment.augment_graph(graph)
