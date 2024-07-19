@@ -1,0 +1,209 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ServiceEcosystemGoogle: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemGoogle#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemGoogle#>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemGoogle#> rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+ServiceEcosystemGoogle:GCStorage
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:File,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Data_Zones_all,
+            TagTaxonomy:Big;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "GCStorage".
+
+ServiceEcosystemGoogle:CloudSQL
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Relational,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Operational,
+            TagTaxonomy:Data_Zones_all;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "CloudSQL".
+
+ServiceEcosystemGoogle:Firestore
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:hasTag
+            TagTaxonomy:Semi_Structured,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Operational,
+            TagTaxonomy:Data_Zones_all;
+        DPDO:name "Firestore".
+
+ServiceEcosystemGoogle:ComputeEngine
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "ComputeEngine".
+
+ServiceEcosystemGoogle:Dataflow
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Big,
+            TagTaxonomy:Batch,
+            TagTaxonomy:ETL;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "Dataflow".
+
+ServiceEcosystemGoogle:VertexAI
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Machine_Learning,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Batch;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "VertexAI".
+
+ServiceEcosystemGoogle:Dataproc
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Machine_Learning,
+            TagTaxonomy:Big,
+            TagTaxonomy:Batch;
+        DPDO:requires
+            ServiceEcosystemGoogle:ComputeEngine;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "Dataproc".
+
+ServiceEcosystemGoogle:BigQuery
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:hasTag
+            TagTaxonomy:Relational,
+            TagTaxonomy:Document,
+            TagTaxonomy:Key_Value,
+            TagTaxonomy:Big,
+            TagTaxonomy:Reporting;
+        DPDO:name "BigQuery".
+
+ServiceEcosystemGoogle:PubSub
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Push,
+            TagTaxonomy:Mini_Batch,
+            TagTaxonomy:Streaming;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "PubSub".
+
+ServiceEcosystemGoogle:GCFunctions
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Small,
+            TagTaxonomy:Cumulative,
+            TagTaxonomy:Push,
+            TagTaxonomy:Batch,
+            TagTaxonomy:Mini_Batch;
+        DPDO:isCompatible
+            ServiceEcosystemGoogle:BigQuery,
+            ServiceEcosystemGoogle:Firestore,
+            ServiceEcosystemGoogle:ComputeEngine,
+            ServiceEcosystemGoogle:Dataproc,
+            ServiceEcosystemGoogle:Dataflow,
+            ServiceEcosystemGoogle:PubSub,
+            ServiceEcosystemGoogle:GCFunctions,
+            ServiceEcosystemGoogle:CloudSQL,
+            ServiceEcosystemGoogle:GCStorage,
+            ServiceEcosystemGoogle:VertexAI;
+        DPDO:name "GCFunctions".

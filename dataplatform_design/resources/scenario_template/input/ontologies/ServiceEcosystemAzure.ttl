@@ -1,0 +1,301 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ServiceEcosystemAzure: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemAzure#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemAzure#>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemAzure#> rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+ServiceEcosystemAzure:AzureBlobStorage
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:File,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Data_Zones_all,
+            TagTaxonomy:Big;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureBlobStorage".
+
+ServiceEcosystemAzure:AzureSQLDatabase
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Relational,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Operational,
+            TagTaxonomy:Data_Zones_all;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureSQLDatabase".
+
+ServiceEcosystemAzure:AzureSynapseAnalytics
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:hasTag
+            TagTaxonomy:Reporting,
+            TagTaxonomy:Multidimensional,
+            TagTaxonomy:Data_Volume_all;
+        DPDO:name "AzureSynapseAnalytics".
+
+ServiceEcosystemAzure:CosmosDB
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:hasTag
+            TagTaxonomy:Semi_Structured,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Operational,
+            TagTaxonomy:Data_Zones_all;
+        DPDO:name "CosmosDB".
+
+ServiceEcosystemAzure:AzureVM
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureVM".
+
+ServiceEcosystemAzure:Databricks_Autoloader
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:hasTag
+            TagTaxonomy:Delta.
+
+ServiceEcosystemAzure:AzureDataFactory
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Big,
+            TagTaxonomy:Batch,
+            TagTaxonomy:ETL;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureDataFactory".
+
+ServiceEcosystemAzure:AzureMachineLearning
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Machine_Learning,
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Batch;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureMachineLearning".
+
+ServiceEcosystemAzure:AzureHDInsight
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Machine_Learning,
+            TagTaxonomy:Big,
+            TagTaxonomy:Batch;
+        DPDO:requires
+            ServiceEcosystemAzure:AzureVM;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureHDInsight".
+
+ServiceEcosystemAzure:AzureStreamAnalytics
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Push,
+            TagTaxonomy:Mini_Batch,
+            TagTaxonomy:Streaming;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureStreamAnalytics".
+
+ServiceEcosystemAzure:Lakehouse
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Data_Volume_all,
+            TagTaxonomy:Landing,
+            TagTaxonomy:File,
+            TagTaxonomy:Structured;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:requires ServiceEcosystemAzure:AzureBlobStorage;
+        DPDO:name "Lakehouse".
+
+ServiceEcosystemAzure:AzureFunctions
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Small,
+            TagTaxonomy:Cumulative,
+            TagTaxonomy:Push,
+            TagTaxonomy:Batch,
+            TagTaxonomy:Mini_Batch;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "AzureFunctions".
+
+ServiceEcosystemAzure:Databricks_Job
+        rdf:type owl:NamedIndividual, DPDO:Service;
+        DPDO:hasTag
+            TagTaxonomy:Big,
+            TagTaxonomy:Batch;
+        DPDO:isCompatible
+            ServiceEcosystemAzure:Databricks_Autoloader,
+            ServiceEcosystemAzure:Databricks_Job,
+            ServiceEcosystemAzure:CosmosDB,
+            ServiceEcosystemAzure:AzureVM,
+            ServiceEcosystemAzure:AzureHDInsight,
+            ServiceEcosystemAzure:AzureDataFactory,
+            ServiceEcosystemAzure:AzureStreamAnalytics,
+            ServiceEcosystemAzure:Lakehouse,
+            ServiceEcosystemAzure:AzureFunctions,
+            ServiceEcosystemAzure:AzureSQLDatabase,
+            ServiceEcosystemAzure:AzureSynapseAnalytics,
+            ServiceEcosystemAzure:AzureBlobStorage,
+            ServiceEcosystemAzure:AzureMachineLearning;
+        DPDO:name "Databricks_Job".
