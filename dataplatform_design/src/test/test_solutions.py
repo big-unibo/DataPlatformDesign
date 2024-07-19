@@ -43,10 +43,13 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     NAMESPACES = config["ontologies"]["namespaces"]
 
     # Remove all files from the folder
-    for file_name in os.listdir(os.path.join(scenario_directory, "output")):
-        file_path = os.path.join(os.path.join(scenario_directory, "output"), file_name)
-        if os.path.isfile(file_path):
-            os.remove(file_path)
+    if os.path.exists(os.path.join(scenario_directory, "output")):
+        for file_name in os.listdir(os.path.join(scenario_directory, "output")):
+            file_path = os.path.join(
+                os.path.join(scenario_directory, "output"), file_name
+            )
+            if os.path.isfile(file_path):
+                os.remove(file_path)
 
     matched_graph_path = os.path.join(
         scenario_directory, "output", "matched_graph.json"
