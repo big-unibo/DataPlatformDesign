@@ -258,18 +258,32 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
         if len(not_implements) > 0:
             for not_implement in not_implements:
                 logger.exception(
-                    f"""Couldn't find an service implement for {not_implement["node"]["value"]}"""
+                    f"""Couldn't find implementedBy arc for {not_implement["node"]["value"]}"""
                 )
-            raise Exception(f"Couldn't find an service implement for some DFD Nodes")
+            raise Exception(
+                f"Couldn't find implementedBy arcs for DFD Nodes "
+                + str(
+                    [not_implement["node"]["value"] for not_implement in not_implements]
+                )
+            )
         elif len(compatible_node_count) > 0:
             for linked_nodes in compatible_node_count:
                 previous_node = linked_nodes["previous_node"]["value"]
                 following_node = linked_nodes["following_node"]["value"]
                 logger.exception(
-                    f"Can't find a set of compatible services for nodes {previous_node} -> and {following_node}"
+                    f"Couldn't find compatible services for ({previous_node}, {following_node})"
                 )
             raise Exception(
-                "Can't find a set of compatible services for two consecutive DFD nodes"
+                "Couldn't find compatible services for consecutive DFD nodes "
+                + str(
+                    [
+                        (
+                            linked_nodes["previous_node"]["value"],
+                            linked_nodes["following_node"]["value"],
+                        )
+                        for linked_nodes in compatible_node_count
+                    ]
+                )
             )
         else:
             logger.error("Couldn't match DFD: HTTP error code:", response.status_code)

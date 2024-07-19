@@ -91,7 +91,7 @@ DFD:DWH
 DFD:Download
         rdf:type owl:NamedIndividual, DPDO:Process;
         DPDO:hasTag
-            TagTaxonomy:Pull,
+            TagTaxonomy:Cumulative,
             TagTaxonomy:Batch;
         DPDO:flowsData DFD:Raw_Images;
         DPDO:name "Download Image Data".

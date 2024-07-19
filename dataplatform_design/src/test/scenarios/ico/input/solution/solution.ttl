@@ -14,11 +14,13 @@
 # DFD:CLV DPDO:selected ServiceEcosystem:Sagemaker.
 # DFD:KPI DPDO:selected ServiceEcosystem:Lakehouse.
 
-DFD:Download DPDO:selected ServiceEcosystem:Glue.
-DFD:Clean DPDO:selected ServiceEcosystem:Glue.
-DFD:Legacy_ETL DPDO:selected ServiceEcosystem:Glue.
-DFD:Integrate DPDO:selected ServiceEcosystem:Glue.
-DFD:Compute_KPIs DPDO:selected ServiceEcosystem:Glue.
+DFD:Download DPDO:selected ServiceEcosystem:Lambda.
+DFD:Legacy_ETL DPDO:selected ServiceEcosystem:Lambda.
+
+DFD:Clean DPDO:selected ServiceEcosystem:Databricks_Autoloader.
+
+DFD:Integrate DPDO:selected ServiceEcosystem:Sagemaker.
+DFD:Compute_KPIs DPDO:selected ServiceEcosystem:Sagemaker.
 
 DFD:CLV DPDO:selected ServiceEcosystem:Sagemaker.
 
@@ -26,6 +28,5 @@ DFD:Raw_Sales DPDO:selected ServiceEcosystem:Lakehouse.
 DFD:Cleaned_Data DPDO:selected ServiceEcosystem:Lakehouse.
 DFD:Integrated_Data DPDO:selected ServiceEcosystem:Lakehouse.
 DFD:KPI DPDO:selected ServiceEcosystem:Lakehouse.
-DFD:Old_DWH DPDO:selected ServiceEcosystem:Lakehouse.
 
 ServiceEcosystem:Lakehouse DPDO:selected ServiceEcosystem:S3.

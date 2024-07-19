@@ -42,6 +42,12 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     # .ttl paths representing ontologies
     NAMESPACES = config["ontologies"]["namespaces"]
 
+    # Remove all files from the folder
+    for file_name in os.listdir(os.path.join(scenario_directory, "output")):
+        file_path = os.path.join(os.path.join(scenario_directory, "output"), file_name)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+
     matched_graph_path = os.path.join(
         scenario_directory, "output", "matched_graph.json"
     )
@@ -139,7 +145,7 @@ class TestSolutions(unittest.TestCase):
         test_scenarioI(self, get_path("isCompatible02"))
 
     def test_ico(self):
-        test_scenarioI(self, get_path("ico"))
+        test_scenarioI(self, get_path("ico"), n_solutions=2)
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)

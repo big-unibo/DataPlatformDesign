@@ -368,7 +368,8 @@ ServiceEcosystem:Databricks_Autoloader
             ServiceEcosystem:Redshift,
             ServiceEcosystem:S3,
             ServiceEcosystem:Sagemaker;
-        DPDO:hasTag TagTaxonomy:Computing_all.
+        DPDO:hasTag
+            TagTaxonomy:Delta.
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#Glue
 ServiceEcosystem:Glue
@@ -585,7 +586,8 @@ ServiceEcosystem:Lambda
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
             TagTaxonomy:Small,
-            TagTaxonomy:Collection_all,
+            TagTaxonomy:Cumulative,
+            TagTaxonomy:Push,
             TagTaxonomy:Batch,
             TagTaxonomy:Mini_Batch;
         DPDO:isCompatible
@@ -628,6 +630,7 @@ ServiceEcosystem:Databricks_Job
         DPDO:hasTag
             TagTaxonomy:Big,
             TagTaxonomy:Batch;
+            # TagTaxonomy:Machine_Learning;
         DPDO:isCompatible
             ServiceEcosystem:Athena,
             ServiceEcosystem:Databricks_Autoloader,
