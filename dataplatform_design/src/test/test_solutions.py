@@ -155,7 +155,7 @@ class TestSolutions(unittest.TestCase):
         test_scenarioI(self, get_path("isCompatible02"))
 
     def test_ico(self):
-        test_scenarioI(self, get_path("ico"), n_solutions=2)
+        test_scenarioI(self, get_path("ico01"), n_solutions=2)
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)
