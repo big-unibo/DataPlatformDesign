@@ -49,7 +49,11 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     solution_path = config["ontologies"]["solution"]
 
     dataplat_designer = DataPlatformDesigner(
-        GRAPHDB_ENDPOINT, GRAPHDB_REPOSITORY, GRAPHDB_NAMED_GRAPH, NAMESPACES
+        GRAPHDB_ENDPOINT,
+        GRAPHDB_REPOSITORY,
+        GRAPHDB_NAMED_GRAPH,
+        NAMESPACES,
+        scenario_directory,
     )
 
     dataplat_designer.setup_config(config)
@@ -139,7 +143,3 @@ class TestSolutions(unittest.TestCase):
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)
-
-
-# test = TestSolutions()
-# test.test_isAkin01()
