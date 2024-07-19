@@ -165,9 +165,7 @@ ServiceEcosystemAzure:AzureDataFactory
 ServiceEcosystemAzure:AzureMachineLearning
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
-            TagTaxonomy:Machine_Learning,
-            TagTaxonomy:Data_Volume_all,
-            TagTaxonomy:Batch;
+            TagTaxonomy:Machine_Learning;
         DPDO:isCompatible
             ServiceEcosystemAzure:Databricks_Autoloader,
             ServiceEcosystemAzure:Databricks_Job,
@@ -187,7 +185,6 @@ ServiceEcosystemAzure:AzureMachineLearning
 ServiceEcosystemAzure:AzureHDInsight
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
-            TagTaxonomy:Machine_Learning,
             TagTaxonomy:Big,
             TagTaxonomy:Batch;
         DPDO:requires

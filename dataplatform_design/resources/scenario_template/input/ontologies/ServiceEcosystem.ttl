@@ -447,7 +447,6 @@ ServiceEcosystem:Sagemaker
 ServiceEcosystem:EMR
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
-            TagTaxonomy:Machine_Learning,
             TagTaxonomy:Big,
             TagTaxonomy:Batch;
         DPDO:requires

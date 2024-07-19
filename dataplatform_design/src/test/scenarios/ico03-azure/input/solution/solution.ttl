@@ -7,8 +7,8 @@ DFD:Legacy_ETL DPDO:selected ServiceEcosystemAzure:AzureFunctions.
 
 DFD:Clean DPDO:selected ServiceEcosystemAzure:Databricks_Autoloader.
 
-DFD:Integrate DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
-DFD:Compute_KPIs DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
+DFD:Integrate DPDO:selected ServiceEcosystemAzure:Databricks_Job.
+DFD:Compute_KPIs DPDO:selected ServiceEcosystemAzure:Databricks_Job.
 
 DFD:CLV DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
 

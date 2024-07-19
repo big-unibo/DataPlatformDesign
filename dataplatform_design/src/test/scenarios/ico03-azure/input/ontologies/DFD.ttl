@@ -112,7 +112,5 @@ DFD:Compute_KPIs
 DFD:CLV
     rdf:type owl:NamedIndividual, DPDO:Process;
     DPDO:hasTag
-        TagTaxonomy:Machine_Learning,
-        TagTaxonomy:Big,
-        TagTaxonomy:Batch;
+        TagTaxonomy:Machine_Learning;
     DPDO:name "CLV process".
