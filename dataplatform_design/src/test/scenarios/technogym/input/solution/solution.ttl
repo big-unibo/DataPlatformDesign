@@ -1,0 +1,27 @@
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+
+DFD:Sensor_Data DPDO:selected ServiceEcosystem:EC2 ;
+                DPDO:selected ServiceEcosystem:PostGIS .
+
+DFD:Raw_Images  DPDO:selected ServiceEcosystem:GeoServer ;
+                DPDO:selected ServiceEcosystem:EC2 ;
+                DPDO:selected ServiceEcosystem:S3 .
+
+DFD:Data_Enrichment DPDO:selected ServiceEcosystem:Sagemaker .
+
+DFD:Index_Comp DPDO:selected ServiceEcosystem:Sagemaker .
+
+DFD:Integrated_Data DPDO:selected ServiceEcosystem:EC2 ;
+                    DPDO:selected ServiceEcosystem:PostGIS .
+
+DFD:ETL DPDO:selected ServiceEcosystem:Sagemaker .
+
+DFD:DWH DPDO:selected ServiceEcosystem:Redshift .
+
+DFD:Download DPDO:selected ServiceEcosystem:Sagemaker .
+
+DFD:Consume DPDO:selected ServiceEcosystem:Lambda .
+
+DFD:Irrigation_Opt DPDO:selected ServiceEcosystem:Sagemaker .
