@@ -46,12 +46,6 @@ def get_require_edges(graph):
     result = graph.query(requires_query)
     service_requirements_dict = {}
 
-    # for service, require in result:
-    #     if service not in service_requirements_dict:
-    #         service_requirements_dict[service] = []
-    #     if require not in service_requirements_dict[service]:
-    #         service_requirements_dict[service].append(require)
-
     for node, service, serviceRequirement in result:
         node = normalize_name(node)
         service = normalize_name(service)
@@ -63,10 +57,6 @@ def get_require_edges(graph):
         service_requirements_dict[node][service].append(serviceRequirement)
 
     return service_requirements_dict
-    # [
-    #     [normalize_name(node)] + [f"{normalize_name(service)}" for service in services]
-    #     for node, services in service_requirements_dict.items()
-    # ]
 
 
 def get_minimal_coverage(graph):
@@ -129,57 +119,69 @@ def get_dataflows(graph):
 
 def get_akin_services(graph, implementedby_edges, dfd_edges):
     akin_services = f"""
-        SELECT ?service ?akinService WHERE {{
+        SELECT ?node ?service ?followingNode ?akinService WHERE {{
+                            ?node <{DPDO.implementedBy}> ?service .
+                            ?node <{DPDO.flowsData}> ?followingNode .
                             ?service <{DPDO.isAkin}> ?akinService .
                         }}
     """
     result = graph.query(akin_services)
     akin_services_dict = {}
-    for node, followingNode in result:
-        if node not in akin_services_dict:
-            akin_services_dict[node] = []
-        akin_services_dict[node].append(str(followingNode))
+    akin_services = []
+    for node, service, followingNode, akin_service in result:
+        akin_services.append(
+            (
+                ((normalize_name(str(node))),
+                (normalize_name(str(service)))),
+                ((normalize_name(str(followingNode))),
+                (normalize_name(str(akin_service)))),
+            )
+        )
+    return akin_services
+    #     if node not in akin_services_dict:
+    #         akin_services_dict[node] = []
+    #     akin_services_dict[node].append(str(followingNode))
 
-    akin_services = [
-        (str(normalize_name(node)), [normalize_name(service) for service in services])
-        for node, services in akin_services_dict.items()
-    ]
-    implementedby_edges = [
-        (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implementedby_edges
-    ]
-    implements_cartesian_product = list(
-        itertools.product(*[implementedby_edges, implementedby_edges])
-    )
+    # akin_services = [
+    #     (str(normalize_name(node)), [normalize_name(service) for service in services])
+    #     for node, services in akin_services_dict.items()
+    # ]
+    # implementedby_edges = [
+    #     (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implementedby_edges
+    # ]
+    # implements_cartesian_product = list(
+    #     itertools.product(*[implementedby_edges, implementedby_edges])
+    # )
 
-    akins = []
-    for source, dest in implements_cartesian_product:
-        is_akin = False
+    # akins = []
+    # for source, dest in implements_cartesian_product:
+    #     is_akin = False
 
-        # DFD nodes
-        dfd_source_node = source[0]
-        dfd_dest_node = dest[0]
+    #     # DFD nodes
+    #     dfd_source_node = source[0]
+    #     dfd_dest_node = dest[0]
 
-        # (DFD nodes) Implemented by
-        dfd_source_node_implBy = source[1]
-        dfd_dest_node_implBy = dest[1]
+    #     # (DFD nodes) Implemented by
+    #     dfd_source_node_implBy = source[1]
+    #     dfd_dest_node_implBy = dest[1]
 
-        # For every DFD edge (Flow)
-        for source_edge, dest_edge in dfd_edges:
-            # If source nodes of two "ImplementedBy" edges are connected by a DFD edge (Flow) then two services MUST be compatible
-            if dfd_source_node == source_edge and dfd_dest_node in dest_edge:
-                for service, list_akins in akin_services:
-                    # Check for bi-directional compatibility
-                    if (
-                        dfd_source_node_implBy == service
-                        and dfd_dest_node_implBy in list_akins
-                    ) or (
-                        dfd_dest_node_implBy == service
-                        and dfd_source_node_implBy in list_akins
-                    ):
-                        is_akin = True
-                if is_akin:
-                    akins.append((source, dest))
-    return list(set(akins))
+    #     # For every DFD edge (Flow)
+    #     for source_edge, dest_edge in dfd_edges:
+    #         # If source nodes of two "ImplementedBy" edges are connected by a DFD edge (Flow) then two services MUST be compatible
+    #         if dfd_source_node == source_edge and dfd_dest_node in dest_edge:
+    #             for service, list_akins in akin_services:
+    #                 # Check for bi-directional compatibility
+    #                 if (
+    #                     dfd_source_node_implBy == service
+    #                     and dfd_dest_node_implBy in list_akins
+    #                 ) or (
+    #                     dfd_dest_node_implBy == service
+    #                     and dfd_source_node_implBy in list_akins
+    #                 ):
+    #                     is_akin = True
+    #             if is_akin:
+    #                 akins.append((source, dest))
+    # return list(set(akins))
 
 
 # Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.

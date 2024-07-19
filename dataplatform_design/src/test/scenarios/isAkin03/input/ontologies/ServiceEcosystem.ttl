@@ -1,0 +1,33 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@base <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+                <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+
+ServiceEcosystem:S1 rdf:type owl:NamedIndividual, DPDO:Service;
+                DPDO:hasTag TagTaxonomy:Relational;
+                DPDO:isCompatible ServiceEcosystem:S2, ServiceEcosystem:S3;
+                DPDO:isAkin ServiceEcosystem:S2;
+                DPDO:name "S1".
+
+ServiceEcosystem:S2 rdf:type owl:NamedIndividual, DPDO:Service;
+                DPDO:isCompatible ServiceEcosystem:S1, ServiceEcosystem:S3;
+                DPDO:requires ServiceEcosystem:S4;
+                DPDO:name "S2".
+
+ServiceEcosystem:S3 rdf:type owl:NamedIndividual, DPDO:Service;
+                DPDO:hasTag TagTaxonomy:Batch;
+                DPDO:isCompatible ServiceEcosystem:S1, ServiceEcosystem:S2;
+                DPDO:name "S3".
+
+ServiceEcosystem:S4 rdf:type owl:NamedIndividual, DPDO:Service;
+                DPDO:name "S4".
