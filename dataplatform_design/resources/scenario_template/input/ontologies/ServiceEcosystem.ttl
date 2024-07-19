@@ -377,7 +377,6 @@ ServiceEcosystem:Glue
             TagTaxonomy:Structured,
             TagTaxonomy:Document,
             TagTaxonomy:Big,
-            TagTaxonomy:Pull,
             TagTaxonomy:Batch,
             TagTaxonomy:ETL;
         DPDO:isCompatible

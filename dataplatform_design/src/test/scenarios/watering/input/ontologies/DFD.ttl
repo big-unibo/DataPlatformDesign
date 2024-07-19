@@ -20,7 +20,7 @@ DFD:Sensor_Data
         DPDO:hasTag
             TagTaxonomy:Relational,
             TagTaxonomy:Small,
-            TagTaxonomy:Vectorial,
+            # TagTaxonomy:Vectorial,
             TagTaxonomy:Landing;
         DPDO:name "Sensor Data".
 
@@ -33,7 +33,7 @@ DFD:Raw_Images
             TagTaxonomy:Archive,
             TagTaxonomy:Big,
             TagTaxonomy:File,
-            # TagTaxonomy:Landing,
+            TagTaxonomy:Landing,
             TagTaxonomy:Raster;
         DPDO:name "Raw Images".
 
@@ -64,9 +64,9 @@ DFD:Integrated_Data
             DFD:ETL,
             DFD:Irrigation_Opt;
         DPDO:hasTag
-            TagTaxonomy:Operational,
-            TagTaxonomy:Relational,
-            TagTaxonomy:Vectorial;
+            # TagTaxonomy:Operational,
+            TagTaxonomy:Relational;
+            # TagTaxonomy:Vectorial;
         DPDO:name "Integrated Data".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#ETL
@@ -83,8 +83,8 @@ DFD:ETL
 DFD:DWH
         rdf:type owl:NamedIndividual, DPDO:Repository;
         DPDO:hasTag
-            TagTaxonomy:Multidimensional,
-            TagTaxonomy:Reporting;
+            TagTaxonomy:Multidimensional;
+            # TagTaxonomy:Reporting;
         DPDO:name "DWH".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Download
