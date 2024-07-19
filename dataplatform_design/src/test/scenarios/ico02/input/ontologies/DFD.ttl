@@ -1,0 +1,96 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#>.
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+
+@base <http://www.foo.bar/dataplatform_design/ontologies/DFD>.
+
+<http://www.foo.bar/dataplatform_design/ontologies/DFD>
+    rdf:type owl:Ontology;
+    owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
+        <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
+
+####################################################################
+## Repository
+####################################################################
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Cleaned_Data
+DFD:Cleaned_Data
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData
+        DFD:Integrate;
+    DPDO:hasTag
+        TagTaxonomy:Structured;
+    DPDO:name "Cleaned Data".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrated_Data
+DFD:Integrated_Data
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag
+        TagTaxonomy:Structured;
+    DPDO:flowsData
+        DFD:Compute_KPIs,
+        DFD:CLV;
+    DPDO:name "Integrated Data".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#KPI
+DFD:KPI
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag
+        TagTaxonomy:Multidimensional;
+    DPDO:name "KPIs repository".
+
+####################################################################
+## Process
+####################################################################
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Legacy_ETL
+DFD:Legacy_ETL
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag
+        TagTaxonomy:Small,
+        TagTaxonomy:Batch;
+    DPDO:name "Legacy ETL".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Clean
+DFD:Clean
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData
+        DFD:Cleaned_Data;
+    DPDO:hasTag
+        TagTaxonomy:Delta;
+    DPDO:name "Transform".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Integrate
+DFD:Integrate
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData
+        DFD:Integrated_Data;
+    DPDO:hasTag
+        TagTaxonomy:Big,
+        TagTaxonomy:Batch;
+    DPDO:name "Integrate".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#Compute_KPIs
+DFD:Compute_KPIs
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData
+        DFD:KPI;
+    DPDO:hasTag
+        TagTaxonomy:Big,
+        TagTaxonomy:Batch;
+    DPDO:name "Compute KPIs".
+
+###  http://www.foo.bar/dataplatform_design/ontologies/DFD#CLV
+DFD:CLV
+    rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag
+        TagTaxonomy:Machine_Learning,
+        TagTaxonomy:Big,
+        TagTaxonomy:Batch;
+    DPDO:name "CLV process".

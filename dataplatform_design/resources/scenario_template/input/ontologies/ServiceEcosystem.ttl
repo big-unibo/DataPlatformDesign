@@ -375,8 +375,6 @@ ServiceEcosystem:Databricks_Autoloader
 ServiceEcosystem:Glue
         rdf:type owl:NamedIndividual, DPDO:Service;
         DPDO:hasTag
-            TagTaxonomy:Structured,
-            TagTaxonomy:Document,
             TagTaxonomy:Big,
             TagTaxonomy:Batch,
             TagTaxonomy:ETL;

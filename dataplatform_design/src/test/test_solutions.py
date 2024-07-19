@@ -106,7 +106,6 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
 
     # Compare solution to given one
     res, s = dataplat_designer.compare_solutions(selected_graphs, solution_path)
-    # print(s)
     self.assertTrue(res)
     self.assertEqual(len(selected_graphs), n_solutions)
     # assert result, f"Testing {scenario_directory}, result: {result}"
@@ -154,8 +153,11 @@ class TestSolutions(unittest.TestCase):
     def test_isCompatible02(self):
         test_scenarioI(self, get_path("isCompatible02"))
 
-    def test_ico(self):
+    def test_ico01(self):
         test_scenarioI(self, get_path("ico01"), n_solutions=2)
+
+    def test_ico02(self):
+        test_scenarioI(self, get_path("ico02"), n_solutions=1)
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)
