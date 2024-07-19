@@ -24,7 +24,6 @@ jobs:
             ./wait-for-it.sh "127.0.0.1:7200" --timeout=480 -- echo "GraphDB is up"
             pip install -r requirements.txt
             python -m unittest dataplatform_design/src/test/test_solutions.py
-            python dataplatform_design/src/main/visualize.py
 
   release:
     needs:
