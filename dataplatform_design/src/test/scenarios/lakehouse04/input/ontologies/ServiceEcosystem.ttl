@@ -19,6 +19,7 @@ ServiceEcosystem:S1 rdf:type owl:NamedIndividual, DPDO:Service;
 
 ServiceEcosystem:S3 rdf:type owl:NamedIndividual, DPDO:Service;
     DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all, TagTaxonomy:Big;
+    DPDO:isCompatible ServiceEcosystem:Redshift;
     DPDO:name "S3".
 
 ServiceEcosystem:RDS rdf:type owl:NamedIndividual, DPDO:Service;
@@ -32,5 +33,6 @@ ServiceEcosystem:Redshift rdf:type owl:NamedIndividual, DPDO:Service;
     DPDO:name "Redshift".
 
 ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual, DPDO:Service;
-    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:File, TagTaxonomy:Structured;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:File, TagTaxonomy:Structured, TagTaxonomy:Landing;
+    DPDO:isCompatible ServiceEcosystem:S1, ServiceEcosystem:S3;
     DPDO:name "Lakehouse".

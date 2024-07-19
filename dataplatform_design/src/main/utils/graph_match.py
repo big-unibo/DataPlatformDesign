@@ -2,7 +2,8 @@ import os
 import requests
 import json
 from . import utils
-from rdflib import Namespace
+from rdflib import Namespace, Graph, URIRef
+import rdflib
 
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")
 # Load config
@@ -24,56 +25,93 @@ TAG_TAXONOMY = Namespace(config["ontologies"]["namespaces"]["tag_taxonomy"])
 SERVICE_ECOSYSTEM = Namespace(config["ontologies"]["namespaces"]["service_ecosystem"])
 
 
-def match_lakehouse_pattern(endpoint, repository_name, named_graph_uri):
+def match_lakehouse_pattern(
+    endpoint, repository_name, named_graph_uri, matched_graph_path, namespaces
+):
+
     lakehouse_query = f"""
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        INSERT {{
-                GRAPH <{named_graph_uri}> {{
-                ?pathRepository <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
-                ?datalake <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
-            }}
-        }}
+        SELECT ?datalake ?pathRepository ?dwh
         WHERE {{
             ?datalake rdf:type <{DPDO.Repository}> .
             ?datalake <{DPDO.hasTag}> <{TAG_TAXONOMY.Landing}> .
-            OPTIONAL{{
-                ?datalake <{DPDO.flowsData}>+ ?repository .
-                ?repository rdf:type <{DPDO.Repository}> .
-                ?repository <{DPDO.flowsData}>+ ?dwh .
-
+            OPTIONAL {{
+                ?datalake <{DPDO.flowsData}>+ ?repository_pattern .
+                ?repository_pattern rdf:type <{DPDO.Repository}> .
+                ?repository_pattern <{DPDO.flowsData}>+ ?dwh .
                 FILTER EXISTS {{
-                ?repository <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
-            }}
+                    ?repository_pattern <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
+                }}
             }}
             ?dwh rdf:type <{DPDO.Repository}> .
             FILTER EXISTS {{
                 ?datalake <{DPDO.flowsData}>+ ?dwh .
                 ?dwh <{DPDO.hasTag}> <{TAG_TAXONOMY.Multidimensional}> .
             }}
-
-            FILTER(?repository != ?dwh)
+            FILTER (?repository_pattern != ?dwh)
             {{
                 ?datalake <{DPDO.flowsData}>+ ?pathRepository .
                 ?pathRepository rdf:type <{DPDO.Repository}> .
             }}
+            FILTER EXISTS{{
+                ?datalake <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+                ?pathRepository <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+            }}
+
         }}
-
     """
-
-    lakehouse_headers = {
-        "Content-Type": "application/sparql-update",
-        # "Accept": "text/turtle",  # o "application/ld+json" se preferisci JSON-LD
-    }
     response = requests.post(
-        f"{endpoint}/repositories/{repository_name}/statements",
+        f"{endpoint}/repositories/{repository_name}",
         data=lakehouse_query,
-        headers=lakehouse_headers,
+        headers={
+            "Content-Type": "application/sparql-query",
+            "Accept": "application/sparql-results+json",
+        },
     )
 
-    if response.status_code == 204:
-        logger.debug("Successfully checked for Lakehouse pattern.")
-        return True
+    if response.status_code == 200:
+        lakehouse_implements = response.json()
+
+        lakehouse = []
+        if len(lakehouse_implements["results"]["bindings"]) > 0:
+            for result in lakehouse_implements["results"]["bindings"]:
+                datalake = result["datalake"]["value"]
+                pathRepository = result["pathRepository"]["value"]
+                dwh = result["dwh"]["value"]
+
+                lakehouse.append(f"<{datalake}>")
+                lakehouse.append(f"<{pathRepository}>")
+                lakehouse.append(f"<{dwh}>")
+            lakehouse = list(set(lakehouse))
+            if len(lakehouse) > 0:
+                delete_query = [f"\n?s != {dfd_node} " for dfd_node in lakehouse]
+
+                delete_useless_lakehouse = f"""
+                    DELETE {{
+                        GRAPH <{named_graph_uri}> {{
+                            ?s <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+                        }}
+                    }}
+                    WHERE {{
+                        GRAPH <{named_graph_uri}> {{
+                            ?s <{DPDO.implementedBy}> <{SERVICE_ECOSYSTEM.Lakehouse}> .
+                            FILTER({"&& ".join(delete_query)})
+                        }}
+                    }}
+                """
+
+                response = requests.post(
+                    f"{endpoint}/repositories/{repository_name}/statements",
+                    data=delete_useless_lakehouse,
+                    headers={
+                        "Content-Type": "application/sparql-update",
+                    },
+                )
+                logger.debug("Successfully checked for Lakehouse pattern.")
+
+        return save_matched_graph(
+            endpoint, repository_name, named_graph_uri, matched_graph_path
+        )
     else:
         logger.error(
             "Something went wrong while checking for Lakehouse", response.status_code
@@ -89,7 +127,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
 
         INSERT {{
                 GRAPH <{named_graph_uri}> {{
-                ?node <{DPDO.implementedBy}> ?service .
+                    ?node <{DPDO.implementedBy}> ?service .
                 }}
             }}
         WHERE {{
@@ -130,7 +168,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
                         }}
                }}
             }}
-            FILTER (?service != <{SERVICE_ECOSYSTEM.Lakehouse}>) .
+
         }}
     """
 
@@ -145,9 +183,101 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
         headers=match_headers,
     )
 
-    if response.status_code == 204:
+    dfd_nodes_query = f"""SELECT (COUNT(DISTINCT ?node) AS ?count)
+    WHERE {{
+        ?node a <{DPDO.DFDNode}> .
+    }}"""
+
+    dfd_nodes_response = requests.post(
+        f"{endpoint}/repositories/{repository_name}",
+        data=dfd_nodes_query,
+        headers={
+            "Content-Type": "application/sparql-query",
+            "Accept": "application/sparql-results+json",
+        },
+    )
+
+    dfd_implements_query = f"""SELECT (COUNT(DISTINCT ?node) AS ?count)
+    WHERE {{
+        ?node a <{DPDO.DFDNode}> .
+        ?node <{DPDO.implementedBy}> ?service .
+    }}"""
+    dfd_implements_response = requests.post(
+        f"{endpoint}/repositories/{repository_name}",
+        data=dfd_implements_query,
+        headers={
+            "Content-Type": "application/sparql-query",
+            "Accept": "application/sparql-results+json",
+        },
+    )
+    at_least_implement_query = f"""
+        SELECT (COUNT(DISTINCT ?previous_node) AS ?count)
+            WHERE {{
+                ?previous_node a <{DPDO.DFDNode}> .
+                ?previous_node <{DPDO.implementedBy}> ?service .
+
+                ?following_node  a <{DPDO.DFDNode}> .
+                ?following_node  <{DPDO.implementedBy}> ?another_service .
+
+                ?previous_node <{DPDO.flowsData}> ?following_node .
+
+                ?service <{DPDO.isCompatible}> ?another_service .
+            }}
+    """
+    dfd_compatible_response = requests.post(
+        f"{endpoint}/repositories/{repository_name}",
+        data=at_least_implement_query,
+        headers={
+            "Content-Type": "application/sparql-query",
+            "Accept": "application/sparql-results+json",
+        },
+    )
+    flows_data_query = f"""
+        SELECT (COUNT(DISTINCT ?previous_node) AS ?count)
+            WHERE {{
+                ?previous_node a <{DPDO.DFDNode}> .
+                ?following_node  a <{DPDO.DFDNode}> .
+                ?previous_node <{DPDO.flowsData}> ?following_node .
+            }}
+    """
+    flows_data_response = requests.post(
+        f"{endpoint}/repositories/{repository_name}",
+        data=flows_data_query,
+        headers={
+            "Content-Type": "application/sparql-query",
+            "Accept": "application/sparql-results+json",
+        },
+    )
+    flows_data_count = int(
+        flows_data_response.json()["results"]["bindings"][0]["count"]["value"]
+    )
+    compatible_node_count = int(
+        dfd_compatible_response.json()["results"]["bindings"][0]["count"]["value"]
+    )
+    node_count = int(
+        dfd_nodes_response.json()["results"]["bindings"][0]["count"]["value"]
+    )
+    implements_count = int(
+        dfd_implements_response.json()["results"]["bindings"][0]["count"]["value"]
+    )
+
+    if (
+        response.status_code == 204
+        and node_count == implements_count
+        and flows_data_count == compatible_node_count
+    ):
         logger.debug("Successfully matched DFD and Service Graph.")
     else:
+        if node_count != implements_count:
+            logger.error("Not all DFD nodes matched a service.")
+            raise Exception("Not all DFD nodes matched a service.")
+        elif flows_data_count != compatible_node_count:
+            logger.error(
+                "Can't find a set of compatible services for two consecutive DFD nodes"
+            )
+            raise Exception(
+                "Can't find a set of compatible services for two consecutive DFD nodes"
+            )
         logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
         logger.error(response.content)
 

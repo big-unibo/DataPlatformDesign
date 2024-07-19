@@ -32,5 +32,6 @@ ServiceEcosystem:Redshift rdf:type owl:NamedIndividual, DPDO:Service;
     DPDO:name "Redshift".
 
 ServiceEcosystem:Lakehouse rdf:type owl:NamedIndividual, DPDO:Service;
-    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:File, TagTaxonomy:Structured;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:File, TagTaxonomy:Structured, TagTaxonomy:Landing;
+    DPDO:isCompatible ServiceEcosystem:S1, ServiceEcosystem:S3;
     DPDO:name "Lakehouse".

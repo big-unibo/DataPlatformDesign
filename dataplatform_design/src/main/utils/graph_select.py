@@ -71,9 +71,9 @@ def get_require_edges(graph):
 
 def get_minimal_coverage(graph):
     minimal_coverage = f"""SELECT ?node ?service WHERE {{
-                        ?node <{DPDO.implementedBy}> ?service .
-                    }}
-                    """
+            ?node <{DPDO.implementedBy}> ?service .
+        }}
+    """
     result = graph.query(minimal_coverage)
     minimal_coverage_dict = {}
     for node, service in result:
@@ -127,25 +127,7 @@ def get_dataflows(graph):
     ]
 
 
-def get_compatible_services(graph):
-    compatible_services = f"""SELECT ?service ?compatibleService WHERE {{
-                    ?service <{DPDO.isCompatible}> ?compatibleService .
-                }}
-                """
-    result = graph.query(compatible_services)
-    minimal_coverage_dict = {}
-    for node, followingNode in result:
-        if node not in minimal_coverage_dict:
-            minimal_coverage_dict[node] = []
-        minimal_coverage_dict[node].append(str(followingNode))
-
-    return [
-        (str(normalize_name(node)), [normalize_name(service) for service in services])
-        for node, services in minimal_coverage_dict.items()
-    ]
-
-
-def get_akin_services(graph, implementedby_edges, implemented_services, dfd_edges):
+def get_akin_services(graph, implementedby_edges, dfd_edges):
     akin_services = f"""
         SELECT ?service ?akinService WHERE {{
                             ?service <{DPDO.isAkin}> ?akinService .
@@ -201,47 +183,34 @@ def get_akin_services(graph, implementedby_edges, implemented_services, dfd_edge
 
 
 # Returns all couple of services that were matched and might be selected for two contiguos DFD entities but have no compatibility between each other.
-def find_not_compatible_edges(implemented_by_edges, dfd_edges, compatibilities):
-    implemented_by_edges = [
-        (tuple.split("->")[0], tuple.split("->")[1]) for tuple in implemented_by_edges
-    ]
-    implements_cartesian_product = list(
-        itertools.product(*[implemented_by_edges, implemented_by_edges])
-    )
+def find_not_compatible_edges(graph):
+    not_compatible_services_query = f"""
+        SELECT ?previous_node ?service ?following_node ?another_service
+            WHERE {{
+                ?previous_node <{DPDO.implementedBy}> ?service .
 
+                ?following_node  <{DPDO.implementedBy}> ?another_service .
+
+                ?previous_node <{DPDO.flowsData}> ?following_node .
+
+                FILTER NOT EXISTS{{
+                    ?service <{DPDO.isCompatible}> ?another_service .
+                }}
+            }}
+    """
+    result = graph.query(not_compatible_services_query)
     not_compatible_services = []
-    for source, dest in implements_cartesian_product:
-        compatible = False
-
-        # DFD nodes
-        dfd_source_node = source[0]
-        dfd_dest_node = dest[0]
-
-        # (DFD nodes) Implemented by
-        dfd_source_node_implBy = source[1]
-        dfd_dest_node_implBy = dest[1]
-
-        # Exclude self-joined nodes through cartesian product
-        if dfd_source_node == dfd_dest_node:
-            compatible = True
-
-        # For every DFD edge (Flow)
-        for source_edge, dest_edge in dfd_edges:
-            # If source nodes of two "ImplementedBy" edges are connected by a DFD edge (Flow) then two services MUST be compatible
-            if dfd_source_node == source_edge and dfd_dest_node in dest_edge:
-                for service, compatibilitiy in compatibilities:
-                    # Check for bi-directional compatibility
-                    if (
-                        dfd_source_node_implBy == service
-                        and dfd_dest_node_implBy in compatibilitiy
-                    ) or (
-                        dfd_dest_node_implBy == service
-                        and dfd_source_node_implBy in compatibilitiy
-                    ):
-                        compatible = True
-                if not compatible:
-                    not_compatible_services.append((source, dest))
-    return list(set(not_compatible_services))
+    for node, service, following_node, following_service in result:
+        not_compatible_services.append(
+            (
+                (normalize_name(str(node)), normalize_name(str(service))),
+                (
+                    normalize_name(str(following_node)),
+                    normalize_name(str(following_service)),
+                ),
+            )
+        )
+    return not_compatible_services
 
 
 def get_lakehouse_services(named_graph):
@@ -342,14 +311,9 @@ def select_services(named_graph):
 
     implementedby_edges = get_implementedby_edges(named_graph)
     dfd_edges = get_dataflows(named_graph)
-    compatibilities = get_compatible_services(named_graph)
-    not_compatible_services = find_not_compatible_edges(
-        implementedby_edges, dfd_edges, compatibilities
-    )
+    not_compatible_services = find_not_compatible_edges(named_graph)
     implemented_services = get_implementedby_services(named_graph)
-    akin_services = get_akin_services(
-        named_graph, implementedby_edges, implemented_services, dfd_edges
-    )
+    akin_services = get_akin_services(named_graph, implementedby_edges, dfd_edges)
     lakehouse_implements = get_lakehouse_services(named_graph)
     preferences = get_preferences(named_graph)
     mandatories = get_mandatories(named_graph)

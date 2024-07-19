@@ -92,24 +92,29 @@ class DataPlatformDesigner:
 
         # Load DPDO into matched graph
         matched_graph.parse(dpdo_ontology_path, format="turtle")
-        # Embed lakehouse patterns & match graph
-        if graph_match.match_lakehouse_pattern(
-            self.endpoint, self.repository, self.named_graph
-        ) & graph_match.build_matched_graph(
-            self.endpoint, self.repository, self.named_graph, matched_graph_path
-        ):
+        try:
+            # Embed lakehouse patterns & match graph
+            if graph_match.build_matched_graph(
+                self.endpoint, self.repository, self.named_graph, matched_graph_path
+            ) & graph_match.match_lakehouse_pattern(
+                self.endpoint, self.repository, self.named_graph, matched_graph_path, self.namespaces
+            ):
 
-            # # Load matched graph
-            matched_graph.parse(
-                location=os.path.join(matched_graph_path),
-                format="json-ld",
-            )
+                # # Load matched graph
+                matched_graph.parse(
+                    location=os.path.join(matched_graph_path),
+                    format="json-ld",
+                )
 
-            # Focus only on named graph
-            named_graph = Graph(
-                store=matched_graph.store, identifier=URIRef(self.named_graph)
-            )
-            return named_graph
+                # Focus only on named graph
+                named_graph = Graph(
+                    store=matched_graph.store, identifier=URIRef(self.named_graph)
+                )
+                return named_graph
+        except Exception as e:
+            logger.exception("Something went wrong while building matched graph")
+            logger.exception(e.__doc__)
+            logger.exception(str(e))
 
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
@@ -222,7 +227,9 @@ class DataPlatformDesigner:
                 format="turtle",
             )
             # Compare expected solution with computed solution
-            if utils.graphs_are_equal(expected_solution, solution, [self.DPDO.flowsData, RDF.type]):
+            if utils.graphs_are_equal(
+                expected_solution, solution, [self.DPDO.flowsData, RDF.type]
+            ):
                 s = f"Expected solution matches solution {selected_graphs.index(solution)}!"
                 # logger.info(s)
                 return True, s

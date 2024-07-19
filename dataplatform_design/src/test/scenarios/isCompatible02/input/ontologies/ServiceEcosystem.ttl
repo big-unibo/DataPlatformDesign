@@ -15,6 +15,7 @@
 
 ServiceEcosystem:S1 rdf:type owl:NamedIndividual, DPDO:Service;
                 DPDO:hasTag TagTaxonomy:Relational;
+                DPDO:isCompatible ServiceEcosystem:S2;
                 DPDO:name "S1".
 
 ServiceEcosystem:S2 rdf:type owl:NamedIndividual, DPDO:Service;
