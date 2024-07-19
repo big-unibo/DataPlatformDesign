@@ -106,7 +106,7 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
 
     # Compare solution to given one
     res, s, solution_cost = dataplat_designer.compare_solutions(
-        selected_graphs, solution_path
+        selected_graphs, solution_path, costs
     )
     self.assertTrue(res)
     self.assertEqual(len(selected_graphs), n_solutions)
@@ -162,7 +162,7 @@ class TestSolutions(unittest.TestCase):
         test_scenarioI(self, get_path("ico02"), n_solutions=1)
 
     def test_ico03(self):
-        test_scenarioI(self, get_path("ico03-azure"), n_solutions=1)
+        test_scenarioI(self, get_path("ico03-azure"), n_solutions=2)
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)

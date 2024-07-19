@@ -1,6 +1,20 @@
 @prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
 @prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#>.
-@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+@prefix ServiceEcosystemAzure: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemAzure#>.
 
-DFD:N1 DPDO:selected ServiceEcosystem:EC2.
-DFD:N2 DPDO:selected ServiceEcosystem:GeoServer.
+DFD:Download DPDO:selected ServiceEcosystemAzure:AzureFunctions.
+DFD:Legacy_ETL DPDO:selected ServiceEcosystemAzure:AzureFunctions.
+
+DFD:Clean DPDO:selected ServiceEcosystemAzure:Databricks_Autoloader.
+
+DFD:Integrate DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
+DFD:Compute_KPIs DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
+
+DFD:CLV DPDO:selected ServiceEcosystemAzure:AzureMachineLearning.
+
+DFD:Raw_Sales DPDO:selected ServiceEcosystemAzure:Lakehouse.
+DFD:Cleaned_Data DPDO:selected ServiceEcosystemAzure:Lakehouse.
+DFD:Integrated_Data DPDO:selected ServiceEcosystemAzure:Lakehouse.
+DFD:KPI DPDO:selected ServiceEcosystemAzure:Lakehouse.
+
+ServiceEcosystemAzure:Lakehouse DPDO:selected ServiceEcosystemAzure:AzureBlobStorage.
