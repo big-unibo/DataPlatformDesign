@@ -545,7 +545,6 @@ def select_services(named_graph):
 
         for j, name in enumerate(problem.variables.get_names()):
             selected = solution_values[j]
-            print(f"{name} : {selected}")
             if "->" in name and selected > 0:
                 selected_edges.append(name)
             elif selected > 0:
