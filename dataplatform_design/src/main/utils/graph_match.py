@@ -201,16 +201,19 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
     at_least_implement_query = f"""
         SELECT ?previous_node ?following_node
             WHERE {{
-                ?previous_node a <{DPDO.DFDNode}> .
                 ?previous_node <{DPDO.implementedBy}> ?service .
 
-                ?following_node  a <{DPDO.DFDNode}> .
                 ?following_node  <{DPDO.implementedBy}> ?another_service .
 
                 ?previous_node <{DPDO.flowsData}> ?following_node .
 
                 FILTER NOT EXISTS{{
                     ?service <{DPDO.isCompatible}> ?another_service .
+                }}
+                FILTER NOT EXISTS{{
+                    ?previous_node <{DPDO.implementedBy}> ?yet_another_service .
+                    ?following_node  <{DPDO.implementedBy}> ?yet_another_another_service .
+                    ?yet_another_service <{DPDO.isCompatible}> ?yet_another_another_service .
                 }}
             }}
     """
@@ -258,7 +261,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
                     f"""Couldn't find an service implement for {not_implement["node"]["value"]}"""
                 )
             raise Exception(f"Couldn't find an service implement for some DFD Nodes")
-        elif compatible_node_count > 0:
+        elif len(compatible_node_count) > 0:
             for linked_nodes in compatible_node_count:
                 previous_node = linked_nodes["previous_node"]["value"]
                 following_node = linked_nodes["following_node"]["value"]

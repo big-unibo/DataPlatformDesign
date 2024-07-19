@@ -121,14 +121,12 @@ def process_directory_tree(root_dir):
                 file_path = os.path.join(dirpath, filename)
                 save_path = os.path.join(dirpath, filename.replace(".ttl", ""))
                 if "config" not in file_path:
-                    print(file_path)
                     g = parse_turtle_to_graph(file_path)
                     visualize_graph(g, save_path)
             elif filename.endswith(".json"):
                 file_path = os.path.join(dirpath, filename)
                 save_path = os.path.join(dirpath, filename.replace(".json", ""))
                 if "config" not in file_path:
-                    print(file_path)
                     g = parse_json_to_graph(file_path)
                     visualize_graph(g, save_path)
 
