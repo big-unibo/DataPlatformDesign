@@ -182,7 +182,7 @@ class DataPlatformDesigner:
                 for edge in requires[solution_number]
             ]
             logger.debug(f"\n Pushing solution {solution_number} to GraphDb...:")
-            
+
             data = db_selected_graph.serialize(format="turtle")
             headers = {"Content-Type": "application/x-turtle"}
             response = requests.post(
@@ -225,8 +225,8 @@ class DataPlatformDesigner:
     def augment_graph(self, graph):
         return graph_augment.augment_graph(graph)
 
-    def compare_solutions(self, selected_graphs, solution_path):
-        for solution in selected_graphs:
+    def compare_solutions(self, selected_graphs, solution_path, costs):
+        for solution, cost in zip(selected_graphs, costs):
             logger.debug(f"Comparing solution n° {selected_graphs.index(solution)}")
             expected_solution = utils.setup_graph(self.namespaces)
             expected_solution.parse(
@@ -239,6 +239,6 @@ class DataPlatformDesigner:
             ):
                 s = f"Expected solution matches solution {selected_graphs.index(solution)}!"
                 # logger.info(s)
-                return True, s
+                return True, s, cost
         # logger.warning("No computed solution matches proposed one")
-        return False, "No solution"
+        return False, "No solution", -1
