@@ -19,7 +19,7 @@ jobs:
       - name: Run
         run: |
             chmod +x *.sh
-            sudo apt-get install graphviz
+            sudo apt-get install graphviz -y
             docker compose up &
             ./wait-for-it.sh "127.0.0.1:7200" --timeout=480 -- echo "GraphDB is up"
             pip install -r requirements.txt
