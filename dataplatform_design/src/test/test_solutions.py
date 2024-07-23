@@ -166,3 +166,6 @@ class TestSolutions(unittest.TestCase):
 
     def test_watering(self):
         test_scenarioI(self, get_path("watering"), n_solutions=2)
+
+    def test_techogym(self):
+        test_scenarioI(self, get_path("technogym"), n_solutions=1)

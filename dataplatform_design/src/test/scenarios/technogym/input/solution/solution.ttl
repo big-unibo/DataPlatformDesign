@@ -1,27 +1,33 @@
 @prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
 @prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
-@prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+@prefix ServiceEcosystemGoogle: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemGoogle#> .
 
-DFD:Sensor_Data DPDO:selected ServiceEcosystem:EC2 ;
-                DPDO:selected ServiceEcosystem:PostGIS .
+DFD:Download_Entity DPDO:selected ServiceEcosystemGoogle:GCFunctions .
 
-DFD:Raw_Images  DPDO:selected ServiceEcosystem:GeoServer ;
-                DPDO:selected ServiceEcosystem:EC2 ;
-                DPDO:selected ServiceEcosystem:S3 .
+DFD:Temp_Entity_Storage DPDO:selected ServiceEcosystemGoogle:GCStorage .
 
-DFD:Data_Enrichment DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:Bulk_Loader DPDO:selected ServiceEcosystemGoogle:GCFunctions .
 
-DFD:Index_Comp DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:Entity_Storage DPDO:selected ServiceEcosystemGoogle:BigQuery .
 
-DFD:Integrated_Data DPDO:selected ServiceEcosystem:EC2 ;
-                    DPDO:selected ServiceEcosystem:PostGIS .
+DFD:Cold_Storage  DPDO:selected ServiceEcosystemGoogle:GCStorage .
 
-DFD:ETL DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:ETL DPDO:selected ServiceEcosystemGoogle:Dataform .
 
-DFD:DWH DPDO:selected ServiceEcosystem:Redshift .
+DFD:Historical_Data DPDO:selected ServiceEcosystemGoogle:BigQuery .
 
-DFD:Download DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:View_Updater DPDO:selected ServiceEcosystemGoogle:Dataform .
 
-DFD:Consume DPDO:selected ServiceEcosystem:Lambda .
+DFD:Live_Data DPDO:selected ServiceEcosystemGoogle:BigQuery .
 
-DFD:Irrigation_Opt DPDO:selected ServiceEcosystem:Sagemaker .
+DFD:Feature_Eng DPDO:selected ServiceEcosystemGoogle:Dataform .
+
+DFD:Feature_Store DPDO:selected ServiceEcosystemGoogle:BigQuery .
+
+DFD:Model_Inference DPDO:selected ServiceEcosystemGoogle:VertexAI .
+
+DFD:Model_Store DPDO:selected ServiceEcosystemGoogle:BigQuery .
+
+DFD:Flow_Back DPDO:selected ServiceEcosystemGoogle:Dataform .
+
+DFD:Intermediate_Storage DPDO:selected ServiceEcosystemGoogle:BigQuery .

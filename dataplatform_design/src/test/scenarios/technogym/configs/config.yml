@@ -8,17 +8,17 @@ ontologies:
   namespaces:
     dfd: http://www.foo.bar/dataplatform_design/ontologies/DFD#
     dpdo: http://www.foo.bar/dataplatform_design/ontologies/DPDO#
-    service_ecosystem: http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#
+    service_ecosystem: http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystemGoogle#
     tag_taxonomy: http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#
   paths:
     dfd: dataplatform_design/src/test/scenarios/technogym/input/ontologies/DFD.ttl
     dpdo: dataplatform_design/resources/scenario_template/input/ontologies/DPDO.ttl
-    service_ecosystem: dataplatform_design/resources/scenario_template/input/ontologies/ServiceEcosystem.ttl
+    service_ecosystem: dataplatform_design/resources/scenario_template/input/ontologies/ServiceEcosystemGoogle.ttl
     tag_taxonomy: dataplatform_design/resources/scenario_template/input/ontologies/TagTaxonomy.ttl
   prefix:
     dfd: DFD
     dpdo: DPDO
-    service_ecosystem: ServiceEcosystem
+    service_ecosystem: ServiceEcosystemGoogle
     tag_taxonomy: TagTaxonomy
   solution: dataplatform_design/src/test/scenarios/technogym/input/solution/solution.ttl
 prefix: http://www.foo.bar/dataplatform_design/ontologies/
