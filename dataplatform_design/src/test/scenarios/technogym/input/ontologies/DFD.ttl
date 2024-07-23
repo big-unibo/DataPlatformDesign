@@ -13,13 +13,94 @@
     owl:imports <http://www.foo.bar/dataplatform_design/ontologies/DPDO>,
                 <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
 
-DFD:N1
-    rdf:type owl:NamedIndividual, DPDO:Repository;
-    DPDO:flowsData DFD:N2;
-    DPDO:hasTag TagTaxonomy:Relational;
-    DPDO:name "N1".
-
-DFD:N2
+DFD:Download_Entity
     rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:Temp_Entity_Storage;
     DPDO:hasTag TagTaxonomy:Batch;
-    DPDO:name "N2".
+    DPDO:name "Download_Entity".
+
+DFD:Temp_Entity_Storage
+    rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing,
+                TagTaxonomy:File;
+    DPDO:name "Temp_Entity_Storage".
+
+DFD:Bulk_Loader rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:Entity_Storage,
+                    DFD:Cold_Storage;
+    DPDO:hasTag TagTaxonomy:Batch,
+                TagTaxonomy:Small;
+    DPDO:name "Bulk_Loader".
+
+DFD:Entity_Storage rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational;
+    DPDO:flowsData DFD:ETL ;
+    DPDO:name "Entity_Storage".
+
+DFD:Cold_Storage rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:File,
+                TagTaxonomy:Archive;
+    DPDO:name "Cold_Storage".
+
+DFD:ETL rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL,
+                TagTaxonomy:Batch,
+                TagTaxonomy:Big;
+    DPDO:flowsData DFD:Historical_Data;
+    DPDO:name "ETL".
+
+DFD:Historical_Data rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal,
+                TagTaxonomy:Relational ;
+    DPDO:flowsData DFD:View_Updater;
+    DPDO:name "Historical_Data".
+
+DFD:View_Updater rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big,
+                TagTaxonomy:Batch;
+    DPDO:flowsData DFD:Live_Data ;
+    DPDO:name "View_Updater".
+
+DFD:Live_Data rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational,
+                TagTaxonomy:Processed,
+                TagTaxonomy:Big;
+    DPDO:flowsData DFD:Feature_Eng;
+    DPDO:name "Live_Data".
+
+DFD:Feature_Eng rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL;
+    DPDO:flowsData DFD:Feature_Store ;
+    DPDO:name "Feature_Eng".
+
+DFD:Feature_Store rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational,
+                TagTaxonomy:Processed;
+    DPDO:flowsData DFD:Model_Inference;
+    DPDO:name "Feature_Store".
+
+DFD:Model_Inference rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning;
+    DPDO:flowsData DFD:Model_Store;
+    DPDO:name "Model_Inference".
+
+DFD:Model_Store rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational,
+                TagTaxonomy:Processed;
+    DPDO:flowsData DFD:Flow_Back;
+    DPDO:name "Model_Store".
+
+DFD:Flow_Back rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Batch;
+    DPDO:flowsData DFD:Intermediate_Storage;
+    DPDO:name "Flow_Back".
+
+DFD:Intermediate_Storage rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational,
+                TagTaxonomy:Processed;
+    DPDO:flowsData DFD:Push_Salesforce;
+    DPDO:name "Intermediate_Storage".
+
+# DFD:Push_Salesforce rdf:type owl:NamedIndividual, DPDO:Process;
+#     DPDO:hasTag TagTaxonomy:Delta;
+#     DPDO:name "Push_Salesforce".
