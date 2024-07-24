@@ -85,9 +85,10 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
         ]
     )
 
-    dataplat_designer.add_constraints(
-        config["ontologies"]["adds_constraints_paths"].values()
-    )
+    if "adds_constraints_paths" in config["ontologies"]:
+        dataplat_designer.add_constraints(
+            config["ontologies"]["adds_constraints_paths"].values()
+        )
 
     # Building matched graph
     matched_graph = dataplat_designer.build_matched_graph(

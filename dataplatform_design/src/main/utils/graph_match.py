@@ -40,7 +40,7 @@ def match_lakehouse_pattern(
                 ?repository_pattern rdf:type <{DPDO.Repository}> .
                 ?repository_pattern <{DPDO.flowsData}>+ ?dwh .
                 FILTER EXISTS {{
-                    ?repository_pattern <{DPDO.hasTag}> <{TAG_TAXONOMY.Relational}> .
+                    ?repository_pattern <{DPDO.hasTag}> <{TAG_TAXONOMY.Structured}> .
                 }}
             }}
             ?dwh rdf:type <{DPDO.Repository}> .
