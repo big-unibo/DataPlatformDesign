@@ -225,25 +225,6 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
             "Accept": "application/sparql-results+json",
         },
     )
-    flows_data_query = f"""
-        SELECT (COUNT(DISTINCT ?previous_node) AS ?count)
-            WHERE {{
-                ?previous_node a <{DPDO.DFDNode}> .
-                ?following_node  a <{DPDO.DFDNode}> .
-                ?previous_node <{DPDO.flowsData}> ?following_node .
-            }}
-    """
-    flows_data_response = requests.post(
-        f"{endpoint}/repositories/{repository_name}",
-        data=flows_data_query,
-        headers={
-            "Content-Type": "application/sparql-query",
-            "Accept": "application/sparql-results+json",
-        },
-    )
-    flows_data_count = int(
-        flows_data_response.json()["results"]["bindings"][0]["count"]["value"]
-    )
     compatible_node_count = dfd_compatible_response.json()["results"]["bindings"]
 
     not_implements = dfd_implements_response.json()["results"]["bindings"]
