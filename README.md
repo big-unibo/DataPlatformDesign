@@ -1,9 +1,9 @@
 # Data Platform Match & Select Algorithm
 This repository stores the implementation of "Process-Driven Design of Cloud Data Platforms" [...].
-The match and select algorithm has been implemented in Python 3.9 and thus requires it to be run. The application relies on GraphDB to store knowledge graphs and SPARQL queries to perform the matching part of the algorithm.
+The match and select algorithm has been implemented in Python 3.9 and thus requires it to be run. The application relies on GraphDB to store knowledge graphs, SPARQL queries to perform the matching part of the algorithm and CPLEX python library to perform the selection part.
 
 The application returns all optimal solution to the optimization problem.
-Upon execution, the matched and selected graphs will be available in the `/dataplatform_design/src/test/scenarios/scenario_{scenario_name}/output` directory in the form of .json knowledge graphs and a visual .png representation.
+Upon execution, the matched and selected graphs will be available in the `/dataplatform_design/src/test/scenarios/{scenario_name}/output` directory in the form of .json knowledge graphs and a visual .png representation.
 
 The application works with scenarios, each of them defining a data pipeline to be implemented with respect to a certain service ecosystem and a taxonomy of tags.
 
@@ -22,7 +22,7 @@ A template for a design scenario can be found in `/dataplatform_design/resources
 
 - `scenario_0/`: main directory of a scenario.
 - `scenario_0/configs/`: contains config files.
-  - `config.yml`: Stores the algorithm parameters (e.g. GraphDB ip address, ontologies namespaces, etc.);
+  - `config.yml`: Stores the algorithm parameters (e.g. GraphDB ip address, ontologies namespaces, ontologies paths for the scenario, etc.);
   - `repo-config.ttl`: Stores the GraphDB repository configs, such as the ruleset (default OWL-Max).
 - `scenario_0/input/`: defines scenario inputs.
   - `adds_constraint/`: represents additional constraints such as preferences and mandatories constraints.
@@ -51,7 +51,9 @@ The script takes additional optional parameters such as:
 - --solution {path_to_service_ontology.ttl}
 - --preferences {path_to_service_ontology.ttl}
 
-which specify the path of the ontologies to be copied into the scenario. <u>Please note that in case of using user-defined ontologies with different namespaces than the default ones, such ontologies' namespaces and prefixes <b>must</b> be updated in </u> `/dataplatform_design/src/test/scenarios/scenario_{scenario_name}/configs/config.yml`.
+which specify the path of the ontologies to be copied into the scenario.
+
+ <u>Please note that in case of using user-defined ontologies with different namespaces than the default ones, such ontologies' namespaces, prefixes, and paths <b>must</b> be updated in </u> `/dataplatform_design/src/test/scenarios/{scenario_name}/configs/config.yml`.
 
 ### Testing scenarios
 
