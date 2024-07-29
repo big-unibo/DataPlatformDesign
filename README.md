@@ -1,5 +1,7 @@
 # Optimizing blueprints of cloud data platforms
 
+[![build](https://github.com/big-unibo/DataPlatformDesign/actions/workflows/build.yml/badge.svg)](https://github.com/big-unibo/DataPlatformDesign/actions/workflows/build.yml)
+
 ## Research papers
 
 This repository contains the implementation of the following research paper:
