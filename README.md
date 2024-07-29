@@ -2,7 +2,7 @@
 
 ## Research papers
 
-Implementation of the following research paper:
+This repository contains the implementation of the following research paper:
 
 - Francia, Matteo, Golfarelli Matteo, and Pasini Manuele. "Process-Driven Design of Cloud Data Platforms". Submitted to **Information Systems** (2024) 
 
