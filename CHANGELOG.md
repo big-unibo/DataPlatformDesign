@@ -1,3 +1,60 @@
+## [1.2.0](https://github.com/big-unibo/DataPlatformDesign/compare/1.1.0...1.2.0) (2024-07-29)
+
+
+### Features
+
+* bug fix and new match ([e04c78c](https://github.com/big-unibo/DataPlatformDesign/commit/e04c78cb4fa399ab22320ca00e9db86f1c0c2ac3))
+* generating solution image after building selection graphs ([aec1419](https://github.com/big-unibo/DataPlatformDesign/commit/aec14194b044b3d15761a39429801fd9a18a7676))
+* implemented technogym use case ([671f6ac](https://github.com/big-unibo/DataPlatformDesign/commit/671f6ac8a39a1ee6c4cd9b9525c36243cf1f5c19))
+* improving selected graph visualization ([0532e60](https://github.com/big-unibo/DataPlatformDesign/commit/0532e60c93f0b9ab89ccc038df46b1b40f7db799))
+* modified akins ([6e727c6](https://github.com/big-unibo/DataPlatformDesign/commit/6e727c6017b8190b33efd8174bf8b0031b36ffaa))
+* not bidirectional implementBy & check for missing nodes & lakehouse must also match ([08cb7bb](https://github.com/big-unibo/DataPlatformDesign/commit/08cb7bb63bcc9c8b835df408c52510eea893a82c))
+* print matched graph ([828a50d](https://github.com/big-unibo/DataPlatformDesign/commit/828a50dc63c46752c3f1d455cdfe061dbf5dbab8))
+* pushing solution to graphdb ([abd4ae1](https://github.com/big-unibo/DataPlatformDesign/commit/abd4ae17d8bf274781f02a48f35c6b887ba20e78))
+* showing selected_graph ([cf83805](https://github.com/big-unibo/DataPlatformDesign/commit/cf83805b8b465ffd66e4956187b7470520baf33f))
+* solutions get pushed to GraphDB ([8a3118b](https://github.com/big-unibo/DataPlatformDesign/commit/8a3118bc900656f0dd9f7c4030cbe72de8c1be66))
+
+
+### Bug Fixes
+
+* creating output folder if not exist ([9184cd6](https://github.com/big-unibo/DataPlatformDesign/commit/9184cd6e12b8fe78f2f2e362b7afc64ec1e09703))
+* error in checking for compatible services ([435f4c6](https://github.com/big-unibo/DataPlatformDesign/commit/435f4c63ae0bc2d41703b52256cb7458b23b33aa))
+* forgot file ([b3f519c](https://github.com/big-unibo/DataPlatformDesign/commit/b3f519c3fddefa7c595a703c427c40620fede4ea))
+* forgot something ([e74a914](https://github.com/big-unibo/DataPlatformDesign/commit/e74a914278430974dd40a21fba8c528aeda465c3))
+* mandatories now a constraint ([1b7889c](https://github.com/big-unibo/DataPlatformDesign/commit/1b7889c275f67ac733f47701866b172d39f967dd))
+* mandatory  on lakehouse4 ([cd3fbcb](https://github.com/big-unibo/DataPlatformDesign/commit/cd3fbcb194c3778582f08d1f6368a51f2831f3b1))
+* removing legacy mandatories ([16040dd](https://github.com/big-unibo/DataPlatformDesign/commit/16040ddb6ccdafdf17b56a931a434bb96eb3e26c))
+* removing print ([2557b69](https://github.com/big-unibo/DataPlatformDesign/commit/2557b693d015c8c564241d0896863d9e0b23feda))
+* retrieve lakehouse implements ([408ed6d](https://github.com/big-unibo/DataPlatformDesign/commit/408ed6dcb87a778966da305fd5290d21ac58a9e9))
+* service ecosystem syntax error ([fb2b737](https://github.com/big-unibo/DataPlatformDesign/commit/fb2b737bed7b065e3c70aa7dc05472ff4bf6a69d))
+* wrong config was being used ([9580d06](https://github.com/big-unibo/DataPlatformDesign/commit/9580d06f74006a29415404d3f03a84a87a187f01))
+* wrong push ([4576dd3](https://github.com/big-unibo/DataPlatformDesign/commit/4576dd3f9c4a54caa824f8deb7653f23e1da907e))
+
+
+### Dependency updates
+
+* **deps:** update dependency pandas to v2.2.2 ([5d3714b](https://github.com/big-unibo/DataPlatformDesign/commit/5d3714b4558a646e81661b1275a61821159780f5))
+* **deps:** update dependency pytest to v8.2.2 ([f2d3fa5](https://github.com/big-unibo/DataPlatformDesign/commit/f2d3fa5f162e4577659301b57d084e85864b385f))
+* **deps:** update dependency requests to v2.32.2 [security] ([c99c41e](https://github.com/big-unibo/DataPlatformDesign/commit/c99c41ece73c7de2e0f0dc73246abf229424c49c))
+* **deps:** update dependency requests to v2.32.3 ([d07e14b](https://github.com/big-unibo/DataPlatformDesign/commit/d07e14b0693226efc652d6c679de13bdf50f40a0))
+* **deps:** update node.js to 18.20 ([777890c](https://github.com/big-unibo/DataPlatformDesign/commit/777890c072ade46c5e4f45bb578df2def33d48a5))
+* **deps:** update python docker tag to v3.12 ([b800924](https://github.com/big-unibo/DataPlatformDesign/commit/b8009243687d57d578ef62a9b1c553b16543a5f9))
+
+
+### General maintenance
+
+* add akin test + returning solutions' costs ([2bfa2b1](https://github.com/big-unibo/DataPlatformDesign/commit/2bfa2b1907df7a2d57b3d4e6b7ff0e73997e3999))
+* minor reafctor ([01b4e25](https://github.com/big-unibo/DataPlatformDesign/commit/01b4e252ba0cd53bea2bae5352cc7e4df673b11a))
+* not copying preferences to new scenario ([31cfd49](https://github.com/big-unibo/DataPlatformDesign/commit/31cfd490b79defa80b1732067b426a131bc4daae))
+* not copying template dpdo, tagtax and serviceecosystem ([92730a4](https://github.com/big-unibo/DataPlatformDesign/commit/92730a4239f6aa4de05fd167b22d3467f5047092))
+* pushing scenarios ([6e0f73e](https://github.com/big-unibo/DataPlatformDesign/commit/6e0f73e0b0915dc7577cb0ebf7e66d0a81e3aa25))
+* refactoring and updating readme ([1a40afc](https://github.com/big-unibo/DataPlatformDesign/commit/1a40afcc36cdd9c2cac9e426389301d3227fb727))
+* removing lakehouse ([e370321](https://github.com/big-unibo/DataPlatformDesign/commit/e370321c662197f273e3e36dc883daf30401e509))
+* returning solution cost ([ceb0eeb](https://github.com/big-unibo/DataPlatformDesign/commit/ceb0eeb19b02a29c944cffd9abe81c7faca2a4d9))
+* showing nodes name when not matching correctly ([c356929](https://github.com/big-unibo/DataPlatformDesign/commit/c356929bc0886f98211fdd60f6c2267927c17206))
+* updating readme and deleting useless stuff ([bc5c664](https://github.com/big-unibo/DataPlatformDesign/commit/bc5c664de77e9d7b8da0795b99066614ae6487dc))
+* updating uris to a more dummy one ([2022a21](https://github.com/big-unibo/DataPlatformDesign/commit/2022a218fab60d129eb5d89b349d186328e94b7a))
+
 ## [1.1.0](https://github.com/big-unibo/DataPlatformDesign/compare/1.0.0...1.1.0) (2024-07-08)
 
 
