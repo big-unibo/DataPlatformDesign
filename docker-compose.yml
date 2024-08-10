@@ -1,7 +1,7 @@
 version: "3"
 services:
   graphdb:
-    image: khaller/graphdb-free:10.7.1
+    image: khaller/graphdb-free:10.7.2
     ports:
       - "7200:7200"
       - "7300:7300"
