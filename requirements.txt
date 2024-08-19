@@ -37,7 +37,7 @@ python-dotenv==1.0.1
 pytz==2024.1
 PyYAML==6.0.2
 rdflib==7.0.0
-rdflib-neo4j==1.0
+rdflib-neo4j==1.1
 requests==2.32.3
 six==1.16.0
 SPARQLWrapper==2.0.0
