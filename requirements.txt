@@ -7,7 +7,7 @@ cplex==22.1.1.2
 cycler==0.12.1
 exceptiongroup==1.2.2
 flake8==7.1.1
-fonttools==4.54.0
+fonttools==4.54.1
 graphviz==0.20.3
 idna==3.10
 importlib_resources==6.4.5
