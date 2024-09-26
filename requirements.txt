@@ -17,7 +17,7 @@ kiwisolver==1.4.7
 matplotlib==3.9.2
 mccabe==0.7.0
 mypy-extensions==1.0.0
-neo4j==5.24.0
+neo4j==5.25.0
 networkx==3.2.1
 numpy==2.0.2
 owlready2==0.46
