@@ -20,7 +20,7 @@ mypy-extensions==1.0.0
 neo4j==5.25.0
 networkx==3.2.1
 numpy==2.0.2
-owlready2==0.46
+owlready2==0.47
 packaging==24.1
 pandas==2.2.3
 pathspec==0.12.1
