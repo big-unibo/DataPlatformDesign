@@ -19,7 +19,7 @@ mccabe==0.7.0
 mypy-extensions==1.0.0
 neo4j==5.25.0
 networkx==3.2.1
-numpy==2.0.2
+numpy==2.1.2
 owlready2==0.47
 packaging==24.1
 pandas==2.2.3
