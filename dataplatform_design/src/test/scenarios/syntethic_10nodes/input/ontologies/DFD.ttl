@@ -1,0 +1,56 @@
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+DFD:N1 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N2;
+    DPDO:flowsData DFD:N3;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N1".
+
+DFD:N2 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N4;
+    DPDO:flowsData DFD:N5;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N2".
+
+DFD:N3 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N3".
+
+DFD:N4 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N6;
+    DPDO:flowsData DFD:N7;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N4".
+
+DFD:N5 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N5".
+
+DFD:N6 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N6".
+
+DFD:N7 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N8;
+    DPDO:flowsData DFD:N9;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N7".
+
+DFD:N8 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N10;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N8".
+
+DFD:N9 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N9".
+
+DFD:N10 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N10".

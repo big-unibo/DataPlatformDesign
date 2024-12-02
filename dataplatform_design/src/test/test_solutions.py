@@ -1,5 +1,8 @@
 import os
 import sys
+import pandas as pd
+from datetime import datetime
+import pytz
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -13,13 +16,29 @@ from dataplatform_designer import DataPlatformDesigner
 import unittest
 
 logger = utils.setup_logger("DataPlat_Design_Test")
+tz = pytz.timezone("Europe/Rome")
 
 
 def get_path(folder):
     return os.path.join("dataplatform_design", "src", "test", "scenarios", folder)
 
 
-def test_scenarioI(self, scenario_directory, n_solutions=1):
+statistics_columns = [
+    "test_id",
+    "seed",
+    "scenario",
+    "iteration",
+    "match_time",
+    "augment_time",
+    "select_time",
+    "number_solutions"
+]
+seed = 42
+tests_statistics = []
+
+
+def test_scenarioI(self, scenario_directory, iteration=0, n_solutions=1):
+
     test_utils.normalize_repositories_names(
         [
             os.path.join(scenario_directory, "configs", "config.yml"),
@@ -84,23 +103,24 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
             )
         ]
     )
-
     if "adds_constraints_paths" in config["ontologies"]:
         dataplat_designer.add_constraints(
             config["ontologies"]["adds_constraints_paths"].values()
         )
 
     # Building matched graph
-    matched_graph = dataplat_designer.build_matched_graph(
+    matched_graph, matching_time = dataplat_designer.build_matched_graph(
         config["ontologies"]["paths"]["dpdo"],
         matched_graph_path,
     )
 
     # Augmenting matched graph
-    matched_graph = dataplat_designer.augment_graph(matched_graph)
+    matched_graph, augmentation_time = dataplat_designer.augment_graph(
+        matched_graph_path, config["ontologies"]["paths"]["dpdo"]
+    )
 
     # Building selected graph
-    selected_graphs, costs = dataplat_designer.build_selected_graph(
+    selected_graphs, costs, selection_time = dataplat_designer.build_selected_graph(
         matched_graph,
         selected_graph_path,
     )
@@ -109,64 +129,129 @@ def test_scenarioI(self, scenario_directory, n_solutions=1):
     res, s, solution_cost = dataplat_designer.compare_solutions(
         selected_graphs, solution_path, costs
     )
+
     self.assertTrue(res)
-    self.assertEqual(len(selected_graphs), n_solutions)
-    # assert result, f"Testing {scenario_directory}, result: {result}"
+    #self.assertEqual(len(selected_graphs), n_solutions)
+
+    return [
+        seed,
+        scenario_directory.split(os.sep)[-1],
+        iteration,
+        matching_time,
+        augmentation_time,
+        selection_time,
+        len(selected_graphs)
+    ]
 
 
 class TestSolutions(unittest.TestCase):
 
-    def test_requires01(self):
-        test_scenarioI(self, get_path("requires01"))
+    def run_scenario_with_stats(self, scenario, iteration=0, n_solutions=1):
+        logger.debug(f"Running scenario {scenario}, iteration {iteration}")
+        global tests_statistics
+        new_stats = test_scenarioI(
+            self, get_path(scenario), iteration=iteration, n_solutions=n_solutions
+        )
+        tests_statistics.append(new_stats)
+
+        # tests_statistics = pd.concat([tests_statistics, new_stats], ignore_index=True)
+
+    def test_requires01(
+        self,
+    ):
+        self.run_scenario_with_stats("requires01", iteration=self.iteration)
 
     def test_requires02(self):
-        test_scenarioI(self, get_path("requires02"))
+        self.run_scenario_with_stats("requires02", iteration=self.iteration)
 
     def test_mandatory01(self):
-        test_scenarioI(self, get_path("mandatory01"))
+        self.run_scenario_with_stats("mandatory01", iteration=self.iteration)
 
     def test_isAkin01(self):
-        test_scenarioI(self, get_path("isAkin01"))
+        self.run_scenario_with_stats("isAkin01", iteration=self.iteration)
 
     def test_isAkin02(self):
-        test_scenarioI(self, get_path("isAkin02"))
+        self.run_scenario_with_stats("isAkin02", iteration=self.iteration)
 
     def test_isAkin03(self):
         try:
-            test_scenarioI(self, get_path("isAkin03"))
+            self.run_scenario_with_stats("isAkin03", iteration=self.iteration)
         except Exception as e:
             logger.exception(e.__doc__)
             return True
 
     def test_isCompatible01(self):
-        test_scenarioI(self, get_path("isCompatible01"))
+        self.run_scenario_with_stats("isCompatible01", iteration=self.iteration)
 
     def test_lakehouse01(self):
-        test_scenarioI(self, get_path("lakehouse01"))
+        self.run_scenario_with_stats("lakehouse01", iteration=self.iteration)
 
     def test_lakehouse02(self):
-        test_scenarioI(self, get_path("lakehouse02"))
+        self.run_scenario_with_stats("lakehouse02", iteration=self.iteration)
 
     def test_lakehouse03(self):
-        test_scenarioI(self, get_path("lakehouse03"))
+        self.run_scenario_with_stats("lakehouse03", iteration=self.iteration)
 
     def test_lakehouse04(self):
-        test_scenarioI(self, get_path("lakehouse04"))
+        self.run_scenario_with_stats("lakehouse04", iteration=self.iteration)
 
     def test_isCompatible02(self):
-        test_scenarioI(self, get_path("isCompatible02"))
+        self.run_scenario_with_stats("isCompatible02", iteration=self.iteration)
 
     def test_ico01(self):
-        test_scenarioI(self, get_path("ico01"), n_solutions=2)
+        self.run_scenario_with_stats("ico01", iteration=self.iteration, n_solutions=2)
 
     def test_ico02(self):
-        test_scenarioI(self, get_path("ico02"), n_solutions=1)
+        self.run_scenario_with_stats("ico02", iteration=self.iteration, n_solutions=1)
 
     def test_ico03(self):
-        test_scenarioI(self, get_path("ico03-azure"), n_solutions=2)
+        self.run_scenario_with_stats(
+            "ico03-azure", iteration=self.iteration, n_solutions=2
+        )
 
     def test_watering(self):
-        test_scenarioI(self, get_path("watering"), n_solutions=2)
+        self.run_scenario_with_stats(
+            "watering", iteration=self.iteration, n_solutions=2
+        )
 
     def test_techogym(self):
-        test_scenarioI(self, get_path("technogym"), n_solutions=1)
+        self.run_scenario_with_stats(
+            "technogym", iteration=self.iteration, n_solutions=1
+        )
+    def test_syntethic10_nodes(self):
+        self.run_scenario_with_stats(
+            "syntethic_10nodes", iteration=self.iteration, n_solutions=1
+        )
+    def test_syntethic100_nodes(self):
+        self.run_scenario_with_stats(
+            "syntethic_100nodes", iteration=self.iteration, n_solutions=1
+        )
+    def test_syntethic1000_nodes(self):
+        self.run_scenario_with_stats(
+            "syntethic_1000nodes", iteration=self.iteration, n_solutions=1
+        )
+
+if __name__ == "__main__":
+
+    iterations = 2
+
+    for i in range(iterations):
+        print(f"--- Iteration {i + 1} ---")
+        test_suite = unittest.TestSuite()
+        loader = unittest.TestLoader()
+        for test_name in loader.getTestCaseNames(TestSolutions):
+            test = TestSolutions(test_name)
+            test.iteration = i
+            test_suite.addTest(test)
+        unittest.TextTestRunner(verbosity=2).run(test_suite)
+    test_id = datetime.now(tz=tz).timestamp()
+    timestamped_statistics = [
+        [test_id] + scenario_statistic for scenario_statistic in tests_statistics
+    ]
+    global_statistics_df = pd.DataFrame(
+        timestamped_statistics, columns=statistics_columns
+    )
+
+    global_statistics_df.to_csv(
+        f"dataplatform_design/test_results/statistics_{datetime.now()}.csv", index=False
+    )

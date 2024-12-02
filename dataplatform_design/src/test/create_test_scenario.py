@@ -48,7 +48,6 @@ new_config_path = os.path.join(
 )
 
 # Push config files into new scenario
-
 test_utils.modify_yaml(
     os.path.join(template_structure["config"], "config.yml"),
     new_config_path,

@@ -5,6 +5,7 @@ from rdflib.namespace import Namespace
 import sys
 import requests
 import visualize
+import time
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -48,6 +49,7 @@ class DataPlatformDesigner:
         self.selection_constraints.append(constraint)
 
     def setup_graph_db(self, repo_config_path):
+        print(f"ENDOPOINT: {self.endpoint}/rest/repositories/{self.repository}")
         graphdb_utils.delete_repository(self.repository, self.endpoint)
         return graphdb_utils.setup_graphdb(
             self.endpoint, self.repository, repo_config_path, self.named_graph
@@ -95,17 +97,11 @@ class DataPlatformDesigner:
         # Load DPDO into matched graph
         matched_graph.parse(dpdo_ontology_path, format="turtle")
         try:
-            # Embed lakehouse patterns & match graph
+            # Embed lakehouse patterns & match graphw
+            start_time = time.time()
             if graph_match.build_matched_graph(
-                self.endpoint, self.repository, self.named_graph, matched_graph_path
-            ) & graph_match.match_lakehouse_pattern(
-                self.endpoint,
-                self.repository,
-                self.named_graph,
-                matched_graph_path,
-                self.namespaces,
-            ):
-
+                self.endpoint, self.repository, self.named_graph, matched_graph_path):
+                duration = time.time() - start_time
                 # # Load matched graph
                 matched_graph.parse(
                     location=os.path.join(matched_graph_path),
@@ -116,14 +112,47 @@ class DataPlatformDesigner:
                 named_graph = Graph(
                     store=matched_graph.store, identifier=URIRef(self.named_graph)
                 )
-                return named_graph
+
+                return named_graph, duration
+            
         except Exception as e:
             logger.exception("Something went wrong while building matched graph")
             logger.exception(e.__doc__)
 
+    def augment_graph(self, matched_graph_path,dpdo_ontology_path):
+        start_time = time.time()
+        graph_match.match_lakehouse_pattern(
+                self.endpoint,
+                self.repository,
+                self.named_graph,
+                matched_graph_path,
+                self.namespaces,
+        )
+        lakehouse_duration = time.time() - start_time
+
+        matched_graph = utils.setup_graph(self.namespaces)
+
+        # Load DPDO into matched graph
+        matched_graph.parse(dpdo_ontology_path, format="turtle")
+        matched_graph.parse(
+            location=os.path.join(matched_graph_path),
+            format="json-ld",
+        )
+
+        # Focus only on named graph
+        named_graph = Graph(
+            store=matched_graph.store, identifier=URIRef(self.named_graph)
+        )
+        start_time = time.time()
+        result = graph_augment.augment_graph(named_graph)
+        other_augment_duration = time.time() - start_time
+        return result, lakehouse_duration + other_augment_duration
+    
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
+        start_time = time.time()
         solutions, requires, costs = graph_select.select_services(named_graph)
+        selection_duration = time.time() - start_time
         selected_graphs = []
         for solution in solutions:
             solution_number = solutions.index(solution)
@@ -220,10 +249,7 @@ class DataPlatformDesigner:
             selected_graphs.append(solution_selected_graph)
         visualize.process_directory_tree(self.scenario_path)
 
-        return selected_graphs, costs
-
-    def augment_graph(self, graph):
-        return graph_augment.augment_graph(graph)
+        return selected_graphs, costs, selection_duration
 
     def compare_solutions(self, selected_graphs, solution_path, costs):
         for solution, cost in zip(selected_graphs, costs):

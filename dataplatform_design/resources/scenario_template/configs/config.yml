@@ -3,7 +3,7 @@
 prefix: "http://www.foo.bar/dataplatform_design/ontologies/"
 
 graph_db:
-  endpoint: http://127.0.0.1:7200
+  endpoint: http://graphdb:7200
   repository: DataPlatformDesign_scenario
   named_graph: http://dpdo_example.com/DPD_Graph
 

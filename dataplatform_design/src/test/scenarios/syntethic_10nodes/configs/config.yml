@@ -1,7 +1,7 @@
 graph_db:
   endpoint: http://graphdb:7200
   named_graph: http://dpdo_example.com/DPD_Graph
-  repository: DataPlatformDesign_lakehouse01
+  repository: DataPlatformDesign_syntethic_10nodes
 ontologies:
   adds_constraints_paths:
     preferences: dataplatform_design/resources/scenario_template/input/adds_constraints/preferences.ttl
@@ -11,14 +11,14 @@ ontologies:
     service_ecosystem: http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#
     tag_taxonomy: http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#
   paths:
-    dfd: dataplatform_design/src/test/scenarios/lakehouse01/input/ontologies/DFD.ttl
+    dfd: dataplatform_design/src/test/scenarios/syntethic_10nodes/input/ontologies/DFD.ttl
     dpdo: dataplatform_design/resources/scenario_template/input/ontologies/DPDO.ttl
-    service_ecosystem: dataplatform_design/src/test/scenarios/lakehouse01/input/ontologies/ServiceEcosystem.ttl
+    service_ecosystem: dataplatform_design/src/test/scenarios/syntethic_10nodes/input/ontologies/ServiceEcosystem.ttl
     tag_taxonomy: dataplatform_design/resources/scenario_template/input/ontologies/TagTaxonomy.ttl
   prefix:
     dfd: DFD
     dpdo: DPDO
     service_ecosystem: ServiceEcosystem
     tag_taxonomy: TagTaxonomy
-  solution: dataplatform_design/src/test/scenarios/lakehouse01/input/solution/solution.ttl
+  solution: dataplatform_design/src/test/scenarios/syntethic_10nodes/input/solution/solution.ttl
 prefix: http://www.foo.bar/dataplatform_design/ontologies/

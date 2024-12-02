@@ -217,9 +217,13 @@ TagTaxonomy:Wide_column_class
 #################################################################
 #    Individuals
 #################################################################
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Language_all
 TagTaxonomy:Language_all rdf:type TagTaxonomy:Language_class.
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Python
 TagTaxonomy:Python rdf:type TagTaxonomy:Python_class.
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#SQL
 TagTaxonomy:SQL rdf:type TagTaxonomy:SQL_class.
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#LowCode
 TagTaxonomy:LowCode rdf:type TagTaxonomy:LowCode_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Delta
 TagTaxonomy:Delta rdf:type TagTaxonomy:Delta_class.
@@ -241,8 +245,6 @@ TagTaxonomy:Data_Model_all rdf:type TagTaxonomy:Data_Model_class.
 TagTaxonomy:Data_Zones_all rdf:type TagTaxonomy:Data_Zones_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#ETL
 TagTaxonomy:ETL rdf:type TagTaxonomy:ETL_class.
-###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Integration
-TagTaxonomy:Integration rdf:type TagTaxonomy:Integration_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Archive
 TagTaxonomy:Archive rdf:type TagTaxonomy:Archive_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Batch

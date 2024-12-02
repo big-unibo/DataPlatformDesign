@@ -32,24 +32,17 @@ def embed_mandatories(graph):
 
     mandatories_query = f"""
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-
-        DELETE {{
-            ?s {DPDO.implementedBy} ?c .
-        }}
         INSERT {{
             ?s {DPDO.implementedBy} ?o .
         }}
         WHERE {{
             ?s rdf:type {DPDO.DFDNode} .
             ?s {DPDO.isMandatory} ?o .
-            OPTIONAL {{
-                ?s {DPDO.implementedBy} ?c .
-            }}
         }}
     """
 
     try:
-        # graph.query(mandatories_query)
+        #graph.query(mandatories_query)
         return graph
     except Exception as e:
         logger.exception("Something went wrong during graph augmentation..")

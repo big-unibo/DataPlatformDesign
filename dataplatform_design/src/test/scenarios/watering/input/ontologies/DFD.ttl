@@ -20,7 +20,6 @@ DFD:Sensor_Data
         DPDO:hasTag
             TagTaxonomy:Relational,
             TagTaxonomy:Small,
-            # TagTaxonomy:Vectorial,
             TagTaxonomy:Landing;
         DPDO:name "Sensor Data".
 
@@ -64,9 +63,7 @@ DFD:Integrated_Data
             DFD:ETL,
             DFD:Irrigation_Opt;
         DPDO:hasTag
-            # TagTaxonomy:Operational,
             TagTaxonomy:Relational;
-            # TagTaxonomy:Vectorial;
         DPDO:name "Integrated Data".
 
 ###  http://www.foo.bar/dataplatform_design/ontologies/DFD#ETL

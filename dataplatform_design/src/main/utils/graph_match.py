@@ -9,10 +9,9 @@ logger = utils.setup_logger("DataPlat_Design_Match_Graph")
 # Load config
 config = utils.load_yaml(
     os.path.join(
-        "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
+        "/", "dataplatform_design", "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
     )
 )
-
 
 def setup_config(scenario_config):
     global config

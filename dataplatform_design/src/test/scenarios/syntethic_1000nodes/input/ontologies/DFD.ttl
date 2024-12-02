@@ -1,0 +1,5006 @@
+@prefix DFD: <http://www.foo.bar/dataplatform_design/ontologies/DFD#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+@prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+DFD:N1 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N2;
+    DPDO:flowsData DFD:N3;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N1".
+
+DFD:N2 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N4;
+    DPDO:flowsData DFD:N5;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N2".
+
+DFD:N3 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N3".
+
+DFD:N4 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N6;
+    DPDO:flowsData DFD:N7;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N4".
+
+DFD:N5 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N5".
+
+DFD:N6 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N6".
+
+DFD:N7 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N8;
+    DPDO:flowsData DFD:N9;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N7".
+
+DFD:N8 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N10;
+    DPDO:flowsData DFD:N11;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N8".
+
+DFD:N9 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N9".
+
+DFD:N10 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N12;
+    DPDO:flowsData DFD:N13;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N10".
+
+DFD:N11 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Document;
+    DPDO:name "N11".
+
+DFD:N12 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N14;
+    DPDO:flowsData DFD:N15;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N12".
+
+DFD:N13 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Machine_Learning;
+    DPDO:name "N13".
+
+DFD:N14 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N16;
+    DPDO:flowsData DFD:N17;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Vectorial;
+    DPDO:name "N14".
+
+DFD:N15 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Spatial;
+    DPDO:name "N15".
+
+DFD:N16 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N18;
+    DPDO:flowsData DFD:N19;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N16".
+
+DFD:N17 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Spatial;
+    DPDO:name "N17".
+
+DFD:N18 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Reporting;
+    DPDO:name "N18".
+
+DFD:N19 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N20;
+    DPDO:flowsData DFD:N21;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N19".
+
+DFD:N20 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N22;
+    DPDO:flowsData DFD:N23;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Regression;
+    DPDO:name "N20".
+
+DFD:N21 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N21".
+
+DFD:N22 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N24;
+    DPDO:flowsData DFD:N25;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N22".
+
+DFD:N23 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Archive;
+    DPDO:name "N23".
+
+DFD:N24 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N26;
+    DPDO:flowsData DFD:N27;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N24".
+
+DFD:N25 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Machine_Learning;
+    DPDO:name "N25".
+
+DFD:N26 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N28;
+    DPDO:flowsData DFD:N29;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Wide_Column;
+    DPDO:name "N26".
+
+DFD:N27 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N27".
+
+DFD:N28 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N30;
+    DPDO:flowsData DFD:N31;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N28".
+
+DFD:N29 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N29".
+
+DFD:N30 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N32;
+    DPDO:flowsData DFD:N33;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Machine_Learning;
+    DPDO:name "N30".
+
+DFD:N31 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N31".
+
+DFD:N32 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N34;
+    DPDO:flowsData DFD:N35;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N32".
+
+DFD:N33 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Functionality_all;
+    DPDO:name "N33".
+
+DFD:N34 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Delta;
+    DPDO:name "N34".
+
+DFD:N35 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N36;
+    DPDO:flowsData DFD:N37;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N35".
+
+DFD:N36 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N38;
+    DPDO:flowsData DFD:N39;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Graph;
+    DPDO:name "N36".
+
+DFD:N37 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Semi_Structured;
+    DPDO:name "N37".
+
+DFD:N38 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N38".
+
+DFD:N39 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N40;
+    DPDO:flowsData DFD:N41;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N39".
+
+DFD:N40 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N40".
+
+DFD:N41 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N42;
+    DPDO:flowsData DFD:N43;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N41".
+
+DFD:N42 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N44;
+    DPDO:flowsData DFD:N45;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N42".
+
+DFD:N43 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N43".
+
+DFD:N44 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N46;
+    DPDO:flowsData DFD:N47;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Regression;
+    DPDO:name "N44".
+
+DFD:N45 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Multidimensional;
+    DPDO:name "N45".
+
+DFD:N46 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N46".
+
+DFD:N47 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N48;
+    DPDO:flowsData DFD:N49;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N47".
+
+DFD:N48 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N48".
+
+DFD:N49 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N50;
+    DPDO:flowsData DFD:N51;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N49".
+
+DFD:N50 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Archive;
+    DPDO:name "N50".
+
+DFD:N51 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N52;
+    DPDO:flowsData DFD:N53;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Classification;
+    DPDO:name "N51".
+
+DFD:N52 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N54;
+    DPDO:flowsData DFD:N55;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Relational;
+    DPDO:name "N52".
+
+DFD:N53 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Archive;
+    DPDO:name "N53".
+
+DFD:N54 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N56;
+    DPDO:flowsData DFD:N57;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N54".
+
+DFD:N55 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N55".
+
+DFD:N56 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N56".
+
+DFD:N57 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N58;
+    DPDO:flowsData DFD:N59;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N57".
+
+DFD:N58 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N60;
+    DPDO:flowsData DFD:N61;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N58".
+
+DFD:N59 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N59".
+
+DFD:N60 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N62;
+    DPDO:flowsData DFD:N63;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Regression;
+    DPDO:name "N60".
+
+DFD:N61 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N61".
+
+DFD:N62 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N62".
+
+DFD:N63 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N64;
+    DPDO:flowsData DFD:N65;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N63".
+
+DFD:N64 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N66;
+    DPDO:flowsData DFD:N67;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Mini_Batch;
+    DPDO:name "N64".
+
+DFD:N65 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Spatial;
+    DPDO:name "N65".
+
+DFD:N66 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N66".
+
+DFD:N67 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N68;
+    DPDO:flowsData DFD:N69;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N67".
+
+DFD:N68 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N68".
+
+DFD:N69 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N70;
+    DPDO:flowsData DFD:N71;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Functionality_all;
+    DPDO:name "N69".
+
+DFD:N70 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N70".
+
+DFD:N71 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N72;
+    DPDO:flowsData DFD:N73;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N71".
+
+DFD:N72 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N74;
+    DPDO:flowsData DFD:N75;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N72".
+
+DFD:N73 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N73".
+
+DFD:N74 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N74".
+
+DFD:N75 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N76;
+    DPDO:flowsData DFD:N77;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Semi_Structured;
+    DPDO:name "N75".
+
+DFD:N76 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N78;
+    DPDO:flowsData DFD:N79;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N76".
+
+DFD:N77 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N77".
+
+DFD:N78 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N78".
+
+DFD:N79 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N80;
+    DPDO:flowsData DFD:N81;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N79".
+
+DFD:N80 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N82;
+    DPDO:flowsData DFD:N83;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N80".
+
+DFD:N81 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N81".
+
+DFD:N82 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N82".
+
+DFD:N83 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N84;
+    DPDO:flowsData DFD:N85;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Reporting;
+    DPDO:name "N83".
+
+DFD:N84 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N84".
+
+DFD:N85 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N86;
+    DPDO:flowsData DFD:N87;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N85".
+
+DFD:N86 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N88;
+    DPDO:flowsData DFD:N89;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N86".
+
+DFD:N87 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Classification;
+    DPDO:name "N87".
+
+DFD:N88 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N90;
+    DPDO:flowsData DFD:N91;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N88".
+
+DFD:N89 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Raster;
+    DPDO:name "N89".
+
+DFD:N90 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N92;
+    DPDO:flowsData DFD:N93;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N90".
+
+DFD:N91 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Small;
+    DPDO:name "N91".
+
+DFD:N92 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N94;
+    DPDO:flowsData DFD:N95;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Vectorial;
+    DPDO:name "N92".
+
+DFD:N93 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N93".
+
+DFD:N94 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N94".
+
+DFD:N95 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N96;
+    DPDO:flowsData DFD:N97;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N95".
+
+DFD:N96 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N98;
+    DPDO:flowsData DFD:N99;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Batch;
+    DPDO:name "N96".
+
+DFD:N97 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Functionality_all;
+    DPDO:name "N97".
+
+DFD:N98 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N100;
+    DPDO:flowsData DFD:N101;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N98".
+
+DFD:N99 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N99".
+
+DFD:N100 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N102;
+    DPDO:flowsData DFD:N103;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N100".
+
+DFD:N101 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N101".
+
+DFD:N102 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N102".
+
+DFD:N103 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N104;
+    DPDO:flowsData DFD:N105;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N103".
+
+DFD:N104 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N104".
+
+DFD:N105 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N106;
+    DPDO:flowsData DFD:N107;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N105".
+
+DFD:N106 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N106".
+
+DFD:N107 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N108;
+    DPDO:flowsData DFD:N109;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N107".
+
+DFD:N108 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Mini_Batch;
+    DPDO:name "N108".
+
+DFD:N109 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N110;
+    DPDO:flowsData DFD:N111;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Document;
+    DPDO:name "N109".
+
+DFD:N110 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N112;
+    DPDO:flowsData DFD:N113;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N110".
+
+DFD:N111 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N111".
+
+DFD:N112 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N112".
+
+DFD:N113 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N114;
+    DPDO:flowsData DFD:N115;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N113".
+
+DFD:N114 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Spatial;
+    DPDO:name "N114".
+
+DFD:N115 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N116;
+    DPDO:flowsData DFD:N117;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N115".
+
+DFD:N116 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N118;
+    DPDO:flowsData DFD:N119;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N116".
+
+DFD:N117 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Raster;
+    DPDO:name "N117".
+
+DFD:N118 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Functionality_all;
+    DPDO:name "N118".
+
+DFD:N119 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N120;
+    DPDO:flowsData DFD:N121;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N119".
+
+DFD:N120 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N122;
+    DPDO:flowsData DFD:N123;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Language_all;
+    DPDO:name "N120".
+
+DFD:N121 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N121".
+
+DFD:N122 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N124;
+    DPDO:flowsData DFD:N125;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N122".
+
+DFD:N123 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N123".
+
+DFD:N124 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N126;
+    DPDO:flowsData DFD:N127;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Cumulative;
+    DPDO:name "N124".
+
+DFD:N125 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Batch;
+    DPDO:name "N125".
+
+DFD:N126 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N128;
+    DPDO:flowsData DFD:N129;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Small;
+    DPDO:name "N126".
+
+DFD:N127 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Delta;
+    DPDO:name "N127".
+
+DFD:N128 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N128".
+
+DFD:N129 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N130;
+    DPDO:flowsData DFD:N131;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Classification;
+    DPDO:name "N129".
+
+DFD:N130 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N130".
+
+DFD:N131 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N132;
+    DPDO:flowsData DFD:N133;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N131".
+
+DFD:N132 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N132".
+
+DFD:N133 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N134;
+    DPDO:flowsData DFD:N135;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Wide_Column;
+    DPDO:name "N133".
+
+DFD:N134 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N136;
+    DPDO:flowsData DFD:N137;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Machine_Learning;
+    DPDO:name "N134".
+
+DFD:N135 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N135".
+
+DFD:N136 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N136".
+
+DFD:N137 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N138;
+    DPDO:flowsData DFD:N139;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N137".
+
+DFD:N138 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N140;
+    DPDO:flowsData DFD:N141;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N138".
+
+DFD:N139 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:Raster;
+    DPDO:name "N139".
+
+DFD:N140 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N142;
+    DPDO:flowsData DFD:N143;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N140".
+
+DFD:N141 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N141".
+
+DFD:N142 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N144;
+    DPDO:flowsData DFD:N145;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N142".
+
+DFD:N143 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N143".
+
+DFD:N144 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N144".
+
+DFD:N145 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N146;
+    DPDO:flowsData DFD:N147;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Key_Value;
+    DPDO:name "N145".
+
+DFD:N146 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N146".
+
+DFD:N147 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N148;
+    DPDO:flowsData DFD:N149;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N147".
+
+DFD:N148 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N148".
+
+DFD:N149 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N150;
+    DPDO:flowsData DFD:N151;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Archive;
+    DPDO:name "N149".
+
+DFD:N150 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N152;
+    DPDO:flowsData DFD:N153;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N150".
+
+DFD:N151 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N151".
+
+DFD:N152 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N154;
+    DPDO:flowsData DFD:N155;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Mini_Batch;
+    DPDO:name "N152".
+
+DFD:N153 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N153".
+
+DFD:N154 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Small;
+    DPDO:name "N154".
+
+DFD:N155 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N156;
+    DPDO:flowsData DFD:N157;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N155".
+
+DFD:N156 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N158;
+    DPDO:flowsData DFD:N159;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N156".
+
+DFD:N157 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Functionality_all;
+    DPDO:name "N157".
+
+DFD:N158 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Python;
+    DPDO:name "N158".
+
+DFD:N159 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N160;
+    DPDO:flowsData DFD:N161;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N159".
+
+DFD:N160 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N160".
+
+DFD:N161 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N162;
+    DPDO:flowsData DFD:N163;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N161".
+
+DFD:N162 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N162".
+
+DFD:N163 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N164;
+    DPDO:flowsData DFD:N165;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Streaming;
+    DPDO:name "N163".
+
+DFD:N164 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N166;
+    DPDO:flowsData DFD:N167;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N164".
+
+DFD:N165 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Regression;
+    DPDO:name "N165".
+
+DFD:N166 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Small;
+    DPDO:name "N166".
+
+DFD:N167 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N168;
+    DPDO:flowsData DFD:N169;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N167".
+
+DFD:N168 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N170;
+    DPDO:flowsData DFD:N171;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N168".
+
+DFD:N169 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Small;
+    DPDO:name "N169".
+
+DFD:N170 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N172;
+    DPDO:flowsData DFD:N173;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N170".
+
+DFD:N171 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N171".
+
+DFD:N172 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Raster;
+    DPDO:name "N172".
+
+DFD:N173 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N174;
+    DPDO:flowsData DFD:N175;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N173".
+
+DFD:N174 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Delta;
+    DPDO:name "N174".
+
+DFD:N175 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N176;
+    DPDO:flowsData DFD:N177;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N175".
+
+DFD:N176 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N176".
+
+DFD:N177 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N178;
+    DPDO:flowsData DFD:N179;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N177".
+
+DFD:N178 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N178".
+
+DFD:N179 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N180;
+    DPDO:flowsData DFD:N181;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N179".
+
+DFD:N180 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N182;
+    DPDO:flowsData DFD:N183;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N180".
+
+DFD:N181 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N181".
+
+DFD:N182 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N184;
+    DPDO:flowsData DFD:N185;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N182".
+
+DFD:N183 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N183".
+
+DFD:N184 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N184".
+
+DFD:N185 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N186;
+    DPDO:flowsData DFD:N187;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Graph;
+    DPDO:name "N185".
+
+DFD:N186 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N188;
+    DPDO:flowsData DFD:N189;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Multidimensional;
+    DPDO:name "N186".
+
+DFD:N187 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N187".
+
+DFD:N188 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N190;
+    DPDO:flowsData DFD:N191;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N188".
+
+DFD:N189 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N189".
+
+DFD:N190 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N192;
+    DPDO:flowsData DFD:N193;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Mini_Batch;
+    DPDO:name "N190".
+
+DFD:N191 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Pull;
+    DPDO:name "N191".
+
+DFD:N192 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N194;
+    DPDO:flowsData DFD:N195;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N192".
+
+DFD:N193 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N193".
+
+DFD:N194 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N196;
+    DPDO:flowsData DFD:N197;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N194".
+
+DFD:N195 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Wide_Column;
+    DPDO:name "N195".
+
+DFD:N196 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N196".
+
+DFD:N197 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N198;
+    DPDO:flowsData DFD:N199;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Archive;
+    DPDO:name "N197".
+
+DFD:N198 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N200;
+    DPDO:flowsData DFD:N201;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Multidimensional;
+    DPDO:name "N198".
+
+DFD:N199 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N199".
+
+DFD:N200 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N200".
+
+DFD:N201 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N202;
+    DPDO:flowsData DFD:N203;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N201".
+
+DFD:N202 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N202".
+
+DFD:N203 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N204;
+    DPDO:flowsData DFD:N205;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N203".
+
+DFD:N204 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Graph;
+    DPDO:name "N204".
+
+DFD:N205 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N206;
+    DPDO:flowsData DFD:N207;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N205".
+
+DFD:N206 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N206".
+
+DFD:N207 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N208;
+    DPDO:flowsData DFD:N209;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Wide_Column;
+    DPDO:name "N207".
+
+DFD:N208 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N210;
+    DPDO:flowsData DFD:N211;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N208".
+
+DFD:N209 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N209".
+
+DFD:N210 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N212;
+    DPDO:flowsData DFD:N213;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Big;
+    DPDO:name "N210".
+
+DFD:N211 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N211".
+
+DFD:N212 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N212".
+
+DFD:N213 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N214;
+    DPDO:flowsData DFD:N215;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N213".
+
+DFD:N214 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Language_all;
+    DPDO:name "N214".
+
+DFD:N215 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N216;
+    DPDO:flowsData DFD:N217;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N215".
+
+DFD:N216 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N218;
+    DPDO:flowsData DFD:N219;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Functionality_all;
+    DPDO:name "N216".
+
+DFD:N217 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N217".
+
+DFD:N218 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N218".
+
+DFD:N219 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N220;
+    DPDO:flowsData DFD:N221;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N219".
+
+DFD:N220 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Semi_Structured;
+    DPDO:name "N220".
+
+DFD:N221 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N222;
+    DPDO:flowsData DFD:N223;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Functionality_all;
+    DPDO:name "N221".
+
+DFD:N222 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N224;
+    DPDO:flowsData DFD:N225;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N222".
+
+DFD:N223 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N223".
+
+DFD:N224 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N224".
+
+DFD:N225 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N226;
+    DPDO:flowsData DFD:N227;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Classification;
+    DPDO:name "N225".
+
+DFD:N226 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N228;
+    DPDO:flowsData DFD:N229;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N226".
+
+DFD:N227 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Temporal;
+    DPDO:name "N227".
+
+DFD:N228 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Functionality_all;
+    DPDO:name "N228".
+
+DFD:N229 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N230;
+    DPDO:flowsData DFD:N231;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N229".
+
+DFD:N230 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N232;
+    DPDO:flowsData DFD:N233;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N230".
+
+DFD:N231 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N231".
+
+DFD:N232 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N234;
+    DPDO:flowsData DFD:N235;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N232".
+
+DFD:N233 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N233".
+
+DFD:N234 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N234".
+
+DFD:N235 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N236;
+    DPDO:flowsData DFD:N237;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N235".
+
+DFD:N236 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N238;
+    DPDO:flowsData DFD:N239;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N236".
+
+DFD:N237 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N237".
+
+DFD:N238 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N240;
+    DPDO:flowsData DFD:N241;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N238".
+
+DFD:N239 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N239".
+
+DFD:N240 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Regression;
+    DPDO:name "N240".
+
+DFD:N241 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N242;
+    DPDO:flowsData DFD:N243;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N241".
+
+DFD:N242 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N244;
+    DPDO:flowsData DFD:N245;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N242".
+
+DFD:N243 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N243".
+
+DFD:N244 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N246;
+    DPDO:flowsData DFD:N247;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Archive;
+    DPDO:name "N244".
+
+DFD:N245 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N245".
+
+DFD:N246 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N246".
+
+DFD:N247 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N248;
+    DPDO:flowsData DFD:N249;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Relational;
+    DPDO:name "N247".
+
+DFD:N248 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N248".
+
+DFD:N249 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N250;
+    DPDO:flowsData DFD:N251;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N249".
+
+DFD:N250 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N252;
+    DPDO:flowsData DFD:N253;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N250".
+
+DFD:N251 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Functionality_all;
+    DPDO:name "N251".
+
+DFD:N252 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N254;
+    DPDO:flowsData DFD:N255;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N252".
+
+DFD:N253 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Multidimensional;
+    DPDO:name "N253".
+
+DFD:N254 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Delta;
+    DPDO:name "N254".
+
+DFD:N255 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N256;
+    DPDO:flowsData DFD:N257;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N255".
+
+DFD:N256 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N256".
+
+DFD:N257 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N258;
+    DPDO:flowsData DFD:N259;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Delta;
+    DPDO:name "N257".
+
+DFD:N258 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N260;
+    DPDO:flowsData DFD:N261;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N258".
+
+DFD:N259 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Graph;
+    DPDO:name "N259".
+
+DFD:N260 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N262;
+    DPDO:flowsData DFD:N263;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N260".
+
+DFD:N261 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N261".
+
+DFD:N262 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N264;
+    DPDO:flowsData DFD:N265;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Batch;
+    DPDO:name "N262".
+
+DFD:N263 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Document;
+    DPDO:name "N263".
+
+DFD:N264 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N266;
+    DPDO:flowsData DFD:N267;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N264".
+
+DFD:N265 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N265".
+
+DFD:N266 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N268;
+    DPDO:flowsData DFD:N269;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Spatial;
+    DPDO:name "N266".
+
+DFD:N267 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N267".
+
+DFD:N268 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N268".
+
+DFD:N269 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N270;
+    DPDO:flowsData DFD:N271;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Big;
+    DPDO:name "N269".
+
+DFD:N270 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N272;
+    DPDO:flowsData DFD:N273;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N270".
+
+DFD:N271 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N271".
+
+DFD:N272 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N274;
+    DPDO:flowsData DFD:N275;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N272".
+
+DFD:N273 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N273".
+
+DFD:N274 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N276;
+    DPDO:flowsData DFD:N277;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N274".
+
+DFD:N275 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N275".
+
+DFD:N276 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Delta;
+    DPDO:name "N276".
+
+DFD:N277 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N278;
+    DPDO:flowsData DFD:N279;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Vectorial;
+    DPDO:name "N277".
+
+DFD:N278 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N280;
+    DPDO:flowsData DFD:N281;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Semi_Structured;
+    DPDO:name "N278".
+
+DFD:N279 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N279".
+
+DFD:N280 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N280".
+
+DFD:N281 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N282;
+    DPDO:flowsData DFD:N283;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N281".
+
+DFD:N282 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N282".
+
+DFD:N283 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N284;
+    DPDO:flowsData DFD:N285;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N283".
+
+DFD:N284 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N286;
+    DPDO:flowsData DFD:N287;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N284".
+
+DFD:N285 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Archive;
+    DPDO:name "N285".
+
+DFD:N286 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N288;
+    DPDO:flowsData DFD:N289;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Archive;
+    DPDO:name "N286".
+
+DFD:N287 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Classification;
+    DPDO:name "N287".
+
+DFD:N288 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Document;
+    DPDO:name "N288".
+
+DFD:N289 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N290;
+    DPDO:flowsData DFD:N291;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N289".
+
+DFD:N290 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N290".
+
+DFD:N291 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N292;
+    DPDO:flowsData DFD:N293;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Collection_all;
+    DPDO:name "N291".
+
+DFD:N292 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N292".
+
+DFD:N293 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N294;
+    DPDO:flowsData DFD:N295;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N293".
+
+DFD:N294 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Semi_Structured;
+    DPDO:name "N294".
+
+DFD:N295 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N296;
+    DPDO:flowsData DFD:N297;
+    DPDO:hasTag TagTaxonomy:Reporting, TagTaxonomy:Raster;
+    DPDO:name "N295".
+
+DFD:N296 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Cumulative;
+    DPDO:name "N296".
+
+DFD:N297 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N298;
+    DPDO:flowsData DFD:N299;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Vectorial;
+    DPDO:name "N297".
+
+DFD:N298 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N300;
+    DPDO:flowsData DFD:N301;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N298".
+
+DFD:N299 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Document;
+    DPDO:name "N299".
+
+DFD:N300 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N302;
+    DPDO:flowsData DFD:N303;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N300".
+
+DFD:N301 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N301".
+
+DFD:N302 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N304;
+    DPDO:flowsData DFD:N305;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N302".
+
+DFD:N303 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N303".
+
+DFD:N304 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N306;
+    DPDO:flowsData DFD:N307;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N304".
+
+DFD:N305 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N305".
+
+DFD:N306 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N306".
+
+DFD:N307 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N308;
+    DPDO:flowsData DFD:N309;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N307".
+
+DFD:N308 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N310;
+    DPDO:flowsData DFD:N311;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Functionality_all;
+    DPDO:name "N308".
+
+DFD:N309 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N309".
+
+DFD:N310 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N312;
+    DPDO:flowsData DFD:N313;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N310".
+
+DFD:N311 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:File;
+    DPDO:name "N311".
+
+DFD:N312 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N314;
+    DPDO:flowsData DFD:N315;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N312".
+
+DFD:N313 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N313".
+
+DFD:N314 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N316;
+    DPDO:flowsData DFD:N317;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N314".
+
+DFD:N315 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Streaming;
+    DPDO:name "N315".
+
+DFD:N316 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N318;
+    DPDO:flowsData DFD:N319;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Big;
+    DPDO:name "N316".
+
+DFD:N317 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Temporal;
+    DPDO:name "N317".
+
+DFD:N318 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N320;
+    DPDO:flowsData DFD:N321;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N318".
+
+DFD:N319 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Archive;
+    DPDO:name "N319".
+
+DFD:N320 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N322;
+    DPDO:flowsData DFD:N323;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N320".
+
+DFD:N321 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N321".
+
+DFD:N322 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N324;
+    DPDO:flowsData DFD:N325;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Semi_Structured;
+    DPDO:name "N322".
+
+DFD:N323 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N323".
+
+DFD:N324 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N326;
+    DPDO:flowsData DFD:N327;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N324".
+
+DFD:N325 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N325".
+
+DFD:N326 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Functionality_all;
+    DPDO:name "N326".
+
+DFD:N327 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N328;
+    DPDO:flowsData DFD:N329;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N327".
+
+DFD:N328 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N330;
+    DPDO:flowsData DFD:N331;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N328".
+
+DFD:N329 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:ETL;
+    DPDO:name "N329".
+
+DFD:N330 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N332;
+    DPDO:flowsData DFD:N333;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N330".
+
+DFD:N331 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N331".
+
+DFD:N332 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Document;
+    DPDO:name "N332".
+
+DFD:N333 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N334;
+    DPDO:flowsData DFD:N335;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Functionality_all;
+    DPDO:name "N333".
+
+DFD:N334 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N334".
+
+DFD:N335 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N336;
+    DPDO:flowsData DFD:N337;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N335".
+
+DFD:N336 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N338;
+    DPDO:flowsData DFD:N339;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Landing;
+    DPDO:name "N336".
+
+DFD:N337 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N337".
+
+DFD:N338 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N340;
+    DPDO:flowsData DFD:N341;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N338".
+
+DFD:N339 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Structured;
+    DPDO:name "N339".
+
+DFD:N340 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N340".
+
+DFD:N341 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N342;
+    DPDO:flowsData DFD:N343;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N341".
+
+DFD:N342 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N344;
+    DPDO:flowsData DFD:N345;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N342".
+
+DFD:N343 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N343".
+
+DFD:N344 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N344".
+
+DFD:N345 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N346;
+    DPDO:flowsData DFD:N347;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N345".
+
+DFD:N346 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N346".
+
+DFD:N347 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N348;
+    DPDO:flowsData DFD:N349;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N347".
+
+DFD:N348 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N350;
+    DPDO:flowsData DFD:N351;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N348".
+
+DFD:N349 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N349".
+
+DFD:N350 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N352;
+    DPDO:flowsData DFD:N353;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Regression;
+    DPDO:name "N350".
+
+DFD:N351 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N351".
+
+DFD:N352 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N354;
+    DPDO:flowsData DFD:N355;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N352".
+
+DFD:N353 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N353".
+
+DFD:N354 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N354".
+
+DFD:N355 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N356;
+    DPDO:flowsData DFD:N357;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Document;
+    DPDO:name "N355".
+
+DFD:N356 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N356".
+
+DFD:N357 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N358;
+    DPDO:flowsData DFD:N359;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N357".
+
+DFD:N358 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N358".
+
+DFD:N359 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N360;
+    DPDO:flowsData DFD:N361;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Archive;
+    DPDO:name "N359".
+
+DFD:N360 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N360".
+
+DFD:N361 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N362;
+    DPDO:flowsData DFD:N363;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Structured;
+    DPDO:name "N361".
+
+DFD:N362 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Graph;
+    DPDO:name "N362".
+
+DFD:N363 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N364;
+    DPDO:flowsData DFD:N365;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N363".
+
+DFD:N364 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N366;
+    DPDO:flowsData DFD:N367;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N364".
+
+DFD:N365 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N365".
+
+DFD:N366 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N368;
+    DPDO:flowsData DFD:N369;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Key_Value;
+    DPDO:name "N366".
+
+DFD:N367 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N367".
+
+DFD:N368 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N370;
+    DPDO:flowsData DFD:N371;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Big;
+    DPDO:name "N368".
+
+DFD:N369 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N369".
+
+DFD:N370 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N370".
+
+DFD:N371 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N372;
+    DPDO:flowsData DFD:N373;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N371".
+
+DFD:N372 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Reporting, TagTaxonomy:Raster;
+    DPDO:name "N372".
+
+DFD:N373 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N374;
+    DPDO:flowsData DFD:N375;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N373".
+
+DFD:N374 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N376;
+    DPDO:flowsData DFD:N377;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N374".
+
+DFD:N375 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N375".
+
+DFD:N376 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N378;
+    DPDO:flowsData DFD:N379;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Language_all;
+    DPDO:name "N376".
+
+DFD:N377 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N377".
+
+DFD:N378 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N380;
+    DPDO:flowsData DFD:N381;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N378".
+
+DFD:N379 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N379".
+
+DFD:N380 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N382;
+    DPDO:flowsData DFD:N383;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Vectorial;
+    DPDO:name "N380".
+
+DFD:N381 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Spatial;
+    DPDO:name "N381".
+
+DFD:N382 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N382".
+
+DFD:N383 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N384;
+    DPDO:flowsData DFD:N385;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N383".
+
+DFD:N384 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N386;
+    DPDO:flowsData DFD:N387;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Classification;
+    DPDO:name "N384".
+
+DFD:N385 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N385".
+
+DFD:N386 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Delta;
+    DPDO:name "N386".
+
+DFD:N387 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N388;
+    DPDO:flowsData DFD:N389;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Collection_all;
+    DPDO:name "N387".
+
+DFD:N388 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N390;
+    DPDO:flowsData DFD:N391;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N388".
+
+DFD:N389 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Small;
+    DPDO:name "N389".
+
+DFD:N390 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Data_Model_all;
+    DPDO:name "N390".
+
+DFD:N391 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N392;
+    DPDO:flowsData DFD:N393;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N391".
+
+DFD:N392 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N392".
+
+DFD:N393 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N394;
+    DPDO:flowsData DFD:N395;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N393".
+
+DFD:N394 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N396;
+    DPDO:flowsData DFD:N397;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N394".
+
+DFD:N395 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N395".
+
+DFD:N396 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N398;
+    DPDO:flowsData DFD:N399;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Small;
+    DPDO:name "N396".
+
+DFD:N397 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Delta;
+    DPDO:name "N397".
+
+DFD:N398 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N398".
+
+DFD:N399 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N400;
+    DPDO:flowsData DFD:N401;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Vectorial;
+    DPDO:name "N399".
+
+DFD:N400 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N402;
+    DPDO:flowsData DFD:N403;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Pull;
+    DPDO:name "N400".
+
+DFD:N401 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N401".
+
+DFD:N402 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N404;
+    DPDO:flowsData DFD:N405;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N402".
+
+DFD:N403 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N403".
+
+DFD:N404 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N406;
+    DPDO:flowsData DFD:N407;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N404".
+
+DFD:N405 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Regression;
+    DPDO:name "N405".
+
+DFD:N406 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N408;
+    DPDO:flowsData DFD:N409;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N406".
+
+DFD:N407 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Small;
+    DPDO:name "N407".
+
+DFD:N408 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N410;
+    DPDO:flowsData DFD:N411;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Delta;
+    DPDO:name "N408".
+
+DFD:N409 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N409".
+
+DFD:N410 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N412;
+    DPDO:flowsData DFD:N413;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N410".
+
+DFD:N411 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N411".
+
+DFD:N412 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N412".
+
+DFD:N413 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N414;
+    DPDO:flowsData DFD:N415;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N413".
+
+DFD:N414 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N414".
+
+DFD:N415 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N416;
+    DPDO:flowsData DFD:N417;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Delta;
+    DPDO:name "N415".
+
+DFD:N416 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Reporting;
+    DPDO:name "N416".
+
+DFD:N417 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N418;
+    DPDO:flowsData DFD:N419;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N417".
+
+DFD:N418 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N420;
+    DPDO:flowsData DFD:N421;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N418".
+
+DFD:N419 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N419".
+
+DFD:N420 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Spatial;
+    DPDO:name "N420".
+
+DFD:N421 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N422;
+    DPDO:flowsData DFD:N423;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N421".
+
+DFD:N422 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N424;
+    DPDO:flowsData DFD:N425;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N422".
+
+DFD:N423 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Machine_Learning;
+    DPDO:name "N423".
+
+DFD:N424 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N426;
+    DPDO:flowsData DFD:N427;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Functionality_all;
+    DPDO:name "N424".
+
+DFD:N425 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Relational;
+    DPDO:name "N425".
+
+DFD:N426 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Big;
+    DPDO:name "N426".
+
+DFD:N427 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N428;
+    DPDO:flowsData DFD:N429;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Cumulative;
+    DPDO:name "N427".
+
+DFD:N428 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N430;
+    DPDO:flowsData DFD:N431;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N428".
+
+DFD:N429 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Regression;
+    DPDO:name "N429".
+
+DFD:N430 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N430".
+
+DFD:N431 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N432;
+    DPDO:flowsData DFD:N433;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N431".
+
+DFD:N432 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Pull;
+    DPDO:name "N432".
+
+DFD:N433 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N434;
+    DPDO:flowsData DFD:N435;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N433".
+
+DFD:N434 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N434".
+
+DFD:N435 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N436;
+    DPDO:flowsData DFD:N437;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Collection_all;
+    DPDO:name "N435".
+
+DFD:N436 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N436".
+
+DFD:N437 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N438;
+    DPDO:flowsData DFD:N439;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N437".
+
+DFD:N438 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N438".
+
+DFD:N439 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N440;
+    DPDO:flowsData DFD:N441;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Wide_Column;
+    DPDO:name "N439".
+
+DFD:N440 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N440".
+
+DFD:N441 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N442;
+    DPDO:flowsData DFD:N443;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N441".
+
+DFD:N442 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N444;
+    DPDO:flowsData DFD:N445;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N442".
+
+DFD:N443 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Spatial;
+    DPDO:name "N443".
+
+DFD:N444 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N446;
+    DPDO:flowsData DFD:N447;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Archive;
+    DPDO:name "N444".
+
+DFD:N445 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Classification;
+    DPDO:name "N445".
+
+DFD:N446 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N446".
+
+DFD:N447 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N448;
+    DPDO:flowsData DFD:N449;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N447".
+
+DFD:N448 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N450;
+    DPDO:flowsData DFD:N451;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Data_Model_all;
+    DPDO:name "N448".
+
+DFD:N449 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Mini_Batch;
+    DPDO:name "N449".
+
+DFD:N450 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N452;
+    DPDO:flowsData DFD:N453;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N450".
+
+DFD:N451 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N451".
+
+DFD:N452 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N454;
+    DPDO:flowsData DFD:N455;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N452".
+
+DFD:N453 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N453".
+
+DFD:N454 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Streaming;
+    DPDO:name "N454".
+
+DFD:N455 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N456;
+    DPDO:flowsData DFD:N457;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Semi_Structured;
+    DPDO:name "N455".
+
+DFD:N456 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N458;
+    DPDO:flowsData DFD:N459;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N456".
+
+DFD:N457 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N457".
+
+DFD:N458 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N460;
+    DPDO:flowsData DFD:N461;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N458".
+
+DFD:N459 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N459".
+
+DFD:N460 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N460".
+
+DFD:N461 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N462;
+    DPDO:flowsData DFD:N463;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N461".
+
+DFD:N462 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N464;
+    DPDO:flowsData DFD:N465;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N462".
+
+DFD:N463 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N463".
+
+DFD:N464 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N466;
+    DPDO:flowsData DFD:N467;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Delta;
+    DPDO:name "N464".
+
+DFD:N465 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N465".
+
+DFD:N466 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N468;
+    DPDO:flowsData DFD:N469;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N466".
+
+DFD:N467 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N467".
+
+DFD:N468 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N470;
+    DPDO:flowsData DFD:N471;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N468".
+
+DFD:N469 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Big;
+    DPDO:name "N469".
+
+DFD:N470 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N472;
+    DPDO:flowsData DFD:N473;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N470".
+
+DFD:N471 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Functionality_all;
+    DPDO:name "N471".
+
+DFD:N472 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N474;
+    DPDO:flowsData DFD:N475;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:Raster;
+    DPDO:name "N472".
+
+DFD:N473 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Machine_Learning;
+    DPDO:name "N473".
+
+DFD:N474 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N476;
+    DPDO:flowsData DFD:N477;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Regression;
+    DPDO:name "N474".
+
+DFD:N475 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:name "N475".
+
+DFD:N476 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Streaming;
+    DPDO:name "N476".
+
+DFD:N477 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N478;
+    DPDO:flowsData DFD:N479;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N477".
+
+DFD:N478 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N480;
+    DPDO:flowsData DFD:N481;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Semi_Structured;
+    DPDO:name "N478".
+
+DFD:N479 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Machine_Learning;
+    DPDO:name "N479".
+
+DFD:N480 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N482;
+    DPDO:flowsData DFD:N483;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Structured;
+    DPDO:name "N480".
+
+DFD:N481 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N481".
+
+DFD:N482 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N484;
+    DPDO:flowsData DFD:N485;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N482".
+
+DFD:N483 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N483".
+
+DFD:N484 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N486;
+    DPDO:flowsData DFD:N487;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Functionality_all;
+    DPDO:name "N484".
+
+DFD:N485 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Document;
+    DPDO:name "N485".
+
+DFD:N486 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N486".
+
+DFD:N487 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N488;
+    DPDO:flowsData DFD:N489;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Vectorial;
+    DPDO:name "N487".
+
+DFD:N488 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Big;
+    DPDO:name "N488".
+
+DFD:N489 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N490;
+    DPDO:flowsData DFD:N491;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Reporting;
+    DPDO:name "N489".
+
+DFD:N490 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Vectorial;
+    DPDO:name "N490".
+
+DFD:N491 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N492;
+    DPDO:flowsData DFD:N493;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Classification;
+    DPDO:name "N491".
+
+DFD:N492 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N494;
+    DPDO:flowsData DFD:N495;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Classification;
+    DPDO:name "N492".
+
+DFD:N493 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Small;
+    DPDO:name "N493".
+
+DFD:N494 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N494".
+
+DFD:N495 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N496;
+    DPDO:flowsData DFD:N497;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N495".
+
+DFD:N496 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N498;
+    DPDO:flowsData DFD:N499;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N496".
+
+DFD:N497 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N497".
+
+DFD:N498 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N498".
+
+DFD:N499 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N500;
+    DPDO:flowsData DFD:N501;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Machine_Learning;
+    DPDO:name "N499".
+
+DFD:N500 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N500".
+
+DFD:N501 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N502;
+    DPDO:flowsData DFD:N503;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Spatial;
+    DPDO:name "N501".
+
+DFD:N502 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N504;
+    DPDO:flowsData DFD:N505;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N502".
+
+DFD:N503 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N503".
+
+DFD:N504 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N504".
+
+DFD:N505 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N506;
+    DPDO:flowsData DFD:N507;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N505".
+
+DFD:N506 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N506".
+
+DFD:N507 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N508;
+    DPDO:flowsData DFD:N509;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Collection_all;
+    DPDO:name "N507".
+
+DFD:N508 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N508".
+
+DFD:N509 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N510;
+    DPDO:flowsData DFD:N511;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N509".
+
+DFD:N510 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N512;
+    DPDO:flowsData DFD:N513;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N510".
+
+DFD:N511 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N511".
+
+DFD:N512 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N514;
+    DPDO:flowsData DFD:N515;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Collection_all;
+    DPDO:name "N512".
+
+DFD:N513 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N513".
+
+DFD:N514 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N514".
+
+DFD:N515 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N516;
+    DPDO:flowsData DFD:N517;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N515".
+
+DFD:N516 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N518;
+    DPDO:flowsData DFD:N519;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Raster;
+    DPDO:name "N516".
+
+DFD:N517 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N517".
+
+DFD:N518 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N520;
+    DPDO:flowsData DFD:N521;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N518".
+
+DFD:N519 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N519".
+
+DFD:N520 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N522;
+    DPDO:flowsData DFD:N523;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N520".
+
+DFD:N521 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Structured;
+    DPDO:name "N521".
+
+DFD:N522 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Batch;
+    DPDO:name "N522".
+
+DFD:N523 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N524;
+    DPDO:flowsData DFD:N525;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N523".
+
+DFD:N524 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N526;
+    DPDO:flowsData DFD:N527;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N524".
+
+DFD:N525 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N525".
+
+DFD:N526 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Reporting;
+    DPDO:name "N526".
+
+DFD:N527 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N528;
+    DPDO:flowsData DFD:N529;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Big;
+    DPDO:name "N527".
+
+DFD:N528 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N530;
+    DPDO:flowsData DFD:N531;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N528".
+
+DFD:N529 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N529".
+
+DFD:N530 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N532;
+    DPDO:flowsData DFD:N533;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N530".
+
+DFD:N531 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Classification;
+    DPDO:name "N531".
+
+DFD:N532 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N532".
+
+DFD:N533 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N534;
+    DPDO:flowsData DFD:N535;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N533".
+
+DFD:N534 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N534".
+
+DFD:N535 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N536;
+    DPDO:flowsData DFD:N537;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N535".
+
+DFD:N536 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N538;
+    DPDO:flowsData DFD:N539;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N536".
+
+DFD:N537 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N537".
+
+DFD:N538 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N538".
+
+DFD:N539 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N540;
+    DPDO:flowsData DFD:N541;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Reporting;
+    DPDO:name "N539".
+
+DFD:N540 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Delta;
+    DPDO:name "N540".
+
+DFD:N541 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N542;
+    DPDO:flowsData DFD:N543;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Key_Value;
+    DPDO:name "N541".
+
+DFD:N542 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N544;
+    DPDO:flowsData DFD:N545;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N542".
+
+DFD:N543 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Document;
+    DPDO:name "N543".
+
+DFD:N544 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N544".
+
+DFD:N545 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N546;
+    DPDO:flowsData DFD:N547;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N545".
+
+DFD:N546 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N548;
+    DPDO:flowsData DFD:N549;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Reporting;
+    DPDO:name "N546".
+
+DFD:N547 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N547".
+
+DFD:N548 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N550;
+    DPDO:flowsData DFD:N551;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Small;
+    DPDO:name "N548".
+
+DFD:N549 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N549".
+
+DFD:N550 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N550".
+
+DFD:N551 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N552;
+    DPDO:flowsData DFD:N553;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Collection_all;
+    DPDO:name "N551".
+
+DFD:N552 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N554;
+    DPDO:flowsData DFD:N555;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Structured;
+    DPDO:name "N552".
+
+DFD:N553 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N553".
+
+DFD:N554 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N556;
+    DPDO:flowsData DFD:N557;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N554".
+
+DFD:N555 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N555".
+
+DFD:N556 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N558;
+    DPDO:flowsData DFD:N559;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Relational;
+    DPDO:name "N556".
+
+DFD:N557 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N557".
+
+DFD:N558 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N558".
+
+DFD:N559 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N560;
+    DPDO:flowsData DFD:N561;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N559".
+
+DFD:N560 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N560".
+
+DFD:N561 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N562;
+    DPDO:flowsData DFD:N563;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Key_Value;
+    DPDO:name "N561".
+
+DFD:N562 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N564;
+    DPDO:flowsData DFD:N565;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N562".
+
+DFD:N563 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Python;
+    DPDO:name "N563".
+
+DFD:N564 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N564".
+
+DFD:N565 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N566;
+    DPDO:flowsData DFD:N567;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N565".
+
+DFD:N566 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N568;
+    DPDO:flowsData DFD:N569;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:LowCode;
+    DPDO:name "N566".
+
+DFD:N567 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N567".
+
+DFD:N568 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N568".
+
+DFD:N569 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N570;
+    DPDO:flowsData DFD:N571;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N569".
+
+DFD:N570 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N570".
+
+DFD:N571 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N572;
+    DPDO:flowsData DFD:N573;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Collection_all;
+    DPDO:name "N571".
+
+DFD:N572 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N572".
+
+DFD:N573 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N574;
+    DPDO:flowsData DFD:N575;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Mini_Batch;
+    DPDO:name "N573".
+
+DFD:N574 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N576;
+    DPDO:flowsData DFD:N577;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N574".
+
+DFD:N575 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N575".
+
+DFD:N576 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N578;
+    DPDO:flowsData DFD:N579;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N576".
+
+DFD:N577 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N577".
+
+DFD:N578 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Wide_Column;
+    DPDO:name "N578".
+
+DFD:N579 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N580;
+    DPDO:flowsData DFD:N581;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Reporting;
+    DPDO:name "N579".
+
+DFD:N580 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Document;
+    DPDO:name "N580".
+
+DFD:N581 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N582;
+    DPDO:flowsData DFD:N583;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N581".
+
+DFD:N582 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N584;
+    DPDO:flowsData DFD:N585;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N582".
+
+DFD:N583 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N583".
+
+DFD:N584 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N586;
+    DPDO:flowsData DFD:N587;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Small;
+    DPDO:name "N584".
+
+DFD:N585 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N585".
+
+DFD:N586 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N586".
+
+DFD:N587 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N588;
+    DPDO:flowsData DFD:N589;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N587".
+
+DFD:N588 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N590;
+    DPDO:flowsData DFD:N591;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N588".
+
+DFD:N589 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Pull;
+    DPDO:name "N589".
+
+DFD:N590 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N590".
+
+DFD:N591 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N592;
+    DPDO:flowsData DFD:N593;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Regression;
+    DPDO:name "N591".
+
+DFD:N592 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N594;
+    DPDO:flowsData DFD:N595;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N592".
+
+DFD:N593 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N593".
+
+DFD:N594 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Document;
+    DPDO:name "N594".
+
+DFD:N595 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N596;
+    DPDO:flowsData DFD:N597;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N595".
+
+DFD:N596 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N596".
+
+DFD:N597 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N598;
+    DPDO:flowsData DFD:N599;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N597".
+
+DFD:N598 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N600;
+    DPDO:flowsData DFD:N601;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N598".
+
+DFD:N599 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N599".
+
+DFD:N600 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N602;
+    DPDO:flowsData DFD:N603;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N600".
+
+DFD:N601 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N601".
+
+DFD:N602 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N604;
+    DPDO:flowsData DFD:N605;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N602".
+
+DFD:N603 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N603".
+
+DFD:N604 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N606;
+    DPDO:flowsData DFD:N607;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Document;
+    DPDO:name "N604".
+
+DFD:N605 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N605".
+
+DFD:N606 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N608;
+    DPDO:flowsData DFD:N609;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Small;
+    DPDO:name "N606".
+
+DFD:N607 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N607".
+
+DFD:N608 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Language_all;
+    DPDO:name "N608".
+
+DFD:N609 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N610;
+    DPDO:flowsData DFD:N611;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Relational;
+    DPDO:name "N609".
+
+DFD:N610 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N612;
+    DPDO:flowsData DFD:N613;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N610".
+
+DFD:N611 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Temporal;
+    DPDO:name "N611".
+
+DFD:N612 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Small;
+    DPDO:name "N612".
+
+DFD:N613 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N614;
+    DPDO:flowsData DFD:N615;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Relational;
+    DPDO:name "N613".
+
+DFD:N614 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N616;
+    DPDO:flowsData DFD:N617;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Structured;
+    DPDO:name "N614".
+
+DFD:N615 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Classification;
+    DPDO:name "N615".
+
+DFD:N616 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N618;
+    DPDO:flowsData DFD:N619;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Document;
+    DPDO:name "N616".
+
+DFD:N617 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N617".
+
+DFD:N618 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N618".
+
+DFD:N619 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N620;
+    DPDO:flowsData DFD:N621;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Cumulative;
+    DPDO:name "N619".
+
+DFD:N620 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N620".
+
+DFD:N621 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N622;
+    DPDO:flowsData DFD:N623;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N621".
+
+DFD:N622 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N624;
+    DPDO:flowsData DFD:N625;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Big;
+    DPDO:name "N622".
+
+DFD:N623 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Big;
+    DPDO:name "N623".
+
+DFD:N624 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Reporting, TagTaxonomy:Raster;
+    DPDO:name "N624".
+
+DFD:N625 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N626;
+    DPDO:flowsData DFD:N627;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N625".
+
+DFD:N626 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N628;
+    DPDO:flowsData DFD:N629;
+    DPDO:hasTag TagTaxonomy:Python, TagTaxonomy:Key_Value;
+    DPDO:name "N626".
+
+DFD:N627 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N627".
+
+DFD:N628 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N630;
+    DPDO:flowsData DFD:N631;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N628".
+
+DFD:N629 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Batch;
+    DPDO:name "N629".
+
+DFD:N630 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N632;
+    DPDO:flowsData DFD:N633;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Classification;
+    DPDO:name "N630".
+
+DFD:N631 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Functionality_all;
+    DPDO:name "N631".
+
+DFD:N632 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Spatial;
+    DPDO:name "N632".
+
+DFD:N633 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N634;
+    DPDO:flowsData DFD:N635;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Big;
+    DPDO:name "N633".
+
+DFD:N634 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N634".
+
+DFD:N635 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N636;
+    DPDO:flowsData DFD:N637;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N635".
+
+DFD:N636 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N638;
+    DPDO:flowsData DFD:N639;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Spatial;
+    DPDO:name "N636".
+
+DFD:N637 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N637".
+
+DFD:N638 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N640;
+    DPDO:flowsData DFD:N641;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N638".
+
+DFD:N639 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N639".
+
+DFD:N640 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N642;
+    DPDO:flowsData DFD:N643;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N640".
+
+DFD:N641 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Reporting, TagTaxonomy:Raster;
+    DPDO:name "N641".
+
+DFD:N642 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N644;
+    DPDO:flowsData DFD:N645;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Regression;
+    DPDO:name "N642".
+
+DFD:N643 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N643".
+
+DFD:N644 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Wide_Column;
+    DPDO:name "N644".
+
+DFD:N645 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N646;
+    DPDO:flowsData DFD:N647;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Functionality_all;
+    DPDO:name "N645".
+
+DFD:N646 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N648;
+    DPDO:flowsData DFD:N649;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N646".
+
+DFD:N647 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N647".
+
+DFD:N648 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N650;
+    DPDO:flowsData DFD:N651;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N648".
+
+DFD:N649 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N649".
+
+DFD:N650 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Big;
+    DPDO:name "N650".
+
+DFD:N651 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N652;
+    DPDO:flowsData DFD:N653;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N651".
+
+DFD:N652 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Language_all;
+    DPDO:name "N652".
+
+DFD:N653 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N654;
+    DPDO:flowsData DFD:N655;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N653".
+
+DFD:N654 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N656;
+    DPDO:flowsData DFD:N657;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Streaming;
+    DPDO:name "N654".
+
+DFD:N655 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Batch;
+    DPDO:name "N655".
+
+DFD:N656 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N656".
+
+DFD:N657 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N658;
+    DPDO:flowsData DFD:N659;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N657".
+
+DFD:N658 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N660;
+    DPDO:flowsData DFD:N661;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N658".
+
+DFD:N659 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N659".
+
+DFD:N660 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N662;
+    DPDO:flowsData DFD:N663;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Python;
+    DPDO:name "N660".
+
+DFD:N661 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N661".
+
+DFD:N662 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Collection_all;
+    DPDO:name "N662".
+
+DFD:N663 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N664;
+    DPDO:flowsData DFD:N665;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N663".
+
+DFD:N664 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N666;
+    DPDO:flowsData DFD:N667;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Functionality_all;
+    DPDO:name "N664".
+
+DFD:N665 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Cumulative;
+    DPDO:name "N665".
+
+DFD:N666 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N666".
+
+DFD:N667 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N668;
+    DPDO:flowsData DFD:N669;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Graph;
+    DPDO:name "N667".
+
+DFD:N668 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N670;
+    DPDO:flowsData DFD:N671;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N668".
+
+DFD:N669 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N669".
+
+DFD:N670 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N672;
+    DPDO:flowsData DFD:N673;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N670".
+
+DFD:N671 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N671".
+
+DFD:N672 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N672".
+
+DFD:N673 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N674;
+    DPDO:flowsData DFD:N675;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N673".
+
+DFD:N674 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N674".
+
+DFD:N675 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N676;
+    DPDO:flowsData DFD:N677;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N675".
+
+DFD:N676 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N676".
+
+DFD:N677 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N678;
+    DPDO:flowsData DFD:N679;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N677".
+
+DFD:N678 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N680;
+    DPDO:flowsData DFD:N681;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Archive;
+    DPDO:name "N678".
+
+DFD:N679 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N679".
+
+DFD:N680 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N682;
+    DPDO:flowsData DFD:N683;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N680".
+
+DFD:N681 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N681".
+
+DFD:N682 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N684;
+    DPDO:flowsData DFD:N685;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N682".
+
+DFD:N683 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Collection_all;
+    DPDO:name "N683".
+
+DFD:N684 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N686;
+    DPDO:flowsData DFD:N687;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N684".
+
+DFD:N685 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Push;
+    DPDO:name "N685".
+
+DFD:N686 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N686".
+
+DFD:N687 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N688;
+    DPDO:flowsData DFD:N689;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Machine_Learning;
+    DPDO:name "N687".
+
+DFD:N688 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N688".
+
+DFD:N689 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N690;
+    DPDO:flowsData DFD:N691;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N689".
+
+DFD:N690 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N690".
+
+DFD:N691 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N692;
+    DPDO:flowsData DFD:N693;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Big;
+    DPDO:name "N691".
+
+DFD:N692 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N694;
+    DPDO:flowsData DFD:N695;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Big;
+    DPDO:name "N692".
+
+DFD:N693 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N693".
+
+DFD:N694 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N694".
+
+DFD:N695 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N696;
+    DPDO:flowsData DFD:N697;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:Raster;
+    DPDO:name "N695".
+
+DFD:N696 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Temporal;
+    DPDO:name "N696".
+
+DFD:N697 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N698;
+    DPDO:flowsData DFD:N699;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Functionality_all;
+    DPDO:name "N697".
+
+DFD:N698 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Reporting;
+    DPDO:name "N698".
+
+DFD:N699 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N700;
+    DPDO:flowsData DFD:N701;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Wide_Column;
+    DPDO:name "N699".
+
+DFD:N700 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N700".
+
+DFD:N701 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N702;
+    DPDO:flowsData DFD:N703;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Relational;
+    DPDO:name "N701".
+
+DFD:N702 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N704;
+    DPDO:flowsData DFD:N705;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Small;
+    DPDO:name "N702".
+
+DFD:N703 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N703".
+
+DFD:N704 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N706;
+    DPDO:flowsData DFD:N707;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N704".
+
+DFD:N705 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:name "N705".
+
+DFD:N706 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N706".
+
+DFD:N707 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N708;
+    DPDO:flowsData DFD:N709;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N707".
+
+DFD:N708 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N710;
+    DPDO:flowsData DFD:N711;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N708".
+
+DFD:N709 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Collection_all;
+    DPDO:name "N709".
+
+DFD:N710 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N710".
+
+DFD:N711 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N712;
+    DPDO:flowsData DFD:N713;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Mini_Batch;
+    DPDO:name "N711".
+
+DFD:N712 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N714;
+    DPDO:flowsData DFD:N715;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N712".
+
+DFD:N713 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N713".
+
+DFD:N714 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N716;
+    DPDO:flowsData DFD:N717;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N714".
+
+DFD:N715 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Streaming;
+    DPDO:name "N715".
+
+DFD:N716 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N716".
+
+DFD:N717 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N718;
+    DPDO:flowsData DFD:N719;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Structured;
+    DPDO:name "N717".
+
+DFD:N718 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Operational;
+    DPDO:name "N718".
+
+DFD:N719 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N720;
+    DPDO:flowsData DFD:N721;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N719".
+
+DFD:N720 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N720".
+
+DFD:N721 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N722;
+    DPDO:flowsData DFD:N723;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N721".
+
+DFD:N722 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N722".
+
+DFD:N723 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N724;
+    DPDO:flowsData DFD:N725;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N723".
+
+DFD:N724 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N726;
+    DPDO:flowsData DFD:N727;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N724".
+
+DFD:N725 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Semi_Structured;
+    DPDO:name "N725".
+
+DFD:N726 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N726".
+
+DFD:N727 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N728;
+    DPDO:flowsData DFD:N729;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Python;
+    DPDO:name "N727".
+
+DFD:N728 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N730;
+    DPDO:flowsData DFD:N731;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Machine_Learning;
+    DPDO:name "N728".
+
+DFD:N729 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N729".
+
+DFD:N730 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Functionality_all;
+    DPDO:name "N730".
+
+DFD:N731 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N732;
+    DPDO:flowsData DFD:N733;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N731".
+
+DFD:N732 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N734;
+    DPDO:flowsData DFD:N735;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Functionality_all;
+    DPDO:name "N732".
+
+DFD:N733 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Streaming;
+    DPDO:name "N733".
+
+DFD:N734 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N734".
+
+DFD:N735 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N736;
+    DPDO:flowsData DFD:N737;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N735".
+
+DFD:N736 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N738;
+    DPDO:flowsData DFD:N739;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N736".
+
+DFD:N737 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N737".
+
+DFD:N738 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N740;
+    DPDO:flowsData DFD:N741;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Streaming;
+    DPDO:name "N738".
+
+DFD:N739 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Document;
+    DPDO:name "N739".
+
+DFD:N740 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Data_Model_all;
+    DPDO:name "N740".
+
+DFD:N741 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N742;
+    DPDO:flowsData DFD:N743;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N741".
+
+DFD:N742 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Landing;
+    DPDO:name "N742".
+
+DFD:N743 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N744;
+    DPDO:flowsData DFD:N745;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N743".
+
+DFD:N744 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N746;
+    DPDO:flowsData DFD:N747;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N744".
+
+DFD:N745 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N745".
+
+DFD:N746 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Multidimensional;
+    DPDO:name "N746".
+
+DFD:N747 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N748;
+    DPDO:flowsData DFD:N749;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Multidimensional;
+    DPDO:name "N747".
+
+DFD:N748 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N748".
+
+DFD:N749 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N750;
+    DPDO:flowsData DFD:N751;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N749".
+
+DFD:N750 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N752;
+    DPDO:flowsData DFD:N753;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Structured;
+    DPDO:name "N750".
+
+DFD:N751 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Spatial, TagTaxonomy:Graph;
+    DPDO:name "N751".
+
+DFD:N752 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N752".
+
+DFD:N753 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N754;
+    DPDO:flowsData DFD:N755;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Pull;
+    DPDO:name "N753".
+
+DFD:N754 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N754".
+
+DFD:N755 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N756;
+    DPDO:flowsData DFD:N757;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Landing;
+    DPDO:name "N755".
+
+DFD:N756 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N756".
+
+DFD:N757 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N758;
+    DPDO:flowsData DFD:N759;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N757".
+
+DFD:N758 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N758".
+
+DFD:N759 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N760;
+    DPDO:flowsData DFD:N761;
+    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:name "N759".
+
+DFD:N760 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Machine_Learning;
+    DPDO:name "N760".
+
+DFD:N761 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N762;
+    DPDO:flowsData DFD:N763;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Archive;
+    DPDO:name "N761".
+
+DFD:N762 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N762".
+
+DFD:N763 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N764;
+    DPDO:flowsData DFD:N765;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N763".
+
+DFD:N764 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N766;
+    DPDO:flowsData DFD:N767;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N764".
+
+DFD:N765 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N765".
+
+DFD:N766 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N768;
+    DPDO:flowsData DFD:N769;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N766".
+
+DFD:N767 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N767".
+
+DFD:N768 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Reporting;
+    DPDO:name "N768".
+
+DFD:N769 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N770;
+    DPDO:flowsData DFD:N771;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Landing;
+    DPDO:name "N769".
+
+DFD:N770 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N770".
+
+DFD:N771 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N772;
+    DPDO:flowsData DFD:N773;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N771".
+
+DFD:N772 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N774;
+    DPDO:flowsData DFD:N775;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Document;
+    DPDO:name "N772".
+
+DFD:N773 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N773".
+
+DFD:N774 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Vectorial;
+    DPDO:name "N774".
+
+DFD:N775 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N776;
+    DPDO:flowsData DFD:N777;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Functionality_all;
+    DPDO:name "N775".
+
+DFD:N776 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N776".
+
+DFD:N777 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N778;
+    DPDO:flowsData DFD:N779;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N777".
+
+DFD:N778 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N780;
+    DPDO:flowsData DFD:N781;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Small;
+    DPDO:name "N778".
+
+DFD:N779 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Functionality_all;
+    DPDO:name "N779".
+
+DFD:N780 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N780".
+
+DFD:N781 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N782;
+    DPDO:flowsData DFD:N783;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Regression;
+    DPDO:name "N781".
+
+DFD:N782 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Spatial;
+    DPDO:name "N782".
+
+DFD:N783 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N784;
+    DPDO:flowsData DFD:N785;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Delta;
+    DPDO:name "N783".
+
+DFD:N784 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N786;
+    DPDO:flowsData DFD:N787;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N784".
+
+DFD:N785 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N785".
+
+DFD:N786 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Functionality_all;
+    DPDO:name "N786".
+
+DFD:N787 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N788;
+    DPDO:flowsData DFD:N789;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Delta;
+    DPDO:name "N787".
+
+DFD:N788 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:Raster;
+    DPDO:name "N788".
+
+DFD:N789 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N790;
+    DPDO:flowsData DFD:N791;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Collection_all;
+    DPDO:name "N789".
+
+DFD:N790 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N790".
+
+DFD:N791 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N792;
+    DPDO:flowsData DFD:N793;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:File;
+    DPDO:name "N791".
+
+DFD:N792 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Archive;
+    DPDO:name "N792".
+
+DFD:N793 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N794;
+    DPDO:flowsData DFD:N795;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Small;
+    DPDO:name "N793".
+
+DFD:N794 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N794".
+
+DFD:N795 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N796;
+    DPDO:flowsData DFD:N797;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Document;
+    DPDO:name "N795".
+
+DFD:N796 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N798;
+    DPDO:flowsData DFD:N799;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N796".
+
+DFD:N797 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N797".
+
+DFD:N798 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Document;
+    DPDO:name "N798".
+
+DFD:N799 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N800;
+    DPDO:flowsData DFD:N801;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N799".
+
+DFD:N800 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N802;
+    DPDO:flowsData DFD:N803;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Semi_Structured;
+    DPDO:name "N800".
+
+DFD:N801 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N801".
+
+DFD:N802 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N804;
+    DPDO:flowsData DFD:N805;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N802".
+
+DFD:N803 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N803".
+
+DFD:N804 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N804".
+
+DFD:N805 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N806;
+    DPDO:flowsData DFD:N807;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Streaming;
+    DPDO:name "N805".
+
+DFD:N806 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N806".
+
+DFD:N807 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N808;
+    DPDO:flowsData DFD:N809;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Batch;
+    DPDO:name "N807".
+
+DFD:N808 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N810;
+    DPDO:flowsData DFD:N811;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Wide_Column;
+    DPDO:name "N808".
+
+DFD:N809 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N809".
+
+DFD:N810 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N812;
+    DPDO:flowsData DFD:N813;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Classification;
+    DPDO:name "N810".
+
+DFD:N811 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Semi_Structured;
+    DPDO:name "N811".
+
+DFD:N812 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Reporting;
+    DPDO:name "N812".
+
+DFD:N813 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N814;
+    DPDO:flowsData DFD:N815;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:name "N813".
+
+DFD:N814 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N816;
+    DPDO:flowsData DFD:N817;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N814".
+
+DFD:N815 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N815".
+
+DFD:N816 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N818;
+    DPDO:flowsData DFD:N819;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N816".
+
+DFD:N817 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N817".
+
+DFD:N818 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N820;
+    DPDO:flowsData DFD:N821;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Vectorial;
+    DPDO:name "N818".
+
+DFD:N819 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N819".
+
+DFD:N820 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N822;
+    DPDO:flowsData DFD:N823;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Reporting;
+    DPDO:name "N820".
+
+DFD:N821 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Classification;
+    DPDO:name "N821".
+
+DFD:N822 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N824;
+    DPDO:flowsData DFD:N825;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N822".
+
+DFD:N823 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Multidimensional;
+    DPDO:name "N823".
+
+DFD:N824 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N826;
+    DPDO:flowsData DFD:N827;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Small;
+    DPDO:name "N824".
+
+DFD:N825 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N825".
+
+DFD:N826 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N826".
+
+DFD:N827 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N828;
+    DPDO:flowsData DFD:N829;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Vectorial;
+    DPDO:name "N827".
+
+DFD:N828 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N830;
+    DPDO:flowsData DFD:N831;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N828".
+
+DFD:N829 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N829".
+
+DFD:N830 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N830".
+
+DFD:N831 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N832;
+    DPDO:flowsData DFD:N833;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Delta;
+    DPDO:name "N831".
+
+DFD:N832 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Regression;
+    DPDO:name "N832".
+
+DFD:N833 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N834;
+    DPDO:flowsData DFD:N835;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N833".
+
+DFD:N834 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N836;
+    DPDO:flowsData DFD:N837;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N834".
+
+DFD:N835 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:LowCode;
+    DPDO:name "N835".
+
+DFD:N836 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N836".
+
+DFD:N837 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N838;
+    DPDO:flowsData DFD:N839;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N837".
+
+DFD:N838 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Functionality_all;
+    DPDO:name "N838".
+
+DFD:N839 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N840;
+    DPDO:flowsData DFD:N841;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N839".
+
+DFD:N840 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N840".
+
+DFD:N841 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N842;
+    DPDO:flowsData DFD:N843;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:SQL;
+    DPDO:name "N841".
+
+DFD:N842 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N844;
+    DPDO:flowsData DFD:N845;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N842".
+
+DFD:N843 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Wide_Column;
+    DPDO:name "N843".
+
+DFD:N844 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N846;
+    DPDO:flowsData DFD:N847;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:name "N844".
+
+DFD:N845 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Python;
+    DPDO:name "N845".
+
+DFD:N846 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N848;
+    DPDO:flowsData DFD:N849;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Regression;
+    DPDO:name "N846".
+
+DFD:N847 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N847".
+
+DFD:N848 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N850;
+    DPDO:flowsData DFD:N851;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N848".
+
+DFD:N849 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:name "N849".
+
+DFD:N850 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Regression;
+    DPDO:name "N850".
+
+DFD:N851 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N852;
+    DPDO:flowsData DFD:N853;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Processed;
+    DPDO:name "N851".
+
+DFD:N852 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N854;
+    DPDO:flowsData DFD:N855;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Document;
+    DPDO:name "N852".
+
+DFD:N853 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Regression;
+    DPDO:name "N853".
+
+DFD:N854 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N856;
+    DPDO:flowsData DFD:N857;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Small;
+    DPDO:name "N854".
+
+DFD:N855 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Big;
+    DPDO:name "N855".
+
+DFD:N856 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Wide_Column;
+    DPDO:name "N856".
+
+DFD:N857 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N858;
+    DPDO:flowsData DFD:N859;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Streaming;
+    DPDO:name "N857".
+
+DFD:N858 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N860;
+    DPDO:flowsData DFD:N861;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Spatial;
+    DPDO:name "N858".
+
+DFD:N859 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N859".
+
+DFD:N860 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N862;
+    DPDO:flowsData DFD:N863;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Mini_Batch;
+    DPDO:name "N860".
+
+DFD:N861 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N861".
+
+DFD:N862 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N864;
+    DPDO:flowsData DFD:N865;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:name "N862".
+
+DFD:N863 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:File;
+    DPDO:name "N863".
+
+DFD:N864 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:SQL;
+    DPDO:name "N864".
+
+DFD:N865 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N866;
+    DPDO:flowsData DFD:N867;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Relational;
+    DPDO:name "N865".
+
+DFD:N866 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N868;
+    DPDO:flowsData DFD:N869;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Mini_Batch;
+    DPDO:name "N866".
+
+DFD:N867 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Graph;
+    DPDO:name "N867".
+
+DFD:N868 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N868".
+
+DFD:N869 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N870;
+    DPDO:flowsData DFD:N871;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Delta;
+    DPDO:name "N869".
+
+DFD:N870 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Vectorial;
+    DPDO:name "N870".
+
+DFD:N871 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N872;
+    DPDO:flowsData DFD:N873;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Relational;
+    DPDO:name "N871".
+
+DFD:N872 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Functionality_all;
+    DPDO:name "N872".
+
+DFD:N873 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N874;
+    DPDO:flowsData DFD:N875;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:Raster;
+    DPDO:name "N873".
+
+DFD:N874 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N874".
+
+DFD:N875 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N876;
+    DPDO:flowsData DFD:N877;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N875".
+
+DFD:N876 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Functionality_all;
+    DPDO:name "N876".
+
+DFD:N877 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N878;
+    DPDO:flowsData DFD:N879;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N877".
+
+DFD:N878 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N880;
+    DPDO:flowsData DFD:N881;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Vectorial;
+    DPDO:name "N878".
+
+DFD:N879 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N879".
+
+DFD:N880 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Semi_Structured;
+    DPDO:name "N880".
+
+DFD:N881 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N882;
+    DPDO:flowsData DFD:N883;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Cumulative;
+    DPDO:name "N881".
+
+DFD:N882 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N882".
+
+DFD:N883 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N884;
+    DPDO:flowsData DFD:N885;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N883".
+
+DFD:N884 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Document;
+    DPDO:name "N884".
+
+DFD:N885 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N886;
+    DPDO:flowsData DFD:N887;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N885".
+
+DFD:N886 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N888;
+    DPDO:flowsData DFD:N889;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Graph;
+    DPDO:name "N886".
+
+DFD:N887 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Operational;
+    DPDO:name "N887".
+
+DFD:N888 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Processed, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N888".
+
+DFD:N889 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N890;
+    DPDO:flowsData DFD:N891;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N889".
+
+DFD:N890 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N890".
+
+DFD:N891 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N892;
+    DPDO:flowsData DFD:N893;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Key_Value;
+    DPDO:name "N891".
+
+DFD:N892 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N894;
+    DPDO:flowsData DFD:N895;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N892".
+
+DFD:N893 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:Collection_all;
+    DPDO:name "N893".
+
+DFD:N894 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Batch;
+    DPDO:name "N894".
+
+DFD:N895 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N896;
+    DPDO:flowsData DFD:N897;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N895".
+
+DFD:N896 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N896".
+
+DFD:N897 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N898;
+    DPDO:flowsData DFD:N899;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N897".
+
+DFD:N898 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N900;
+    DPDO:flowsData DFD:N901;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Language_all;
+    DPDO:name "N898".
+
+DFD:N899 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:ETL;
+    DPDO:name "N899".
+
+DFD:N900 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Operational;
+    DPDO:name "N900".
+
+DFD:N901 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N902;
+    DPDO:flowsData DFD:N903;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N901".
+
+DFD:N902 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N904;
+    DPDO:flowsData DFD:N905;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N902".
+
+DFD:N903 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Spatial;
+    DPDO:name "N903".
+
+DFD:N904 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Cumulative, TagTaxonomy:Raster;
+    DPDO:name "N904".
+
+DFD:N905 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N906;
+    DPDO:flowsData DFD:N907;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Operational;
+    DPDO:name "N905".
+
+DFD:N906 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N906".
+
+DFD:N907 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N908;
+    DPDO:flowsData DFD:N909;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Vectorial;
+    DPDO:name "N907".
+
+DFD:N908 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N908".
+
+DFD:N909 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N910;
+    DPDO:flowsData DFD:N911;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Relational;
+    DPDO:name "N909".
+
+DFD:N910 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N912;
+    DPDO:flowsData DFD:N913;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N910".
+
+DFD:N911 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Raster;
+    DPDO:name "N911".
+
+DFD:N912 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N914;
+    DPDO:flowsData DFD:N915;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Key_Value;
+    DPDO:name "N912".
+
+DFD:N913 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Language_all;
+    DPDO:name "N913".
+
+DFD:N914 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N916;
+    DPDO:flowsData DFD:N917;
+    DPDO:hasTag TagTaxonomy:Raster, TagTaxonomy:Big;
+    DPDO:name "N914".
+
+DFD:N915 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Landing, TagTaxonomy:ETL;
+    DPDO:name "N915".
+
+DFD:N916 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N918;
+    DPDO:flowsData DFD:N919;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:LowCode;
+    DPDO:name "N916".
+
+DFD:N917 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Mini_Batch, TagTaxonomy:Computing_all;
+    DPDO:name "N917".
+
+DFD:N918 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Reporting;
+    DPDO:name "N918".
+
+DFD:N919 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N920;
+    DPDO:flowsData DFD:N921;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N919".
+
+DFD:N920 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N922;
+    DPDO:flowsData DFD:N923;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Document;
+    DPDO:name "N920".
+
+DFD:N921 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Vectorial, TagTaxonomy:File;
+    DPDO:name "N921".
+
+DFD:N922 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N924;
+    DPDO:flowsData DFD:N925;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N922".
+
+DFD:N923 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Cumulative;
+    DPDO:name "N923".
+
+DFD:N924 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N926;
+    DPDO:flowsData DFD:N927;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N924".
+
+DFD:N925 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Small;
+    DPDO:name "N925".
+
+DFD:N926 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Semi_Structured;
+    DPDO:name "N926".
+
+DFD:N927 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N928;
+    DPDO:flowsData DFD:N929;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Mini_Batch;
+    DPDO:name "N927".
+
+DFD:N928 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N928".
+
+DFD:N929 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N930;
+    DPDO:flowsData DFD:N931;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N929".
+
+DFD:N930 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N930".
+
+DFD:N931 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N932;
+    DPDO:flowsData DFD:N933;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N931".
+
+DFD:N932 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Model_all, TagTaxonomy:Regression;
+    DPDO:name "N932".
+
+DFD:N933 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N934;
+    DPDO:flowsData DFD:N935;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N933".
+
+DFD:N934 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Processed;
+    DPDO:name "N934".
+
+DFD:N935 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N936;
+    DPDO:flowsData DFD:N937;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Functionality_all;
+    DPDO:name "N935".
+
+DFD:N936 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N938;
+    DPDO:flowsData DFD:N939;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N936".
+
+DFD:N937 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N937".
+
+DFD:N938 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N940;
+    DPDO:flowsData DFD:N941;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Delta;
+    DPDO:name "N938".
+
+DFD:N939 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N939".
+
+DFD:N940 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N940".
+
+DFD:N941 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N942;
+    DPDO:flowsData DFD:N943;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Semi_Structured;
+    DPDO:name "N941".
+
+DFD:N942 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N942".
+
+DFD:N943 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N944;
+    DPDO:flowsData DFD:N945;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N943".
+
+DFD:N944 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N946;
+    DPDO:flowsData DFD:N947;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N944".
+
+DFD:N945 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Vectorial;
+    DPDO:name "N945".
+
+DFD:N946 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N946".
+
+DFD:N947 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N948;
+    DPDO:flowsData DFD:N949;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N947".
+
+DFD:N948 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Functionality_all;
+    DPDO:name "N948".
+
+DFD:N949 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N950;
+    DPDO:flowsData DFD:N951;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Wide_Column;
+    DPDO:name "N949".
+
+DFD:N950 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N952;
+    DPDO:flowsData DFD:N953;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Delta;
+    DPDO:name "N950".
+
+DFD:N951 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N951".
+
+DFD:N952 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Machine_Learning, TagTaxonomy:Multidimensional;
+    DPDO:name "N952".
+
+DFD:N953 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N954;
+    DPDO:flowsData DFD:N955;
+    DPDO:hasTag TagTaxonomy:Batch, TagTaxonomy:Graph;
+    DPDO:name "N953".
+
+DFD:N954 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Machine_Learning;
+    DPDO:name "N954".
+
+DFD:N955 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N956;
+    DPDO:flowsData DFD:N957;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:name "N955".
+
+DFD:N956 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Big;
+    DPDO:name "N956".
+
+DFD:N957 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N958;
+    DPDO:flowsData DFD:N959;
+    DPDO:hasTag TagTaxonomy:Graph, TagTaxonomy:LowCode;
+    DPDO:name "N957".
+
+DFD:N958 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Batch;
+    DPDO:name "N958".
+
+DFD:N959 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N960;
+    DPDO:flowsData DFD:N961;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Data_Volume_all;
+    DPDO:name "N959".
+
+DFD:N960 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N962;
+    DPDO:flowsData DFD:N963;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Key_Value;
+    DPDO:name "N960".
+
+DFD:N961 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Python;
+    DPDO:name "N961".
+
+DFD:N962 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:Machine_Learning;
+    DPDO:name "N962".
+
+DFD:N963 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N964;
+    DPDO:flowsData DFD:N965;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Relational;
+    DPDO:name "N963".
+
+DFD:N964 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N966;
+    DPDO:flowsData DFD:N967;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Spatial;
+    DPDO:name "N964".
+
+DFD:N965 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Wide_Column;
+    DPDO:name "N965".
+
+DFD:N966 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Wide_Column, TagTaxonomy:Temporal;
+    DPDO:name "N966".
+
+DFD:N967 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N968;
+    DPDO:flowsData DFD:N969;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Pull;
+    DPDO:name "N967".
+
+DFD:N968 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Document;
+    DPDO:name "N968".
+
+DFD:N969 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N970;
+    DPDO:flowsData DFD:N971;
+    DPDO:hasTag TagTaxonomy:Structured, TagTaxonomy:Delta;
+    DPDO:name "N969".
+
+DFD:N970 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Document, TagTaxonomy:Structured;
+    DPDO:name "N970".
+
+DFD:N971 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N972;
+    DPDO:flowsData DFD:N973;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Wide_Column;
+    DPDO:name "N971".
+
+DFD:N972 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N974;
+    DPDO:flowsData DFD:N975;
+    DPDO:hasTag TagTaxonomy:Small, TagTaxonomy:Big;
+    DPDO:name "N972".
+
+DFD:N973 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Streaming;
+    DPDO:name "N973".
+
+DFD:N974 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Data_Zones_all;
+    DPDO:name "N974".
+
+DFD:N975 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N976;
+    DPDO:flowsData DFD:N977;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N975".
+
+DFD:N976 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Computing_all;
+    DPDO:name "N976".
+
+DFD:N977 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N978;
+    DPDO:flowsData DFD:N979;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N977".
+
+DFD:N978 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Big;
+    DPDO:name "N978".
+
+DFD:N979 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N980;
+    DPDO:flowsData DFD:N981;
+    DPDO:hasTag TagTaxonomy:Functionality_all, TagTaxonomy:Collection_all;
+    DPDO:name "N979".
+
+DFD:N980 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N982;
+    DPDO:flowsData DFD:N983;
+    DPDO:hasTag TagTaxonomy:Collection_all, TagTaxonomy:Wide_Column;
+    DPDO:name "N980".
+
+DFD:N981 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Key_Value;
+    DPDO:name "N981".
+
+DFD:N982 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Multidimensional;
+    DPDO:name "N982".
+
+DFD:N983 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N984;
+    DPDO:flowsData DFD:N985;
+    DPDO:hasTag TagTaxonomy:SQL, TagTaxonomy:Classification;
+    DPDO:name "N983".
+
+DFD:N984 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N986;
+    DPDO:flowsData DFD:N987;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Big;
+    DPDO:name "N984".
+
+DFD:N985 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N985".
+
+DFD:N986 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N988;
+    DPDO:flowsData DFD:N989;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Regression;
+    DPDO:name "N986".
+
+DFD:N987 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:name "N987".
+
+DFD:N988 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:ETL;
+    DPDO:name "N988".
+
+DFD:N989 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N990;
+    DPDO:flowsData DFD:N991;
+    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:name "N989".
+
+DFD:N990 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N992;
+    DPDO:flowsData DFD:N993;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Vectorial;
+    DPDO:name "N990".
+
+DFD:N991 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:Data_Volume_all, TagTaxonomy:Delta;
+    DPDO:name "N991".
+
+DFD:N992 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N994;
+    DPDO:flowsData DFD:N995;
+    DPDO:hasTag TagTaxonomy:Data_Zones_all, TagTaxonomy:Semi_Structured;
+    DPDO:name "N992".
+
+DFD:N993 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:ETL;
+    DPDO:name "N993".
+
+DFD:N994 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:ETL, TagTaxonomy:Push;
+    DPDO:name "N994".
+
+DFD:N995 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N996;
+    DPDO:flowsData DFD:N997;
+    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:Spatial;
+    DPDO:name "N995".
+
+DFD:N996 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:flowsData DFD:N998;
+    DPDO:flowsData DFD:N999;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Cumulative;
+    DPDO:name "N996".
+
+DFD:N997 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Data_Nature_all, TagTaxonomy:Small;
+    DPDO:name "N997".
+
+DFD:N998 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Archive;
+    DPDO:name "N998".
+
+DFD:N999 rdf:type owl:NamedIndividual, DPDO:Repository;
+    DPDO:flowsData DFD:N1000;
+    DPDO:hasTag TagTaxonomy:Computing_all, TagTaxonomy:Batch;
+    DPDO:name "N999".
+
+DFD:N1000 rdf:type owl:NamedIndividual, DPDO:Process;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Batch;
+    DPDO:name "N1000".
