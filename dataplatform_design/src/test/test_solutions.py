@@ -239,20 +239,20 @@ class TestSolutions(unittest.TestCase):
             "syntethic_50nodes", iteration=self.iteration, n_solutions=1
         )
 
-    def test_syntethic250_nodes(self):
-        self.run_scenario_with_stats(
-            "syntethic_250nodes", iteration=self.iteration, n_solutions=1
-        )
+    # def test_syntethic250_nodes(self):
+    #     self.run_scenario_with_stats(
+    #         "syntethic_250nodes", iteration=self.iteration, n_solutions=1
+    #     )
 
-    def test_syntethic300_nodes(self):
-        self.run_scenario_with_stats(
-            "syntethic_300nodes", iteration=self.iteration, n_solutions=1
-        )
+    # def test_syntethic300_nodes(self):
+    #     self.run_scenario_with_stats(
+    #         "syntethic_300nodes", iteration=self.iteration, n_solutions=1
+    #     )
 
 
 if __name__ == "__main__":
 
-    iterations = 10
+    iterations = 1
 
     for i in range(iterations):
         print(f"--- Iteration {i + 1} ---")

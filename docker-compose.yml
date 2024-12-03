@@ -6,8 +6,6 @@ services:
       - "7200:7200"
       - "7300:7300"
     restart: always
-    volumes:
-      - "graphdb_data:/opt/graphdb/home"
 
   dataplat_designer:
     build:
@@ -16,7 +14,7 @@ services:
     restart: no
     volumes:
       - "./dataplatform_design/src/test/scenarios/:/dataplatform_design/dataplatform_design/src/test/scenarios/"
-      - "./dataplatform_design/run_statistics/:/dataplatform_design/dataplatform_design/run_statistics/"
+      - "./dataplatform_design/test_results/:/dataplatform_design/dataplatform_design/test_results/"
     command:
       - /bin/bash
       - -c

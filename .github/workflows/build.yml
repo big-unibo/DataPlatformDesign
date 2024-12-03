@@ -8,6 +8,7 @@ on:
       - 'renovate.json'
   pull_request:
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -20,11 +21,7 @@ jobs:
         run: |
             chmod +x *.sh
             sudo apt-get install graphviz -y
-            docker compose up &>/dev/null &
-            ./wait-for-it.sh "127.0.0.1:7200" --timeout=480 -- echo "GraphDB is up"
-            pip install -r requirements.txt
-            python -m unittest dataplatform_design/src/test/test_solutions.py
-
+            docker compose up --abort-on-container-exit
   release:
     needs:
       - build
