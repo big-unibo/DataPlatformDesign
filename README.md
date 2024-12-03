@@ -59,7 +59,7 @@ A new scenario can be created by running
 Once scenarios have been defined, all of them can be tested via
 
    ```sh
-   python dataplatform_design/src/test/test_solutions.py
+    docker compose up
    ```
 
 Such script will compute the optimal set of services implementing the DFD for each scenario, and will compare each computed solution to the proposed one, returning true if <u>for each scenario</u>, one of the computed solution matches the proposed one.
