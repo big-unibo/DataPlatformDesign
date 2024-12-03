@@ -9,48 +9,48 @@
 DFD:N1 rdf:type owl:NamedIndividual, DPDO:Process;
     DPDO:flowsData DFD:N2;
     DPDO:flowsData DFD:N3;
-    DPDO:hasTag TagTaxonomy:Big, TagTaxonomy:Streaming;
+    DPDO:hasTag TagTaxonomy:Regression, TagTaxonomy:Semi_Structured;
     DPDO:name "N1".
 
 DFD:N2 rdf:type owl:NamedIndividual, DPDO:Repository;
     DPDO:flowsData DFD:N4;
     DPDO:flowsData DFD:N5;
-    DPDO:hasTag TagTaxonomy:Relational, TagTaxonomy:Pull;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Semi_Structured;
     DPDO:name "N2".
 
 DFD:N3 rdf:type owl:NamedIndividual, DPDO:Repository;
-    DPDO:hasTag TagTaxonomy:Language_all, TagTaxonomy:Computing_all;
+    DPDO:hasTag TagTaxonomy:Push, TagTaxonomy:Relational;
     DPDO:name "N3".
 
 DFD:N4 rdf:type owl:NamedIndividual, DPDO:Process;
     DPDO:flowsData DFD:N6;
     DPDO:flowsData DFD:N7;
-    DPDO:hasTag TagTaxonomy:Streaming, TagTaxonomy:LowCode;
+    DPDO:hasTag TagTaxonomy:Key_Value, TagTaxonomy:Classification;
     DPDO:name "N4".
 
 DFD:N5 rdf:type owl:NamedIndividual, DPDO:Process;
-    DPDO:hasTag TagTaxonomy:Pull, TagTaxonomy:Data_Nature_all;
+    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:File;
     DPDO:name "N5".
 
 DFD:N6 rdf:type owl:NamedIndividual, DPDO:Repository;
-    DPDO:hasTag TagTaxonomy:Archive, TagTaxonomy:Batch;
+    DPDO:flowsData DFD:N8;
+    DPDO:flowsData DFD:N9;
+    DPDO:hasTag TagTaxonomy:Operational, TagTaxonomy:Push;
     DPDO:name "N6".
 
 DFD:N7 rdf:type owl:NamedIndividual, DPDO:Repository;
-    DPDO:flowsData DFD:N8;
-    DPDO:flowsData DFD:N9;
-    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Mini_Batch;
+    DPDO:hasTag TagTaxonomy:Semi_Structured, TagTaxonomy:Small;
     DPDO:name "N7".
 
 DFD:N8 rdf:type owl:NamedIndividual, DPDO:Process;
     DPDO:flowsData DFD:N10;
-    DPDO:hasTag TagTaxonomy:LowCode, TagTaxonomy:Multidimensional;
+    DPDO:hasTag TagTaxonomy:File, TagTaxonomy:Mini_Batch;
     DPDO:name "N8".
 
 DFD:N9 rdf:type owl:NamedIndividual, DPDO:Process;
-    DPDO:hasTag TagTaxonomy:Multidimensional, TagTaxonomy:Wide_Column;
+    DPDO:hasTag TagTaxonomy:Delta, TagTaxonomy:Unstructured;
     DPDO:name "N9".
 
 DFD:N10 rdf:type owl:NamedIndividual, DPDO:Repository;
-    DPDO:hasTag TagTaxonomy:Temporal, TagTaxonomy:SQL;
+    DPDO:hasTag TagTaxonomy:Classification, TagTaxonomy:Operational;
     DPDO:name "N10".

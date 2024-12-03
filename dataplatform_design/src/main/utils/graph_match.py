@@ -4,14 +4,22 @@ import json
 from . import utils
 from rdflib import Namespace, Graph, URIRef
 import rdflib
+import time
 
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")
 # Load config
 config = utils.load_yaml(
     os.path.join(
-        "/", "dataplatform_design", "dataplatform_design", "resources", "scenario_template", "configs", "config.yml"
+        "/",
+        "dataplatform_design",
+        "dataplatform_design",
+        "resources",
+        "scenario_template",
+        "configs",
+        "config.yml",
     )
 )
+
 
 def setup_config(scenario_config):
     global config
@@ -59,6 +67,7 @@ def match_lakehouse_pattern(
 
         }}
     """
+    start_time = time.time()
     response = requests.post(
         f"{endpoint}/repositories/{repository_name}",
         data=lakehouse_query,
@@ -72,6 +81,7 @@ def match_lakehouse_pattern(
         lakehouse_implements = response.json()
 
         lakehouse = []
+        duration = 0
         if len(lakehouse_implements["results"]["bindings"]) > 0:
             for result in lakehouse_implements["results"]["bindings"]:
                 datalake = result["datalake"]["value"]
@@ -107,19 +117,23 @@ def match_lakehouse_pattern(
                     },
                 )
                 logger.debug("Successfully checked for Lakehouse pattern.")
-
-        return save_matched_graph(
-            endpoint, repository_name, named_graph_uri, matched_graph_path
+            duration = time.time() - start_time
+        return (
+            save_matched_graph(
+                endpoint, repository_name, named_graph_uri, matched_graph_path
+            ),
+            duration,
         )
     else:
         logger.error(
             "Something went wrong while checking for Lakehouse", response.status_code
         )
         logger.error(response.content)
-        return False
+        return False, 0
 
 
 def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_path):
+    start_time = time.time()
     match_query = f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -181,7 +195,7 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
         data=match_query,
         headers=match_headers,
     )
-
+    duration = time.time() - start_time
     dfd_implements_query = f"""SELECT ?node
     WHERE {{
         ?node a <{DPDO.DFDNode}> .
@@ -269,8 +283,11 @@ def build_matched_graph(endpoint, repository_name, named_graph_uri, match_graph_
             logger.error("Couldn't match DFD: HTTP error code:", response.status_code)
             logger.error(response.content)
 
-    return save_matched_graph(
-        endpoint, repository_name, named_graph_uri, match_graph_path
+    return (
+        save_matched_graph(
+            endpoint, repository_name, named_graph_uri, match_graph_path
+        ),
+        duration,
     )
 
 

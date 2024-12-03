@@ -2,6 +2,10 @@ import os
 import rdflib
 from rdflib import Namespace, URIRef
 from graphviz import Digraph
+from utils import utils
+
+# Setup log
+logger = utils.setup_logger("DataPlat_Design_Visualize")
 
 
 def parse_turtle_to_graph(turtle_file):
@@ -41,7 +45,7 @@ def parse_json_to_graph(json_file):
 
 def visualize_graph(g, save_path):
     dot = Digraph(comment="RDF Graph")
-
+    logger.debug(f"Printing graph for {save_path}")
     repository = {}
     process = {}
     for s, p, o in g:
@@ -115,23 +119,30 @@ def visualize_graph(g, save_path):
 
 
 def process_directory_tree(root_dir):
+    logger.debug("HHELLOOOOO")
     for dirpath, _, filenames in os.walk(root_dir):
+        logger.debug(f"Visualizing {root_dir}")
         for filename in filenames:
-            if filename.endswith(".ttl"):
+            logger.debug(f"Now visualizing {filename}")
+            if filename.endswith(".ttl") and not "ServiceEcosystem" in filename:
                 file_path = os.path.join(dirpath, filename)
                 save_path = os.path.join(dirpath, filename.replace(".ttl", ""))
                 if "config" not in file_path:
+                    logger.debug(f"Parsing {file_path} from ttl to graph")
                     g = parse_turtle_to_graph(file_path)
+                    logger.debug(f"Finally visualizing {file_path}")
                     visualize_graph(g, save_path)
             elif filename.endswith(".json"):
                 file_path = os.path.join(dirpath, filename)
                 save_path = os.path.join(dirpath, filename.replace(".json", ""))
                 if "config" not in file_path:
+                    logger.debug(f"Parsing {file_path} from json to graph")
                     g = parse_json_to_graph(file_path)
+                    logger.debug(f"Now finally visualizing...")
                     visualize_graph(g, save_path)
 
 
-# Example usage
+# # Example usage
 # for root_directory in [
 #     "dataplatform_design/src/test/scenarios/",
 #     "dataplatform_design/resources",

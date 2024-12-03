@@ -66,7 +66,6 @@ def normalize_repositories_names(repo_config_paths, test_scenario):
             with open(path, "r") as f:
                 content = f.read()
 
-            # Cerca e modifica il valore nel contenuto del file
             modified_content = re.sub(old_value_pattern, new_value_pattern, content)
 
             with open(path, "w") as f:
@@ -86,7 +85,6 @@ def normalize_repository_name(old_path, new_path, new_name):
         with open(old_path, "r") as f:
             content = f.read()
 
-        # Cerca e modifica il valore nel contenuto del file
         modified_content = re.sub(old_value_pattern, new_value_pattern, content)
 
         with open(new_path, "w") as f:
@@ -134,7 +132,6 @@ def modify_yaml(input_path, output_path, key_to_modify, new_value):
     with open(input_path, "r") as file:
         data = yaml.safe_load(file)
 
-    # Modifica la chiave nidificata
     modify_nested_key(data, key_to_modify, new_value)
 
     """Writes a dictionary to a YAML file."""

@@ -7,6 +7,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @base <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy>.
 <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy> rdf:type owl:Ontology.
+
+
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy/Archive_class
 TagTaxonomy:Archive_class
     rdf:type owl:Class;
@@ -298,6 +300,8 @@ TagTaxonomy:Structured rdf:type TagTaxonomy:Structured_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Temporal
 TagTaxonomy:Temporal rdf:type TagTaxonomy:Temporal_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Vectorial
-TagTaxonomy:Vectorial rdf:type TagTaxonomy:Spatial_class.
+TagTaxonomy:Vectorial rdf:type TagTaxonomy:Vectorial_class.
 ###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Wide_Column
-TagTaxonomy:Wide_Column rdf:type TagTaxonomy:Semi_Structured_class.
+TagTaxonomy:Wide_Column rdf:type TagTaxonomy:Wide_column_class.
+###  http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#Unstructured
+TagTaxonomy:Unstructured rdf:type TagTaxonomy:Unstructured_class.

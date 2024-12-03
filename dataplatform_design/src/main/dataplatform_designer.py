@@ -98,10 +98,10 @@ class DataPlatformDesigner:
         matched_graph.parse(dpdo_ontology_path, format="turtle")
         try:
             # Embed lakehouse patterns & match graphw
-            start_time = time.time()
-            if graph_match.build_matched_graph(
-                self.endpoint, self.repository, self.named_graph, matched_graph_path):
-                duration = time.time() - start_time
+            result, duration = graph_match.build_matched_graph(
+                self.endpoint, self.repository, self.named_graph, matched_graph_path
+            )
+            if result:
                 # # Load matched graph
                 matched_graph.parse(
                     location=os.path.join(matched_graph_path),
@@ -113,22 +113,21 @@ class DataPlatformDesigner:
                     store=matched_graph.store, identifier=URIRef(self.named_graph)
                 )
 
-                return named_graph, duration
-            
+            return named_graph, duration
+
         except Exception as e:
             logger.exception("Something went wrong while building matched graph")
             logger.exception(e.__doc__)
 
-    def augment_graph(self, matched_graph_path,dpdo_ontology_path):
+    def augment_graph(self, matched_graph_path, dpdo_ontology_path):
         start_time = time.time()
-        graph_match.match_lakehouse_pattern(
-                self.endpoint,
-                self.repository,
-                self.named_graph,
-                matched_graph_path,
-                self.namespaces,
+        result, lakehouse_duration = graph_match.match_lakehouse_pattern(
+            self.endpoint,
+            self.repository,
+            self.named_graph,
+            matched_graph_path,
+            self.namespaces,
         )
-        lakehouse_duration = time.time() - start_time
 
         matched_graph = utils.setup_graph(self.namespaces)
 
@@ -147,7 +146,7 @@ class DataPlatformDesigner:
         result = graph_augment.augment_graph(named_graph)
         other_augment_duration = time.time() - start_time
         return result, lakehouse_duration + other_augment_duration
-    
+
     def build_selected_graph(self, named_graph, selected_graph_output_path):
         # Solve the LP problem
         start_time = time.time()
@@ -226,28 +225,30 @@ class DataPlatformDesigner:
                 )
                 logger.error(response.text)
             logger.debug(f"\n Printing solution {solution_number}:")
-            for (
-                node,
-                p,
-                service,
-            ) in solution_selected_graph.triples(
-                ((None, getattr(self.DPDO, f"selected_{solution_number}"), None))
-            ):
-                logger.debug(
-                    f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
-                )
+            # for (
+            #     node,
+            #     p,
+            #     service,
+            # ) in solution_selected_graph.triples(
+            #     ((None, getattr(self.DPDO, f"selected_{solution_number}"), None))
+            # ):
+            #     logger.debug(
+            #         f"{utils.rdf(solution_selected_graph, node)}, {utils.rdf(solution_selected_graph, p)}, {utils.rdf(solution_selected_graph, service)}"
+            #     )
 
             # Write selected_graph
             with open(
                 solution_output_path,
                 "w",
             ) as json_file:
+                logger.debug("Saving selected graph...")
                 json_file.write(
                     solution_selected_graph.serialize(format="json-ld", indent=4)
                 )
 
             selected_graphs.append(solution_selected_graph)
-        visualize.process_directory_tree(self.scenario_path)
+        # logger.debug("Visualizing computed solutions")
+        # visualize.process_directory_tree(self.scenario_path)
 
         return selected_graphs, costs, selection_duration
 

@@ -413,6 +413,18 @@ def select_services(named_graph):
         )
     )
 
+    logger.debug(f"Problem has {len(variable_names)} variables.")
+    logger.debug(
+        f"Number of constraints: {len(fourth_constraint)+len(fifth_constraint)+len(sixth_constraint)+len(edges_constraint)+len(affinity_constraint)+len(lakehouse_constraint)+len(mandatory_constraint)}"
+    )
+    logger.debug(f"Fourth constraint: {len(fourth_constraint)}")
+    logger.debug(f"fifth_constraint : {len(fifth_constraint)}")
+    logger.debug(f"sixth_constraint : {len(sixth_constraint)}")
+    logger.debug(f"edges_constraint : {len(edges_constraint)}")
+    logger.debug(f"affinity_constraint : {len(affinity_constraint)}")
+    logger.debug(f"lakehouse_constraint : {len(lakehouse_constraint)}")
+    logger.debug(f"mandatory_constraint : {len(mandatory_constraint)}")
+
     # Setting variable's value bounds
     lower_bounds = [0 for _ in variable_names]
     upper_bounds = [1 for _ in variable_names]

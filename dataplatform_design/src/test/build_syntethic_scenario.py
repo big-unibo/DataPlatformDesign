@@ -3,6 +3,8 @@ import utils
 from rdflib import Graph, URIRef
 import random
 import yaml
+from itertools import combinations
+
 
 logger = utils.setup_logger("DataPlat_Design_Syntethic_Scenario_Builder")
 
@@ -27,8 +29,6 @@ def build_binary_dfd_tree(n, seed=None):
     Returns:
         TreeNode: Radice dell'albero binario costruito.
     """
-    if seed is not None:
-        random.seed(seed)  # Imposta il seed per risultati riproducibili
 
     if n <= 0:
         return None
@@ -73,7 +73,6 @@ def tag_and_save_dfd_tree(root, seed, ttl_file, services_ttl_file):
         ttl_file (str): Percorso del file .ttl di output.
         services_ttl_file (str): Percorso del file dei servizi (.ttl) da cui estrarre i tag.
     """
-    random.seed(seed)
 
     def get_node_type(depth):
         """
@@ -128,11 +127,35 @@ def tag_and_save_dfd_tree(root, seed, ttl_file, services_ttl_file):
                     service_tags_dict[service_name] = []
                 service_tags_dict[service_name].append(tag)
 
-        # Filtra solo i servizi con esattamente 2 tag
         valid_services = {
-            service: tags
+            service: (
+                random.sample(filtered_tags, 2)
+                if len(filtered_tags) >= 2
+                else random.sample(tags, 2)
+            )  # Usa tutti i tag disponibili se sono meno di 2
             for service, tags in service_tags_dict.items()
-            if len(tags) == 2
+            for filtered_tags in [
+                [
+                    tag
+                    for tag in tags
+                    # if tag
+                    # not in [
+                    #     "Machine_Learning",
+                    #     "Semi_Structured",
+                    #     "Structured",
+                    #     "Unstructured",
+                    #     "Spatial",
+                    #     "Pull",
+                    #     "Functionality_all",
+                    #     "Computing_all",
+                    #     "Collection_all",
+                    #     "Data_Volume_all",
+                    #     "Data_Nature_all",
+                    #     "Data_Model_all",
+                    #     "Data_Zones_all",
+                    # ]
+                ]
+            ]
         }
 
         return valid_services
@@ -164,18 +187,31 @@ def tag_and_save_dfd_tree(root, seed, ttl_file, services_ttl_file):
     # Salva il file .ttl
     with open(ttl_file, "w") as f:
         f.write("\n".join(ttl_lines))
-    print(f"File TTL salvato in: {ttl_file}")
+    logger.debug(f".ttl file saved: {ttl_file}")
 
 
-def generate_services(tag_taxonomy, seed, num_services, output_file):
+def generate_services_with_unique_tag_pairs(
+    tag_taxonomy, num_services, output_file, compatibility_percentage
+):
     prefix_lines = """
-    @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
-    @prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
-    @prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
-    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-    @prefix owl: <http://www.w3.org/2002/07/owl#>.
+    @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#> .
+    @prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#> .
+    @prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
     """
-    random.seed(seed)
+
+    # Genera tutte le coppie possibili (combinazioni) di tag
+    all_tag_pairs = list(combinations(tag_taxonomy, 2))
+
+    # Verifica che ci siano abbastanza coppie per il numero di servizi richiesti
+    if len(all_tag_pairs) < num_services:
+        raise ValueError(
+            "Il numero di servizi supera il numero di coppie uniche disponibili."
+        )
+
+    # Mescola le coppie per assegnazione casuale
+    random.shuffle(all_tag_pairs)
 
     with open(output_file, "w") as ttl_file:
         ttl_file.write(prefix_lines)
@@ -185,28 +221,67 @@ def generate_services(tag_taxonomy, seed, num_services, output_file):
             service_uri = f"ServiceEcosystem:{service_id}"
             header_uri = f"http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#{service_id}"
 
-
-            tag1, tag2 = random.sample(tag_taxonomy, 2)
-
+            # Estrai una coppia unica di tag
+            tag1, tag2 = all_tag_pairs.pop(0)
 
             ttl_file.write(f"###  {header_uri}\n")
             ttl_file.write(f"{service_uri}\n")
             ttl_file.write(f"\trdf:type owl:NamedIndividual, DPDO:Service;\n")
             ttl_file.write(f"\tDPDO:hasTag TagTaxonomy:{tag1}, TagTaxonomy:{tag2};\n")
 
-
             ttl_file.write(f"\tDPDO:isCompatible\n")
             all_services = [
-                f"ServiceEcosystem:S{j}" for j in range(1, num_services + 1) if j != i
+                f"ServiceEcosystem:S{j}" for j in range(1, num_services + 1)
             ]
-            #compatible_services = all_services
             compatible_services = random.sample(
-                all_services, len(all_services) * 3 // 4
+                all_services, int(len(all_services) * compatibility_percentage)
             )
             ttl_file.write("        " + ",\n        ".join(compatible_services) + ";\n")
 
             # Nome del servizio
             ttl_file.write(f'    DPDO:name "{service_id}".\n\n')
+
+
+def generate_services(
+    tag_taxonomy, num_services, output_file, compatibility_percentage
+):
+    prefix_lines = """
+    @prefix ServiceEcosystem: <http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#>.
+    @prefix TagTaxonomy: <http://www.foo.bar/dataplatform_design/ontologies/TagTaxonomy#>.
+    @prefix DPDO: <http://www.foo.bar/dataplatform_design/ontologies/DPDO#>.
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+    @prefix owl: <http://www.w3.org/2002/07/owl#>.
+    """
+
+    with open(output_file, "w") as ttl_file:
+        ttl_file.write(prefix_lines)
+
+        for i in range(1, num_services + 1):
+            service_id = f"S{i}"
+            service_uri = f"ServiceEcosystem:{service_id}"
+            header_uri = f"http://www.foo.bar/dataplatform_design/ontologies/ServiceEcosystem#{service_id}"
+
+            tag1, tag2 = random.sample(tag_taxonomy, 2)
+
+            ttl_file.write(f"###  {header_uri}\n")
+            ttl_file.write(f"{service_uri}\n")
+            ttl_file.write(f"\trdf:type owl:NamedIndividual, DPDO:Service;\n")
+            ttl_file.write(f"\tDPDO:hasTag TagTaxonomy:{tag1}, TagTaxonomy:{tag2};\n")
+
+            ttl_file.write(f"\tDPDO:isCompatible\n")
+            all_services = [
+                f"ServiceEcosystem:S{j}" for j in range(1, num_services + 1)
+            ]
+            # compatible_services = all_services
+            # compatible_services = all_services
+            compatible_services = random.sample(
+                all_services, int(len(all_services) * compatibility_percentage)
+            )
+            ttl_file.write("        " + ",\n        ".join(compatible_services) + ";\n")
+
+            # Nome del servizio
+            ttl_file.write(f'    DPDO:name "{service_id}".\n\n')
+
 
 def modify_yaml(file_path, modifications):
     """
@@ -214,7 +289,7 @@ def modify_yaml(file_path, modifications):
 
     Args:
         file_path (str): The path to the YAML file.
-        modifications (dict): A dictionary where keys are the YAML paths (dot-separated) to be updated 
+        modifications (dict): A dictionary where keys are the YAML paths (dot-separated) to be updated
                               and values are the new values to set.
 
     Example:
@@ -223,6 +298,7 @@ def modify_yaml(file_path, modifications):
             "key2": "another_value"
         }
     """
+
     def set_nested_value(data, path, value):
         """Set a value in a nested dictionary using a dot-separated path."""
         keys = path.split(".")
@@ -243,25 +319,18 @@ def modify_yaml(file_path, modifications):
         with open(file_path, "w") as file:
             yaml.dump(yaml_data, file, default_flow_style=False)
 
-        print(f"File '{file_path}' successfully updated.")
+        logger.debug(f"File '{file_path}' successfully updated.")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logger.debug(f"An error occurred: {e}")
+
 
 tag_taxonomy = [
-    "Language_all",
     "Python",
     "SQL",
     "LowCode",
     "Delta",
     "Cumulative",
-    "Functionality_all",
-    "Computing_all",
-    "Collection_all",
-    "Data_Volume_all",
-    "Data_Nature_all",
-    "Data_Model_all",
-    "Data_Zones_all",
     "ETL",
     "Archive",
     "Batch",
@@ -272,33 +341,44 @@ tag_taxonomy = [
     "Graph",
     "Key_Value",
     "Landing",
-    "Machine_Learning",
     "Mini_Batch",
     "Multidimensional",
     "Reporting",
     "Operational",
     "Processed",
-    "Pull",
     "Push",
     "Raster",
     "Regression",
     "Relational",
-    "Semi_Structured",
     "Small",
-    "Spatial",
     "Streaming",
-    "Structured",
     "Temporal",
     "Vectorial",
     "Wide_Column",
+    "Machine_Learning",
+    "Semi_Structured",
+    "Structured",
+    "Unstructured",
+    "Spatial",
+    "Pull",
+    # "Functionality_all",
+    # "Computing_all",
+    # "Collection_all",
+    # "Data_Volume_all",
+    # "Data_Nature_all",
+    # "Data_Model_all",
+    # "Data_Zones_all",
 ]
 
-seed = 42 
+
+seed = 42
 services_card = 200
-scenarios_dfd_cardinality = [10, 100, 1000]
+scenarios_dfd_cardinality = [50, 200, 250]
+compatibility_percentage = 0.95
+
+random.seed(seed)
 
 scenarios_directory = os.path.join("dataplatform_design", "src", "test", "scenarios")
-
 
 for scenario in scenarios_dfd_cardinality:
     scenario_name = f"syntethic_{scenario}nodes"
@@ -311,17 +391,21 @@ for scenario in scenarios_dfd_cardinality:
     )
 
     updates = {
-        "ontologies.path.ServiceEcosystem": f"{os.path.join(new_scenario_ontologies_path, 'ServiceEcosystem.ttl')}",
+        "ontologies.paths.service_ecosystem": f"{os.path.join(new_scenario_ontologies_path, 'ServiceEcosystem.ttl')}",
     }
 
-    modify_yaml(os.path.join(scenarios_directory, scenario_name, "configs", "config.yml"), updates)
+    modify_yaml(
+        os.path.join(scenarios_directory, scenario_name, "configs", "config.yml"),
+        updates,
+    )
 
     generate_services(
         tag_taxonomy,
-        seed,
-        num_services=services_card,
-        output_file=os.path.join(new_scenario_ontologies_path, "ServiceEcosystem.ttl"),
+        services_card,
+        os.path.join(new_scenario_ontologies_path, "ServiceEcosystem.ttl"),
+        compatibility_percentage,
     )
+
     binary_tree = build_binary_dfd_tree(scenario, seed=seed)
 
     tag_and_save_dfd_tree(

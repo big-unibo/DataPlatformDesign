@@ -16,16 +16,13 @@ services:
     restart: no
     volumes:
       - "./dataplatform_design/src/test/scenarios/:/dataplatform_design/dataplatform_design/src/test/scenarios/"
-      - "./dataplatform_design/test_results/:/dataplatform_design/dataplatform_design/test_results/"
+      - "./dataplatform_design/run_statistics/:/dataplatform_design/dataplatform_design/run_statistics/"
     command:
       - /bin/bash
       - -c
       - |
         sleep 10
         python dataplatform_design/src/test/test_solutions.py
-        tail -f /dev/null
-    stdin_open: true
-    tty: true
     depends_on:
       - graphdb
 
