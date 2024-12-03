@@ -14,15 +14,13 @@ services:
     restart: no
     volumes:
       - "./dataplatform_design/src/test/scenarios/:/dataplatform_design/dataplatform_design/src/test/scenarios/"
-      - "./dataplatform_design/test_results/:/dataplatform_design/dataplatform_design/test_results/"
+      - "./dataplatform_design/run_statistics/:/dataplatform_design/dataplatform_design/run_statistics/"
     command:
       - /bin/bash
       - -c
       - |
         sleep 10
         python dataplatform_design/src/test/test_solutions.py
+        python dataplatform_design/src/test/plot_statistics.py
     depends_on:
       - graphdb
-
-volumes:
-    graphdb_data:

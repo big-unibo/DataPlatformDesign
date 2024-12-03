@@ -66,7 +66,6 @@ def plot_metrics_grid(result_paths, out_path):
 def plot_stacked_bar_chart(result_paths, out_path):
     for test_result in result_paths:
         df = pd.read_csv(test_result)
-
         grouped = df.groupby("scenario").mean()
 
         grouped["total_time"] = (
@@ -108,13 +107,14 @@ def plot_stacked_bar_chart(result_paths, out_path):
         )
 
 
-result_directory = "/home/dataplatform_design/run_statistics/"
+print(os.path)
+result_directory = "/dataplatform_design/dataplatform_design/run_statistics/"
 result_paths = [
     os.path.join(result_directory, file)
     for file in os.listdir(result_directory)
     if ".csv" in file
 ]
-out_path = "/home/dataplatform_design/run_statistics/plots/"
+out_path = "/dataplatform_design/dataplatform_design/run_statistics/plots/"
 
 plot_metrics_grid(result_paths, out_path)
 plot_stacked_bar_chart(result_paths, out_path)

@@ -252,7 +252,7 @@ class TestSolutions(unittest.TestCase):
 
 if __name__ == "__main__":
 
-    iterations = 1
+    iterations = 0
 
     for i in range(iterations):
         print(f"--- Iteration {i + 1} ---")
@@ -267,14 +267,15 @@ if __name__ == "__main__":
     timestamped_statistics = [
         [test_id] + scenario_statistic for scenario_statistic in tests_statistics
     ]
-    global_statistics_df = pd.DataFrame(
-        timestamped_statistics, columns=statistics_columns
-    )
+    if len(timestamped_statistics) > 0:
+        global_statistics_df = pd.DataFrame(
+            timestamped_statistics, columns=statistics_columns
+        )
 
-    global_statistics_df.to_csv(
-        f"dataplatform_design/run_statistics/statistics_{datetime.now(tz=tz).timestamp()}.csv",
-        index=False,
-    )
+        global_statistics_df.to_csv(
+            f"dataplatform_design/run_statistics/statistics_{datetime.now(tz=tz).timestamp()}.csv",
+            index=False,
+        )
 
 ## 1000 nodi, 200 servizi ~ 3k variabili
 ## 1000 nodi, 100 servizi ~ 2113 variabili
