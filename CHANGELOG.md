@@ -1,3 +1,15 @@
+## [1.4.1](https://github.com/big-unibo/DataPlatformDesign/compare/1.4.0...1.4.1) (2024-12-05)
+
+### Bug Fixes
+
+* plot the experiment ([c9a0119](https://github.com/big-unibo/DataPlatformDesign/commit/c9a011988f8405a162a810b2766a6261d3f51385))
+
+### General maintenance
+
+* minor refactoring ([8392e1f](https://github.com/big-unibo/DataPlatformDesign/commit/8392e1fb3bf363f71f7966b237717e64a4de9982))
+* minor refactoring ([3021882](https://github.com/big-unibo/DataPlatformDesign/commit/3021882ee42a96f4b57ecca14eedbe9c8b17822e))
+* minor refactoring ([83f94d4](https://github.com/big-unibo/DataPlatformDesign/commit/83f94d4d4680aa1e82ccd00af89ede34f29a77cd))
+
 ## [1.4.0](https://github.com/big-unibo/DataPlatformDesign/compare/1.3.0...1.4.0) (2024-12-05)
 
 ### Features
