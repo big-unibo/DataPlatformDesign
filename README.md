@@ -51,15 +51,30 @@ A new scenario can be created by running
    ```sh
    python dataplatform_design/src/test/create_test_scenario.py --scenario_name {scenario_name}
    ```
+Upon creation, users can then define the DFD.ttl ontology to reflect the pipeline to be implemented. The above script optionally takes a further set of parameters defining paths of user-defined .ttl files for scenario creation, such as 
+- --service_ecosystem
+- --tag_taxonomy
+- --solution
+- --preferences
+- --dfd.
 
 <u>Please note that in case of using user-defined ontologies with different namespaces than the default ones, such ontologies' namespaces and prefixes <b>must</b> be updated in </u> `/dataplatform_design/src/test/scenarios/scenario_{scenario_name}/configs/config.yml`.
 
 ### Testing scenarios
 
-Once scenarios have been defined, all of them can be tested via
+Once scenarios have been defined, all of them can be tested by running:
 
    ```sh
     docker compose up
    ```
 
-Such script will compute the optimal set of services implementing the DFD for each scenario, and will compare each computed solution to the proposed one, returning true if <u>for each scenario</u>, one of the computed solution matches the proposed one.
+During execution, the script will compute the optimal set of services to implement the DFD for each scenario and compare the computed solutions to the proposed ones. The test is considered successful if, for each scenario, at least one computed solution matches the proposed one.
+
+Additionally, based on the iteration parameters specified in the .env file, the algorithm will be evaluated for each iteration and scenario. The results will include:
+
+- <b>Detailed statistics</b> for each scenario and iteration, saved as .csv files in:
+`/dataplatform_design/dataplatform_design/run_statistics/`
+- <b>Bar charts</b> summarizing the statistics, available in:
+`/dataplatform_design/dataplatform_design/run_statistics/plots`
+
+This process ensures thorough validation of both the solutions and the algorithm’s performance.

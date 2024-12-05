@@ -1,7 +1,3 @@
-graph_db:
-  endpoint: http://graphdb:7200
-  named_graph: http://dpdo_example.com/DPD_Graph
-  repository: DataPlatformDesign_syntethic_50nodes
 ontologies:
   adds_constraints_paths:
     preferences: dataplatform_design/resources/scenario_template/input/adds_constraints/preferences.ttl

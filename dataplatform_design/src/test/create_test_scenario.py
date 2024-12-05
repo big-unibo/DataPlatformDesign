@@ -47,13 +47,13 @@ new_config_path = os.path.join(
     scenario_resources_path_dict["repo_config"], "config.yml"
 )
 
-# Push config files into new scenario
-test_utils.modify_yaml(
-    os.path.join(template_structure["config"], "config.yml"),
-    new_config_path,
-    ["graph_db", "repository"],
-    f"DataPlatformDesign_{scenario_name}",
-)
+# # Push config files into new scenario
+# test_utils.modify_yaml(
+#     os.path.join(template_structure["config"], "config.yml"),
+#     new_config_path,
+#     ["graph_db", "repository"],
+#     f"DataPlatformDesign_{scenario_name}",
+# )
 test_utils.normalize_repository_name(
     os.path.join(template_structure["config"], "repo-config.ttl"),
     os.path.join(scenario_resources_path_dict["repo_config"], "repo-config.ttl"),

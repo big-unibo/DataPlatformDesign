@@ -4,7 +4,7 @@ from rdflib import Graph, URIRef
 import random
 import yaml
 from itertools import combinations
-
+from dotenv import load_dotenv
 
 logger = utils.setup_logger("DataPlat_Design_Syntethic_Scenario_Builder")
 
@@ -371,10 +371,12 @@ tag_taxonomy = [
 ]
 
 
-seed = 42
-services_card = 200
-scenarios_dfd_cardinality = [50, 200, 250]
-compatibility_percentage = 0.95
+load_dotenv(".env")
+
+seed = os.getenv("SEED")
+services_card = os.getenv("SERVOCES_CARDINALITY")
+scenarios_dfd_cardinality = os.getenv("DFD_NODES_CARD")
+compatibility_percentage = os.getenv("SERVICES_COMPATIBILITY_PERCENTAGE")
 
 random.seed(seed)
 

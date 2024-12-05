@@ -3,6 +3,9 @@ import sys
 import pandas as pd
 from datetime import datetime
 import pytz
+import unittest
+from dotenv import load_dotenv
+
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources"))
@@ -13,10 +16,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../test
 import test_utils
 from utils import utils
 from dataplatform_designer import DataPlatformDesigner
-import unittest
+
 
 logger = utils.setup_logger("DataPlat_Design_Test")
 tz = pytz.timezone("Europe/Rome")
+
+load_dotenv(".env")
 
 
 def get_path(folder):
@@ -52,10 +57,9 @@ def test_scenarioI(self, scenario_directory, iteration=0, n_solutions=1):
     config = utils.load_yaml(scenario_config_path)
 
     # GraphDB endpoint
-    GRAPHDB_ENDPOINT = config["graph_db"]["endpoint"]
-    GRAPHDB_REPOSITORY = config["graph_db"]["repository"]
-    GRAPHDB_NAMED_GRAPH = config["graph_db"]["named_graph"]
-
+    GRAPHDB_ENDPOINT = os.getenv("GRAPHDB_ENDPOINT")
+    GRAPHDB_NAMED_GRAPH = os.getenv("GRAPHDB_NAMED_GRAPH")
+    GRAPHDB_REPOSITORY = f"DataPlatformDesign_{scenario_directory.split(os.sep)[-1]}"
     # logger.info(f"Running scenario {scenario_directory}")
 
     # .ttl paths representing ontologies
@@ -125,6 +129,7 @@ def test_scenarioI(self, scenario_directory, iteration=0, n_solutions=1):
         selected_graph_path,
     )
     logger.debug("Comparing solutions")
+
     # Compare solution to given one
     res, s, solution_cost = dataplat_designer.compare_solutions(
         selected_graphs, solution_path, costs
@@ -239,20 +244,20 @@ class TestSolutions(unittest.TestCase):
             "syntethic_50nodes", iteration=self.iteration, n_solutions=1
         )
 
-    # def test_syntethic250_nodes(self):
-    #     self.run_scenario_with_stats(
-    #         "syntethic_250nodes", iteration=self.iteration, n_solutions=1
-    #     )
+    def test_syntethic250_nodes(self):
+        self.run_scenario_with_stats(
+            "syntethic_250nodes", iteration=self.iteration, n_solutions=1
+        )
 
-    # def test_syntethic300_nodes(self):
-    #     self.run_scenario_with_stats(
-    #         "syntethic_300nodes", iteration=self.iteration, n_solutions=1
-    #     )
+    def test_syntethic300_nodes(self):
+        self.run_scenario_with_stats(
+            "syntethic_300nodes", iteration=self.iteration, n_solutions=1
+        )
 
 
 if __name__ == "__main__":
 
-    iterations = 0
+    iterations = int(os.getenv("ITERATIONS"))
 
     for i in range(iterations):
         print(f"--- Iteration {i + 1} ---")
@@ -276,11 +281,3 @@ if __name__ == "__main__":
             f"dataplatform_design/run_statistics/statistics_{datetime.now(tz=tz).timestamp()}.csv",
             index=False,
         )
-
-## 1000 nodi, 200 servizi ~ 3k variabili
-## 1000 nodi, 100 servizi ~ 2113 variabili
-## 500 nodi, 100 servizi ~ 1082 variabili
-
-
-## Negli scenari sintetici, è come se non esistesse differenza tra repository e processi, un repository e un processo contigui potrebbero avere gli stessi tag. Quindi nel DFD un repository potrebbe essere implementato da AWS Lambda.
-## Watering matcha e seleziona Lakehouse
