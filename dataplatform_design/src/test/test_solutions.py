@@ -21,7 +21,8 @@ from dataplatform_designer import DataPlatformDesigner
 logger = utils.setup_logger("DataPlat_Design_Test")
 tz = pytz.timezone("Europe/Rome")
 
-load_dotenv(".env")
+if not load_dotenv(".env"):
+    load_dotenv(".env.example")
 
 
 def get_path(folder):
