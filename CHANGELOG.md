@@ -1,3 +1,20 @@
+## [1.4.0](https://github.com/big-unibo/DataPlatformDesign/compare/1.3.0...1.4.0) (2024-12-05)
+
+### Features
+
+* last impl, adding .env ([0599e04](https://github.com/big-unibo/DataPlatformDesign/commit/0599e04715e017db13cd97f6847cf5fdeea82afe))
+
+### Dependency updates
+
+* **deps:** update dependency fonttools to v4.55.1 ([#128](https://github.com/big-unibo/DataPlatformDesign/issues/128)) ([2dce928](https://github.com/big-unibo/DataPlatformDesign/commit/2dce928cfcd4cb3769e08ea3b7796525982819ed))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.116 ([#131](https://github.com/big-unibo/DataPlatformDesign/issues/131)) ([ad993c7](https://github.com/big-unibo/DataPlatformDesign/commit/ad993c77b49b2a16497e1d2f2b2f5eb8fcc943c3))
+* **deps:** update dependency six to v1.17.0 ([#130](https://github.com/big-unibo/DataPlatformDesign/issues/130)) ([f618298](https://github.com/big-unibo/DataPlatformDesign/commit/f618298d9a14650f497afb26c0f34cee5a1ed376))
+* **deps:** update node.js to 22.12 ([#129](https://github.com/big-unibo/DataPlatformDesign/issues/129)) ([91a8645](https://github.com/big-unibo/DataPlatformDesign/commit/91a8645ed83419a495d57275a00264380c8b360a))
+
+### General maintenance
+
+* updated readme ([4a78a56](https://github.com/big-unibo/DataPlatformDesign/commit/4a78a56909e4c3371f4508d4de51bc17a2f56304))
+
 ## [1.3.0](https://github.com/big-unibo/DataPlatformDesign/compare/1.2.0...1.3.0) (2024-12-03)
 
 ### Features
