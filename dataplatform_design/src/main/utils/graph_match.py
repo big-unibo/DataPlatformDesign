@@ -2,8 +2,7 @@ import os
 import requests
 import json
 from . import utils
-from rdflib import Namespace, Graph, URIRef
-import rdflib
+from rdflib import Namespace
 import time
 
 logger = utils.setup_logger("DataPlat_Design_Match_Graph")

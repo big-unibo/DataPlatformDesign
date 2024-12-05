@@ -4,7 +4,6 @@ import pytz
 from rdflib.namespace import Namespace
 import sys
 import requests
-import visualize
 import time
 
 sys.path.append(

@@ -1,6 +1,6 @@
 import os
 import rdflib
-from rdflib import Namespace, URIRef
+from rdflib import URIRef
 from graphviz import Digraph
 from utils import utils
 

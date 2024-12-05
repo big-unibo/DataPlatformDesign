@@ -1,10 +1,7 @@
 from . import utils
 from rdflib import Namespace
-import itertools
 from cplex import Cplex
 import os
-import contextlib
-import sys
 
 
 # Load default config

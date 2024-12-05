@@ -1,6 +1,4 @@
 import os
-import requests
-import json
 from . import utils
 from rdflib import Namespace
 
@@ -42,7 +40,7 @@ def embed_mandatories(graph):
     """
 
     try:
-        #graph.query(mandatories_query)
+        # graph.query(mandatories_query)
         return graph
     except Exception as e:
         logger.exception("Something went wrong during graph augmentation..")

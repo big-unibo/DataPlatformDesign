@@ -1,6 +1,5 @@
 import requests
 import utils
-import os
 from . import utils
 
 # Setup logger
