@@ -63,52 +63,57 @@ def plot_metrics_grid(result_paths, out_path):
         )
 
 
-def plot_stacked_bar_chart(result_paths, out_path):
+def plot_stacked_bar_chart(result_paths, out_path, all=True):
+    from matplotlib import rc
+    plt.rcParams['font.family'] = 'Serif'
+    plt.rcParams['font.serif'] = ['Times New Roman']
+    rc('text', usetex=True)
     for test_result in result_paths:
         df = pd.read_csv(test_result)
+        if not all:
+            df = df[df["scenario"].apply(lambda x: "syntethic" in x)]
+            df["scenario"] = df["scenario"].apply(lambda x: x.replace("syntethic_", "").replace("nodes", ""))
+            df = df[(df["scenario"] == "10") | (df["scenario"] == "50") | (df["scenario"] == "250")]
         grouped = df.groupby("scenario").mean()
-
         grouped["total_time"] = (
             grouped["match_time"] + grouped["augment_time"] + grouped["select_time"]
         )
-
         grouped = grouped.sort_values("total_time", ascending=True)
-
-        fig, ax = plt.subplots(figsize=(14, 8))
-
-        ax.bar(grouped.index, grouped["match_time"], label="Match Time")
+        print(grouped.columns)
+        print(grouped.reset_index()[["scenario", "match_time", "augment_time", "select_time", "total_time"]].to_latex(index=False, float_format="%.2f"))
+        fig, ax = plt.subplots(figsize=(4, 3))
+        ax.set_axisbelow(True)
+        ax.grid()
+        ax.bar(grouped.index, grouped["match_time"], label="Match")
         ax.bar(
             grouped.index,
             grouped["augment_time"],
             bottom=grouped["match_time"],
-            label="Augment Time",
+            label="Augment",
         )
         ax.bar(
             grouped.index,
             grouped["select_time"],
             bottom=grouped["match_time"] + grouped["augment_time"],
-            label="Select Time",
+            label="Optimize",
         )
-
-        ax.set_title("Average Times per Scenario", fontsize=16)
-        ax.set_ylabel("Time (s)", fontsize=12)
-        ax.set_xlabel("Scenario", fontsize=12)
-        ax.legend()
-
-        plt.xticks(rotation=45, fontsize=10, ha="right")
+        # ax.set_title("Average Times per Scenario", fontsize=16)
+        ax.set_ylabel("Time (s)", fontsize=14)
+        ax.set_xlabel("$|N^D|$", fontsize=14)
+        ax.legend(fontsize=12)
+        plt.xticks(rotation=0, fontsize=12, ha="right")
         plt.tight_layout()
-
         os.makedirs(
             os.path.join(out_path, test_result.split(os.sep)[-1][:-4]), exist_ok=True
         )
-        plt.savefig(
-            f"{os.path.join(out_path, test_result.split(os.sep)[-1][:-4], 'stacked_bar_chart.svg')}",
-            format="svg",
-        )
-
+        for fmt in ["svg", "pdf"]:
+            plt.savefig(
+                f"{os.path.join(out_path, test_result.split(os.sep)[-1][:-4], 'stacked_bar_chart.' + fmt)}",
+                format=fmt,
+            )
 
 print(os.path)
-result_directory = "/dataplatform_design/dataplatform_design/run_statistics/"
+result_directory = "/dataplatform_design/dataplatform_design/run_statistics/" # "../../run_statistics/"
 result_paths = [
     os.path.join(result_directory, file)
     for file in os.listdir(result_directory)
@@ -117,4 +122,4 @@ result_paths = [
 out_path = "/dataplatform_design/dataplatform_design/run_statistics/plots/"
 
 plot_metrics_grid(result_paths, out_path)
-plot_stacked_bar_chart(result_paths, out_path)
+plot_stacked_bar_chart(result_paths, out_path, all=False)

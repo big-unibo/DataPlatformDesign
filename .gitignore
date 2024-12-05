@@ -8,6 +8,8 @@
 !**/input/ontologies/*.ttl
 **/input/solution/*
 !**/input/solution/*.ttl
+*.svg
+*.pdf
 
 /dataplatform_design/run_statistics/plots/*
 
