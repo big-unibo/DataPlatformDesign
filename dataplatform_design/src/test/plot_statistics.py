@@ -67,7 +67,7 @@ def plot_stacked_bar_chart(result_paths, out_path, all=True):
     from matplotlib import rc
     plt.rcParams['font.family'] = 'Serif'
     plt.rcParams['font.serif'] = ['Times New Roman']
-    rc('text', usetex=True)
+    # rc('text', usetex=True)
     for test_result in result_paths:
         df = pd.read_csv(test_result)
         if not all:
