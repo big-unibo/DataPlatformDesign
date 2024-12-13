@@ -15,7 +15,7 @@ importlib_resources==6.4.5
 iniconfig==2.0.0
 isodate==0.6.1
 kiwisolver==1.4.7
-matplotlib==3.9.3
+matplotlib==3.9.4
 mccabe==0.7.0
 mypy-extensions==1.0.0
 neo4j==5.27.0
