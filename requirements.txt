@@ -47,7 +47,7 @@ SPARQLWrapper==2.0.0
 tomli==2.2.1
 tomli==2.2.1
 typing_extensions==4.12.2
-tzdata==2024.2
+tzdata==2025.1
 urllib3==2.3.0
 zipp==3.21.0
 jinja2
