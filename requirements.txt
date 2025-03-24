@@ -33,7 +33,7 @@ pluggy==1.5.0
 pycodestyle==2.12.1
 pyfactxx==1.8.1
 pyflakes==3.2.0
-pyparsing==3.2.1
+pyparsing==3.2.2
 pytest==8.3.5
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
