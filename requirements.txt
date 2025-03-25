@@ -37,7 +37,7 @@ pyparsing==3.2.2
 pytest==8.3.5
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
-pytz==2025.1
+pytz==2025.2
 PyYAML==6.0.2
 rdflib==7.0.0
 rdflib-neo4j==1.1
