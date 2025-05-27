@@ -22,7 +22,7 @@ neo4j==5.28.1
 neo4j==5.28.1
 networkx==3.2.1
 numpy==2.0.2
-owlready2==0.47
+owlready2==0.48
 packaging==25.0
 packaging==25.0
 pandas==2.2.3
