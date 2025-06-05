@@ -25,7 +25,7 @@ numpy==2.0.2
 owlready2==0.48
 packaging==25.0
 packaging==25.0
-pandas==2.2.3
+pandas==2.3.0
 pathspec==0.12.1
 pillow==11.2.1
 platformdirs==4.3.8
