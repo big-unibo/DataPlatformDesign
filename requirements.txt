@@ -28,7 +28,7 @@ packaging==25.0
 pandas==2.3.2
 pathspec==0.12.1
 pillow==11.3.0
-platformdirs==4.3.8
+platformdirs==4.4.0
 pluggy==1.6.0
 pycodestyle==2.12.1
 pyfactxx==1.8.1
