@@ -19,5 +19,6 @@ COPY ./ /dataplatform_design/
 
 WORKDIR /dataplatform_design
 
+RUN chmod +x *.sh
 
 

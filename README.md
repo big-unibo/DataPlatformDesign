@@ -20,6 +20,11 @@ Main features
 Running the approach
 
 - The steps necessary to run the approach can be found in the Github action [build](https://github.com/big-unibo/DataPlatformDesign/blob/master/.github/workflows/build.yml)
+- If on a Unix-based system, the article tests can be reproduced via:
+   ```sh
+    chmod +x run_evaluation.sh
+    ./run_evaluation.sh
+   ```
 - The list of mandatory (Python) dependencies to successfully run the script is explicited inside `requirements.txt` file in the project root directory.
 
 ### Scenario setup

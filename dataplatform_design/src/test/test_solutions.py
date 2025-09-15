@@ -132,23 +132,27 @@ def test_scenarioI(self, scenario_directory, iteration=0, n_solutions=1):
     logger.debug("Comparing solutions")
 
     # Compare solution to given one
-    res, s, solution_cost = dataplat_designer.compare_solutions(
-        selected_graphs, solution_path, costs
-    )
+    # If we're testing synthethic scenarios, we don't have a given solution so we don't care about this comparison, just skip it.
+    if "syntethic" not in scenario_directory:
+        res, s, solution_cost = dataplat_designer.compare_solutions(
+            selected_graphs, solution_path, costs
+        )
+    else:
+        res = True
     logger.debug("Comparison complete")
 
-    try:
-        self.assertTrue(res)
-    except Exception as _:
-        return [
-            seed,
-            scenario_directory.split(os.sep)[-1],
-            iteration,
-            matching_time,
-            augmentation_time,
-            selection_time,
-            len(selected_graphs),
-        ]
+    # try:
+    self.assertTrue(res)
+    # except Exception as _:
+    #     return [
+    #         seed,
+    #         scenario_directory.split(os.sep)[-1],
+    #         iteration,
+    #         matching_time,
+    #         augmentation_time,
+    #         selection_time,
+    #         len(selected_graphs),
+    #     ]
     # self.assertEqual(len(selected_graphs), n_solutions)
 
     return [
@@ -237,22 +241,22 @@ class TestSolutions(unittest.TestCase):
 
     def test_syntethic10_nodes(self):
         self.run_scenario_with_stats(
-            "syntethic_10nodes", iteration=self.iteration, n_solutions=1
+            "syntethic_10nodes", iteration=self.iteration, n_solutions=24
         )
 
     def test_syntethic50_nodes(self):
         self.run_scenario_with_stats(
-            "syntethic_50nodes", iteration=self.iteration, n_solutions=1
+            "syntethic_50nodes", iteration=self.iteration, n_solutions=278
         )
 
     def test_syntethic250_nodes(self):
         self.run_scenario_with_stats(
-            "syntethic_250nodes", iteration=self.iteration, n_solutions=1
+            "syntethic_250nodes", iteration=self.iteration, n_solutions=193
         )
 
     def test_syntethic300_nodes(self):
         self.run_scenario_with_stats(
-            "syntethic_300nodes", iteration=self.iteration, n_solutions=1
+            "syntethic_300nodes", iteration=self.iteration, n_solutions=152
         )
 
 
