@@ -21,6 +21,11 @@ Running the approach
 
 - The steps necessary to run the approach can be found in the Github action [build](https://github.com/big-unibo/DataPlatformDesign/blob/master/.github/workflows/build.yml)
 - The list of mandatory (Python) dependencies to successfully run the script is explicited inside `requirements.txt` file in the project root directory.
+- Alternatively. the approach, data and figures mentioned in the article can be reproduced through Docker by opening a shell within this project directory and running
+- 
+   ```sh
+   docker compose up --abort-on-container-exit
+   ```
 
 ### Scenario setup
 
