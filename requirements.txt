@@ -10,7 +10,7 @@ flake8==7.1.2
 fonttools==4.60.1
 fonttools==4.60.1
 graphviz==0.21
-idna==3.10
+idna==3.11
 importlib_resources==6.5.2
 iniconfig==2.1.0
 isodate==0.6.1
