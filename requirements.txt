@@ -26,7 +26,7 @@ owlready2==0.49
 packaging==25.0
 packaging==25.0
 pandas==2.3.3
-pathspec==0.12.1
+pathspec==1.0.0
 pillow==11.3.0
 platformdirs==4.4.0
 pluggy==1.6.0
