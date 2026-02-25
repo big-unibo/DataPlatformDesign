@@ -21,7 +21,7 @@ mypy-extensions==1.1.0
 neo4j==5.28.3
 neo4j==5.28.3
 networkx==3.2.1
-numpy==2.0.2
+numpy==2.4.2
 owlready2==0.50
 packaging==26.0
 packaging==26.0
