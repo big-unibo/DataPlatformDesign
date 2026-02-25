@@ -30,7 +30,7 @@ pathspec==1.0.4
 pillow==11.3.0
 platformdirs==4.4.0
 pluggy==1.6.0
-pycodestyle==2.12.1
+pycodestyle==2.14.0
 pyfactxx==1.8.1
 pyflakes==3.2.0
 pyparsing==3.3.2
