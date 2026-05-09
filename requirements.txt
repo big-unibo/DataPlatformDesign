@@ -48,7 +48,7 @@ tomli==2.4.1
 tomli==2.4.1
 typing_extensions==4.15.0
 tzdata==2026.2
-urllib3==2.6.3
+urllib3==2.7.0
 zipp==3.23.1
 jinja2
 tabulate
