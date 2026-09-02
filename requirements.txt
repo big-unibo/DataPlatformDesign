@@ -23,8 +23,8 @@ neo4j==5.28.5
 networkx==3.2.1
 numpy==2.0.2
 owlready2==0.51
-packaging==26.2
-packaging==26.2
+packaging==26.3
+packaging==26.3
 pandas==2.3.3
 pathspec==1.1.1
 pillow==11.3.0
