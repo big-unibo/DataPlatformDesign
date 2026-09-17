@@ -32,7 +32,7 @@ platformdirs==4.4.0
 pluggy==1.6.0
 pycodestyle==2.12.1
 pyfactxx==1.8.1
-pyflakes==3.2.0
+pyflakes==3.4.0
 pyparsing==3.3.2
 pytest==8.4.2
 python-dateutil==2.9.0.post0
