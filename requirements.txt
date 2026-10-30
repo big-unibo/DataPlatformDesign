@@ -1,4 +1,4 @@
-black==25.11.0
+black==26.10.1
 certifi==2026.10.23
 charset-normalizer==3.5.2
 click==8.1.8
